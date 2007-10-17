@@ -25,10 +25,17 @@
             the version of the JDK that is being used to run that Java application
         (more details below).</p>
         <h3>Getting Started</h3>
-        <p>To start VisualVM on Windows, run the visualvm.exe program that is in the
-            \bin folder under the VisualVM install folder.  
-            On Unix or Linux use the visualvm shell script that is in the /bin
-            folder.
+        <p>To start VisualVM on Windows, run the <code>visualvm.exe</code> program that is in the
+            <code>\bin</code> folder under the VisualVM install folder.  
+            On Unix or Linux use the visualvm shell script that is in the <code>/bin</code>
+            folder under the VisualVM install folder. You may specify the JDK which runs VisualVM
+            and/or user directory using command line parameters or by modifying <code>/etc/visualvm.conf</code>
+            file. Example command for starting VisualVM on Windows is:
+        </p>
+        <p>
+          <pre>
+  visualvm.exe --jdkhome "C:\Software\Java\jdk1.6.0_03" --userdir "C:\Temp\visualvm_userdir"
+          </pre>
         </p>
         <p>The initial display is shown in Figure 1. The Applications window has three 
             entries. The first lists Java applications
