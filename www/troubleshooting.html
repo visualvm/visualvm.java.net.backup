@@ -22,7 +22,7 @@ for details and fix.</p>
 <p><b>Description:&nbsp;</b>Thread dump or heap dump cannot be taken or profiling doesn't work for applications running on JDK 6.0.</p>
 <p><b>Resolution:&nbsp;&nbsp;</b>All these features utilize dynamic attach feature of JDK 6.0. There is a known problem with dynamic attach, it may
     cause target JVM to crash when class sharing is enabled. To start an application without class sharing, provide <code>-Xshare:off</code> argument
-to the <code>java</code> command starting the app.</p>
+to the <code>java</code> command starting the app. More information can be found in <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6497639">this</a> and <a href="http://bugs.sun.com/bugdatabase/view_bug.do;jsessionid=75eeb97f40427854daec7d1fcd3?bug_id=6598065">this</a> bug detail.</p>
 
 <script src="https://ssl.google-analytics.com/urchin.js" type="text/javascript">
 </script>
