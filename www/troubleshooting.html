@@ -1,11 +1,14 @@
 <html>
 <head>
-<title>Troubleshooting</title>
+<title>Troubleshooting guide for VisualVM Preview 1</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body>
     
+<h3><font size="+2">Troubleshooting guide for VisualVM Preview 1</font></h3>
+<br>
+
 <h3>VisualVM Application Window Is Empty, Exception Is Thrown</h3>
 <p><b>Description:&nbsp;</b>Main window of VisualVM is empty, <code>java.lang.ClassNotFoundException: sun.jvmstat.monitor.MonitorException</code> may be presented to the user and is logged in the logfile.</p>
 <p><b>Resolution:&nbsp;&nbsp;</b>This happens when VisualVM runs on JRE instead of JDK. To define which JDK will be used for running VisualVM, follow the steps in 
