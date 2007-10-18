@@ -6,19 +6,19 @@
 
 <body>
     
-<h4>VisualVM Application Window Is Empty, Exception Is Thrown</h4>
+<h3>VisualVM Application Window Is Empty, Exception Is Thrown</h3>
 <p><b>Description:&nbsp;</b>Main window of VisualVM is empty, <code>java.lang.ClassNotFoundException: sun.jvmstat.monitor.MonitorException</code> may be presented to the user and is logged in the logfile.</p>
 <p><b>Resolution:&nbsp;&nbsp;</b>This happens when VisualVM runs on JRE instead of JDK. To define which JDK will be used for running VisualVM, follow the steps in 
 Getting Started part of the <a href="description.html">Introduction to VisualVM</a> document.</p>
 
-<h4>No Running Local Applications Detected</h4>
+<h3>No Running Local Applications Detected</h3>
 <p><b>Description:&nbsp;</b>There are no running applications shown in the Applications window on the left side (including the VisualVM itself).</p>
 <p><b>Resolution:&nbsp;&nbsp;</b>This can happen on Windows systems, it's a known problem related to the <code>jps</code> JDK tool used by VisualVM to
     detect running Java applications. There are two main root causes: <i>broken access rights to temporary directory on a NTFS disk</i> - see <a href="http://forum.java.sun.com/thread.jspa?threadID=5133218&tstart=0">this thread</a>
 for details and fix or <i>having temporary directory on a FAT disk</i> - see <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5042659">this bug detail</a>
 for details and fix.</p>
 
-<h4>Thread Dump, Heap Dump or Profiling Does Not Work</h4>
+<h3>Thread Dump, Heap Dump or Profiling Does Not Work</h3>
 <p><b>Description:&nbsp;</b>Thread dump or heap dump cannot be taken or profiling doesn't work for applications running on JDK 6.0.</p>
 <p><b>Resolution:&nbsp;&nbsp;</b>All these features utilize dynamic attach feature of JDK 6.0. There is a known problem with dynamic attach, it may
     cause target JVM to crash when class sharing is enabled. To start an application without class sharing, provide <code>-Xshare:off</code> argument
