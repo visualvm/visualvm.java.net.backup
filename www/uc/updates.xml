@@ -3,6 +3,7 @@
 <!DOCTYPE module_updates PUBLIC "-//NetBeans//DTD Autoupdate Catalog 2.5//EN" "http://www.netbeans.org/dtds/autoupdate-catalog-2_5.dtd">
 <module_updates timestamp="53/36/14/12/11/2007">
 
+<module_group name="Tools">
 
 <module codenamebase="org.netbeans.modules.visualgc" distribution="http://profiler.netbeans.org/files/documents/164/1271/visualgc-1.1.1.nbm" downloadsize="75971" homepage="http://profiler.netbeans.org" license="5D4B83E3" moduleauthor="" needsrestart="false" releasedate="2006/12/19">
     <manifest OpenIDE-Module="org.netbeans.modules.visualgc/1" OpenIDE-Module-Build-Version="061219" OpenIDE-Module-Display-Category="Tools" OpenIDE-Module-Implementation-Version="1" OpenIDE-Module-Java-Dependencies="Java &gt; 1.5" OpenIDE-Module-Long-Description="Integration of the Visual GC tool into NetBeans IDE. Adds Window | Visual GC menu item to easily launch Visual GC integrated into the IDE." OpenIDE-Module-Module-Dependencies="org.openide.awt &gt; 6.7.1, org.openide.dialogs &gt; 6.5.1, org.openide.modules &gt; 6.5.1, org.openide.options &gt; 6.4.1, org.openide.util &gt; 6.8.1, org.openide.windows &gt; 6.5.1" OpenIDE-Module-Name="Visual GC" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Specification-Version="1.1.1"/>
