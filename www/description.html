@@ -97,7 +97,7 @@
             in the Applications window and then fill in the dialog that is shown in 
             Figure 6. Note that the jstatd utility must be running on the remote
             system - more information about jstatd is available 
-            <a href="http://java.sun.com/j2se/1.5.0/docs/tooldocs/share/jstatd.html">
+            <a href="http://java.sun.com/javase/6/docs/tooldocs/share/jstatd.html">
         here</a>.</p>
         <img src="images/remote.png"/><br>
         <b>Figure 6: Add Remote Host</b>
@@ -133,31 +133,33 @@
         <h3>MBean Browser VisualVM Plugin</h3>
         <p>The MBean Browser is a new VisualVM plugin available in the VisualVM
         (Preview 2) Plugins Center which provides the same functionality as the
-        JConsole's MBeans tab.</p>
+        <a href="http://java.sun.com/javase/6/docs/technotes/guides/management/jconsole.html#gdeap">JConsole's MBeans tab</a>.</p>
         <img src="images/mbean_browser_uc.png"/><br>
         <b>Figure 9: MBean Browser plugin in the VisualVM (Preview 2) Plugins Center</b>
         <p>The MBean Browser plugin allows to browse the MBeans registered in the
-        out-of-the-box JMX management agent's platform MBeanServer for local and
+        out-of-the-box management agent's platform MBean server both in local and
         remote Java applications. It also allows to get and set MBean attributes
         and invoke MBean operations as well as subscribing for MBean notifications.</p>
         <img src="images/mbean_browser.png"/><br>
         <b>Figure 10: MBean Browser displays the attributes of the ClassLoading
         MXBean in the local Notepad application</b>
-        <p>The MBean Browser will be enabled in the following cases:</p>
+        <p>The MBean Browser will be enabled - by right-clicking in a given local
+        or remote application and choosing the Open item in the contextual menu -
+        in the following cases:</p>
             <ul>
                 <li>local process:</li>
                 <ul>
-                    <li>the local Java application is running on JDK 6 or later
+                    <li>the local Java application is running on JDK 6 or higher
                     (no special management system property needed)</li>
                     <li>the local Java application is running on JDK 5 and has been
-                    started with the <b>-Dcom.sun.management.jmxremote</b> system property, i.e.<br>
+                    started with the <b>-Dcom.sun.management.jmxremote</b> system property, e.g.<br>
                 <pre>$ java -Dcom.sun.management.jmxremote MyApp</pre></li>
                 </ul>
                 <li>remote process:</li>
                 <ul>
-                    <li>the remote Java application is running on JDK 5 or later
+                    <li>the remote Java application is running on JDK 5 or higher
                     and has been started with a specific port for remote management
-                    and security has been disabled (both authentication and encryption), i.e.<br>
+                    and security has been disabled (both authentication and encryption), e.g.<br>
                     <pre>$ java -Dcom.sun.management.jmxremote.port=&lt;port&gt; -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false MyApp</pre></li>
                 </ul>
             </ul>
