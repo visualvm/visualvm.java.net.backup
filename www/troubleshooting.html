@@ -1,23 +1,23 @@
 <html>
 <head>
-<title>Troubleshooting guide for VisualVM Preview 1</title>
+<title>Troubleshooting guide for VisualVM Preview 2</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body>
     
-<h3><font size="+1">Troubleshooting guide for VisualVM Preview 1</font></h3>
+<h3><font size="+1">Troubleshooting guide for VisualVM Preview 2</font></h3>
 <br>
 
 <a name="jrehost"></a>
-<h3>VisualVM Application Window Is Empty, Exception Is Thrown</h3>
-<p><b>Description:&nbsp;</b>Main window of VisualVM is empty, <code>java.lang.ClassNotFoundException: sun.jvmstat.monitor.MonitorException</code> may be presented to the user and is logged in the logfile.</p>
-<p><b>Resolution:&nbsp;&nbsp;</b>This happens when VisualVM runs on JRE instead of JDK. To define which JDK will be used for running VisualVM, follow the steps in 
+<h3>Error Starting VisualVM Dialog Is Shown During VisualVM Startup</h3>
+<p><b>Description:&nbsp;</b>Error Starting VisualVM dialog is shown during VisualVM startup with a message about an unsupported version of Java.</p>
+<p><b>Resolution:&nbsp;&nbsp;</b>VisualVM only supports running on JDK 6.0 or 7.0. When started on JRE and/or older Java platform, VisualVM shows this dialog and terminates. To define which JDK will be used for running VisualVM, follow the steps in 
 Getting Started section of the <a href="description.html#getting_started">Introduction to VisualVM</a> document.</p><br>
 
 <a name="jpswin"></a>
-<h3>No Running Local Applications Detected</h3>
-<p><b>Description:&nbsp;</b>There are no running applications shown in the Applications window on the left side (including the VisualVM itself).</p>
+<h3>Local Applications Cannot Be Detected (Error Dialog On Startup)</h3>
+<p><b>Description:&nbsp;</b>An error dialog saying that local applications cannot be detected is shown immediately after VisualVM startup.</p>
 <p><b>Resolution:&nbsp;&nbsp;</b>This can happen on Windows systems, it's a known problem related to the <code>jps</code> JDK tool used by VisualVM to
     detect running Java applications. There are two main root causes: <i>broken access rights to temporary directory on a NTFS disk</i> - see <a href="http://forum.java.sun.com/thread.jspa?threadID=5133218&tstart=0">this thread</a>
 for details and fix or <i>having temporary directory on a FAT disk</i> - see <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5042659">this bug detail</a>
@@ -31,8 +31,8 @@ This is a requirement for VisualVM to be able to discover and access remote Java
 in Remote Applications section of the <a href="description.html#remote_applications">Introduction to VisualVM</a> document.</p><br>
 
 <a name="xshare"></a>
-<h3>Profiling Does Not Work</h3>
-<p><b>Description:&nbsp;</b>Profiling doesn't work for applications running on JDK 6.0.</p>
+<h3>Profiler Tab Shows Warning About Class Sharing, Profiling Does Not Work</h3>
+<p><b>Description:&nbsp;</b>"Class sharing is enabled for this JVM" warning is shown in red box in Profiler tab, profiling CPU or Memory crashes local applications running on JDK 6.0.</p>
 <p><b>Resolution:&nbsp;&nbsp;</b>There is a known problem with dynamic attach which is used for profiling, it may
     cause target JVM to crash when class sharing is enabled. To start an application without class sharing, provide <code>-Xshare:off</code> argument
 to the <code>java</code> command starting the app. More information can be found in <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6497639">this</a>
