@@ -129,6 +129,39 @@
             whether or not it should write a heap dump in the event of an
             OutOfMemoryError (OOME).</p>
         
+        <a name="mbean_browser"></a>
+        <h3>MBean Browser VisualVM Plugin</h3>
+        <p>The MBean Browser is a new VisualVM plugin available in the VisualVM
+        (Preview 2) Plugins Center which provides the same functionality as the
+        JConsole's MBeans tab.</p>
+        <img src="images/mbean_browser_uc.png"/><br>
+        <b>Figure 9: MBean Browser plugin in the VisualVM (Preview 2) Plugins Center</b>
+        <p>The MBean Browser plugin allows to browse the MBeans registered in the
+        out-of-the-box JMX management agent's platform MBeanServer for local and
+        remote Java applications. It also allows to get and set MBean attributes
+        and invoke MBean operations as well as subscribing for MBean notifications.</p>
+        <img src="images/mbean_browser.png"/><br>
+        <b>Figure 10: MBean Browser displays the attributes of the ClassLoading
+        MXBean in the local Notepad application</b>
+        <p>The MBean Browser will be enabled in the following cases:</p>
+            <ul>
+                <li>local process:</li>
+                <ul>
+                    <li>the local Java application is running on JDK 6 or later
+                    (no special management system property needed)</li>
+                    <li>the local Java application is running on JDK 5 and has been
+                    started with the <b>-Dcom.sun.management.jmxremote</b> system property, i.e.<br>
+                <pre>$ java -Dcom.sun.management.jmxremote MyApp</pre></li>
+                </ul>
+                <li>remote process:</li>
+                <ul>
+                    <li>the remote Java application is running on JDK 5 or later
+                    and has been started with a specific port for remote management
+                    and security has been disabled (both authentication and encryption), i.e.<br>
+                    <pre>$ java -Dcom.sun.management.jmxremote.port=&lt;port&gt; -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false MyApp</pre></li>
+                </ul>
+            </ul>
+
         <a name="feature_matrix"></a>
         <h3>JDK Dependent Feature Matrix</h3>
         <p>The VisualVM features that are available depend on the JDK version that
@@ -145,6 +178,7 @@
             <tr><td>Thread Dump</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
             <tr><td>Heap Dump</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
             <tr><td>Enable Heap Dump on OOME</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
+            <tr><td>MBean Browser</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td></tr>
         </table>
         
 <!-- GOOGLE ANALYTICS TRACKING FOR PROFILER -->    
