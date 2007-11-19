@@ -12,7 +12,7 @@
 </module>
 
 <module codenamebase="org.netbeans.modules.management.mbeans" distribution="https://visualvm.dev.java.net/files/documents/7163/75704/org-netbeans-modules-management-mbeans.nbm" downloadsize="16398" homepage="https://visualvm.dev.java.net" license="C0B2B106" moduleauthor="" needsrestart="false" releasedate="2007/11/19" targetcluster="visualvm">
-    <manifest AutoUpdate-Show-In-Client="true" OpenIDE-Module="org.netbeans.modules.management.mbeans" OpenIDE-Module-Display-Category="Tools" OpenIDE-Module-Implementation-Version="071119" OpenIDE-Module-Java-Dependencies="Java &gt; 1.5" OpenIDE-Module-Module-Dependencies="org.netbeans.modules.management = 071119, org.openide.modules &gt; 7.3, org.openide.util &gt; 7.10.0.1" OpenIDE-Module-Name="VisualVM-MBeans" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="MBean Browser" OpenIDE-Module-Specification-Version="1.0"/>
+    <manifest AutoUpdate-Show-In-Client="true" OpenIDE-Module="org.netbeans.modules.management.mbeans" OpenIDE-Module-Display-Category="Tools" OpenIDE-Module-Implementation-Version="071119" OpenIDE-Module-Java-Dependencies="Java &gt; 1.5" OpenIDE-Module-Module-Dependencies="org.netbeans.modules.management = 071119, org.openide.modules &gt; 7.3, org.openide.util &gt; 7.10.0.1" OpenIDE-Module-Name="VisualVM-MBeans" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Long-Description="The MBean Browser plugin integrates JConsole's MBeans tab functionality into VisualVM" OpenIDE-Module-Specification-Version="1.0"/>
     
 </module>
 
