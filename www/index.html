@@ -37,20 +37,113 @@
 </table>
 </div>
 
-<h4>Features</h4>
-<p>Current feature set of the tool is described in the <a href="description.html">Introduction to VisualVM</a> document.<br>
-The proof-of-concept version of the tool has been presented at JavaOne 2007 as a BOF-9123. You can download the presentation slides <a href="http://weblogs.java.net/blog/mandychung/archive/VisualVM-BOF-2007.pdf">here</a>.
-</p>
+<!-- CONTENTS -->
+<div style="padding-top: 30px;">
+<table border="0px">
+  <tr>
+      
+    <!-- MAIN CONTENTS AREA -->
+    <td rowspan="3" valign="top" width="100%">
+      
+      <div style="border-top: solid 1px #696; margin-right: 15px;">
+          
+          <!-- ------------------------------------------------------------- -->
+          <!-- MAIN CONTENTS AREA                                            -->
+          <!--                                                               -->
+          
+          <h4 style="margin-top: 5px; margin-bottom: 5px;">News</h4>
+          <p style="margin-top: 0px; margin-bottom: 3px;"><i>November 19th, 2007:</i> VisualVM Preview 2 released. This release introduces Plugin Center, a repository
+          where you can get extensions to VisualVM (currently MBeans browser and VisualGC are available). Other news: new About dialog,
+          latest profiler bugfixes, latest NetBeans platform, usability improvements.</p>
+          <p style="margin-top: 0px; margin-bottom: 3px;"><i>October 15th, 2007:</i> VisualVM Preview 1 released. It provides basic monitoring and profiling
+          capabilities for both production and development time use.</p>
+          
+          <h4 style="margin-top: 15px; margin-bottom: 5px;">Feature Matrix</h4>
+          <p style="margin-top: 0px; margin-bottom: 3px;">
+              <table border="1" cellspacing="0">
+                <tr><td><b>Feature</b></td><td style="text-align:center;" width="15%"><b>JDK 1.4.2<br><small>local/remote</small></b></td><td style="text-align:center;" width="15%"><b>JDK 5.0<br><small>local/remote</small></b></td><td style="text-align:center;" width="15%"><b>JDK 6.0<br><small>local</small></b></td><td style="text-align:center;" width="15%"><b>JDK 6.0<br><small>remote</small></b></td></tr>
+                <tr><td>Overview</td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td></tr>
+                <tr><td>System Properties (in Overview)</td><td style="text-align:center;">&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
+                <tr><td>Monitor</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td></tr>
+                <tr><td>Profiler</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
+                <tr><td>Thread Dump</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
+                <tr><td>Heap Dump</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
+                <tr><td>Enable Heap Dump on OOME</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
+                <tr><td>MBean Browser</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td></tr>
+            </table>
+          </p>
+          
+          <h4 style="margin-bottom: 5px;">Feedback</h4>
+          <p style="margin-top: 0px; margin-bottom: 3px;">Please send us your feedback: <a href="mailto:feedback@visualvm.dev.java.net">feedback@visualvm.dev.java.net</a>.</p>
+          
+          <!--                                                               -->
+          <!-- END MAIN CONTENTS AREA                                        -->
+          <!-- ------------------------------------------------------------- -->
+          
+      </div>
+      
+    </td>
+    <!-- END MAIN CONTENTS AREA -->
+    
+    <!-- DOWNLOADS COLUMN -->
+    <td valign="top">
+      
+      <table style="border-width: 1px; border-spacing: 0px; border-style: solid; border-color: #696; border-collapse: collapse; width: 230px;">
+          <tr>
+              <td valign="center" style="color: white; background-color: #696; padding: 0px 5px 0px 5px;"><b>Download</b></td>
+          </tr>
+          <tr>
+              <td valign="top" style="padding: 5px 10px 10px 10px;">Latest release:
+                  <ul style="margin-left: 10px; padding-left: 10px; margin-top: 3px; padding-top: 3px; margin-bottom: 2px; padding-bottom: 2px;">
+                      <li><a href="https://visualvm.dev.java.net/files/documents/7163/76190/visualvm-preview2.zip">Preview 2</a> (zip, 7MB)</li>
+                  </ul>
+              </td>
+          </tr>
+      </table>
+      
+    </td>
+    <!-- END DOWNLOADS COLUMN -->
+    
+  </tr>
+  
+  <tr>
+      
+    <!-- DOCUMENTS COLUMN -->
+    <td valign="top" style="padding-top: 20px;">
+      
+      <table style="border-width: 1px; border-spacing: 0px; border-style: solid; border-color: #696; border-collapse: collapse; width: 230px;">
+          <tr>
+              <td valign="center" style="color: white; background-color: #696; padding: 0px 5px 0px 5px;"><b>Documents</b></td>
+          </tr>
+          <tr>
+              <td valign="top" style="padding: 5px 10px 10px 10px;">
+                  <ul style="margin-left: 10px; padding-left: 10px; margin-bottom: 2px; padding-bottom: 2px;">
+                    <li><a href="https://visualvm.dev.java.net/description.html">Introduction to VisualVM</a></li>
+                    <li><a href="https://visualvm.dev.java.net/troubleshooting.html">Troubleshooting Guide</a></li>
+                    <li><a href="http://weblogs.java.net/blog/mandychung/archive/VisualVM-BOF-2007.pdf">BOF-9123, JavaOne 2007</a></li>
+                  </ul>
+              </td>
+          </tr>
+      </table>
+      
+    </td>
+    <!-- END DOCUMENTS COLUMN -->
+    
+  </tr>
 
-<h4>Download</h4>
-<p>You can download the Preview 2 version of the tool <a href="https://visualvm.dev.java.net/files/documents/7163/76190/visualvm-preview2.zip">here</a>. Currently you can get only the binaries, sources will be available soon.<br>
-   <i>What's new in Preview 2: </i> Working Plugin Center, MBeans tab from JConsole, new About dialog, profiler bugfixes, latest NB platform, usability improvements.</p>
+  <tr>
+      
+    <!-- SPACER COLUMN -->
+    <td valign="top">
+      &nbsp;
+    </td>
+    <!-- END SPACER COLUMN -->
+    
+  </tr>
 
-<h4>Troubleshooting</h4>
-<p>Troubleshooting guide for currently known problems can be found <a href="troubleshooting.html">here</a>.</p>
-
-<h4>Feedback</h4>
-<p>Please send us your feedback: <a href="mailto:feedback@visualvm.dev.java.net">feedback@visualvm.dev.java.net</a>.</p>
+</table>
+</div>
+<!-- END CONTENTS -->
 
 <!-- GOOGLE ANALYTICS TRACKING FOR PROFILER -->    
 <script src="https://ssl.google-analytics.com/urchin.js" type="text/javascript">
