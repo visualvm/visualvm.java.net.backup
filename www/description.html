@@ -132,13 +132,13 @@
         <a name="mbean_browser"></a>
         <h3>MBean Browser VisualVM Plugin</h3>
         <p>The MBean Browser is a new VisualVM plugin available in the VisualVM
-        (Preview 2) Plugins Center which provides the same functionality as the
+        Plugin Center which provides the same functionality as the
         <a href="http://java.sun.com/javase/6/docs/technotes/guides/management/jconsole.html#gdeap">JConsole's MBeans tab</a>.
         In order to install it just choose Tools &gt; Plugins from the main menu
         of VisualVM, select the VisualVM-MBeans plugin and click on the Install
         button.</p>
         <img src="images/mbean_browser_uc.png"/><br>
-        <b>Figure 9: MBean Browser plugin in the VisualVM (Preview 2) Plugins Center</b>
+        <b>Figure 9: MBean Browser plugin in the VisualVM Plugin Center</b>
         <p>The MBean Browser plugin allows to browse the MBeans registered in the
         out-of-the-box management agent's platform MBean server both in local and
         remote Java applications. It also allows to get and set MBean attributes
@@ -147,8 +147,40 @@
         <b>Figure 10: MBean Browser displays the attributes of the ClassLoading
         MXBean in the local Notepad application</b>
         <p>The MBean Browser will be enabled - by right-clicking in a given local
-        or remote application and choosing the Open item in the contextual menu -
-        in the following cases:</p>
+        or remote application and choosing the Open item in the contextual menu - whenever JMX
+        is enabled in the target VM. See <a href="#jmx">Enabling JMX access in the target VM</a>
+        for more detailed information.</p>
+
+        <a name="jconsole_plugins"></a>
+        <h3>JConsole Plugins Wrapper VisualVM Plugin</h3>
+        <p>This plugin wraps custom JConsole plugins and integrates them into VisualVM.
+        The aim of this plugin is to serve as a smooth migration path for JConsole plugin
+        developers. The custom JConsole plugins supplied using the jconsole.plugin.path
+        system property will be loaded into the VisualVM tool.</p>
+        <p><b>Usage:</b></p>
+        <p style="color: blue">$ visualvm [-J-Djconsole.plugin.path=&lt;plugin-path&gt;]</p>
+        <ul>
+            <li>where &lt;plugin-path&gt; specifies the paths to the jar files of the JConsole plugins
+            to look up. Multiple paths are separated by the path separator character of the platform.</li>
+        </ul>
+        <p>This plugin is available in the VisualVM Plugin Center. In order to install
+        it just choose Tools &gt; Plugins from the main menu of VisualVM, select the
+        VisualVM-JConsole plugin and click on the Install button.</p>
+        <img src="images/jconsole_plugins_uc.png"/><br>
+        <b>Figure 11: JConsole plugins in the VisualVM Plugin Center</b>
+        <p>The picture below shows an example of VisualVM running the JTop JConsole plugin
+        supplied with the JDK under &lt;jdk-home&gt;/demo/management/JTop/JTop.jar</p>
+        <img src="images/jconsole_plugins_jtop.png"/><br>
+        <b>Figure 12: JTop JConsole plugin running inside VisualVM.</b>
+        <p>The support for custom JConsole plugins in VisualVM will be enabled
+        - by right-clicking in a given local or remote application and choosing
+        the Open item in the contextual menu - whenever JMX is enabled in the
+        target VM. See <a href="#jmx">Enabling JMX access in the target VM</a>
+        for more detailed information.</p>
+
+        <a name="jmx"></a>
+        <h3>Enabling JMX access in the target VM</h3>
+        <p>The JMX access will be enabled in the target VM in the following cases:</p>
             <ul>
                 <li>local process:</li>
                 <ul>
@@ -184,6 +216,7 @@
             <tr><td>Heap Dump</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
             <tr><td>Enable Heap Dump on OOME</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
             <tr><td>MBean Browser</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td></tr>
+            <tr><td>JConsole plugins</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td></tr>
         </table-->
         
 <!-- GOOGLE ANALYTICS TRACKING FOR PROFILER -->    
@@ -204,19 +237,3 @@ urchinTracker();
         
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
