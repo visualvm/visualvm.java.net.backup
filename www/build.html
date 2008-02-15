@@ -1,28 +1,36 @@
 <html>
 <head>
-<title>Build guide for VisualVM </title>
+<title>Build guide for VisualVM</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 <body>
-<p>
-This document describes VisualVM CVS layout and shourt instructions how to build VisualVM. 
-There are two suites - one visualvm, which is the core tool and the plugins suite, 
-which has plugins available on plugin center. The layout in <a href="https://visualvm.dev.java.net/source/browse/visualvm/">CVS</a> is
-</p>
+<p>This document describes the VisualVM CVS layout and short instructions on how to build VisualVM.</p>
+
+<p>There are two suites:</p>
 <ul>
-<li>visualvm
-   <ul>
-   <li>www       <- web pages</li>
-   <li>visualvm  <- core tool suite</li>
-   <li>plugins   <- for plugin center (jconsole, mbeans, glassfish)</li>
-   </ul>
-</li>
+<li><b>visualvm</b>: which defines the core tool, and</li>
+<li><b>plugins</b>: which contains the plugins available in the VisualVM Plugin Center.</li>
+</ul>
+
+<p>The layout in <a href="https://visualvm.dev.java.net/source/browse/visualvm/">CVS</a> is:</p>
+<ul>
+    <li>visualvm
+        <ul>
+            <li>www&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt;--- web pages</li>
+            <li>visualvm&nbsp&nbsp&lt;--- core tool suite</li>
+            <li>plugins&nbsp&nbsp&nbsp&nbsp&lt;--- for plugin center (jconsole, mbeans, glassfish)</li>
+        </ul>
+    </li>
 </ul>
 <p>
-To build visualvm core tool you need NetBeans platform and profiler binaries available <a href="https://visualvm.dev.java.net/files/documents/7163/85899/nb_visualvm_08022008.zip">here</a>. Those binaries must be extracted to visualvm/visualvm directory. You can use <code>ant run</code> or <code>ant build-zip</code> to build or run VisualVM.
+To build the visualvm core tool you need the NetBeans platform and profiler binaries available
+<a href="https://visualvm.dev.java.net/files/documents/7163/85899/nb_visualvm_08022008.zip">here</a>.
+These binaries must be extracted into the visualvm/visualvm directory. You can use <code>ant run</code>
+or <code>ant build-zip</code> to build or run VisualVM.
 </p>
-To build plugins suite, use <code>ant build</code> or <code>ant run</code>. This will automatically build zip distribution of core tool to visualvm/visualvm/dist/visualvm.zip and extract it to visualvm/plugins/visualvm directory. After that build of plugins suite continue as usually. 
-</p>
-
+To build the plugins suite, use <code>ant build</code> or <code>ant run</code>. This will automatically
+build the zip distribution of the visualvm core tool into visualvm/visualvm/dist/visualvm.zip and extract
+it into the visualvm/plugins/visualvm directory. After that the build of the plugins suite continues to
+build each of the individual plugins.</p>
 </body>
-
+</html>
