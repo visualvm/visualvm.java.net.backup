@@ -44,19 +44,19 @@
         <p>A visual representation of the entry points into VisualVM:
         
         <p><a href="http://blogs.sun.com/geertjan/resource/big-entrypoints-diagram.png"><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-3.png" border="1"></a>
-
-<p>The lifecycle of a VisualVM plugin is determined by a <tt>ModuleInstall</tt> class,
-which comes from the NetBeans APIs. Whenever you implement a new entrypoint into
-VisualVM, you need to provide code for registering and unregistering the entrypoint
-implementation. The relevant initialization code must be provided in the <tt>ModuleInstall</tt>
-class. When the plugin is loaded into VisualVM, the <tt>ModuleInstall.restored</tt>
-method is the first method that is called from your plugin. That is the method
-that should initialize the entrypoints. When the plugin is uninstalled, or when VisualVM
-closes down, the plugin's entrypoints need to be deregistered, from the
-<tt>ModuleInstall.uninstalled</tt> method. You will be shown some typical
-registration/deregistration code in the "Hello World" scenario that follows.
-
-
+        
+        <p>The lifecycle of a VisualVM plugin is determined by a <tt>ModuleInstall</tt> class,
+        which comes from the NetBeans APIs. Whenever you implement a new entrypoint into
+        VisualVM, you need to provide code for registering and unregistering the entrypoint
+        implementation. The relevant initialization code must be provided in the <tt>ModuleInstall</tt>
+        class. When the plugin is loaded into VisualVM, the <tt>ModuleInstall.restored</tt>
+        method is the first method that is called from your plugin. That is the method
+        that should initialize the entrypoints. When the plugin is uninstalled, or when VisualVM
+        closes down, the plugin's entrypoints need to be deregistered, from the
+        <tt>ModuleInstall.uninstalled</tt> method. You will be shown some typical
+        registration/deregistration code in the "Hello World" scenario that follows.
+        
+        
         <h2>Preparing to Extend VisualVM</h2>
         
         <p>When you are planning to extend VisualVM, you need to
@@ -64,13 +64,13 @@ registration/deregistration code in the "Hello World" scenario that follows.
         
         <ul>
             
-            <li><b>JDK 6.</b> VisualVM itself runs on JDK 6, even
+            <li><b>Install JDK 6.</b> VisualVM itself runs on JDK 6, even
             though it can monitor and manage applications running
             on earlier versions of the JDK. The plugins that you
             create need to therefore also make use of JDK 6 and
             not any earlier version of the JDK.
             
-            <li><b>NetBeans IDE 6.0.</b> Though you are free to use
+            <li><b>Install NetBeans IDE 6.0.</b> Though you are free to use
             any editor or IDE to develop VisualVM plugins, NetBeans IDE
             is optimized for plugin development for VisualVM. For example,
             the VisualVM plugin project structure, as well as several
@@ -78,7 +78,22 @@ registration/deregistration code in the "Hello World" scenario that follows.
             time of writing, similar code generating features for VisualVM
             are not supported by other IDEs.
             
+            <li><b>Register VisualVM in NetBeans IDE.</b> You will be
+            building your VisualVM plugins against VisualVM, so that its
+            plugins (and the APIs exposed by those plugins) are available
+            to your own plugins. When you put the binary of VisualVM in the
+            NetBeans Platform Manager, you will enable NetBeans IDE to compile
+            your plugin against VisualVM. The VisualVM's APIs are then available 
+            to your plugin. Under the Tools menu, choose NetBeans Platform
+            Manager, and then browse to the root folder of your VisualVM
+            installation, as shown here:
             
+            <p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-1.png" border="1">
+                
+            <p>Click Next and then click Finish. Later, when you create
+            a VisualVM plugin project, you will be able to specify that the
+            plugin should be built against the VisualVM binary that you
+            registered above.
             
             
             
@@ -123,15 +138,15 @@ registration/deregistration code in the "Hello World" scenario that follows.
                 blog entries are as follows:
                 <p><ul>
                     <li><b><a href="http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm"> Getting Started Extending VisualVM (Part 1)</a>.</b>
-                     Here you create your first tab extension. You discover that VisualVM
-                     tabs are broken down into master views, master view configurations,
-                     and detail views.
+                    Here you create your first tab extension. You discover that VisualVM
+                    tabs are broken down into master views, master view configurations,
+                    and detail views.
                     <li><b><a href="http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm_part">Getting Started Extending VisualVM (Part 2)</a>.</b>
-                     Here you create an application type extension, with an overview
-                     extension and menu extension specifically for the application type.
+                    Here you create an application type extension, with an overview
+                    extension and menu extension specifically for the application type.
                     <li><b><a href="http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm_part1">Getting Started Extending VisualVM (Part 3)</a>.</b>
-                     Here you are introduced to application type subnodes and you
-                     are referred to the GlassFish plugin for related source code.
+                    Here you are introduced to application type subnodes and you
+                    are referred to the GlassFish plugin for related source code.
                 </ul>    
             </li>
             
