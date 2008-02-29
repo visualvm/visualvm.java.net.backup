@@ -18,12 +18,24 @@
         following categories, each implemented by the factory pattern:
         
         <ul>
-            <li><b>Tab extension.</b> 
-            <li><b>Overview tab extension.</b> 
+            <li><b>Tab extension.</b> By default, VisualVM provides tabs
+            with labels such as "Overview", "Monitor", and "Threads". You can
+            create new tabs just like these. Your tabs can either be available
+            to all application types or to specific application types.
+            <li><b>Overview tab extension.</b> By default, the application
+            types all share an "Overview" tab, which lists JVM arguments and
+            other high level application-specific inormation. You can provide
+            new subtabs within the Overview tab, which can either be
+            available to all appllication types or to specific application
+            types.
             <li><b>Menu extension.</b> 
             <li><b>Application type extension.</b> 
         </ul>    
         
+        <p>A visual representation of the entry points into VisualVM:
+        
+        <p><a href="http://blogs.sun.com/geertjan/resource/big-entrypoints-diagram.png"><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-3.png" border="1"></a>
+
         <h2>Preparing to Extend VisualVM</h2>
         
         <h2>Hello World</h2>
