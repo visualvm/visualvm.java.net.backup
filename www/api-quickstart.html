@@ -41,10 +41,11 @@
             with labels such as "Overview", "Monitor", and "Threads". You can
             create new tabs just like these. Your tabs can either be available
             to all application types or to specific application types.
-            <li><b>Overview tab extension.</b> By default, the application
-            types all share an "Overview" tab, which lists JVM arguments and
+            <li><b>Subtab extension.</b> By default, the application
+            types all share an "Overview" tab, a "Monitor" tab, and a
+            "Threads" tab. For example, the "Overview" tab lists JVM arguments and
             other high level application-specific information. You can provide
-            new subtabs within the Overview tab, which can either be
+            new subtabs within these three tab, which can either be
             available to all appllication types or to specific application
             types.
             <li><b>Menu extension.</b> An application type, and its subnodes,
@@ -331,8 +332,9 @@ and you'll see your new tab, for all application types:
                     and detail views. That blog entry is reproduced in the "Hello World"
                     section of this tutorial.
                     <li><b><a href="http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm_part">Getting Started Extending VisualVM (Part 2)</a>.</b>
-                    Here you create an application type extension, with an overview
-                    extension and menu extension specifically for the application type.
+                    Here you create an application type extension, with a subtab
+                    extension within the Overview tab and a menu extension, both specifically 
+                    for the application type.
                     <li><b><a href="http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm_part1">Getting Started Extending VisualVM (Part 3)</a>.</b>
                     Here you are introduced to application type subnodes and you
                     are referred to the GlassFish plugin for related source code.
