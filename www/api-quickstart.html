@@ -28,13 +28,34 @@
             new subtabs within the Overview tab, which can either be
             available to all appllication types or to specific application
             types.
-            <li><b>Menu extension.</b> 
-            <li><b>Application type extension.</b> 
+            <li><b>Menu extension.</b> An application type, and its subnodes,
+            can have one or more menu items added to their contextual menus.
+            <li><b>Application type extension.</b> Not only can you extend
+            existing application types, as shown above, but you can also
+            create an entire new application type. You can do this to do 
+            something as simple as provide a distinguishing icon for a
+            running instance of your application. Alternatively, you might
+            want to provide a lot of functionality, including graphs, to show
+            the processing of your application. The starting point for this
+            application-specific functionality is to implement a new
+            application type.
         </ul>    
         
         <p>A visual representation of the entry points into VisualVM:
         
         <p><a href="http://blogs.sun.com/geertjan/resource/big-entrypoints-diagram.png"><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-3.png" border="1"></a>
+
+<p>The lifecycle of a plugin into VisualVM is determined by a <tt>ModuleInstall</tt> class,
+which comes from the NetBeans APIs. Whenever you implement a new entrypoint into
+VisualVM, you need to provide code for registering and unregistering the entrypoint
+implementation. The relevant initialization code must be provided in the <tt>ModuleInstall</tt>
+class. When the plugin is loaded into VisualVM, the <tt>ModuleInstall.restored</tt>
+method is the first method that is called from your plugin. That is the method
+that should initialize the entrypoints. When the plugin is uninstalled, or when VisualVM
+closes down, the plugin's entrypoints need to be deregistered, from the
+<tt>ModuleInstall.uninstalled</tt> method. You will be shown some typical
+registration/deregistration code in the "Hello World" scenario that follows.
+
 
         <h2>Preparing to Extend VisualVM</h2>
         
