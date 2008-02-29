@@ -227,17 +227,16 @@ import javax.management.MBeanServerConnection;</pre>
     private DataViewComponent dvc;
     private Application application;
     private DataViewComponent view;
-    private static final String IMAGE_PATH = 
-            "org/geertjan/hellovisualvm/icon.png"; // NOI18N
+    //Make sure there is an image at this location in your project:
+    private static final String IMAGE_PATH = "org/hellovisualvm/icon.png"; // NOI18N
 
     public HelloWorldView(Application application) {
-        super("Hello World", new ImageIcon(Utilities.loadImage(
-                IMAGE_PATH, true)).getImage(), 60);
+        super("Hello World", new ImageIcon(Utilities.loadImage(IMAGE_PATH, true)).getImage(), 60);
         this.application = application;
         view = createViewComponent();
     }
 
-    @Override
+    <b>@Override</b>
     public DataViewComponent getView() {
         return view;
     }
