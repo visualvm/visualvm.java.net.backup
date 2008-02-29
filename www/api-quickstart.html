@@ -133,13 +133,13 @@ some placeholders for content.
 <p><li>Create a new NetBeans module and make sure to specify that 
 you want to build against the VisualVM binary that you registered earlier:
 
-<p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-4.png" border="1"/>
+<p><p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-4.png" border="1"/>
 
 <p><li>Use the "Module Installer" wizard, which will create a class that is called
 when the plugin is installed into VisualVM. Here's where you'll find the wizard 
 in the New File dialog:
 
-<p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-5.png" border="1"/>
+<p><p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-5.png" border="1"/>
 
 <p><li>Once you've completed the wizard, implement the <tt>ModuleInstall.restored</tt> 
 method and the <tt>ModuleInstall.uninstalled</tt> methods as follows:
@@ -154,7 +154,9 @@ public void uninstalled() {
     HelloWorldViewProvider.unregister();
 }</pre>
 
-<p><li>Now add a dependency on "VisualVM-Core", which provides the APIs into the VisualVM. 
+<p><li>Now add a dependency on "VisualVM-Core", which provides the APIs into the VisualVM.
+Do this by right-clicking the project node, choosing "Properties", and then setting
+the dependency in the "Libraries" tab.
 
 <p><li>Create a class called "HelloViewProvider", as follows:
 
@@ -203,9 +205,9 @@ public void uninstalled() {
 <p>By reading the Javadoc that you downloaded earlier, you'll 
 know what the two overridden methods above are all about:
 
-<p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-6.png" border="1"/>
+<p><p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-6.png" border="1"/>
 
-<p>You should be using the following import statements at this point:
+<p><p>You should be using the following import statements at this point:
 
 <p><pre>import com.sun.tools.visualvm.core.datasource.Application;
 import com.sun.tools.visualvm.core.model.jmx.JmxModel;
@@ -287,7 +289,9 @@ import javax.management.MBeanServerConnection;</pre>
     
 }</pre>
 
-<p><li><b>Install the Plugin.</b> Install the plugin and you'll see this new tab in VisualVM:
+<p><li>Right-click the project node and choose "Run".
+This will install the plugin in a new instance of VisualVM
+and you'll see your new tab:
 
 <p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-7.png" border="1"/>
 
