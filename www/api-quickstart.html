@@ -119,6 +119,179 @@
         
         <h2>Hello World</h2>
         
+        
+        <p>Now, we'll say "Hello World". We will create a new tab that looks as follows:
+
+<p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-7.png" border="1"/>
+
+<p>There will be no data in our tab, we'll simply create it and add 
+some placeholders for content. 
+
+<ol>
+<p><li>Create a new NetBeans module and make sure to specify that 
+you want to build against the VisualVM binary that you registered earlier:
+
+<p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-4.png" border="1"/>
+
+<p><li>Use the "Module Installer" wizard, which will create a class that is called
+when the plugin is installed into VisualVM. Here's where you'll find the wizard 
+in the New File dialog:
+
+<p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-5.png" border="1"/>
+
+<p><li>Once you've completed the wizard, implement the <tt>ModuleInstall.restored</tt> 
+method and the <tt>ModuleInstall.uninstalled</tt> methods as follows:
+
+<p><pre>@Override
+public void restored() {
+    HelloWorldViewProvider.initialize();
+}
+
+@Override
+public void uninstalled() {
+    HelloWorldViewProvider.unregister();
+}</pre>
+
+<p><li>Now add a dependency on "VisualVM-Core", which provides the APIs into the VisualVM. 
+
+<p><li>Create a class called "HelloViewProvider", as follows:
+
+<p><pre>class HelloWorldViewProvider implements DataSourceViewsProvider&lt;Application&gt; {
+
+    private Map&lt;Application, DataSourceView&gt; viewsCache = new HashMap();
+    private static DataSourceViewsProvider&lt;Application&gt; HelloWorldViewProvider = 
+            new HelloWorldViewProvider();
+
+    @Override
+    public boolean supportsViewFor(Application application) {
+        //Always shown:
+        return true;
+    }
+
+    @Override
+    public synchronized Set<? extends DataSourceView> getViews(
+            final Application application) {
+        
+        DataSourceView view = viewsCache.get(application);
+        if (view == null) {
+            view = new HelloWorldView(application) {
+                @Override
+                public void removed() {
+                    super.removed();
+                    viewsCache.remove(application);
+                }
+            };
+            viewsCache.put(application, view);
+        }
+        return Collections.singleton(view);
+    }
+
+    static void initialize() {
+        DataSourceWindowFactory.sharedInstance().addViewProvider(
+                HelloWorldViewProvider, Application.class);
+    }
+    
+    static void unregister() {
+        DataSourceWindowFactory.sharedInstance().removeViewProvider(
+                HelloWorldViewProvider);
+    }
+    
+}</pre>
+
+<p>By reading the Javadoc that you downloaded earlier, you'll 
+know what the two overridden methods above are all about:
+
+<p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-6.png" border="1"/>
+
+<p>You should be using the following import statements at this point:
+
+<p><pre>import com.sun.tools.visualvm.core.datasource.Application;
+import com.sun.tools.visualvm.core.model.jmx.JmxModel;
+import com.sun.tools.visualvm.core.model.jmx.JmxModelFactory;
+import com.sun.tools.visualvm.core.ui.DataSourceView;
+import com.sun.tools.visualvm.core.ui.DataSourceViewsProvider;
+import com.sun.tools.visualvm.core.ui.DataSourceWindowFactory;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import javax.management.MBeanServerConnection;</pre>
+
+<p><li>Finally, we'll create our <tt>HelloView</tt> class, which is created by our provider above:
+
+<p><pre>class HelloWorldView extends DataSourceView {
+
+    private DataViewComponent dvc;
+    private Application application;
+    private DataViewComponent view;
+    private static final String IMAGE_PATH = 
+            "org/geertjan/hellovisualvm/icon.png"; // NOI18N
+
+    public HelloWorldView(Application application) {
+        super("Hello World", new ImageIcon(Utilities.loadImage(
+                IMAGE_PATH, true)).getImage(), 60);
+        this.application = application;
+        view = createViewComponent();
+    }
+
+    @Override
+    public DataViewComponent getView() {
+        return view;
+    }
+
+    private DataViewComponent createViewComponent() {
+
+        <b>//Data area for master view:</b>
+        JEditorPane generalDataArea = new JEditorPane();
+        generalDataArea.setBorder(BorderFactory.createEmptyBorder(14, 8, 14, 8));
+
+        <b>//Panel, which we'll reuse in all four of our detail views for this sample:</b>
+
+        JPanel panel = new JPanel();
+
+        <b>//Master view:</b>
+        DataViewComponent.MasterView masterView = new DataViewComponent.MasterView
+                ("Hello World Overview", null, generalDataArea);
+
+        <b>//Configuration of master view:</b>
+        DataViewComponent.MasterViewConfiguration masterConfiguration = 
+                new DataViewComponent.MasterViewConfiguration(false);
+
+        <b>//Add the master view and configuration view to the component:</b>
+        dvc = new DataViewComponent(masterView, masterConfiguration);
+
+        <b>//Add configuration details to the component, which are the show/hide checkboxes at the top:</b>
+        dvc.configureDetailsArea(new DataViewComponent.DetailsAreaConfiguration(
+                "Hello World Details 1", true), DataViewComponent.TOP_LEFT);
+        dvc.configureDetailsArea(new DataViewComponent.DetailsAreaConfiguration(
+                "Hello World Details 2", true), DataViewComponent.TOP_RIGHT);
+        dvc.configureDetailsArea(new DataViewComponent.DetailsAreaConfiguration(
+                "Hello World Details 3 & 4", true), DataViewComponent.BOTTOM_RIGHT);
+
+        <b>//Add detail views to the component:</b>
+
+        dvc.addDetailsView(new DataViewComponent.DetailsView(
+                "Hello World Details 1", null, panel, null), DataViewComponent.TOP_LEFT);
+        dvc.addDetailsView(new DataViewComponent.DetailsView(
+                "Hello World Details 2", null, panel, null), DataViewComponent.TOP_RIGHT);
+        dvc.addDetailsView(new DataViewComponent.DetailsView(
+                "Hello World Details 3", null, panel, null), DataViewComponent.BOTTOM_RIGHT);
+        dvc.addDetailsView(new DataViewComponent.DetailsView(
+                "Hello World Details 4", null, panel, null), DataViewComponent.BOTTOM_RIGHT);
+
+        return dvc;
+
+    }
+    
+}</pre>
+
+<p><li><b>Install the Plugin.</b> Install the plugin and you'll see this new tab in VisualVM:
+
+<p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-7.png" border="1"/>
+
+</ol>
+        <p>Congratulations you have completed the Hello World scenario!
+        
         <h2>Further Reading</h2>
         
         <p>To continue learning about the VisualVM APIs, you are
