@@ -45,7 +45,7 @@
         
         <p><a href="http://blogs.sun.com/geertjan/resource/big-entrypoints-diagram.png"><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-3.png" border="1"></a>
 
-<p>The lifecycle of a plugin into VisualVM is determined by a <tt>ModuleInstall</tt> class,
+<p>The lifecycle of a VisualVM plugin is determined by a <tt>ModuleInstall</tt> class,
 which comes from the NetBeans APIs. Whenever you implement a new entrypoint into
 VisualVM, you need to provide code for registering and unregistering the entrypoint
 implementation. The relevant initialization code must be provided in the <tt>ModuleInstall</tt>
