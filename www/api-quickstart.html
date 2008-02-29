@@ -14,11 +14,68 @@
         <p>In this tutorial you will be
         introduced to the VisualVM API and you will be shown how to get
         started using it
-        to extend VisualVM.
+        to extend VisualVM. Entry points into VisualVM fall into the
+        following categories, each implemented by the factory pattern:
         
-        <h2>Terminology</h2>
+        <ul>
+            <li><b>Tab extension.</b> 
+            <li><b>Overview tab extension.</b> 
+            <li><b>Menu extension.</b> 
+            <li><b>Application type extension.</b> 
+        </ul>    
         
         <h2>Hello World Scenario</h2>
+        
+        <h2>Further Reading</h2>
+        
+        <p>To continue learning about the VisualVM APIs, you are
+        recommended to consult the following resources:
+        
+        <ol>
+            <li><b>VisualVM Javadoc.</b></li>
+            <li><b>VisualVM Plugins.</b> When you download the VisualVM
+                sources, you will find that you have also downloaded the sources
+                of a set of plugins. You can inspect these plugins and learn
+                from them. At the time of writing, these plugins were as follows:
+                <ul>
+                    <li><b>GlassFish.</b> This plugin provides a new application
+                        type for the GlassFish server. A new application type node
+                        is created for each running GlassFish instance. All deployed
+                        applications are represented by subnodes, with further subnodes
+                        for each servlet in the application. Furthermore, tabs specific
+                        to each server instance, application, and servlet are also
+                    provided.</li>
+                    <li><b>MBeans.</b> This plugin provides a new tab for all
+                    applications that have JMX enabled. The information provided
+                    in the tab is exactly the same as the information provided by
+                    the MBeans tab in the JDK's JConsole application.
+                    <li><b>JConsole.</b> This plugin makes VisualVM receptive
+                    to JConsole plugins, so that investment in JConsole plugins is
+                    not lost when you transfer from JConsole to VisualVM.
+                </ul>
+                
+            </li> 
+            <li><b>Blog entries by Geertjan Wielenga.</b> Geertjan is
+                the technical writer responsible for documenting the VisualVM APIs.
+                While learning about the VisualVM APIs, he wrote a series of blog
+                entries about the VisualVM APIs he was learning about. The relevant
+                blog entries are as follows:
+                <ul>
+                    <li><b><a href="http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm"> Getting Started Extending VisualVM (Part 1)</a>.</b>
+                     Here you create your first tab extension. You discover that VisualVM
+                     tabs are broken down into master views, master view configurations,
+                     and detail views.
+                    <li><b><a href="http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm_part">Getting Started Extending VisualVM (Part 2)</a>.</b>
+                     Here you create an application type extension, with an overview
+                     extension and menu extension specifically for the application type.
+                    <li><b><a href="http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm_part1">Getting Started Extending VisualVM (Part 3)</a>.</b>
+                     Here you are introduced to application type subnodes and you
+                     are referred to the GlassFish plugin for related source code.
+                </ul>    
+            </li>
+            
+        </ol>
+        
         
         
     </body>
