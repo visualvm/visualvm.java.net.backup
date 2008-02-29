@@ -214,20 +214,6 @@ know what the two overridden methods above are all about:
 
 <p><p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-6.png" border="1"/>
 
-<p><p>You should be using the following import statements at this point:
-
-<p><pre>import com.sun.tools.visualvm.core.datasource.Application;
-import com.sun.tools.visualvm.core.model.jmx.JmxModel;
-import com.sun.tools.visualvm.core.model.jmx.JmxModelFactory;
-import com.sun.tools.visualvm.core.ui.DataSourceView;
-import com.sun.tools.visualvm.core.ui.DataSourceViewsProvider;
-import com.sun.tools.visualvm.core.ui.DataSourceWindowFactory;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import javax.management.MBeanServerConnection;</pre>
-
 <p><li>Finally, we'll create our <tt>HelloView</tt> class, which is created by our provider above:
 
 <p><pre>class HelloWorldView extends DataSourceView {
