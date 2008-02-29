@@ -163,18 +163,16 @@ the dependency in the "Libraries" tab.
 <p><pre>class HelloWorldViewProvider implements DataSourceViewsProvider&lt;Application&gt; {
 
     private Map&lt;Application, DataSourceView&gt; viewsCache = new HashMap();
-    private static DataSourceViewsProvider&lt;Application&gt; HelloWorldViewProvider = 
-            new HelloWorldViewProvider();
+    private static DataSourceViewsProvider&lt;Application&gt; HelloWorldViewProvider =  new HelloWorldViewProvider();
 
-    @Override
+    <b>@Override</b>
     public boolean supportsViewFor(Application application) {
         //Always shown:
         return true;
     }
 
-    @Override
-    public synchronized Set<? extends DataSourceView> getViews(
-            final Application application) {
+    <b>@Override</b>
+    public synchronized Set<? extends DataSourceView> getViews(final Application application) {
         
         DataSourceView view = viewsCache.get(application);
         if (view == null) {
@@ -186,6 +184,7 @@ the dependency in the "Libraries" tab.
                 }
             };
             viewsCache.put(application, view);
+            
         }
         return Collections.singleton(view);
     }
@@ -291,7 +290,7 @@ import javax.management.MBeanServerConnection;</pre>
 
 <p><li>Right-click the project node and choose "Run".
 This will install the plugin in a new instance of VisualVM
-and you'll see your new tab:
+and you'll see your new tab, for all application types:
 
 <p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-7.png" border="1"/>
 
