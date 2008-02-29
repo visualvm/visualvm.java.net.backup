@@ -14,7 +14,25 @@
         <p>In this tutorial you will be
         introduced to the VisualVM APIs and you will be shown how to get
         started using them
-        to extend VisualVM. Entry points into VisualVM fall into the
+        to extend VisualVM. In general, there are two types of use cases
+        that apply to VisualVM extensions. Firstly, you have a monitoring
+        or management tool that
+        you want to make available to VisualVM. For example, maybe you have
+        a tool that shows an application's threads or processing speed in a
+        new and interesting way. In this case, you would create a plugin
+        that makes your tool available to VisualVM so that its users can
+        benefit from the feature set provided by your tool. Secondly, you
+        have an application with specific monitoring/management needs. For
+        example, if your application is a deployment server, you might want to 
+        give users a graphic overview of the applications that are deployed
+        to that server. In this case, you would need to introduce a new type
+        of application to VisualVM. By default, all applications are treated
+        in the same way and if, therefore, your application has one or more
+        unique characteristics, you would need to provide for a unique type
+        of application in this way.
+        
+        
+        <p>Entry points into VisualVM fall into the
         following categories, each implemented by the factory pattern:
         
         <ul>
@@ -88,7 +106,7 @@
             Manager, and then browse to the root folder of your VisualVM
             installation, as shown here:
             
-            <p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-1.png" border="1">
+            <p><p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-1.png" border="1">
                 
             <p>Click Next and then click Finish. Later, when you create
             a VisualVM plugin project, you will be able to specify that the
