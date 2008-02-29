@@ -171,7 +171,7 @@ the dependency in the "Libraries" tab.
 <p><pre>class HelloWorldViewProvider implements DataSourceViewsProvider&lt;Application&gt; {
 
     private Map&lt;Application, DataSourceView&gt; viewsCache = new HashMap();
-    private static DataSourceViewsProvider&lt;Application&gt; HelloWorldViewProvider =  new HelloWorldViewProvider();
+    private static DataSourceViewsProvider&lt;Application&gt; instance =  new HelloWorldViewProvider();
 
     <b>@Override</b>
     public boolean supportsViewFor(Application application) {
@@ -199,12 +199,12 @@ the dependency in the "Libraries" tab.
 
     static void initialize() {
         DataSourceWindowFactory.sharedInstance().addViewProvider(
-                HelloWorldViewProvider, Application.class);
+                instance, Application.class);
     }
     
     static void unregister() {
         DataSourceWindowFactory.sharedInstance().removeViewProvider(
-                HelloWorldViewProvider);
+                instance);
     }
     
 }</pre>
