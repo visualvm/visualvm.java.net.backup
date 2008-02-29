@@ -199,13 +199,11 @@ the dependency in the "Libraries" tab.
     }
 
     static void initialize() {
-        DataSourceWindowFactory.sharedInstance().addViewProvider(
-                instance, Application.class);
+        DataSourceWindowFactory.sharedInstance().addViewProvider(instance, Application.class);
     }
     
     static void unregister() {
-        DataSourceWindowFactory.sharedInstance().removeViewProvider(
-                instance);
+        DataSourceWindowFactory.sharedInstance().removeViewProvider(instance);
     }
     
 }</pre>
