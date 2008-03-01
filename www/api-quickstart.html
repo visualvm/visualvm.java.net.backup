@@ -65,17 +65,35 @@
         
         <p><img src="http://blogs.sun.com/geertjan/resource/big-entrypoints-diagram.png" border="1">
         
+        <p>Entry points into VisualVM are implemented via the factory
+        pattern. In that light, the main VisualVM APIs are as follows:
+        
+        <ul>
+            <li>Tabs
+            <br><tt>com.sun.tools.visualvm.core.ui.DataSourceViewsProvider
+            <br>/com.sun.tools.visualvm.core.ui.DataSourceView</tt>
+            <li>Subtabs
+            <br><tt>com.sun.tools.visualvm.core.ui.ViewPlugin
+            <br>/com.sun.tools.visualvm.core.ui.ViewPlugin.ViewDescriptor</tt>
+            <li>Menu Items
+            <br><tt>com.sun.tools.visualvm.core.explorer.ExplorerActionsProvider
+            <br>/javax.swing.AbstractAction</tt>
+            <li>Application Types
+            <br><tt>com.sun.tools.visualvm.core.model.apptype.ApplicationTypeFactory
+            <br>/com.sun.tools.visualvm.core.model.apptype.ApplicationType</tt>
+            
+        </ul>    
+
         <p>The lifecycle of a VisualVM plugin is determined by a <tt>ModuleInstall</tt> class,
-        which comes from the NetBeans APIs. Whenever you implement a new entrypoint into
-        VisualVM, you need to provide code for registering and unregistering the entrypoint
+        which comes from the NetBeans APIs. Whenever you implement a new entry point into
+        VisualVM, you need to provide code for registering and unregistering the entry point
         implementation. The relevant initialization code must be provided in the <tt>ModuleInstall</tt>
         class. When the plugin is loaded into VisualVM, the <tt>ModuleInstall.restored</tt>
         method is the first method that is called from your plugin. That is the method
-        that should initialize the entrypoints. When the plugin is uninstalled, or when VisualVM
-        closes down, the plugin's entrypoints need to be deregistered, from the
+        that should initialize the entry points. When the plugin is uninstalled, or when VisualVM
+        closes down, the plugin's entry points need to be deregistered, from the
         <tt>ModuleInstall.uninstalled</tt> method. You will be shown some typical
         registration/deregistration code in the "Hello World" scenario that follows.
-        
         
         <h2>Preparing to Extend VisualVM</h2>
         
