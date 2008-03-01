@@ -89,11 +89,18 @@
             <li>Tabs
             <br><tt>com.sun.tools.visualvm.core.ui.DataSourceViewsProvider
             <br>/com.sun.tools.visualvm.core.ui.DataSourceView</tt>
-            <p>To make your tabs extendable, the following API is needed:
+            <p>To make your tabs extendable, the following API must be extended:
             <br><tt>com.sun.tools.visualvm.core.ui.PluggableViewSupport</tt>
             <li>Subtabs
             <br><tt>com.sun.tools.visualvm.core.ui.ViewPlugin
             <br>/com.sun.tools.visualvm.core.ui.ViewPlugin.ViewDescriptor</tt>
+            <p>To integrate a subtab into one of the existing tabs, you need
+            to initialize one or more of the following APIs:
+            <br><tt>com.sun.tools.visualvm.core.dataview.monitor.MonitorViewSupport</tt>
+            <br><tt>com.sun.tools.visualvm.core.dataview.overview.OverviewViewSupport</tt>
+            <br><tt>com.sun.tools.visualvm.core.dataview.threads.ThreadsViewSupport</tt>
+            <br><tt>com.sun.tools.visualvm.core.heapdump.HeapDumpSupport</tt>
+            <br><tt>com.sun.tools.visualvm.core.threaddump.ThreadDumpSupport</tt>
             <li>Menu Items
             <br><tt>com.sun.tools.visualvm.core.explorer.ExplorerActionsProvider
             <br>/javax.swing.AbstractAction</tt>
@@ -102,17 +109,6 @@
             <br>/com.sun.tools.visualvm.core.model.apptype.ApplicationType</tt>
             
         </ul>    
-        
-        <p>The lifecycle of a VisualVM plugin is determined by a <tt>ModuleInstall</tt> class,
-        which comes from the NetBeans APIs. Whenever you implement a new entry point into
-        VisualVM, you need to provide code for registering and unregistering the entry point
-        implementation. The relevant initialization code must be provided in the <tt>ModuleInstall</tt>
-        class. When the plugin is loaded into VisualVM, the <tt>ModuleInstall.restored</tt>
-        method is the first method that is called from your plugin. That is the method
-        that should initialize the entry points. When the plugin is uninstalled, or when VisualVM
-        closes down, the plugin's entry points need to be deregistered, from the
-        <tt>ModuleInstall.uninstalled</tt> method. You will be shown some typical
-        registration/deregistration code in the "Hello World" scenario that follows.
         
         <p>A brief overview of the packages provided by the VisualVM APIs:
         <ul>
@@ -135,6 +131,17 @@
             <li><b>com.sun.tools.visualvm.core.ui.</b>
             <li><b>com.sun.tools.visualvm.core.ui.components.</b>
         </ul>
+
+        <p>The lifecycle of a VisualVM plugin is determined by a <tt>ModuleInstall</tt> class,
+        which comes from the NetBeans APIs. Whenever you implement a new entry point into
+        VisualVM, you need to provide code for registering and unregistering the entry point
+        implementation. The relevant initialization code must be provided in the <tt>ModuleInstall</tt>
+        class. When the plugin is loaded into VisualVM, the <tt>ModuleInstall.restored</tt>
+        method is the first method that is called from your plugin. That is the method
+        that should initialize the entry points. When the plugin is uninstalled, or when VisualVM
+        closes down, the plugin's entry points need to be deregistered, from the
+        <tt>ModuleInstall.uninstalled</tt> method. You will be shown some typical
+        registration/deregistration code in the "Hello World" scenario that follows.
         
         <h2><a name="preparing"></a>Preparing to Extend VisualVM</h2>
         
@@ -216,7 +223,7 @@ public void restored() {
 @Override
 public void uninstalled() {
     HelloWorldViewProvider.unregister();
-            }</pre>
+}</pre>
             
             <p>As you can see, we will define the above two methods in a class called "HelloWorldViewProvider",
             which we will define later. Therefore you can ignore the red error lines, because you
@@ -266,7 +273,7 @@ public void uninstalled() {
         DataSourceWindowFactory.sharedInstance().removeViewProvider(instance);
     }
     
-            }</pre>
+}</pre>
             
             <p>By reading the Javadoc that you downloaded earlier, you'll 
             know what the two overridden methods above are all about:
@@ -337,7 +344,7 @@ public void uninstalled() {
 
     }
     
-            }</pre>
+}</pre>
             
             <p><li>Right-click the project node and choose "Run".
             This will install the plugin in a new instance of VisualVM
