@@ -55,6 +55,7 @@
                     <td align="left" valign="top">
                         <ul>
                             <li><a href="#entry">Introducing the VisualVM Entry Points</a>
+                            <li><a href="#api">Introducing the VisualVM APIs</a>
                             <li><a href="#preparing">Preparing to Extend VisualVM</a></li>
                             <li><a href="#hello">Creating a "Hello World" Plugin</a></li>
                             <li><a href="#further">Further Reading</a></li>
@@ -127,6 +128,21 @@
             
         </ul>    
         
+        
+        <p><p>The lifecycle of a VisualVM plugin is determined by a <tt>ModuleInstall</tt> class,
+        which comes from the NetBeans APIs. Whenever you implement a new entry point into
+        VisualVM, you need to provide code for registering and unregistering the entry point
+        implementation. The relevant initialization code must be provided in the <tt>ModuleInstall</tt>
+        class. When the plugin is loaded into VisualVM, the <tt>ModuleInstall.restored</tt>
+        method is the first method that is called from your plugin. That is the method
+        that should initialize the entry points. When the plugin is uninstalled, or when VisualVM
+        closes down, the plugin's entry points need to be deregistered, from the
+        <tt>ModuleInstall.uninstalled</tt> method. You will be shown some typical
+        registration/deregistration code in the "Hello World" scenario that follows.
+        
+        
+        <h2 class="tutorial"><a name="api"></a>Introducing the VisualVM APIs</h2>
+        
         <p>A brief overview of the packages provided by the VisualVM APIs:
         <br>
         <table class="ct">
@@ -137,11 +153,16 @@
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.datasource</td>
-                    <td class="ct">Provides...</td>
+                    <td class="ct">Provides the classes that represent
+                        <tt>DataSources</tt>. A <tt>DataSource</tt> can either be
+                        an <tt>Application</tt>, a <tt>Host</tt>, a <tt>CoreDump</tt>, a <tt>SnapShot</tt>,
+                        or a custom-defined <tt>DataSource</tt> that is contributed by a
+                    third party plugin.</td>
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.datasupport</td>
-                    <td class="ct">Provides...</td>
+                    <td class="ct">Provides listeners and interfaces for 
+                    supporting data sources.</td>
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.dataview.monitor</td>
@@ -157,7 +178,10 @@
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.explorer</td>
-                    <td class="ct">Provides...</td>
+                    <td class="ct">Provides entry points into the explorer view.
+                        For example, you can create new menu items on a node in the
+                        explorer view, you can listen to changes, and you can specify
+                    what should happen when a node is expanded or collapsed.</td>
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.heapdump</td>
@@ -165,35 +189,57 @@
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.model</td>
-                    <td class="ct">Provides...</td>
+                    <td class="ct">Provides classes that define the backing model
+                        of new <tt>DataSources</tt>. For example, these classes are
+                    used for synchronization purposes.</td>
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.model.apptype</td>
-                    <td class="ct">Provides...</td>
+                    <td class="ct">Provides predefined generic application types. 
+                        For example, an application type is provided for Java Web Start
+                        applications, so that when an application is deployed via
+                        Java Web Start, a distinct text is shown in VisualVM, to easily
+                        identify the deployed application. There is also a default 
+                        application type so that all applications are recognized in
+                    one way or another.</td>
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.model.dsdescr</td>
-                    <td class="ct">Provides...</td>
+                    <td class="ct">Provides classes that you need to use when
+                    creating new data sources, such as new application types.</td>
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.model.host</td>
-                    <td class="ct">Provides...</td>
+                    <td class="ct">Provides a common interface for 
+                        <tt>DataSources</tt> that represent a host, that is, localhost or remote host.
+                    </td>
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.model.jmx</td>
-                    <td class="ct">Provides...</td>
+                    <td class="ct">Provides classes that let you work with Java
+                        Management Extensions (JMX). For example, you can check
+                        whether JMX is enabled for an application and then
+                    enable/disable functionality provided by your plugin.</td>
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.model.jvm</td>
-                    <td class="ct">Provides...</td>
+                    <td class="ct">Provides classes that let you define
+                        functionality for specific versions of the JVM. For example,
+                        there is a "SunJVM_6" class, as well as a "SunJVM_7" class. Per class,
+                        you can check whether features, such as JVM monitoring, are enabled
+                    and then enable/disable functionality provided by your plugin.</td>
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.scheduler</td>
-                    <td class="ct">Provides...</td>
+                    <td class="ct">Provides scheduler services. For example,
+                        it provides an interval based scheduler service that you
+                    can use to execute tasks at predefined intervals.</td>
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.snapshot</td>
-                    <td class="ct">Provides...</td>
+                    <td class="ct">Provides entry points into snapshots.
+                        For example, you can retrieve a list of registered
+                    snapshots.</td>
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.threaddump</td>
@@ -201,25 +247,23 @@
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.ui</td>
-                    <td class="ct">Provides...</td>
+                    <td class="ct">Provides entry points that let you
+                        create new tabs and subtabs. For example, in addition
+                        to creating tabs and subtabs, you can define where
+                        they should be displayed relative to existing tabs
+                        and subtabs and define whether they are pluggable.
+                    </td>
                 </tr>
                 <tr>
                     <td class="ct">com.sun.tools.visualvm.core.ui.components</td>
-                    <td class="ct">Provides...</td>
+                    <td class="ct">Provides the components that you can use
+                        to define the tabs and subtabs. For example, each tab
+                        is divided into a master area with four detail areas, 
+                        each of which can have configuration areas for showing/hiding
+                    them.</td>
                 </tr>
         </tbody></table>
         
-        
-        <p><p>The lifecycle of a VisualVM plugin is determined by a <tt>ModuleInstall</tt> class,
-        which comes from the NetBeans APIs. Whenever you implement a new entry point into
-        VisualVM, you need to provide code for registering and unregistering the entry point
-        implementation. The relevant initialization code must be provided in the <tt>ModuleInstall</tt>
-        class. When the plugin is loaded into VisualVM, the <tt>ModuleInstall.restored</tt>
-        method is the first method that is called from your plugin. That is the method
-        that should initialize the entry points. When the plugin is uninstalled, or when VisualVM
-        closes down, the plugin's entry points need to be deregistered, from the
-        <tt>ModuleInstall.uninstalled</tt> method. You will be shown some typical
-        registration/deregistration code in the "Hello World" scenario that follows.
         
         <h2><a name="preparing"></a>Preparing to Extend VisualVM</h2>
         
@@ -301,7 +345,7 @@ public void restored() {
 @Override
 public void uninstalled() {
     HelloWorldViewProvider.unregister();
-            }</pre>
+}</pre>
             
             <p>As you can see, we will define the above two methods in a class called "HelloWorldViewProvider",
             which we will define later. Therefore you can ignore the red error lines, because you
@@ -351,7 +395,7 @@ public void uninstalled() {
         DataSourceWindowFactory.sharedInstance().removeViewProvider(instance);
     }
     
-            }</pre>
+}</pre>
             
             <p>By reading the Javadoc that you downloaded earlier, you'll 
             know what the two overridden methods above are all about:
@@ -421,7 +465,7 @@ public void uninstalled() {
 
     }
     
-            }</pre>
+}</pre>
             
             <p><li>Right-click the project node and choose "Run".
             This will install the plugin in a new instance of VisualVM
