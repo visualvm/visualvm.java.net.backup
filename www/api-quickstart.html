@@ -32,6 +32,21 @@
         unique characteristics, you would need to provide for a unique type
         of application in this way.
         
+        <h3>Contents</h3>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tbody><tr>
+                    <td align="left" valign="top">
+                        <ul>
+                            <li><a href="#installing">Introduction</a>
+                            <li><a href="#preparing">Preparing to Extend VisualVM</a></li>
+                            <li><a href="#hello">Hello World</a></li>
+                            <li><a href="#further">Further Reading</a></li>
+                        </ul> 
+                    </td>
+                </tr>
+        </tbody></table>
+        
+        <h2 class="tutorial"><a name="introduction"></a>Introduction</h2>
         
         <p>Entry points into VisualVM fall into the
         following categories, each implemented by the factory pattern:
@@ -87,7 +102,7 @@
             <br>/com.sun.tools.visualvm.core.model.apptype.ApplicationType</tt>
             
         </ul>    
-
+        
         <p>The lifecycle of a VisualVM plugin is determined by a <tt>ModuleInstall</tt> class,
         which comes from the NetBeans APIs. Whenever you implement a new entry point into
         VisualVM, you need to provide code for registering and unregistering the entry point
@@ -121,7 +136,7 @@
             <li><b>com.sun.tools.visualvm.core.ui.components.</b>
         </ul>
         
-        <h2>Preparing to Extend VisualVM</h2>
+        <h2><a name="preparing"></a>Preparing to Extend VisualVM</h2>
         
         <p>When you are planning to extend VisualVM, you need to
         do the following:
@@ -156,7 +171,7 @@
             registered above.
             
             <li><b>Get the VisualVM Javadoc.</b> Get these from the "Milestone 3 API Docs"
-            link on the <a href="https://visualvm.dev.java.net/">https://visualvm.dev.java.net/</a>
+                link on the <a href="https://visualvm.dev.java.net/">https://visualvm.dev.java.net/</a>
             page.</li>
             
             
@@ -164,36 +179,36 @@
         </ul>
         
         
-        <h2>Hello World</h2>
+        <h2><a name="hello"></a>Hello World</h2>
         
         
         <p>Now, we'll say "Hello World". We will create a new tab that looks as follows:
-
-<p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-7.png" border="1"/>
-
-<p>There will be no data in our tab, we'll simply create it and add 
-some placeholders for content. 
-
-<ol>
-<p><li>In NetBeans IDE, choose File &gt; New Project and then
- choose NetBeans Modules &gt; Module. Click Next. Create a new NetBeans module and make 
- sure to specify that 
-you want to build against the VisualVM binary that you registered earlier:
-
-<p><p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-4.png" border="1"/>
-
-<p>Click Next and fill out the next step in way you like. Click Finish.
-
-<p><li>Use the "Module Installer" wizard, which will create the class that is called
-when the plugin is installed into VisualVM. Here's where you'll find the wizard 
-in the New File dialog:
-
-<p><p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-5.png" border="1"/>
-
-<p><li>Once you've completed the wizard, implement the <tt>ModuleInstall.restored</tt> 
-method and the <tt>ModuleInstall.uninstalled</tt> methods as follows:
-
-<p><pre>@Override
+        
+        <p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-7.png" border="1"/>
+        
+        <p>There will be no data in our tab, we'll simply create it and add 
+        some placeholders for content. 
+        
+        <ol>
+            <p><li>In NetBeans IDE, choose File &gt; New Project and then
+            choose NetBeans Modules &gt; Module. Click Next. Create a new NetBeans module and make 
+            sure to specify that 
+            you want to build against the VisualVM binary that you registered earlier:
+            
+            <p><p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-4.png" border="1"/>
+            
+            <p>Click Next and fill out the next step in way you like. Click Finish.
+            
+            <p><li>Use the "Module Installer" wizard, which will create the class that is called
+            when the plugin is installed into VisualVM. Here's where you'll find the wizard 
+            in the New File dialog:
+            
+            <p><p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-5.png" border="1"/>
+            
+            <p><li>Once you've completed the wizard, implement the <tt>ModuleInstall.restored</tt> 
+            method and the <tt>ModuleInstall.uninstalled</tt> methods as follows:
+            
+            <p><pre>@Override
 public void restored() {
     HelloWorldViewProvider.initialize();
 }
@@ -201,19 +216,19 @@ public void restored() {
 @Override
 public void uninstalled() {
     HelloWorldViewProvider.unregister();
-}</pre>
-
-<p>As you can see, we will define the above two methods in a class called "HelloWorldViewProvider",
-which we will define later. Therefore you can ignore the red error lines, because you
-will create the methods later.
-
-<p><li>Now add a dependency on "VisualVM-Core", which provides the APIs into the VisualVM.
-Do this by right-clicking the project node, choosing "Properties", and then setting
-the dependency in the "Libraries" tab.
-
-<p><li>Create a class called "HelloViewProvider", as follows:
-
-<p><pre>class HelloWorldViewProvider implements DataSourceViewsProvider&lt;Application&gt; {
+            }</pre>
+            
+            <p>As you can see, we will define the above two methods in a class called "HelloWorldViewProvider",
+            which we will define later. Therefore you can ignore the red error lines, because you
+            will create the methods later.
+            
+            <p><li>Now add a dependency on "VisualVM-Core", which provides the APIs into the VisualVM.
+            Do this by right-clicking the project node, choosing "Properties", and then setting
+            the dependency in the "Libraries" tab.
+            
+            <p><li>Create a class called "HelloViewProvider", as follows:
+            
+            <p><pre>class HelloWorldViewProvider implements DataSourceViewsProvider&lt;Application&gt; {
 
     private Map&lt;Application, DataSourceView&gt; viewsCache = new HashMap();
     private static DataSourceViewsProvider&lt;Application&gt; instance =  new HelloWorldViewProvider();
@@ -251,16 +266,16 @@ the dependency in the "Libraries" tab.
         DataSourceWindowFactory.sharedInstance().removeViewProvider(instance);
     }
     
-}</pre>
-
-<p>By reading the Javadoc that you downloaded earlier, you'll 
-know what the two overridden methods above are all about:
-
-<p><p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-6.png" border="1"/>
-
-<p><li>Finally, we'll create our <tt>HelloView</tt> class, which is created by our provider above:
-
-<p><pre>class HelloWorldView extends DataSourceView {
+            }</pre>
+            
+            <p>By reading the Javadoc that you downloaded earlier, you'll 
+            know what the two overridden methods above are all about:
+            
+            <p><p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-6.png" border="1"/>
+            
+            <p><li>Finally, we'll create our <tt>HelloView</tt> class, which is created by our provider above:
+            
+            <p><pre>class HelloWorldView extends DataSourceView {
 
     private DataViewComponent dvc;
     private Application application;
@@ -322,25 +337,25 @@ know what the two overridden methods above are all about:
 
     }
     
-}</pre>
-
-<p><li>Right-click the project node and choose "Run".
-This will install the plugin in a new instance of VisualVM
-and you'll see your new tab, for all application types:
-
-<p><p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-7.png" border="1"/>
-
-</ol>
+            }</pre>
+            
+            <p><li>Right-click the project node and choose "Run".
+            This will install the plugin in a new instance of VisualVM
+            and you'll see your new tab, for all application types:
+            
+            <p><p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-7.png" border="1"/>
+            
+        </ol>
         <p>Congratulations you have completed the Hello World scenario!
         
-        <h2>Further Reading</h2>
+        <h2><a name="further"></a>Further Reading</h2>
         
         <p>To continue learning about the VisualVM APIs, you are
         recommended to consult the following resources:
         
         <ol>
             <li><b>VisualVM Javadoc.</b> Get these from the "Milestone 3 API Docs"
-            link on the <a href="https://visualvm.dev.java.net/">https://visualvm.dev.java.net/</a>
+                link on the <a href="https://visualvm.dev.java.net/">https://visualvm.dev.java.net/</a>
             page.</li>
             <li><b>VisualVM Plugins.</b> When you download the VisualVM
                 sources, you will find that you have also downloaded the sources
