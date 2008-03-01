@@ -39,7 +39,9 @@
         <ul>
             <li><b>Tab extension.</b> By default, VisualVM provides tabs
             with labels such as "Overview", "Monitor", and "Threads". You can
-            create new tabs just like these. Your tabs can either be available
+            create new tabs just like these. Optionally, your own tabs can be
+            extendable so that others can plug subtabs into your tabs.
+            Your tabs can either be available
             to all application types or to specific application types.
             <li><b>Subtab extension.</b> Within the three existing tabs
             listed above, you can provide
@@ -72,6 +74,9 @@
             <li>Tabs
             <br><tt>com.sun.tools.visualvm.core.ui.DataSourceViewsProvider
             <br>/com.sun.tools.visualvm.core.ui.DataSourceView</tt>
+            <p>To make your tabs extendable, the following APIs are needed:
+            <br><tt>com.sun.tools.visualvm.core.ui.PluggableViewSupport
+            <br>/com.sun.tools.visualvm.core.ui.PluggableViewSupport</tt>
             <li>Subtabs
             <br><tt>com.sun.tools.visualvm.core.ui.ViewPlugin
             <br>/com.sun.tools.visualvm.core.ui.ViewPlugin.ViewDescriptor</tt>
