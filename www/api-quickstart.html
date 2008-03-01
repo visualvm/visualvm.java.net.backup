@@ -9,7 +9,7 @@
         <meta name="description" content="A short guide to using the Visual VM API.">
         <style type="text/css">
             <!--
-            table.ct {width: 550px;}
+            table.ct {width: 850px;}
             
             th.ct {
                 padding: 10px;
@@ -55,9 +55,9 @@
                     <td align="left" valign="top">
                         <ul>
                             <li><a href="#entry">Introducing the VisualVM Entry Points</a>
-                            <li><a href="#api">Introducing the VisualVM APIs</a>
                             <li><a href="#preparing">Preparing to Extend VisualVM</a></li>
                             <li><a href="#hello">Creating a "Hello World" Plugin</a></li>
+                            <li><a href="#api">VisualVM API Reference</a>
                             <li><a href="#further">Further Reading</a></li>
                         </ul> 
                     </td>
@@ -139,130 +139,6 @@
         closes down, the plugin's entry points need to be deregistered, from the
         <tt>ModuleInstall.uninstalled</tt> method. You will be shown some typical
         registration/deregistration code in the "Hello World" scenario that follows.
-        
-        
-        <h2 class="tutorial"><a name="api"></a>Introducing the VisualVM APIs</h2>
-        
-        <p>A brief overview of the packages provided by the VisualVM APIs:
-        <br>
-        <table class="ct">
-            <tbody>
-                <tr>
-                    <th class="ct">Package</th>
-                    <th class="ct">Description</th>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.datasource</td>
-                    <td class="ct">Provides the classes that represent
-                        <tt>DataSources</tt>. A <tt>DataSource</tt> can either be
-                        an <tt>Application</tt>, a <tt>Host</tt>, a <tt>CoreDump</tt>, a <tt>SnapShot</tt>,
-                        or a custom-defined <tt>DataSource</tt> that is contributed by a
-                    third party plugin.</td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.datasupport</td>
-                    <td class="ct">Provides listeners and interfaces for 
-                    supporting data sources.</td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.dataview.monitor</td>
-                    <td class="ct">Provides the entry point into the "Monitor" tab.</td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.dataview.overview</td>
-                    <td class="ct">Provides the entry point into the "Overview" tab.</td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.dataview.threads</td>
-                    <td class="ct">Provides the entry point into the "Threads" tab.</td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.explorer</td>
-                    <td class="ct">Provides entry points into the explorer view.
-                        For example, you can create new menu items on a node in the
-                        explorer view, you can listen to changes, and you can specify
-                    what should happen when a node is expanded or collapsed.</td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.heapdump</td>
-                    <td class="ct">Provides the entry point into the "Heap Dump" tab.</td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.model</td>
-                    <td class="ct">Provides classes that define the backing model
-                        of new <tt>DataSources</tt>. For example, these classes are
-                    used for synchronization purposes.</td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.model.apptype</td>
-                    <td class="ct">Provides predefined generic application types. 
-                        For example, an application type is provided for Java Web Start
-                        applications, so that when an application is deployed via
-                        Java Web Start, a distinct text is shown in VisualVM, to easily
-                        identify the deployed application. There is also a default 
-                        application type so that all applications are recognized in
-                    one way or another.</td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.model.dsdescr</td>
-                    <td class="ct">Provides classes that you need to use when
-                    creating new data sources, such as new application types.</td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.model.host</td>
-                    <td class="ct">Provides a common interface for 
-                        <tt>DataSources</tt> that represent a host, that is, localhost or remote host.
-                    </td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.model.jmx</td>
-                    <td class="ct">Provides classes that let you work with Java
-                        Management Extensions (JMX). For example, you can check
-                        whether JMX is enabled for an application and then
-                    enable/disable functionality provided by your plugin.</td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.model.jvm</td>
-                    <td class="ct">Provides classes that let you define
-                        functionality for specific versions of the JVM. For example,
-                        there is a "SunJVM_6" class, as well as a "SunJVM_7" class. Per class,
-                        you can check whether features, such as JVM monitoring, are enabled
-                    and then enable/disable functionality provided by your plugin.</td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.scheduler</td>
-                    <td class="ct">Provides scheduler services. For example,
-                        it provides an interval based scheduler service that you
-                    can use to execute tasks at predefined intervals.</td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.snapshot</td>
-                    <td class="ct">Provides entry points into snapshots.
-                        For example, you can retrieve a list of registered
-                    snapshots.</td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.threaddump</td>
-                    <td class="ct">Provides the entry point into the "Thread Dump" tab.</td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.ui</td>
-                    <td class="ct">Provides entry points that let you
-                        create new tabs and subtabs. For example, in addition
-                        to creating tabs and subtabs, you can define where
-                        they should be displayed relative to existing tabs
-                        and subtabs and define whether they are pluggable.
-                    </td>
-                </tr>
-                <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.ui.components</td>
-                    <td class="ct">Provides the components that you can use
-                        to define the tabs and subtabs. For example, each tab
-                        is divided into a master area with four detail areas, 
-                        each of which can have configuration areas for showing/hiding
-                    them.</td>
-                </tr>
-        </tbody></table>
         
         
         <h2><a name="preparing"></a>Preparing to Extend VisualVM</h2>
@@ -476,6 +352,162 @@ public void uninstalled() {
         </ol>
         <p>Congratulations you have completed the Hello World scenario!
         
+          
+        
+        <h2 class="tutorial"><a name="api"></a>VisualVM API Reference</h2>
+        
+        <p>A brief overview of the packages provided by the VisualVM APIs, together
+        with FAQs that relate to the packages in question:
+        <br>
+        <table class="ct">
+            <tbody>
+                <tr>
+                    <th class="ct">Package</th>
+                    <th class="ct">Description</th>
+                    <th class="ct">Related FAQs</th>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.datasource</td>
+                    <td class="ct">Provides the classes that represent
+                        <tt>DataSources</tt>. A <tt>DataSource</tt> can either be
+                        an <tt>Application</tt>, a <tt>Host</tt>, a <tt>CoreDump</tt>, a <tt>SnapShot</tt>,
+                        or a custom-defined <tt>DataSource</tt> that is contributed by a
+                    third party plugin.</td>
+                    <td class="ct"><ul>
+                        <li><a href="api-faq.html#what-is-datasource">What is a <tt>DataSource</tt>?</a>
+                        <li><a href="api-faq.html#default-datasource">What are the default <tt>DataSources</tt>?</a>
+                            <li><a href="api-faq.html#why-create-datasource">Why would I want to create my own <tt>DataSource</tt></a>?
+                    <li><a href="api-faq.html#how-create-datasource">How do I create my own <tt>DataSource</tt>?</a></ul></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.datasupport</td>
+                    <td class="ct">Provides listeners and interfaces for 
+                    supporting data sources.</td>
+                    <td class="ct"></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.dataview.monitor</td>
+                    <td class="ct">Provides the entry point into the "Monitor" tab.</td>
+                    <td class="ct"><ul><li><a href="api-faq.html#how-extend-monitor">How do I extend the Monitor tab?</a></ul></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.dataview.overview</td>
+                    <td class="ct">Provides the entry point into the "Overview" tab.</td>
+                    <td class="ct"><ul><li><a href="api-faq.html#how-extend-overview">How do I extend the Overview tab?</a></ul></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.dataview.threads</td>
+                    <td class="ct">Provides the entry point into the "Threads" tab.</td>
+                    <td class="ct"><ul><li><a href="api-faq.html#how-extend-threads">How do I extend the Threads tab?</a></ul></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.explorer</td>
+                    <td class="ct">Provides entry points into the explorer view.
+                        For example, you can create new menu items on a node in the
+                        explorer view, you can listen to changes, and you can specify
+                    what should happen when a node is expanded or collapsed.</td>
+                    <td class="ct">
+                        <ul><li><a href="api-faq.html#how-add-menu-items">How do I add contextual menu items to my application type?</a>
+                            <li><a href="api-faq.html#how-add-menu-items-sub">How do I add contextual menu items to my application type's subnodes?</a>
+                </ul></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.heapdump</td>
+                    <td class="ct">Provides the entry point into the "Heap Dump" tab.</td>
+                    <td class="ct"><ul><li><a href="api-faq.html#how-extend-headdump">How do I extend the Heap Dump tab?</a></ul></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.model</td>
+                    <td class="ct">Provides classes that define the backing model
+                        of new <tt>DataSources</tt>. For example, these classes are
+                    used for synchronization purposes.</td>
+                    <td class="ct"></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.model.apptype</td>
+                    <td class="ct">Provides predefined generic application types. 
+                        For example, an application type is provided for Java Web Start
+                        applications, so that when an application is deployed via
+                        Java Web Start, a distinct text is shown in VisualVM, to easily
+                        identify the deployed application. There is also a default 
+                        application type so that all applications are recognized in
+                    one way or another.</td>
+                    <td class="ct"><ul><li><a href="api-faq.html#default-apptype">What are the default application types?</a></ul></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.model.dsdescr</td>
+                    <td class="ct">Provides classes that you need to use when
+                    creating new data sources, such as new application types.</td>
+                    <td class="ct"></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.model.host</td>
+                    <td class="ct">Provides a common interface for 
+                        <tt>DataSources</tt> that represent a host, that is, localhost or remote host.
+                    </td>
+                    <td class="ct"><ul><li><a href="api-faq.html#what-is-host">What is a host?</a>
+                        <li><a href="api-faq.html#how-extend-host">How do I extend the Host tab?</a>
+                <li><a href="api-faq.html#how-extend-host-overview">How do I extend the Host Overview tab?</a></ul></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.model.jmx</td>
+                    <td class="ct">Provides classes that let you work with Java
+                        Management Extensions (JMX). For example, you can check
+                        whether JMX is enabled for an application and then
+                    enable/disable functionality provided by your plugin.</td>
+                    <td class="ct"><ul><li><a href="api-faq.html#ensure-jmx">How do I verify that JMX is enabled
+                    for an application?</a></ul></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.model.jvm</td>
+                    <td class="ct">Provides classes that let you define
+                        functionality for specific versions of the JVM. For example,
+                        there is a "SunJVM_6" class, as well as a "SunJVM_7" class. Per class,
+                        you can check whether features, such as JVM monitoring, are enabled
+                    and then enable/disable functionality provided by your plugin.</td>
+                    <td class="ct"><ul><li><a href="api-faq.html#ensure-jvm">How do I check the JVM version used by a data source?</a></ul></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.scheduler</td>
+                    <td class="ct">Provides scheduler services. For example,
+                        it provides an interval based scheduler service that you
+                    can use to execute tasks at predefined intervals.</td>
+                    <td class="ct"></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.snapshot</td>
+                    <td class="ct">Provides entry points into snapshots.
+                        For example, you can retrieve a list of registered
+                    snapshots.</td>
+                    <td class="ct"></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.threaddump</td>
+                    <td class="ct">Provides the entry point into the "Thread Dump" tab.</td>
+                    <td class="ct"><ul><li><a href="api-faq.html#how-extend-threaddump">How do I extend the Thread Dump tab?</a></ul></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.ui</td>
+                    <td class="ct">Provides entry points that let you
+                        create new tabs and subtabs. For example, in addition
+                        to creating tabs and subtabs, you can define where
+                        they should be displayed relative to existing tabs
+                        and subtabs and define whether they are pluggable.
+                    </td>
+                    <td class="ct"><ul><li><a href="api-faq.html#how-create-tabs">How do I create new tabs and subtabs?</a></ul></td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.ui.components</td>
+                    <td class="ct">Provides the components that you can use
+                        to define the tabs and subtabs. For example, each tab
+                        is divided into a master area with four detail areas, 
+                        each of which can have configuration areas for showing/hiding
+                    them.</td>
+                    <td class="ct"><ul><li><a href="api-faq.html#how-layout-view">What components can I use to design my view?</a></ul></td>
+                </tr>
+        </tbody></table>
+      
+        
         <h2><a name="further"></a>Further Reading</h2>
         
         <p>To continue learning about the VisualVM APIs, you are
@@ -485,10 +517,18 @@ public void uninstalled() {
             <li><b>VisualVM Javadoc.</b> Get these from the "Milestone 3 API Docs"
                 link on the <a href="https://visualvm.dev.java.net/">https://visualvm.dev.java.net/</a>
             page.</li>
+            <li><b>VisualVM Developer FAQ.</b> A complete list of typical questions
+            that can be asked in relation to the VisualVM APIs, together with many code
+            samples that answer them.
+            <li><b>VisualVM Sources.</b> If you read the VisualVM sources, you will
+            be able to answer several of your API implementation questions. For example,
+            you can find several pluggable views in the sources that you can learn from
+            when creating your own pluggable views. 
             <li><b>VisualVM Plugins.</b> When you download the VisualVM
                 sources, you will find that you have also downloaded the sources
                 of a set of plugins. You can inspect these plugins and learn
-                from them. At the time of writing, these plugins were as follows:
+                from them. Treat them as samples. At the time of writing, the plugins bundled
+                with the sources are as follows:
                 <p><ul>
                     <li><b>GlassFish.</b> This plugin provides a new application
                         type for the GlassFish server. A new application type node
@@ -534,7 +574,7 @@ public void uninstalled() {
             
         </ol>
         
-        
+        <p><p>
         
     </body>
 </html>
