@@ -7,6 +7,23 @@
         <meta name="author" content="gwielenga@netbeans.org">
         <meta name="indexed" content="y">
         <meta name="description" content="A short guide to using the Visual VM API.">
+        <style type="text/css">
+            <!--
+            table.ct {width: 550px;}
+            
+            th.ct {
+                padding: 10px;
+                background-color: #cad7f0;
+            }
+            
+            td.ct {
+                padding: 10px;
+                background-color: #f2f2f2;
+            }
+            -->
+        </style>
+        
+        
     </head>
     <body>
         <h1>Getting Started Extending VisualVM</h1>
@@ -80,7 +97,7 @@
         
         <p>A visual representation of the entry points into VisualVM:
         
-        <p><img src="http://blogs.sun.com/geertjan/resource/big-entrypoints-diagram.png" border="1">
+        <p><img src="http://blogs.sun.com/geertjan/resource/big-entrypoints-diagram.png" border="1"/>
         
         <p>Entry points into VisualVM are implemented via the factory
         pattern. In that light, the main VisualVM APIs are as follows:
@@ -111,28 +128,89 @@
         </ul>    
         
         <p>A brief overview of the packages provided by the VisualVM APIs:
-        <ul>
-            <li><b>com.sun.tools.visualvm.core.datasource.</b>
-            <li><b>com.sun.tools.visualvm.core.datasupport.</b>
-            <li><b>com.sun.tools.visualvm.core.dataview.monitor.</b>
-            <li><b>com.sun.tools.visualvm.core.dataview.overview.</b>
-            <li><b>com.sun.tools.visualvm.core.dataview.threads.</b>
-            <li><b>com.sun.tools.visualvm.core.explorer.</b>
-            <li><b>com.sun.tools.visualvm.core.heapdump.</b>
-            <li><b>com.sun.tools.visualvm.core.model.</b>
-            <li><b>com.sun.tools.visualvm.core.model.apptype.</b>
-            <li><b>com.sun.tools.visualvm.core.model.dsdescr.</b>
-            <li><b>com.sun.tools.visualvm.core.model.host.</b>
-            <li><b>com.sun.tools.visualvm.core.model.jmx.</b>
-            <li><b>com.sun.tools.visualvm.core.model.jvm.</b>
-            <li><b>com.sun.tools.visualvm.core.scheduler.</b>
-            <li><b>com.sun.tools.visualvm.core.snapshot.</b>
-            <li><b>com.sun.tools.visualvm.core.threaddump.</b>
-            <li><b>com.sun.tools.visualvm.core.ui.</b>
-            <li><b>com.sun.tools.visualvm.core.ui.components.</b>
-        </ul>
-
-        <p>The lifecycle of a VisualVM plugin is determined by a <tt>ModuleInstall</tt> class,
+        <br>
+        <table class="ct">
+            <tbody>
+                <tr>
+                    <th class="ct">Package</th>
+                    <th class="ct">Description</th>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.datasource</td>
+                    <td class="ct">Provides...</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.datasupport</td>
+                    <td class="ct">Provides...</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.dataview.monitor</td>
+                    <td class="ct">Provides the entry point into the "Monitor" tab.</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.dataview.overview</td>
+                    <td class="ct">Provides the entry point into the "Overview" tab.</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.dataview.threads</td>
+                    <td class="ct">Provides the entry point into the "Threads" tab.</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.explorer</td>
+                    <td class="ct">Provides...</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.heapdump</td>
+                    <td class="ct">Provides the entry point into the "Heap Dump" tab.</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.model</td>
+                    <td class="ct">Provides...</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.model.apptype</td>
+                    <td class="ct">Provides...</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.model.dsdescr</td>
+                    <td class="ct">Provides...</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.model.host</td>
+                    <td class="ct">Provides...</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.model.jmx</td>
+                    <td class="ct">Provides...</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.model.jvm</td>
+                    <td class="ct">Provides...</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.scheduler</td>
+                    <td class="ct">Provides...</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.snapshot</td>
+                    <td class="ct">Provides...</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.threaddump</td>
+                    <td class="ct">Provides the entry point into the "Thread Dump" tab.</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.ui</td>
+                    <td class="ct">Provides...</td>
+                </tr>
+                <tr>
+                    <td class="ct">com.sun.tools.visualvm.core.ui.components</td>
+                    <td class="ct">Provides...</td>
+                </tr>
+        </tbody></table>
+        
+        
+        <p><p>The lifecycle of a VisualVM plugin is determined by a <tt>ModuleInstall</tt> class,
         which comes from the NetBeans APIs. Whenever you implement a new entry point into
         VisualVM, you need to provide code for registering and unregistering the entry point
         implementation. The relevant initialization code must be provided in the <tt>ModuleInstall</tt>
@@ -223,7 +301,7 @@ public void restored() {
 @Override
 public void uninstalled() {
     HelloWorldViewProvider.unregister();
-}</pre>
+            }</pre>
             
             <p>As you can see, we will define the above two methods in a class called "HelloWorldViewProvider",
             which we will define later. Therefore you can ignore the red error lines, because you
@@ -273,7 +351,7 @@ public void uninstalled() {
         DataSourceWindowFactory.sharedInstance().removeViewProvider(instance);
     }
     
-}</pre>
+            }</pre>
             
             <p>By reading the Javadoc that you downloaded earlier, you'll 
             know what the two overridden methods above are all about:
@@ -330,7 +408,6 @@ public void uninstalled() {
                 "Hello World Details 3 & 4", true), DataViewComponent.BOTTOM_RIGHT);
 
         <b>//Add detail views to the component:</b>
-
         dvc.addDetailsView(new DataViewComponent.DetailsView(
                 "Hello World Details 1", null, panel, null), DataViewComponent.TOP_LEFT);
         dvc.addDetailsView(new DataViewComponent.DetailsView(
@@ -344,7 +421,7 @@ public void uninstalled() {
 
     }
     
-}</pre>
+            }</pre>
             
             <p><li>Right-click the project node and choose "Run".
             This will install the plugin in a new instance of VisualVM
