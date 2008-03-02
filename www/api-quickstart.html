@@ -76,12 +76,14 @@
             extendable so that others can plug subtabs into your tabs.
             Your tabs can either be available
             to all application types or to specific application types.
-            <li><b>Subtab extension.</b> Within the three existing tabs
-            listed above, you can provide
-            new subtabs. You can also specify the new subtab's 
-            position within the tab.
-            Subtabs can either be
-            available to all application types or to specific application
+            <li><b>Subtab extension.</b> Within tabs
+            such as those listed above, you can provide
+            new subtabs. However, this is only possible if the tab has been
+            created to be "pluggable". The "Overview", "Monitor", and "Threads" tab
+            are all pluggable, but so are the "Thread Dump" tab, the "Heap Dump" tab,
+            and the "Host" tab. When you create a new subtab, 
+            you can specify its position in relation to the other subtabs within the tab.
+            Subtabs can either be available to all application types or to specific application
             types.
             <li><b>Menu extension.</b> An application type, and its subnodes,
             can have one or more menu items added to their contextual menus.
@@ -94,6 +96,13 @@
             the processing of your application. The starting point for this
             application-specific functionality is to implement a new
             application type.
+            <li><b>Data source extension.</b> The "application type" is only
+            one of the types of data sources that can be monitored and managed
+            in VisualVM. For example, another of the data sources is the "host type",
+            which lets you monitor and manage local and remote hosts. In addition,
+            you can create new data sources, in situations where you want to
+            monitor and manage a type of data source that VisualVM does not cater
+            for by default.
         </ul>    
         
         <p>A visual representation of the entry points into VisualVM:
