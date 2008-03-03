@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="default.css">
     </head>
     <body>
-        <h2>Getting Started with VisualVM</h2>
+        <h1>Getting Started with VisualVM</h1>
         <p>VisualVM provides detailed information about Java applications while they are running on the Java Virutal Machine (JVM). 
         VisualVM's graphical user interface enables you to quickly and easily see information about multiple Java applications.</p>
         
@@ -13,9 +13,9 @@
         In this guide you will launch VisualVM and view the details of an application running on the local JVM.</p>
         <p>This guide will also demonstrate how to connect to an application running on a remote JVM.</p>
 
-        <h3>Setting Up</h3>
+        <h2>Setting Up</h2>
         
-        <h4>Installing VisualVM</h4>
+        <h3>Installing VisualVM</h3>
         <ol>
             <li>Download and unzip the VisualVM installer.</li>
             <li>Navigate to the <tt>bin</tt> directory of the VisualVM installation directory and launch the application.</li>
@@ -24,7 +24,7 @@
         <p>When you launch VisualVM you see the main window on the application.</p>
 
         
-        <h4>Installing VisualVM Plugins</h4>
+        <h3>Installing VisualVM Plugins</h3>
         <p>You can extend the functionality of VisualVM by installing plugins available from the VisualVM update center.
         For example, installing the VisualVM-MBeans plugin adds a new MBeans tab to the application tab 
         that is visible if the application utilizes JMX management.</p>
@@ -40,7 +40,7 @@
         <b>Note:</b> You will need to restart VisualVM for the MBeans tab to appear.</p>            
 
 
-        <h3>Viewing Application Data</h3>
+        <h2>Viewing Application Data</h2>
         <p>By default, the Applications window is displayed in the left pane of the main window when VisualVM is launched.
         The Applications window enables you to quickly view data on running Java applications. 
         Local applications are listed below the Local node.
@@ -51,7 +51,7 @@
         <img src="images/getstarted/vvm-anagram-applications.png" style="border:1px solid;">
 
 
-        <h4>Profiling an Application</h4>
+        <h3>Profiling an Application</h3>
         <p>VisualVM includes a profiler that enables you to profile applications running on your local JVM.
         You access the profiling controls in the Profiler tab of the application.
         You can analyze memory usage and CPU performance.<br/>
@@ -70,7 +70,7 @@
         </ol>
         <!--The Anagram application tab has an MBeans tab because the application was been modified to add JMX management.-->
 
-        <h4>Working with Heap Dumps</h4>
+        <h3>Working with Heap Dumps</h3>
         <p>VisualVM enables you to easily take a snapshot of the heap to capture data about local applications.
         You can also view and explore </p>
         
@@ -79,11 +79,11 @@
         The Overview tab displays general information about the application.</p>
         <b>image of anagram application tab - overview</b>-->
 
-        <h4>Viewing Thread Dumps</h4>
+        <h3>Viewing Thread Dumps</h3>
         
         
         
-            <h3>Connecting to a Remote Host</h3>
+            <h2>Connecting to a Remote Host</h2>
             <p>VisualVM enables you to easily monitor applications running on remote hosts and view general data about
             the remote system. You cannot profile applications running on a remote host.</p>
             You can also add remote hosts to view details about applications running on remote JVMs.
@@ -103,14 +103,6 @@
             When you expand the remote host node you can see the Java applications that are running on the remote host.</p>
             <p>You can double-click on the name of the remote applications to open the application tab in VisualVM.</p>
 
-        
-
-        
-        
-
-
-        
-       
         
 
 <!--
