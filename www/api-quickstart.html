@@ -134,6 +134,12 @@
             <li>Application Types
             <br><tt>com.sun.tools.visualvm.core.model.apptype.ApplicationTypeFactory
             <br>/com.sun.tools.visualvm.core.model.apptype.ApplicationType</tt>
+            <li>Data Sources
+            <br><tt>com.sun.tools.visualvm.core.datasource.DefaultDataSourceProvider
+            <br>/com.sun.tools.visualvm.core.datasource.AbstractDataSource</tt>
+            <br>You also need to extend the following:
+            <tt>com.sun.tools.visualvm.core.model.dsdescr.DataSourceDescriptor</tt>
+            <tt>com.sun.tools.visualvm.core.model.AbstractModelProvider</tt>
             
         </ul>    
         
@@ -583,6 +589,12 @@ public void uninstalled() {
                     Here the extendability of the "Overview" tab, "Monitor" tab, and "Threads" tab
                     are highlighted. In addition, you are shown how to make your own tabs
                     extendable.
+                    <li><b><a href="http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm_part3">Getting Started Extending VisualVM (Part 5)</a>.</b>
+                    Here the extendability of the "Host" data source is discussed. Code is provided
+                    for adding a tab to the Localhost view and a subtab to its Overview tab.
+                    <li><b><a href="http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm_part4">Getting Started Extending VisualVM (Part 6)</a>.</b>
+                    Here you learn a lot about the primary actors of VisualVM&#8212;data sources. In addition, you are
+                    shown all the code that you need for creating your own data source.
                 </ul>    
             </li>
             
