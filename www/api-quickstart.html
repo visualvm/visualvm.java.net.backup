@@ -32,23 +32,28 @@
         introduced to the VisualVM APIs and you will be shown how to get
         started using them
         to extend VisualVM. In general, there are two types of use cases
-        that apply to VisualVM extensions. Firstly, you have a monitoring
+        that apply to VisualVM extensions:
+        
+        <ul>
+        <p><li><b>Tool-Centric.</b> In this scenario, you have a monitoring
         or management tool that
         you want to make available to VisualVM. For example, maybe you have
         a tool that shows an application's threads or processing speed in a
         new and interesting way. In this case, you would create a plugin
         that makes your tool available to VisualVM via new tabs and menu
         items, so that VisualVM users can
-        benefit from the feature set provided by your tool. Secondly, you
+        benefit from the feature set provided by your tool. 
+        <p><li><b>Application-Centric.</b> In this scenario, you
         have an application with specific monitoring/management needs. For
         example, if your application is a deployment server, you might want to 
         give users a graphic overview of the applications that are deployed
         to that server. In this case, you would need to introduce a new type
-        of application to VisualVM. By default, all applications are treated
-        in the same way and if, therefore, your application has one or more
-        unique characteristics, you would need to provide for a unique type
+        of application to VisualVM. By default, all of your applications will be treated
+        in the same default way and if, therefore, your application has one or more
+        unique characteristics, and you want those characteristics to be supported
+        in VisualVM, you would need to provide a plugin for a unique type
         of application in this way.
-        
+    </ul>
         <h3>Contents</h3>
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <tbody><tr>
