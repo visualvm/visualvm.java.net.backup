@@ -12,8 +12,6 @@
         <p>This getting started guide should help you quickly get up and running with the VisualVM.
         This guide will demonstrate how to install VisualVM and extend the tool by adding a plugin from the VisualVM update center.
         In this guide you will launch VisualVM and view the details of an applications running on the local JVM and a remote JVM.</p>
-
-        <h2>Setting Up</h2>
         
         <h3>Installing VisualVM</h3>
         <ol>
@@ -31,18 +29,20 @@
         <ol>
             <li>Choose Tools &gt; Plugins from the main menu.</li>
             <li>In the Available Plugins tab, select the Install checkbox for the plugin. Click Install.</li>
-            <li>Step through and complete the plugin installer.</li>
-        </ol>
+            <li>Step through and complete the plugin installer.<br/>
         <img src="images/getstarted/vvm-plugins-window.png">
-        <p class="small">Screenshot of Plugin manager with the VisualVM-MBeans plugin selected.</p>
+        <p class="small">Screenshot of Plugin manager with the VisualVM-MBeans plugin selected.</p></li>
+        </ol>
 
 
         <h2>Viewing Application Data</h2>
+        <hr>
         <p>By default, the Applications window is displayed in the left pane of the main window when VisualVM is launched.
         The Applications window enables you to quickly view data on running Java applications. 
         Local applications are listed below the Local node.
         Java applications running on connected remote hosts are listed below the Remote node.
-        When you double-click the application name in the Applications window, a tab for that application opens in the main window.
+        Application heap dumps and thread dumps are displayed below the application node.</p>
+        <p>When you double-click the application name in the Applications window, a tab for that application opens in the main window.
         Each application tab contains tabs that you use to explore the application data in greater detail.<br/>
         <b>Note.</b> VisualVM is a Java application and will always be one of the applications listed under the Local node.</p>
         <img src="images/getstarted/vvm-anagram-applications.png" style="border:1px solid;">
@@ -60,7 +60,7 @@
             <li>Launch a local Java application with the <tt>-Xshare:off</tt> argument.</li>
             <li>Expand the Local node in the Applications window and double-click the name of the Java application.</li>
             <li>Click the Profiler tab and then click the Memory button.
-            <p>When you click Memory, VisualVM connects to the application and displays the profiling data.</p>
+            <p>When you click Memory, VisualVM connects to the application and displays the profiling data in the Profiler tab.</p>
             <img src="images/getstarted/vvm-anagram-profiler.png" style="border:1px solid;" alt="screenshot of profier tab with profiling results" 
             title="Screenshot showing the profiling results when analyzing memory allocation">
             </li>
@@ -80,6 +80,7 @@
         
         
             <h2>Connecting to a Remote Host</h2>
+            <hr>
             <p>VisualVM enables you to easily monitor applications running on remote hosts and view general data about
             the remote system. You cannot profile applications running on a remote host.</p>
             You can also add remote hosts to view details about applications running on remote JVMs.
@@ -96,7 +97,7 @@
                 <li>Click OK.</li>
             </ol>
             <p>When you click OK, a node for the remote host appears under the Remote node. 
-            When you expand the remote host node you can see the Java applications that are running on the remote host.</p>
+            Expand the remote host node to see the Java applications that are running on the remote host.</p>
             <p>You can double-click on the name of the remote applications to open the application tab in VisualVM.</p>
 
         
