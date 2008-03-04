@@ -10,8 +10,8 @@
         VisualVM's graphical user interface enables you to quickly and easily see information about multiple Java applications.</p>
         
         <p>This getting started guide should help you quickly get up and running with the VisualVM.
-        This guide will demonstrate how to install VisualVM and extend the tool by adding a plugin from the VisualVM update center.
-        In this guide you will launch VisualVM and view the details of an applications running on the local JVM and a remote JVM.</p>
+        This guide will demonstrate how to install VisualVM and add functionality to the tool by installing a plugin from the VisualVM update center.
+        This guide will show you how to launch VisualVM and view some of the information you can get about an application running on the local JVM and a remote JVM.</p>
         
         <h3>Installing VisualVM</h3>
         <ol>
@@ -21,7 +21,7 @@
 
         
         <h3>Installing VisualVM Plugins</h3>
-        <p>You can extend the functionality of VisualVM by installing plugins available from the VisualVM update center.
+        <p>You can add functionality to VisualVM by installing plugins available from the VisualVM update center.
         For example, installing the VisualVM-MBeans plugin adds an MBeans tab to the application tab 
         that enables you to <a href="http://java.sun.com/javase/6/docs/technotes/guides/management/jconsole.html#gdeap">monitor and manage MBeans</a> 
         from within VisualVM.</p>
@@ -36,12 +36,16 @@
 
 
         <h2>Viewing Application Data</h2>
-        <hr>
         <p>By default, the Applications window is displayed in the left pane of the main window when VisualVM is launched.
-        The Applications window enables you to quickly view data on running Java applications. 
-        Local applications are listed below the Local node.
-        Java applications running on connected remote hosts are listed below the Remote node.
-        Application heap dumps and thread dumps are displayed below the application node.</p>
+        The Applications window enables you to quickly see Java applications running on local and remote JVMs. 
+        <!--Application heap dumps and thread dumps are displayed below the application node.--></p>
+        <p>By right-clicking on a local application node you can open a popup menu to select the following tasks.</p>
+        <ul>
+            <li>Open</li>
+            <li>Thread Dump</li>
+            <li>Heap Dump</li>
+            <li>Enable Heap Dump on OOME</li>
+        </ul>
         <p>When you double-click the application name in the Applications window, a tab for that application opens in the main window.
         Each application tab contains tabs that you use to explore the application data in greater detail.<br/>
         <b>Note.</b> VisualVM is a Java application and will always be one of the applications listed under the Local node.</p>
@@ -80,7 +84,6 @@
         
         
             <h2>Connecting to a Remote Host</h2>
-            <hr>
             <p>VisualVM enables you to easily monitor applications running on remote hosts and view general data about
             the remote system. You cannot profile applications running on a remote host.</p>
             You can also add remote hosts to view details about applications running on remote JVMs.
