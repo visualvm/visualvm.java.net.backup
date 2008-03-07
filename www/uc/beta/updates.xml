@@ -5,7 +5,7 @@
 
 <module_group name="Application Servers">
 
-<module codenamebase="net.java.visualvm.modules.glassfish" distribution="net-java-visualvm-modules-glassfish.nbm" downloadsize="73536" homepage="https://visualvm.dev.java.net" license="C0B2B106" moduleauthor="Jaroslav Bachorik" needsrestart="false" releasedate="2008/03/07">
+<module codenamebase="net.java.visualvm.modules.glassfish" distribution="https://visualvm.dev.java.net/files/documents/7163/88862/net-java-visualvm-modules-glassfish.nbm" downloadsize="73536" homepage="https://visualvm.dev.java.net" license="C0B2B106" moduleauthor="Jaroslav Bachorik" needsrestart="false" releasedate="2008/03/07">
     <manifest AutoUpdate-Show-In-Client="true" OpenIDE-Module="net.java.visualvm.modules.glassfish" OpenIDE-Module-Display-Category="Application Servers" OpenIDE-Module-Implementation-Version="080307" OpenIDE-Module-Java-Dependencies="Java &gt; 1.5" OpenIDE-Module-Long-Description="A sample plugin giving an overview of advanced monitoring capabilities of VisualVM. &#10;Enhances monitoring of GlassFish application server by adding specialized overview, new tab for monitoring HTTP Service and the ability to visually select and monitor any of the deployed web applications" OpenIDE-Module-Module-Dependencies="com.sun.appserv.management &gt; 1.0, org.netbeans.lib.profiler.ui/1 = 080208, com.sun.tools.visualvm.core/1 &gt; 1.0, org.openide.modules &gt; 7.3.1, org.openide.util &gt; 7.10.1.1" OpenIDE-Module-Name="VisualVM-Glassfish" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="Enhaned monitoring of GlassFish application server" OpenIDE-Module-Specification-Version="1.0"/>
     
 </module>
@@ -14,7 +14,7 @@
 
 <module_group name="Libraries">
 
-<module autoload="true" codenamebase="com.sun.appserv.management" distribution="com-sun-appserv-management.nbm" downloadsize="1438913" homepage="https://visualvm.dev.java.net" license="D5533D83" moduleauthor="" needsrestart="false" releasedate="2008/03/07">
+<module autoload="true" codenamebase="com.sun.appserv.management" distribution="https://visualvm.dev.java.net/files/documents/7163/88864/com-sun-appserv-management.nbm" downloadsize="1438913" homepage="https://visualvm.dev.java.net" license="D5533D83" moduleauthor="" needsrestart="false" releasedate="2008/03/07">
     <manifest AutoUpdate-Show-In-Client="false" OpenIDE-Module="com.sun.appserv.management" OpenIDE-Module-Display-Category="Libraries" OpenIDE-Module-Implementation-Version="080307" OpenIDE-Module-Java-Dependencies="Java &gt; 1.4" OpenIDE-Module-Long-Description="GlassFish AMX API Library Wrapper" OpenIDE-Module-Name="GlassFish AMX API" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="GlassFish AMX API Library Wrapper" OpenIDE-Module-Specification-Version="1.0"/>
     
 </module>
