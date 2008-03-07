@@ -19,7 +19,69 @@
             <li>Navigate to the <tt>bin</tt> directory of the VisualVM installation directory and launch the application.</li>
         </ol>    
 
+        <p>The main window of VisualVM opens when you launch the application.
+        By default, the Applications window is displayed in the left pane of the main window.
+        The Applications window enables you to quickly see the Java applications running on the local and remote JVMs.</p>
+        <img src="images/getstarted/vvm-anagram-applications.png" style="border:1px solid;" alt="screenshot of profier tab with profiling results" 
+        title="Screenshot showing the profiling results when analyzing memory allocation">
+
+
+        <h3>Profiling an Application</h3>
+        <p>VisualVM includes a profiler that enables you to profile applications running on your local JVM.
+        You access the profiling controls in the Profiler tab of the application.
+        The profiler enables you to analyze memory usage and CPU performance of local applications.<br/>
+        <b>Note.</b> To profile an application running on JDK 6, you need to turn off class sharing for the application otherwise the application may crash.
+        To turn off class sharing, start the application with <tt>-Xshare:off</tt> argument.</p>
         
+        <ol>
+            <li>Launch a local Java application. (Start the application with the <tt>-Xshare:off</tt> argument.)</li>
+            <li>Under the Locals node in the Applications window, right-click the application node and choose Open to open the application tab.</li>
+            <li>Click the Profiler tab in the application tab.</li>
+            <li>Click Memory or CPU in the the Profiler tab.
+            <p>When you click Memory, VisualVM instruments the application and displays the profiling data in the Profiler tab.</p>
+            <img src="images/getstarted/vvm-anagram-profiler.png" style="border:1px solid;" alt="screenshot of profier tab with profiling results" 
+            title="Screenshot showing the profiling results when analyzing memory allocation">
+            </li>
+        </ol>
+
+
+        <h3>Browsing a Heap Dump</h3>
+        <p>VisualVM enables you to easily take and save a snapshots of the heap to capture data about local applications.
+        You can use the VisualVM heap browser to view and explore the heap snapshot.
+        You can also load and browsed saved heap dumps.</p>
+        <ol>
+            <li>Right-click an application's node in the Applications window and choose Open.</li>
+            <li>Click the Monitor tab in the application tab.</li>
+            <li>Click Heap Dump in the Monitor tab.
+            <p>When you click Heap Dump, VisualVM opens the heap dump in a new tab.
+            VisualVM also adds a node for the heap dump below the application's node in the Applications window.</p></li>
+            <li>Click Classes in the Heap Dump toolbar and double-click a class name to open the Instances view for the class.</li>
+            <li>Save the heap dump to your local system by right-clicking the Heap Dump node in the Applications window and choosing Save As.
+            When you take a heap dump with VisualVM, the heap dump is saved in a temporary directory 
+            and will be deleted when you close the application unless you save it.</li>
+        </ol>
+
+
+        <!--Application heap dumps and thread dumps are displayed below the application node.--></p>
+        <!--<h3>Opening Application Tabs</h3>
+        <p>
+        To view data about a specific local application:</p>
+        <ol>
+            <li>Right-click the application node in the Applications window and choose Open.
+            <p>When you click Open, the tab for the application opens in the main window.
+            Overview</p></li>
+            <li>Click</li>
+        </ol>
+-->
+
+        
+        
+        
+<!--<p>When the application tab opens, the Overview tab is displayed by default.
+        The Overview tab displays general information about the application.</p>
+        <b>image of anagram application tab - overview</b>-->
+
+      
         <h3>Installing VisualVM Plugins</h3>
         <p>You can add functionality to VisualVM by installing plugins available from the VisualVM update center.
         For example, installing the VisualVM-MBeans plugin adds an MBeans tab to the application tab 
@@ -33,53 +95,7 @@
         <img src="images/getstarted/vvm-plugins-window.png">
         <p class="small">Screenshot of Plugin manager with the VisualVM-MBeans plugin selected.</p></li>
         </ol>
-
-
-        <h2>Viewing Application Data</h2>
-        <p>By default, the Applications window is displayed in the left pane of the main window when VisualVM is launched.
-        The Applications window enables you to quickly see Java applications running on local and remote JVMs. 
-        <!--Application heap dumps and thread dumps are displayed below the application node.--></p>
-        <p>By right-clicking on a local application node you can open a popup menu to select the following tasks.</p>
-        <ul>
-            <li>Open</li>
-            <li>Thread Dump</li>
-            <li>Heap Dump</li>
-            <li>Enable Heap Dump on OOME</li>
-        </ul>
-        <p>When you double-click the application name in the Applications window, a tab for that application opens in the main window.
-        Each application tab contains tabs that you use to explore the application data in greater detail.<br/>
-        <b>Note.</b> VisualVM is a Java application and will always be one of the applications listed under the Local node.</p>
-        <img src="images/getstarted/vvm-anagram-applications.png" style="border:1px solid;">
-
-
-        <h3>Profiling an Application</h3>
-        <p>VisualVM includes a profiler that enables you to profile applications running on your local JVM.
-        You access the profiling controls in the Profiler tab of the application.
-        You can analyze memory usage and CPU performance.<br/>
-        <b>Note.</b> To profile an application running on JDK 6, you need to turn off class sharing for the application otherwise the application may crash.
-        To turn off class sharing, start the application with <tt>-Xshare:off</tt> argument.</p>
-        
-        <ol>
-            <li>Start VisualVM (if not already started)</li>
-            <li>Launch a local Java application with the <tt>-Xshare:off</tt> argument.</li>
-            <li>Expand the Local node in the Applications window and double-click the name of the Java application.</li>
-            <li>Click the Profiler tab and then click the Memory button.
-            <p>When you click Memory, VisualVM connects to the application and displays the profiling data in the Profiler tab.</p>
-            <img src="images/getstarted/vvm-anagram-profiler.png" style="border:1px solid;" alt="screenshot of profier tab with profiling results" 
-            title="Screenshot showing the profiling results when analyzing memory allocation">
-            </li>
-        </ol>
-
-        <h3>Working with a Heap Dumps</h3>
-        <p>VisualVM enables you to easily take a snapshot of the heap to capture data about local applications.
-        You can also view and explore </p>
-        
-        
-<!--<p>When the application tab opens, the Overview tab is displayed by default.
-        The Overview tab displays general information about the application.</p>
-        <b>image of anagram application tab - overview</b>-->
-
-        <h3>Viewing Thread Dumps</h3>
+      
         
         
         
