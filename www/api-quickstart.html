@@ -197,7 +197,7 @@
             plugin should be built against the VisualVM binary that you
             registered above.
             
-            <li><b>Get the VisualVM Javadoc.</b> Get these from the "Milestone 3 API Docs"
+            <li><b>Get the VisualVM Javadoc.</b> Get these from the "Beta API Docs"
                 link on the <a href="https://visualvm.dev.java.net/">https://visualvm.dev.java.net/</a>
             page.</li>
             
@@ -218,15 +218,21 @@
         
         <ol>
             <p><li>In NetBeans IDE, choose File &gt; New Project and then
-            choose NetBeans Modules &gt; Module. Click Next. Create a new NetBeans module and make 
+            choose NetBeans Modules &gt; Module. Click Next. Create a new NetBeans module 
+            called "HelloVisualVM" and make 
             sure to specify that 
-            you want to build against the VisualVM binary that you registered earlier:
+            you want to build against the VisualVM binary that you registered <a href="#preparing">earlier</a>:
             
-            <p><p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-4.png" border="1"/>
+            <p><p><img src="images/api-quickstart/new-module-1.png" border="1"/>
             
-            <p>Click Next and fill out the next step in way you like. Click Finish.
+            <p>Click Next and fill out the next step as follows:
             
-            <p><li>Use the "Module Installer" wizard, which will create the class that is called
+            <p><p><img src="images/api-quickstart/new-module-2.png" border="1"/>
+            
+            <p>Click Finish.
+            
+            <p><li>Right-click the "HelloVisualVM" project node and choose New &gt; Other.
+            In the New File dialog, use the "Module Installer" wizard, which will create the class that is called
             when the plugin is installed into VisualVM. Here's where you'll find the wizard 
             in the New File dialog:
             
@@ -253,7 +259,7 @@ public void uninstalled() {
             Do this by right-clicking the project node, choosing "Properties", and then setting
             the dependency in the "Libraries" tab.
             
-            <p><li>Create a class called "HelloViewProvider", as follows:
+            <p><li>Create a class called "HelloWorldViewProvider", as follows:
             
             <p><pre>class HelloWorldViewProvider implements DataSourceViewsProvider&lt;Application&gt; {
 
@@ -261,7 +267,7 @@ public void uninstalled() {
     private static DataSourceViewsProvider&lt;Application&gt; instance =  new HelloWorldViewProvider();
 
     <b>@Override</b>
-    public boolean supportsViewFor(Application application) {
+    public boolean supportsViewsFor(Application application) {
         //Always shown:
         return true;
     }
@@ -295,20 +301,20 @@ public void uninstalled() {
     
 }</pre>
             
-            <p>By reading the Javadoc that you downloaded earlier, you'll 
+            <p>By reading the Javadoc that you downloaded <a href="#preparing">earlier</a>, you'll 
             know what the two overridden methods above are all about:
             
             <p><p><img src="http://blogs.sun.com/geertjan/resource/extend-visualvm-6.png" border="1"/>
             
-            <p><li>Finally, we'll create our <tt>HelloView</tt> class, which is created by our provider above:
+            <p><li>Finally, we'll create our <tt>HelloWorldView</tt> class, which is created by our provider above:
             
             <p><pre>class HelloWorldView extends DataSourceView {
 
     private DataViewComponent dvc;
     private Application application;
     private DataViewComponent view;
-    //Make sure there is an image at this location in your project:
-    private static final String IMAGE_PATH = "org/hellovisualvm/icon.png"; // NOI18N
+    //Here we reuse an existing image:
+    private static final String IMAGE_PATH = "com/sun/tools/visualvm/core/ui/resources/coredump.png"; // NOI18N
 
     public HelloWorldView(Application application) {
         super("Hello World", new ImageIcon(Utilities.loadImage(IMAGE_PATH, true)).getImage(), 60);
@@ -541,7 +547,7 @@ public void uninstalled() {
         recommended to consult the following resources:
         
         <ol>
-            <li><b>VisualVM Javadoc.</b> Get these from the "Milestone 3 API Docs"
+            <li><b>VisualVM Javadoc.</b> Get these from the "Beta API Docs"
                 link on the <a href="https://visualvm.dev.java.net/">https://visualvm.dev.java.net/</a>
             page.</li>
             <li><b>VisualVM Developer FAQ.</b> A <a href="api-faq.html">complete list of typical questions</a>
