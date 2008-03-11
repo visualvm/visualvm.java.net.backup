@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>VisualVM Threads Tab</title>
+        <link rel="stylesheet" type="text/css" href="default.css" />
+    </head>
+    <body>
+        <h1>VisualVM Threads Tab</h1>
+        <p>VisualVM presents data for local and remote applications in a tab specific for that application.
+        When you open an application in VisualVM, each application opens in a new tab in the main window.
+        You can have multiple application tabs open.
+        Each application tab contains sub-tabs that display different types of 
+        information about the application.</p>
+
+        <p>The Threads tab displays real-time high-level data on thread activity and memory heap and classes loaded in the VM.
+        By default the Threads tab displays a timeline of current thread activity. 
+        You can click a thread in the timeline to view details about that thread in the Details tab.</p>
+        
+        <h4>Timeline Tab</h4>
+        <p>This tab displays a timeline with thread states. You can zoom in/out on the current view or switch to the Scale to Fit mode. Using the combo box, you can select to display all threads, all live threads or all finished threads. Using (multi)selection, you can also specify a subset of threads to display. 
+        You can double-clicking on a thread timeline to open that thread in the Threads (Details) tab.</p>
+        <img src="images/docs/thread-timeline-screen.png" style="border:1px solid;" alt="screenshot of timeline in Threads tab" 
+        title="screenshot of timeline in Threads tab" />
+      
+        <h4>Details Tab</h4>
+        <p>This tab displays details of threads. 
+        Using the combobox, you can select to display all threads, all live threads or all finished threads. 
+        You can also choose to display only the details of threads selected in the timeline view. 
+        For each thread, the name, classname and current status (alive/finished) are displayed. 
+        A short description of the thread is also provided.</p>
+
+        <p>Each thread displayed in the Details tab has the following tabs:</p>
+        <ul>
+          <li><b>General.</b> This tab displays thread states statistics.</li>
+          <li><b>Details.</b> This tab contains full listings of thread states with timestamps.</li>
+        </ul>
+        <p>A timeline for each thread provides a quick overview of the thread's activity.</p>
+        <img src="images/docs/thread-details-screen.png" style="border:1px solid;" alt="screenshot of timeline in Threads tab" 
+        title="screenshot of timeline in Threads tab" />
+        
+        <h3>Thread Dumps</h3>
+        <img src="images/docs/thread-dump-screen.png" style="border:1px solid;" alt="screenshot of timeline in Threads tab" 
+        title="screenshot of timeline in Threads tab" />
+        
+    </body>
+</html>
