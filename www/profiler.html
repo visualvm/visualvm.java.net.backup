@@ -1,26 +1,29 @@
 <html>
     <head>
         <title>VisualVM Profiler Tab</title>
-        <link rel="stylesheet" type="text/css" href="default.css">
+        <link rel="stylesheet" type="text/css" href="default.css" />
     </head>
     <body>
-        <h2>Profiler Tab</h2>
+        <h1>Profiler Tab</h1>
+        <hr />
         <p>VisualVM presents data for local and remote applications in a tab specific for that application.
         When you open an application in VisualVM, each application opens in a new tab in the main window.
         You can have multiple application tabs open.</p>
         <p>Each application tab contains sub-tabs that display different types of 
-        information about the application.</p>
-
-        <p>The Profiler tab enables you to profile local applications to view data on CPU performance and memory usage.
-        By default the profiling tool is not running until you are ready to profile the application.
+        information about the application.
+        The Profiler tab enables you to profile local applications to view data on CPU performance and memory usage.</p>
+        <p>By default the profiling tool is not running until you are ready to profile the application.
         You can choose from the following profiling options:</p>
         <ul>
             <li><b>CPU.</b> Choose this to profile the performance of the application. 
             These are the figures that a Java application can obtain using the java.lang.Runtime.totalMemory() and java.lang.Runtime.freeMemory() calls.</li>
             <li><b>Memory.</b> Choose this to analyze the memory usage of the application.</li>
         </ul>
+        <p>When you profile an application, VisualVM attaches to the local application and start collecting profiling data.
+        VisualVM does not restart the application.
+        </p>
         
-        <h3>Toolbar</h3>
+        <h4>Toolbar</h4>
         <p>When profiling an application, profiling results are displayed in the Profiler tab.
         The Profiler tab contains a tool bar for working with profiling results.</p>
         <ul>
@@ -35,7 +38,7 @@
             Click to run garbage collection.</li>
         </ul>
         
-        <h3>Filtering results</h3>
+        <h4>Filtering results</h4>
         <p>The filter box below the profiling results enables you to filter the displayed results according to the name of the method. 
         To filter the results, enter a term in the method name filter box, select which filtering method to use and press Return. 
         You can see and select previous filter terms by clicking the arrow to the right of the method name filter box.
@@ -50,10 +53,11 @@ To restore the full unfiltered list of methods, click Clear Filter ( Clear Filte
         Threads emit the "method entry" event when entering a method and generate the corresponding "method exit" event when exiting the method. 
         Both of these events contain timestamps. This data is processed in real time.</p>
 
-<p>When profiling applications that are deployed to a server (such as enterprise applications and web modules) or NetBeans modules or suites deployed to the NetBeans platform, 
-you have the option to also profile the server or platform startup. 
-When this option is selected, the first method executed by the JVM is used as the root method when instrumenting. </p>
-        
+        <p>When profiling applications that are deployed to a server (such as enterprise applications and web modules) or NetBeans modules or suites deployed to the NetBeans platform, 
+        you have the option to also profile the server or platform startup. 
+        When this option is selected, the first method executed by the JVM is used as the root method when instrumenting. </p>
+        <img src="images/docs/profiler-cpu.png" style="border:1px solid;" alt="screenshot of Profiler tab showing CPU profiling" 
+        title="screenshot of Profiler tab showing CPU profiling" />
         
         <h3>Memory</h3>
         <p>When you analyse memory usage, the total number of objects allocated by each class (including array classes) is displayed in a table. 
@@ -69,6 +73,7 @@ When this option is selected, the first method executed by the JVM is used as th
         are instrumented to produce information about object allocations. 
         The number of object allocations that Profiler presents is exact.</p>
         
-        
+        <img src="images/docs/profiler-memory.png" style="border:1px solid;" alt="screenshot of Profiler tab showing memory profiling" 
+        title="screenshot of Profiler tab showing memory profiling" />
     </body>
 </html>
