@@ -38,8 +38,8 @@
         <!--VisualVM cannot be used to Profile itself - only the Overview and Monitor
         tabs are enabled when VisualVM is the chosen application. -->
         
-        <a name="local"></a>
-            <h4>Local Node</h4>
+        
+            <h4>Local Node</h4><a name="local"></a>
             <p>The Local node displays the Java applications that are running on the same local JVM as VisualVM.
             VisualVM is listed as one of the local applications.
             When a Java application is launched, a node for that application is displayed under the 
@@ -49,14 +49,15 @@
             <p>Each local application has the following items available in the popup menu.</p>
             
             <ul>
-                <li><b>Open.</b> Select this to open the tab for the application</li>
-                <li><b>Thread Dump.</b> Select this to capture a thread dump for the application.
+                <li><b><a href="overview_tab.html">Open.</a></b> Select this to open the tab for the application</li>
+                <li><b><a href="threads.html">Thread Dump.</a></b> Select this to capture a thread dump for the application.
                 When you capture a thread dump, the thread dump opens in the main window and a node
                 for the thread dump appears under the application node.</li>
-                <li><b>Heap Dump.</b> Select this to capture a heap dump for the application.
+                <li><b><a href="heapdump.html">Heap Dump.</a></b> Select this to capture a heap dump for the application.
                 When you capture a heap dump, the heap dump opens in the main window and a node
                 for the heap dump appears under the application node.</li>
-                <li><b>Enable Heap Dump on OOME.</b></li>
+                <li><b>Enable Heap Dump on OOME.</b> Select this if you want VisualVM to automatically take a heap dump when
+                an OutOfMemoryException is encountered. The heap dump is save to XXX.</li>
             </ul>
             
             <p>When you take a thread dump or heap dump or a local application, the dump appears under the application node.</p>
@@ -73,8 +74,8 @@
         <b>Note.</b> VisualVM is a Java application and will always be one of the applications listed under the Local node.</p>
         <img src="images/getstarted/vvm-anagram-applications.png" style="border:1px solid;">
         -->
-        <a name="remote"></a>    
-            <h4>Remote Node</h4>
+          
+            <h4>Remote Node</h4><a name="remote"></a>
             <p>The Remote node displays the remote hosts that VisualM is connected to.
             When you are connected to a remote host, you can expand the node for the remote host to see the Java applications that are running on that host.
             When a Java application is launched on the remote host, a node for that application is displayed under the Remote node.
@@ -83,7 +84,7 @@
             <p><b>Note.</b> VisualVM can retrieve monitoring information on remote applications but it cannot profile remote applications. </p>
             
             <h5>Connecting to a Remote Host</h5>
-            To add a remote host, right-click the Remote node, choose Add Remote Host and type the host name or IP address in the Add Remote Host dialog box.</p> 
+            <p>To add a remote host, right-click the Remote node, choose Add Remote Host and type the host name or IP address in the Add Remote Host dialog box.</p> 
             <p><b>Note:</b> To retrieve and display information on applications running on the remote host, the <tt>jstatd</tt> utility
             needs to be running on the remote host.
             To start the <tt>jstatd</tt> utility, type jstatd on the command line.
@@ -91,8 +92,8 @@
             <a href="http://java.sun.com/javase/6/docs/technotes/tools/share/jstatd.html">jstatd - Virtual Machine jstat Daemon</a>
             </p>
             
-            <a name="coredump"></a>
-            <h4>VM Coredumps</h4>
+            
+            <h4>VM Coredumps</h4><a name="coredump"></a>
             
     <!--    <p>intro - describes the basic UI - getting started
         <ul>
@@ -112,7 +113,9 @@
             
         </ul>
         </p>-->
-        <a name="snapshots"></a>
-        <h4>Snapshots</h4>
+        
+        <h4>Snapshots</h4><a name="snapshots"></a>
+        <p>The Snapshots node lists profiling snapshots that are saved to your local system.</p>
+        
     </body>
 </html>

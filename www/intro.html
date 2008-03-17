@@ -8,88 +8,55 @@
         <p>VisualVM is a tool that provides detailed information about Java applications while they are running. 
         VisualVM provides an intuitive visual interface for viewing data about multiple Java applications running on the Java Virtual Machine (JVM).
         </p>
-        <!--
-<h3>Starting VisualVM</h3>
-
-The VisualVM executable can be found in JDK_HOME/bin, where JDK_HOME is the directory in which the Java Development Kit (JDK) is installed. 
-If this directory is in your system path, you can start JConsole by simply typing visualvm in a command (shell) prompt. 
-Otherwise, you have to type the full path to the executable file.
-
-Command Syntax
-
-
-
-Note - Using JConsole to monitor a local application is useful for development and for creating prototypes, 
-but is not recommended for production environments, because JConsole itself consumes significant system resources. 
-Remote monitoring is recommended to isolate the JConsole application from the platform being monitored.
-
-For a complete reference on the syntax of the visualvm command, see the manual page for the visualvm command: 
-Java Monitoring and Management Console.
-
-
-Setting up Local Monitoring
-
-You start JConsole by typing the following command at the command line.
-
-% jconsole
-
-When JConsole starts, you will be given a choice of all the Java applications that are running locally that JConsole can connect to.
-
-If you want to monitor a specific application, and you know that application's process ID, then you can also start JConsole so that it connects to that application. This application must be running with the same user ID as JConsole. The command syntax to start JConsole for local monitoring of a specific application is the following.
-
-% jconsole processID
-
-In the command above processID is the application's process ID (PID). You can determine an application's PID in the following ways:
-
-    *
-
-      On UNIX or Linux systems, you can use the ps command to find the PID of the java instance that is running.
-    *
-
-      On Windows systems, you can use the Task Manager to find the PID of java or javaw.
-    *
-
-      You can also use the jps command-line utility to determine PIDs. See the manual page for the Java Virtual Machine Process Status Tool.
-
-For example, if you determined that the process ID of the Notepad application is 2956, then you would start JConsole with the following command.
-
-% jconsole 2956     
         
+        <h3>Starting VisualVM</h3>
+        <p>After downloading and unzipping the VisualVM zip file, you start VisualVM by double-clicking the VisualVM
+        executable or typing <tt>visualvm</tt> at the command line.</p>
+        <!--<p>The VisualVM executable can be found in JDK_HOME/bin, where JDK_HOME is the directory in which the Java Development Kit (JDK) is installed. 
+        If this directory is in your system path, you can start JConsole by simply typing visualvm in a command (shell) prompt. 
+        Otherwise, you have to type the full path to the executable file.
+        -->
 
--->
-        
+        <h3>Command Syntax</h3>
+
+        <p>For a complete reference on the syntax of the visualvm command, see the manual page for the visualvm command: 
+        <a href="#">VisualVM man page</a>.</p>
+
+
         <h3>VisualVM Windows</h3>
-        <p>The VisualVM window is divided into two windows.
-        </p>
+        <p>When you start VisualVM, the main VisualVM window opens.
+        The main VisualVM window is divided into two windows.</p>
         
         
-        
-        <h4>Applications Window</h4>
+        <h5>Applications Window</h5>
         <p>The <a href="applications_window.html">Applications window</a> opens in the left of the VisualVM when you launch the application.
         The Applications window is the main point of entry for exploring the details of running applications.
         The Applications window enables you to quickly view the applications running on the local machine and any connected remote machines.
         You can also access core dumps (Solaris only) and saved snapshots from the Applications window.</p>
-        <p>The Applications window organizes information under the following nodes.</p>
-        <ul>
-            <li>Local</li>
-        </ul>
-        
-        
-        <p>Right-clicking a node in the Applications window opens a popup menu that enables perform actions related to that node, including
+
+        <p>Right-clicking a node in the Applications window opens a popup menu that enables you to perform actions related to that node, including
         opening application tabs, taking heap and thread dumps and opening snapshots in the main window.</p>
         
-          
+        <p>The Applications window has the following nodes:</p>
+        <ul>
+            <li><a href="applications_window.html#local">Local</a></li>
+            <li><a href="applications_window.html#remote">Remote</a></li>
+            <li><a href="applications_window.html#coredump">VM Coredump</a></li>
+            <li><a href="applications_window.html#snapshots">Snapshots</a></li>
+        </ul>
 
-        <h4>Main Window</h4>
+
+
+        <h5>Main Window</h5>
         <p>Detailed information about applications is displayed in the main window.
         When you view data about an application, each application is represented by a tab in the main window 
         that enables you to easily view and navigate the data.
-        Saved thread or heap dump are also opened in the main window.
-        </p>
+        Saved thread or heap dump are also opened in the main window.</p>
+        
         <p>When you open an application tab in VisualVM, each application tab has the following tabs</p>
         <ul>
-            <li><a href="overview_tab.html">Overview Tab</a> This tab displays high-level information about the application.</li>
-            <li><a href="monitor_tab.html">Monitor Tab</a> This tab contains graphs displaying monitoring data about the application.</li>
+            <li><a href="overview_tab.html">Overview Tab</a><!-- This tab displays high-level information about the application.--></li>
+            <li><a href="monitor_tab.html">Monitor Tab</a> <!--This tab contains graphs displaying monitoring data about the application.--></li>
             <li><a href="thread.html">Threads Tab</a></li>
             <li><a href="profiler.html">Profile Tab</a></li>
         </ul>
