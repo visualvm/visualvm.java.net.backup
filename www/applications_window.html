@@ -1,16 +1,16 @@
 <html>
     <head>
-        <title>VisualVM Applications Window</title>
+        <title>Using the Applications Window</title>
         <link rel="stylesheet" type="text/css" href="default.css" />
     </head>
     <body>
-        <h2>Applications Window</h2>
+        <h1>Using the Applications Window</h1>
+        <hr />
         <p>When you start VisualVM, the Applications window is visible in the left of the VisualVM window.
-        The Applications window enables you to quickly view running local and remote applications. 
-        The Applications also displays core dumps and profiling snapshots saved to your local system.</p>
+        The Applications window enables you to quickly view application that are running on the local JVM and connected remote hosts. 
+        The Applications window also displays core dumps and applicatio snapshots.</p>
         
-        <p>You can perform actions on listed items by right-clicking the node in the Applications 
-        window and choosing an action from the popup menu.</p>
+        
             
  <!--           You can view additional information and perform actions on items listed in the Applications window by 
         right-clicking a node and choosing a item from the popup menu.
@@ -21,101 +21,94 @@
         The Applications window displays the process id (PID) of each application is displayed next to the application name.</p>
      -->  
      <h3>Applications Window Nodes</h3>
-        <p>The Applications window has the following nodes:</p>
+        <p>The Application window has nodes and sub-nodes that you can expand to view the running applications and saved files.
+        You can right-click the nodes to invoke popup menus that enable you to perform actions on 
+        the node. The actions available in the popup menu vary according to the node.</p>
+        
+        <p>The Applications window has the following primary nodes:</p>
         <ul>
             <li><b><a href="#local">Local.</a></b> Expand the Local node to view the applications running on the local JVM.</li>
             <li><b><a href="#remote">Remote.</a></b> Expand the Remote node to view the connected remote hosts.
             Expand the node of a remote host to view the Java applications running on the remote host.</li>
-            <li><b><a href="#coredump">Core Dumps.</a></b></li>
-            <li><b><a href="#snapshots">Snapshots.</a></b> Expand the Snapshots node to view profiling snapshots saved to the local system.</li>
+            <li><b><a href="#coredump">Core Dumps.</a></b> (Unix only)</li>
+            <li><b><a href="#snapshots">Snapshots.</a></b> Expand the Snapshots node to view saved application snapshots.</li>
         </ul>
     
     
-    <img src="images/docs/applications-window.png" style="border:1px solid;" alt="screenshot of VisualVM window" 
+        <img src="images/docs/applications-window.png" style="border:1px solid;" alt="screenshot of VisualVM window" 
         title="screenshot of VisualVM window" />
-    
+        <p></p>
 
         <!--VisualVM cannot be used to Profile itself - only the Overview and Monitor
         tabs are enabled when VisualVM is the chosen application. -->
         
         
-            <h4>Local Node</h4><a name="local"></a>
-            <p>The Local node displays the Java applications that are running on the same local JVM as VisualVM.
-            VisualVM is listed as one of the local applications.
-            When a Java application is launched, a node for that application is displayed under the 
-            Local node. 
-            The Applications window also displays the process ID (PID) for the application.</p>
+            <h4>Working with the Local Node</h4><a name="local"></a>
+            <p>The Local node displays the name and process ID (PID) of Java applications that are running on the same local JVM as VisualVM.
+            When you launch VisualVM and expand the local node, VisualVM automatically displays the currently running Java applications.
+            VisualVM is always listed as one of the local applications.
+            When a local Java application is launched, a node for that application appears under the Local node.</p>
             
-            <p>Each local application has the following items available in the popup menu.</p>
-            
+            <p>If there are any thread dumps, heap dumps or profiling snapshots of an application, they are displayed 
+            as sub-nodes below the application node.
+            Application nodes and their sub-nodes are only visible while the application is running.</p>
+            <p>You can right-click a dump or snapshot sub-node to save it to your local system.
+            You can save all the information collected about an application as an Application snapshot by right-clicking the application node and
+            choosing Save Application Snapshot.
+            Saved application snapshots are visible below the <a href="#snapshots">Snapshots node</a> in the Applications window.</p>
+
+<!--            <p>Each local application has the following items available in the popup menu.</p>
             <ul>
-                <li><b><a href="overview_tab.html">Open.</a></b> Select this to open the tab for the application</li>
+                <li><b><a href="overview_tab.html">Open.</a></b> Select this to open the tab for the application in the main window.</li>
                 <li><b><a href="threads.html">Thread Dump.</a></b> Select this to capture a thread dump for the application.
                 When you capture a thread dump, the thread dump opens in the main window and a node
                 for the thread dump appears under the application node.</li>
                 <li><b><a href="heapdump.html">Heap Dump.</a></b> Select this to capture a heap dump for the application.
                 When you capture a heap dump, the heap dump opens in the main window and a node
                 for the heap dump appears under the application node.</li>
+                <li><a href="profiler.html"><b>Profile.</b></a> Select this to open the Profiler tab for the application.</li>
+                <li><a href="snapshots.html"><b>Profiler Snapshot.</b></a> If the application is being profiled, you can select this to take
+                a profiler snapshot. The snapshot opens in the main window and a snapshot node appears below the application node.</li>
+                <li><a href="snapshots.html#application"><b>Application Snapshot.</b></a></li>
                 <li><b>Enable Heap Dump on OOME.</b> Select this if you want VisualVM to automatically take a heap dump when
                 an OutOfMemoryException is encountered. The heap dump is save to XXX.</li>
             </ul>
-            
-            <p>When you take a thread dump or heap dump or a local application, the dump appears under the application node.</p>
-            
-            <!--
-            <ul>
-            <li><b>Open.</b> Choosepens the application tab</li>
-            <li>Thread Dump - Takes a thread dump</li>
-            <li>Heap Dump Takes a heap dum</li>
-            <li>Enable Heap Dump on OOME - When enabled, a heap dump is taken automatically on OOME</li>
-        </ul>
-        <p>When you double-click the application name in the Applications window, a tab for that application opens in the main window.
-        Each application tab contains tabs that you use to explore the application data in greater detail.<br/>
-        <b>Note.</b> VisualVM is a Java application and will always be one of the applications listed under the Local node.</p>
-        <img src="images/getstarted/vvm-anagram-applications.png" style="border:1px solid;">
-        -->
+    -->        
+            <p>For more, see <a href="applications_local.html">Working with Local Applications</a>.</p>
           
-            <h4>Remote Node</h4><a name="remote"></a>
-            <p>The Remote node displays the remote hosts that VisualM is connected to.
-            When you are connected to a remote host, you can expand the node for the remote host to see the Java applications that are running on that host.
-            When a Java application is launched on the remote host, a node for that application is displayed under the Remote node.
-            Double-click an application node to open the application tab.</p>
+            <h4>Working with the Remote Node</h4><a name="remote"></a>
+            <p>When VisualVM connects to a remote host, the remote host is listed as a node under the Remote node.
+            When connected to a remote host, you can expand the node for the remote host to see the Java applications that are running on that host.
+            When a Java application is launched on the remote host, a node for that application is displayed under the remote host node.</p>
             
-            <p><b>Note.</b> VisualVM can retrieve monitoring information on remote applications but it cannot profile remote applications. </p>
+            <p>You need to explicitly add the location of remote hosts if you want VisualVM to be able to connect to the host.
+            Once a remote host is added, VisualVM persists the address of the remote host and will make a connection to the host each time 
+            VisualVM is started. 
+            If you do not want VisualVM to connect to the host on startup, you should right-click the remote host node and choose Remove
+            before quitting VisualVM.</p>
             
-            <h5>Connecting to a Remote Host</h5>
-            <p>To add a remote host, right-click the Remote node, choose Add Remote Host and type the host name or IP address in the Add Remote Host dialog box.</p> 
+            
             <p><b>Note:</b> To retrieve and display information on applications running on the remote host, the <tt>jstatd</tt> utility
             needs to be running on the remote host.
             To start the <tt>jstatd</tt> utility, type jstatd on the command line.
             The <tt>jstatd</tt> utility is included as part of JDK 6.
             <a href="http://java.sun.com/javase/6/docs/technotes/tools/share/jstatd.html">jstatd - Virtual Machine jstat Daemon</a>
             </p>
+
+            <p>For more, see <a href="applications_remote.html">Working with Remote Applications</a>.</p>
             
             
-            <h4>VM Coredumps</h4><a name="coredump"></a>
-            
-    <!--    <p>intro - describes the basic UI - getting started
-        <ul>
-            <li>screenshot of startup screen</li>
-            <li>description of Applications window - local monitoring and remote</li>
-            <li>description of main window - each application is represented in a tab in the main window -
-            each application tab has the following tabs
+            <h4>Working with VM Coredumps</h4><a name="coredump"></a>
+            <p></p>
+        
+            <h4>Working with Application Snapshots</h4><a name="snapshots"></a>
+            <p>The Snapshots node lists application snapshots that are saved to your local system.
+            You can right-click the Snapshots node to open save application snapshots.</p>
+            <p>Each application snapshot has the following items available in the popup menu.</p>
             <ul>
-                <li><a href="">Overview</a></li>
-                <li><a href="">Monitor</a></li>
-                <li><a href="">Threads</a> (local only)</li>
-                <li><a href="">Profile</a> (local only)</li>
+                <li>Remove</li>
+                <li>Rename</li>
             </ul>
-            </li>
-            <li>tabs may have subtabs, eg Overview tab has the followng tabs:
-            Saved Data, JVM arguments, System properties</li>
-            
-        </ul>
-        </p>-->
-        
-        <h4>Snapshots</h4><a name="snapshots"></a>
-        <p>The Snapshots node lists profiling snapshots that are saved to your local system.</p>
-        
+            <p>For more about snapshots, see <a href="snapshots.html">Working with Snapshots</a>.</p>
     </body>
 </html>

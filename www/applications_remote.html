@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Working with Remote Applications</title>
+        <link rel="stylesheet" type="text/css" href="default.css" />
+    </head>
+    <body>
+        <h2>Working with Remote Applications</h2>
+        <p>When you start VisualVM, the Applications window is visible in the left of the VisualVM window.
+        The Applications window enables you to quickly view running local and remote applications. 
+        The Applications also displays core dumps and profiling snapshots saved to your local system.</p>
+        
+        <p>You can perform actions on listed items by right-clicking the node in the Applications 
+        window and choosing an action from the popup menu.</p>
+            
+ <!--           You can view additional information and perform actions on items listed in the Applications window by 
+        right-clicking a node and choosing a item from the popup menu.
+        
+        When you right-click a node in the Applications window, a popup menu opens
+        with actions you can choose from.
+        When you invoke an open tabs in the main windowNodes in the displays local and remote applications that you can connect to with VisualVM.
+        The Applications window displays the process id (PID) of each application is displayed next to the application name.</p>
+     -->  
+    <!-- 
+    
+    
+    <img src="images/docs/applications-window.png" style="border:1px solid;" alt="screenshot of VisualVM window" 
+        title="screenshot of VisualVM window" />
+    -->
+
+        
+        <!--
+            <p><b>Note.</b> VisualVM can retrieve monitoring information on remote applications but it cannot profile remote applications. </p>
+            
+            <p>Each remote application has the following items available in the popup menu.</p>
+            <ul>
+                <li>Remove</li>
+                <li>Rename</li>
+                <li>JMX Connection</li>
+            </ul>
+            -->
+            <!--<h5>Connecting to a Remote Host</h5>
+            <p>To add a remote host, right-click the Remote node, choose Add Remote Host and type the host name or IP address in the Add Remote Host dialog box.</p> 
+            -->
+                      
+
+          
+            <h4>Remote Node</h4><a name="remote"></a>
+            <p>The Remote node displays the remote hosts that VisualM is connected to.
+            When you are connected to a remote host, you can expand the node for the remote host to see the Java applications that are running on that host.
+            When a Java application is launched on the remote host, a node for that application is displayed under the Remote node.
+            Double-click an application node to open the application tab.</p>
+            
+            <p><b>Note.</b> VisualVM can retrieve monitoring information on remote applications but it cannot profile remote applications. </p>
+            
+            <h5>Connecting to a Remote Host</h5>
+            <p>To add a remote host, right-click the Remote node, choose Add Remote Host and type the host name or IP address in the Add Remote Host dialog box.</p> 
+            <p><b>Note:</b> To retrieve and display information on applications running on the remote host, the <tt>jstatd</tt> utility
+            needs to be running on the remote host.
+            To start the <tt>jstatd</tt> utility, type jstatd on the command line.
+            The <tt>jstatd</tt> utility is included as part of JDK 6.
+            <a href="http://java.sun.com/javase/6/docs/technotes/tools/share/jstatd.html">jstatd - Virtual Machine jstat Daemon</a>
+            </p>
+            
+            
+
+    </body>
+</html>

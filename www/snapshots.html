@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Taking Snapshots</title>
+        <link rel="stylesheet" type="text/css" href="default.css" />
+    </head>
+    <body>
+        <h2>Taking Snapshots</h2>
+        
+        <p>VisualVM enables you to take snapshots of application data and save the snapshots to your local system.</p>
+
+        <p>You can take and save the following types of snapshots:</p>
+        <p><b>Profiler Snapshots</b></p>
+        <p>Profiler snapshots capture profiling data at the moment the snapshot is taken</p>
+        <ul>
+            <li><b>Memory snapshots.</b> A memory snapshot captures profiling data on allocated objects.
+            You can take a memory snapshot when you are using the profiler to analyze memory usage.
+            You can compare memory snapshots session on a local application.</li>
+            <li><b>CPU snapshots.</b> You can take a CPU snapshot when you are using the profiler to application performance.</li>
+        </ul>
+        <p><b>Application Snapshots</b></p>
+            <p>An application snapshot is an archive of profiler snapshots of an application. 
+            You can take an application snapshot if you have memory or CPU snapshots
+            for the application. - These are saved under the Snapshots node in the Applications window.
+            Application snapshots contains heap and thread dumps.
+            You can take an application snapshot of a local application if you have already created
+            heap or thread dumps.</p>
+        
+        <p>When you take a memory or CPU snapshot, the snapshot opens in the application's tab in the main window.</p>
+        <p>The Snapshots node lists profiling snapshots that are saved to your local system.</p>
+            
+            <p>To take a snapshot during a profiling session, do one of the following:</p>
+            <ul>
+                <li>Click the Take Snapshot of Collected Results button in the Profiler tab</li>
+                <li>Right-click the application node and choose Profiler Snapshot.</li>
+            </ul>
+        
+        
+        <p>The snapshot toolbar enables you to do the following:</p>
+        <ul>
+            <li>Save Snapshot to Custom File</li>
+            <li>Save Current View to Image</li>
+            <li>Find in Results</li>
+            <li>Find Next Occurence - find next occurence of search term <!-- TODO --></li>
+            <li>Find Previous Occurence -find previous occurence of search term <!-- TODO --></li>
+        </ul>
+        
+        
+        
+        
+        <h4>Application Snapshots</h4><a name="application"></a>
+        <p>An application snapshot combine enable you to save all snapshot from an application as one
+        file (<tt>.apps</tt>). When you open an application</p>
+
+        
+        
+        
+    </body>
+</html>

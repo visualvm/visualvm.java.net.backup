@@ -1,13 +1,13 @@
 <html>
     <head>
-        <title>VisualVM Heap Dump Tab</title>
+        <title>Browsing a Heap Dump</title>
         <link rel="stylesheet" type="text/css" href="default.css" />
     </head>
     <body>
-        <h1>VisualVM Heap Dump Tab</h1>
+        <h1>Browsing a Heap Dump</h1>
         <hr />
-        <p>The contents of a heap dump file are displayed in the heap dump tab in the main window.
-        The tab enables you to browse the allocated objects in the heap.
+        <p>You can use VisualVM to browse the contents of a heap dump file and quickly see the allocated objects in the heap.
+        Heap dumps are displayed in the heap dump tab in the main window.
         You can open binary format heap dump files (<tt>.hprof</tt>) saved on your local system 
         or use VisualVM to take heap dumps of running applications.</p>
         
@@ -17,12 +17,15 @@
         By examining the heap you can locate where objects are created and find the references to those objects in the source.
         If the JVM is failing to removed unneeded objects from the heap, VisualVM can help you locate the nearest garbage collecting root for the object.</p>
          
-        <h3>Opening a Heap Dump</h3>
-        <p>If you have a heap dump saved on your local system, you can choose File &gt; Load from the main menu, 
-        select the heap dump file type (<tt>.hprof</tt>) and then locate and open the file.
+        <h4>Opening a Heap Dump File</h4>
+        <p>If you have a heap dump file saved on your local system, you can choose open the file in VisualVM by choosing File &gt; Load from the main menu.
+        VisualVM can open heap dumps saved in the <tt>.hprof</tt> file format.
         When you open a saved heap dump, the heap dump opens as a tab in the main window.</p>
         
+        <h4>Taking a Heap Dump</h4>
         <p>You can use VisualVM to take a heap dump of a local running application.
+        VisualVM takes uses the jhat tool included with the JDK to take heap dumps of applications running on the JVM.
+        
         When you use VisualVM to take a heap dump, the file is only temporary until you explicitly save it.
         If you do not save the file, the file will be deleted when the application closes.</p>
         
