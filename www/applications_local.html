@@ -4,7 +4,8 @@
         <link rel="stylesheet" type="text/css" href="default.css" />
     </head>
     <body>
-        <h2>Working with Local Applications</h2>
+        <h1>Working with Local Applications</h1>
+        <hr />
         <p>When you start VisualVM, each Java application running on the local JVM is displayed as a node under the Local node in the <a href="applications_window.html">Applications window</a>.
         You can expand an application node to see the profiler snapshots, thread dumps and heap dumps of the application.
         Right-clicking an application node or sub-node invokes a popup menu enabling you to choose various actions.</p>
@@ -34,20 +35,16 @@
         <img src="images/docs/applications-window.png" style="border:1px solid;" alt="screenshot of VisualVM window" 
         title="screenshot of VisualVM window" />
     
-        <h4>Viewing Application Data</h4>
+        <h3>Viewing Application Data</h3>
         <p>VisualVM displays data about each running local application in a dedicated tab in the main window.
-        By default, the application tab is closed.
-        To open the application tab, right-click the application node in the Applications window and choose Open.</p>
-        <p>Each local application tab has the following sub-tabs: </p>
-        <ul>
-            <li>Overview</li>
-            <li>Monitor</li>
-            <li>Threads</li>
-            <li>Profiler</li>
-        </ul>
+        By default, the application tab is closed.</p>
+        <p>To open the application tab, right-click the application node in the Applications window and choose Open.
+        When you click Open, the Overview tab of the application tab opens in the main window.</p>
+        <p>For more see <a href="overview_tab.html">Application Overview</a></p>
 
 
-        <h4>Taking a Thread Dump</h4>
+
+        <h3>Taking a Thread Dump</h3>
         <p>You can use VisualVM to take a thread dump to capture information about the active application threads
         at the time you take the thread dump.</p>
 
@@ -62,7 +59,7 @@
         <p>For more see <a href="threads.html">Monitoring Application Threads</a></p>
 
 
-        <h4>Taking a Heap Dump</h4>
+        <h3>Taking a Heap Dump</h3>
         <p>You can take a heap dump of a local application to capture the a snapshot of the objects on the heap.</p>
 
         <p>You can take a heap dump in the following ways:</p>
@@ -77,7 +74,7 @@
         <p>For more see <a href="heapdump.html">Browsing a Heap Dump</a></p>
 
 
-        <h4>Profiling the Application</h4>
+        <h3>Profiling the Application</h3>
         <p>VisualVM includes a profiler that enables you to analyze the performance and analyze memory usage of a local application.</p>
         <p>VisualVM cannot be used to Profile itself - only the Overview and Monitor
         tabs are enabled when VisualVM is the chosen application.</p>
@@ -85,7 +82,11 @@
         
         
         
-        <h5>Taking Snapshots</h5>
+        <h3>Taking Snapshots</h3>
+        <p>VisualVM enables you to take snapshots that capture application data at the time the snapshot is taken.
+        You can save snapshots to the local system.
+        You can send snapshots to other users.
+        You can open and view snapshots when the application is not running.</p>
         <p>For more see <a href="snapshots.html">Taking Sanpshots</a></p>
     </body>
 </html>
