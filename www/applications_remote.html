@@ -4,62 +4,60 @@
         <link rel="stylesheet" type="text/css" href="default.css" />
     </head>
     <body>
-        <h2>Working with Remote Applications</h2>
-        <p>When you start VisualVM, the Applications window is visible in the left of the VisualVM window.
-        The Applications window enables you to quickly view running local and remote applications. 
-        The Applications also displays core dumps and profiling snapshots saved to your local system.</p>
+        <h1>Working with Remote Applications</h1>
+        <hr />
+        <p>VisualVM is able to access and display data about applications running on remote hosts.
+        After connecting to the remote host, VisualVM can display general data about the application and monitor
+        thread activity.</p>
+        <p><b>Note.</b> VisualVM can retrieve monitoring information on remote applications but it cannot profile remote applications. </p>
+
+        <p>The Remote node displays the remote hosts that VisualM is connected to.
+        When you are connected to a remote host, you can expand the node for the remote host to see the Java applications that are running on that host.
+        When a Java application is launched on the remote host, a node for that application is displayed under the Remote node.
+        Right-click the application node and choose Open to open the application tab in the main window.</p>
         
         <p>You can perform actions on listed items by right-clicking the node in the Applications 
         window and choosing an action from the popup menu.</p>
             
- <!--           You can view additional information and perform actions on items listed in the Applications window by 
-        right-clicking a node and choosing a item from the popup menu.
-        
-        When you right-click a node in the Applications window, a popup menu opens
-        with actions you can choose from.
-        When you invoke an open tabs in the main windowNodes in the displays local and remote applications that you can connect to with VisualVM.
-        The Applications window displays the process id (PID) of each application is displayed next to the application name.</p>
-     -->  
-    <!-- 
-    
-    
-    <img src="images/docs/applications-window.png" style="border:1px solid;" alt="screenshot of VisualVM window" 
-        title="screenshot of VisualVM window" />
-    -->
+        <h3>Connecting to a Remote Host</h3>
+        <p>To add a remote host, right-click the Remote node, choose Add Remote Host and type the host name or IP address in the Add Remote Host dialog box.</p> 
+        <p><b>Note:</b> To retrieve and display information on applications running on the remote host, the <tt>jstatd</tt> utility
+        needs to be running on the remote host.
+        To start the <tt>jstatd</tt> utility, type jstatd on the command line.
+        The <tt>jstatd</tt> utility is included as part of JDK 6.
+        <a href="http://java.sun.com/javase/6/docs/technotes/tools/share/jstatd.html">jstatd - Virtual Machine jstat Daemon</a>
+        </p>
+        <p>When VisualVM is connected to a remote host, the following actions are available by right-clicking the application node:</p>
+        <ul>
+            <li>Remove</li>
+            <li>Rename</li>
+            <li>JMX Connection</li>
+        </ul>
+            
+            
+        <h3>Viewing Application Data</h3>
+        <p>VisualVM displays data about each running local application in a dedicated tab in the main window.
+        By default, the application tab is closed.</p>
+        <p>To open the application tab, right-click the application node in the Applications window and choose Open.
+        When you click Open, the Overview tab of the application tab opens in the main window.</p>
+        <p>For more see <a href="overview_tab.html">Application Overview</a></p>
 
-        
-        <!--
-            <p><b>Note.</b> VisualVM can retrieve monitoring information on remote applications but it cannot profile remote applications. </p>
-            
-            <p>Each remote application has the following items available in the popup menu.</p>
-            <ul>
-                <li>Remove</li>
-                <li>Rename</li>
-                <li>JMX Connection</li>
-            </ul>
-            -->
-            <!--<h5>Connecting to a Remote Host</h5>
-            <p>To add a remote host, right-click the Remote node, choose Add Remote Host and type the host name or IP address in the Add Remote Host dialog box.</p> 
-            -->
-                      
 
-          
-            <h4>Remote Node</h4><a name="remote"></a>
-            <p>The Remote node displays the remote hosts that VisualM is connected to.
-            When you are connected to a remote host, you can expand the node for the remote host to see the Java applications that are running on that host.
-            When a Java application is launched on the remote host, a node for that application is displayed under the Remote node.
-            Double-click an application node to open the application tab.</p>
-            
-            <p><b>Note.</b> VisualVM can retrieve monitoring information on remote applications but it cannot profile remote applications. </p>
-            
-            <h5>Connecting to a Remote Host</h5>
-            <p>To add a remote host, right-click the Remote node, choose Add Remote Host and type the host name or IP address in the Add Remote Host dialog box.</p> 
-            <p><b>Note:</b> To retrieve and display information on applications running on the remote host, the <tt>jstatd</tt> utility
-            needs to be running on the remote host.
-            To start the <tt>jstatd</tt> utility, type jstatd on the command line.
-            The <tt>jstatd</tt> utility is included as part of JDK 6.
-            <a href="http://java.sun.com/javase/6/docs/technotes/tools/share/jstatd.html">jstatd - Virtual Machine jstat Daemon</a>
-            </p>
+
+        <h3>Taking a Thread Dump</h3>
+        <p>You can use VisualVM to take a thread dump to capture information about the active application threads
+        at the time you take the thread dump.</p>
+
+        <p>You can take a thread dump in the following ways:</p>
+        <ul>
+            <li>Right-click the application node in the Applications window and choose Thread Dump.</li>
+            <li>Click the Thread Dump button in the Threads tab of the application tab.</li>
+        </ul>
+
+        <p>When you take a thread dump, the thread dump opens as a tab of the application in the main window.
+        A node for the thread dump appears under the application node in the Applications window.</p>
+        <p>For more see <a href="threads.html">Monitoring Application Threads</a></p>
+
             
             
 
