@@ -7,23 +7,31 @@
         <h1>Monitoring Application Threads</h1>
         <hr />
         <p>VisualVM presents data for local and remote applications in a tab specific for that application.
-        When you open an application in VisualVM, each application opens in a new tab in the main window.
-        You can have multiple application tabs open.
-        Each application tab contains sub-tabs that display different types of 
-        information about the application.</p>
+        Application tabs are displayed in the main window to the right of the Applications window and
+        you can have multiple application tabs open at one time.
+        Each application tab contains sub-tabs that display different types of information about the application.</p>
 
-        <p>The Threads tab displays real-time high-level data on thread activity and memory heap and classes loaded in the VM.
-        By default the Threads tab displays a timeline of current thread activity. 
+        <h3>Monitoring applications</h3>
+
+        <p>VisualVM displays real-time, high-level data on thread activity in the Threads tab.
+        
+        </p>
+        
+        <p>By default the Threads tab displays a timeline of current thread activity. 
         You can click a thread in the timeline to view details about that thread in the Details tab.</p>
         
         <h4>Timeline Tab</h4>
-        <p>This tab displays a timeline with real-time thread states. You can zoom in/out on the current view or switch to the Scale to Fit mode. Using the combo box, you can select to display all threads, all live threads or all finished threads. Using (multi)selection, you can also specify a subset of threads to display. 
+        <p>This tab displays a timeline with real-time thread states. 
+        You can zoom in/out on the current view or switch to the Scale to Fit mode. 
+        The drop-down liste enables you to select which threads are displayed.
+        You can choose to view all threads, live threads or finished threads. 
+        Using selection, you can also specify a subset of threads to display. 
         You can double-clicking on a thread timeline to open that thread in the Threads (Details) tab.</p>
         <img src="images/docs/thread-timeline-screen.png" style="border:1px solid;" alt="screenshot of timeline in Threads tab" 
         title="screenshot of timeline in Threads tab" />
       
         <h4>Details Tab</h4>
-        <p>This Details tab displays more detailed information about individual threads. 
+        <p>The Details tab displays more detailed information about individual threads. 
         Using the combobox, you can select to display all threads, all live threads or all finished threads. 
         You can also choose to display only the details of threads selected in the timeline view. 
         For each thread, the name, classname and current status (alive/finished) are displayed. 
@@ -39,7 +47,20 @@
         title="screenshot of timeline in Threads tab" />
         
         <h3>Thread Dump</h3>
-        <p>You can use VisualVM to take a thread dump while a local application is running.</p>
+        <p>You can use VisualVM to take a thread dump while a local application is running.
+        Taking a thread dump does not stop the application.
+        When you print the thread dump you get a printout of the thread stack that includes thread states for the Java threads.
+        </p>
+        
+        <p>causes the HotSpot VM to print a thread dump to the application's standard output
+        <p>When you print a thread dump in VisualVM, the tool uses the <tt>jstack</tt> utility to print the stack 
+        trace of the active threads for the application according to the application's <i>pid</i>.</p>
+        Using VisualVM to take a thread dump can be very convenient in cases where you do not have a command-line
+        console for the application.
+        A stack trace of all threads can be useful in diagnosing a number of issues such as deadlocks or hangs.
+
+
+        </p>
         <img src="images/docs/thread-dump-screen.png" style="border:1px solid;" alt="screenshot of timeline in Threads tab" 
         title="screenshot of timeline in Threads tab" />
         

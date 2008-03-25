@@ -1,10 +1,10 @@
 <html>
     <head>
-        <title>VisualVM Monitor Tab</title>
+        <title>Monitoring an Application</title>
         <link rel="stylesheet" type="text/css" href="default.css" />
     </head>
     <body>
-        <h1>Monitor Tab</h1>
+        <h1>Monitoring an Application</h1>
         <hr />
         <p>VisualVM presents data for local and remote applications in a tab specific for that application.
         When you open an application in VisualVM, each application opens in a new tab in the main window.
@@ -12,15 +12,23 @@
         <p>Each application tab contains sub-tabs that display different types of 
         information about the application.</p>
 
-        <p>The Monitor tab displays real-time high-level data on thread activity and memory heap and classes loaded in the VM.</p>
+        <p>The Monitor tab displays real-time, high-level data about the memory heap
+        thread activity and classes loaded in the VM.</p>
         <p>The Monitor tab contains the following sub-tabs:</p>
         <ul>
             <li><b>Heap.</b> Displays the total heap size and how much of the heap is used currently heap. These are the figures that a Java application can obtain using the java.lang.Runtime.totalMemory() and java.lang.Runtime.freeMemory() calls.</li>
-            <li><b>PermGen</b></li>
+            <li><b>PermGen.</b>
+            The permanent generation is the area of the heap where class and method objects are stored. 
+            If an application loads a very large number of classes, then the size of the permanent generation might need to be increased using the -XX:MaxPermSize option.
+            The PermGen graph displays information retrieved using the <tt>jmap</tt> utility.
+            The PermGen graph displays the relationship between the used permgen space and the total size of the permgen space.
+            </li>
+            
             <li><b>Classes</b> Displays information about class loading.</li>
             <li><b>Threads.</b> Displays the current number of live and daemon threads in the application's JVM.</li>
         </ul>
-        <p>The Monitor tab contains the following buttons:</p>
+        <p>When you are monitoring a local application, you can perform the following actions from within VisualVM.
+        </p>
         <ul>
             <li><b>Perform GC</b> Click this to perform garbage collection immediately.</li>
             <li><b>Heap Dump.</b> Click this to take a <a href="heapdump.html">heap dump</a>. When you take a heap dump,
