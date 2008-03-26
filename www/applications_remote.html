@@ -9,20 +9,15 @@
         <p>VisualVM is able to access and display data about applications running on remote hosts.
         After connecting to a remote host, VisualVM can display general data about the application's runtime environment
         and can monitor memory heap and thread activity.</p>
-        <p><b>Note.</b> VisualVM can retrieve monitoring information on remote applications but it cannot profile remote applications. </p>
+        <p><b>Note.</b> VisualVM can retrieve monitoring information on remote applications but it cannot 
+        profile remote applications. </p>
 
+        <h3>Connecting to a Remote Host</h3>
         <p>Connected remote hosts are displayed as nodes under the Remote node in the Applications window.
         When you are connected to a remote host, VisualVM displays applications running on the host as sub-nodes,
         and automatically updates the status of the remote applications, removing the applications when they
         stop and adding applications when they start.</p>
-
-
-        Right-click the application node and choose Open to open the application tab in the main window.</p>
         
-        <p>You can perform actions on listed items by right-clicking the node in the Applications 
-        window and choosing an action from the popup menu.</p>
-            
-        <h3>Connecting to a Remote Host</h3>
         <p>To add a remote host, right-click the Remote node, choose Add Remote Host and type the host name or IP address in the Add Remote Host dialog box.</p> 
         <p><b>Note:</b> To retrieve and display information on applications running on the remote host, the <tt>jstatd</tt> utility
         needs to be running on the remote host.
@@ -39,15 +34,15 @@
             
             
         <h3>Viewing Application Data</h3>
-        <p>VisualVM displays data about each running local application in a dedicated tab in the main window.
+        <p>VisualVM displays data about each running remote application in a dedicated tab in the main window.
         By default, the application tab is closed.</p>
         <p>To open the application tab, right-click the application node in the Applications window and choose Open.
         When you click Open, the Overview tab of the application tab opens in the main window.</p>
-        <p>For more see <a href="overview_tab.html">Application Overview</a></p>
+        <p>For more see <a href="overview_tab.html">Viewing Application Overview</a></p>
 
 
         <h3>Monitoring Application Activity</h3>
-        <p>You can use VisualVM to monitor a local application and view high-level data on thread activity 
+        <p>You can use VisualVM to monitor a remote application and view high-level data on thread activity 
         and memory heap and garbage collection in the VM.</p>
         <p>For more see <a href="monitor_tab.html">Monitoring an Application</a></p>
         

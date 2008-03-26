@@ -9,14 +9,16 @@
         <p>VisualVM presents data for local and remote applications in a tab specific for that application.
         When you open an application in VisualVM, each application opens in a new tab in the main window.
         You can have multiple application tabs open.</p>
-        <p>Each application tab contains sub-tabs that display different types of 
-        information about the application.</p>
+        
 
-        <p>The Monitor tab displays real-time, high-level data about the memory heap
-        thread activity and classes loaded in the VM.</p>
-        <p>The Monitor tab contains the following sub-tabs:</p>
+        <p>The Monitor tab is a sub-tab of the application tab that displays real-time, high-level data about the memory heap
+        thread activity and classes loaded in the VM.
+        Monitoring an application imposes low overhead and can be used for extended periods.</p>
+        <p>The Monitor tab has graphs that display the following:</p>
         <ul>
-            <li><b>Heap.</b> Displays the total heap size and how much of the heap is used currently heap. These are the figures that a Java application can obtain using the java.lang.Runtime.totalMemory() and java.lang.Runtime.freeMemory() calls.</li>
+            <li><b>Heap.</b> Displays the total heap size and how much of the heap is currently used. 
+            These are the figures that a Java application can obtain using the <tt>java.lang.Runtime.totalMemory()</tt>
+            and java.lang.Runtime.freeMemory() calls.</li>
             <li><b>PermGen.</b>
             The permanent generation is the area of the heap where class and method objects are stored. 
             If an application loads a very large number of classes, then the size of the permanent generation might need to be increased using the -XX:MaxPermSize option.
@@ -24,7 +26,7 @@
             The PermGen graph displays the relationship between the used permgen space and the total size of the permgen space.
             </li>
             
-            <li><b>Classes</b> Displays information about class loading.</li>
+            <li><b>Classes</b> The Classes graph displays information about the total number of loaded classes and shared classes.</li>
             <li><b>Threads.</b> Displays the current number of live and daemon threads in the application's JVM.</li>
         </ul>
         <p>When you are monitoring a local application, you can perform the following actions from within VisualVM.
@@ -33,7 +35,8 @@
             <li><b>Perform GC</b> Click this to perform garbage collection immediately.</li>
             <li><b>Heap Dump.</b> Click this to take a <a href="heapdump.html">heap dump</a>. When you take a heap dump,
             a tab displaying the heap dump opens in the application tab. 
-            A node for the heap dump appears under the node for the application in the Applications window.</li>
+            A node for the heap dump appears under the node for the application in the Applications window.
+            <p>For more, see <a href="heapdump.html">Browsing a Heap Dump</a></p></li>
         </ul>
         
         <img src="images/docs/monitor.png" style="border:1px solid;" alt="screenshot of Monitor tab" 
