@@ -14,7 +14,7 @@
         
         <h2>Starting VisualVM</h2>
         <p>After downloading and unzipping the VisualVM zip file, you start VisualVM by double-clicking the VisualVM
-        executable or typing <tt>visualvm</tt> at the command line.</p>
+        executable or typing <tt>jvisualvm</tt> at the command line.</p>
         <!--<p>The VisualVM executable can be found in JDK_HOME/bin, where JDK_HOME is the directory in which the Java Development Kit (JDK) is installed. 
         If this directory is in your system path, you can start JConsole by simply typing visualvm in a command (shell) prompt. 
         Otherwise, you have to type the full path to the executable file.
@@ -33,7 +33,7 @@
         title="screenshot of VisualVM window" />
         
         <p><b>Applications Window</b><br />
-        The <a href="applications_window.html">Applications window</a> opens in the left of the VisualVM when you launch the application.
+        The <a href="applications_window.html">Applications window</a> opens in the left side of the main VisualVM when you launch the application.
         The Applications window is the main point of entry for exploring the details of running applications.
         The Applications window enables you to quickly view the applications running on the local machine and any connected remote machines.
         You can also access core dumps (Solaris only) and saved snapshots from the Applications window.</p>
@@ -41,20 +41,27 @@
         <p>Right-clicking a node in the Applications window opens a popup menu that enables you to perform actions related to that node, including
         opening application tabs, taking heap and thread dumps and opening snapshots in the main window.</p>
         
-        <p>The Applications window has the following nodes:</p>
+        <!--<p>The Applications window has the following nodes:</p>
         <ul>
             <li><b>Local</b><br/>
-            The Local node displays applications running on the local JVM.<br />
+            Expand the Local node to see the list of Java applications running on the local JVM.<br />
             For more, see <a href="applications_local.html">Working with Local Applications</a></li>
             <li><b>Remote</b><br />
+            Expand the Remote node to see the list of connected remote hosts.
+            You can expand a remote host node to see the list of Java applications running on the remote host.
             For more, see <a href="applications_remote.html">Working with Remote Applications</a></li>
             <li><b>VM Coredump</b><br />
-            <!--For more, see <a href="coredumps.html">Working with Coredumps</a>--></li>
+            Expand the VM Coredump to see a list of VM coredumps saved to the local system. 
+            -->
+            <!--For more, see <a href="coredumps.html">Working with Coredumps</a>-->
+            <!--</li>
             <li><b>Snapshots</b><br />
+            Expand the Snapshots node to see a list of application snapshot files (<tt>.apps</tt>) that are saved to the local system.
+            An application snapshot is an archive of data that VisualVM
             For more, see <a href="snapshots.html">Working with Snapshots</a></li>
-        </ul>
+        </ul>-->
 
-
+        <p>For more, see <a href="applications_window.html">Using the Applications Window</a></p>
 
         <p><b>Main Window</b><br />
         Detailed information about applications is displayed in the main window.
