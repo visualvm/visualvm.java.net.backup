@@ -7,13 +7,16 @@
         <h1>Working with Remote Applications</h1>
         <hr />
         <p>VisualVM is able to access and display data about applications running on remote hosts.
-        After connecting to the remote host, VisualVM can display general data about the application's runtime environment
-        and can monitor thread activity.</p>
+        After connecting to a remote host, VisualVM can display general data about the application's runtime environment
+        and can monitor memory heap and thread activity.</p>
         <p><b>Note.</b> VisualVM can retrieve monitoring information on remote applications but it cannot profile remote applications. </p>
 
-        <p>The Remote node displays the remote hosts that VisualM is connected to.
-        When you are connected to a remote host, you can expand the node for the remote host to see the Java applications that are running on that host.
-        When a Java application is launched on the remote host, a node for that application is displayed under the Remote node.
+        <p>Connected remote hosts are displayed as nodes under the Remote node in the Applications window.
+        When you are connected to a remote host, VisualVM displays applications running on the host as sub-nodes,
+        and automatically updates the status of the remote applications, removing the applications when they
+        stop and adding applications when they start.</p>
+
+
         Right-click the application node and choose Open to open the application tab in the main window.</p>
         
         <p>You can perform actions on listed items by right-clicking the node in the Applications 

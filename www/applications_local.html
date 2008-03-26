@@ -65,7 +65,9 @@
         
         <h3>Taking a Thread Dump</h3>
         <p>You can use VisualVM to take a thread dump to capture information about the active application threads
-        at the time you take the thread dump.</p>
+        at the time you take the thread dump.
+        When you take a thread dump, the thread dump opens as a tab of the application in the main window.
+        A node for the thread dump appears under the application node in the Applications window.</p>
 
         <p>You can take a thread dump in the following ways:</p>
         <ul>
@@ -73,8 +75,6 @@
             <li>Click the Thread Dump button in the Threads tab of the application tab.</li>
         </ul>
 
-        <p>When you take a thread dump, the thread dump opens as a tab of the application in the main window.
-        A node for the thread dump appears under the application node in the Applications window.</p>
         <p>For more see <a href="threads.html">Monitoring Application Threads</a></p>
 
 
@@ -83,7 +83,10 @@
 
 
         <h3>Profiling the Application</h3>
-        <p>VisualVM includes a profiler that enables you to analyze the performance and analyze memory usage of a local application.</p>
+        <p>VisualVM includes a profiler that enables you to analyze the performance and memory usage of a local application.
+        You can profile an application without restarting the target application.
+        You can save profiling results as snapshots to your local system.
+        You can open snapshots later in VisualVM.</p>
         <p>VisualVM cannot be used to Profile itself - only the Overview and Monitor
         tabs are enabled when VisualVM is the chosen application.</p>
         <p>For more see <a href="profiler.html">Using the Profiler</a></p>

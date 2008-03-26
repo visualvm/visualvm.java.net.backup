@@ -8,7 +8,7 @@
         <hr />
         <p>When you start VisualVM, the Applications window is visible in the left of the VisualVM window.
         The Applications window enables you to quickly view application that are running on the local JVM and connected remote hosts. 
-        The Applications window also displays core dumps and applicatio snapshots.</p>
+        The Applications window also displays core dumps and application snapshots.</p>
         
         
             
@@ -21,40 +21,44 @@
         The Applications window displays the process id (PID) of each application is displayed next to the application name.</p>
      -->  
      <h3>Applications Window Nodes</h3>
-        <p>The Application window has nodes and sub-nodes that you can expand to view the running applications and saved files.
+        <p>The Application window has nodes and sub-nodes that you can expand to view running applications and saved files.
         You can right-click the nodes to invoke popup menus that enable you to perform actions on 
         the node. The actions available in the popup menu vary according to the node.</p>
         
+        <img src="images/docs/applications-window.png" style="border:1px solid;" alt="screenshot of VisualVM window" 
+        title="screenshot of VisualVM window" />
+        
         <p>The Applications window has the following primary nodes:</p>
-        <ul>
+        <!--<ul>
             <li><b><a href="#local">Local.</a></b> Expand the Local node to view the applications running on the local JVM.</li>
             <li><b><a href="#remote">Remote.</a></b> Expand the Remote node to view the connected remote hosts.
             Expand the node of a remote host to view the Java applications running on the remote host.</li>
             <li><b><a href="#coredump">Core Dumps.</a></b> (Unix only)</li>
             <li><b><a href="#snapshots">Snapshots.</a></b> Expand the Snapshots node to view saved application snapshots.</li>
-        </ul>
+        </ul>-->
     
     
-        <img src="images/docs/applications-window.png" style="border:1px solid;" alt="screenshot of VisualVM window" 
-        title="screenshot of VisualVM window" />
-        <p></p>
+        
 
         <!--VisualVM cannot be used to Profile itself - only the Overview and Monitor
         tabs are enabled when VisualVM is the chosen application. -->
         
         
-            <h4>Working with the Local Node</h4><a name="local"></a>
-            <p>The Local node displays the name and process ID (PID) of Java applications that are running on the same local JVM as VisualVM.
+            <h4>Local Node</h4><a name="local"></a>
+            <p>The Local node displays the name and process IDs (PID) of Java applications that are running on the same local JVM as VisualVM.
             When you launch VisualVM and expand the local node, VisualVM automatically displays the currently running Java applications.
             VisualVM is always listed as one of the local applications.
             When a local Java application is launched, a node for that application appears under the Local node.</p>
             
-            <p>If there are any thread dumps, heap dumps or profiling snapshots of an application, they are displayed 
-            as sub-nodes below the application node.
-            Application nodes and their sub-nodes are only visible while the application is running.</p>
+            <p>If you use VisualVM to take thread dumps, heap dumps or profiling snapshots of an application, 
+            they are displayed as sub-nodes below the application node.
+            The application nodes under the Local node are updated dynamically.
+            When an application starts, a node for the application is automatically added.
+            When an application is terminated, the node and sub-nodes for the application are removed.</p>
             <p>You can right-click a dump or snapshot sub-node to save it to your local system.
-            You can save all the information collected about an application as an Application snapshot by right-clicking the application node and
-            choosing Save Application Snapshot.
+            You can create an application snapshot to collect and archive all the information collected about an application. 
+            
+            To create an application snapshot, right-click the application node and choose Application Snapshot.
             Saved application snapshots are visible below the <a href="#snapshots">Snapshots node</a> in the Applications window.</p>
 
 <!--            <p>Each local application has the following items available in the popup menu.</p>
@@ -76,7 +80,7 @@
     -->        
             <p>For more, see <a href="applications_local.html">Working with Local Applications</a>.</p>
           
-            <h4>Working with the Remote Node</h4><a name="remote"></a>
+            <h4>Remote Node</h4><a name="remote"></a>
             <p>When VisualVM connects to a remote host, the remote host is listed as a node under the Remote node.
             When connected to a remote host, you can expand the node for the remote host to see the Java applications that are running on that host.
             When a Java application is launched on the remote host, a node for that application is displayed under the remote host node.</p>
@@ -98,12 +102,13 @@
             <p>For more, see <a href="applications_remote.html">Working with Remote Applications</a>.</p>
             
             
-            <h4>Working with VM Coredumps</h4><a name="coredump"></a>
+            <h4>VM Coredumps</h4><a name="coredump"></a>
             <p></p>
         
-            <h4>Working with Application Snapshots</h4><a name="snapshots"></a>
+            <h4>Snapshots</h4><a name="snapshots"></a>
             <p>The Snapshots node lists application snapshots that are saved to your local system.
             You can right-click the Snapshots node to open save application snapshots.</p>
+            An application snapshot can be saved to your local system and opened
             <p>Each application snapshot has the following items available in the popup menu.</p>
             <ul>
                 <li>Remove</li>
