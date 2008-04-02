@@ -7,22 +7,15 @@
         <h1>Using the Applications Window</h1>
         <hr />
         <p>When you start VisualVM, the Applications window is visible in the left of the VisualVM window.
-        The Applications window enables you to quickly view application that are running on the local JVM and connected remote hosts. 
+        The Applications window uses a tree structure to enable you to quickly view the applications that are running on the local JVM and connected remote hosts. 
         The Applications window also displays core dumps and application snapshots.</p>
-        
-        <p>Local and remote applications are listed in the Applications window.
-        The process id (PID) of each application is displayed next to the name of the application.</p><p>
+
             
-        <h3>Applications Window Menus</h3>
-        <p>For most nodes in the Applications window, you can view additional information and perform actions by 
-        right-clicking a node and choosing an item from the popup menu.</p>
-        
-        
-        <h3>Applications Window Nodes</h3>
+        <h2>Applications Window Nodes</h2>
         <p>The Application window has nodes and sub-nodes that you can expand to view running applications and saved files.
-        You can right-click the nodes to invoke popup menus that enable you to perform actions on 
-        the node. The actions available in the popup menu vary according to the node.</p>
-        
+        For most nodes in the Applications window, you can view additional information and perform actions by 
+        right-clicking a node and choosing an item from the popup menu.
+        The actions available in the popup menu vary according to the node.</p>
         <img src="images/docs/applications-window.png" style="border:1px solid;" alt="screenshot of VisualVM window" 
         title="screenshot of VisualVM window" />
         
@@ -42,7 +35,7 @@
         tabs are enabled when VisualVM is the chosen application. -->
         
         
-            <h4>Local Node</h4><a name="local"></a>
+            <h3>Local Node</h3><a name="local"></a>
             <p>The Local node displays the name and process IDs (PID) of Java applications that are running on the same local JVM as VisualVM.
             When you launch VisualVM and expand the local node, VisualVM automatically displays the currently running Java applications.
             VisualVM is always listed as one of the local applications.
@@ -76,9 +69,10 @@
                 an OutOfMemoryException is encountered. The heap dump is save to XXX.</li>
             </ul>
     -->        
-            <p>For more, see <a href="applications_local.html">Working with Local Applications</a>.</p>
+            <p>For more information about how to view data about local applications, see the following document:</p>
+            <ul><li>For more, see <a href="applications_local.html">Working with Local Applications</a>.</li></ul>
           
-            <h4>Remote Node</h4><a name="remote"></a>
+            <h3>Remote Node</h3><a name="remote"></a>
             <p>When VisualVM connects to a remote host, the remote host is listed as a node under the Remote node.
             When connected to a remote host, you can expand the node for the remote host to see the Java applications that are running on that host.
             When a Java application is launched on the remote host, a node for that application is displayed under the remote host node.</p>
@@ -97,13 +91,14 @@
             <a href="http://java.sun.com/javase/6/docs/technotes/tools/share/jstatd.html">jstatd - Virtual Machine jstat Daemon</a>
             </p>
 
-            <p>For more, see <a href="applications_remote.html">Working with Remote Applications</a>.</p>
+            <p>For more information about how to view data about remote applications, see the following document:</p>
+            <ul><li><a href="applications_remote.html">Working with Remote Applications</a>.</li></ul>
             
             
-            <h4>VM Coredumps</h4><a name="coredump"></a>
+            <h3>VM Coredumps</h3><a name="coredump"></a>
             <p></p>
         
-            <h4>Snapshots</h4><a name="snapshots"></a>
+            <h3>Snapshots</h3><a name="snapshots"></a>
             <p>The Snapshots node lists application snapshots that are saved to your local system.
             You can right-click the Snapshots node to open save application snapshots.</p>
             An application snapshot can be saved to your local system and opened
