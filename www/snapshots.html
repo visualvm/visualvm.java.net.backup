@@ -8,8 +8,13 @@
         <hr />
         <p>VisualVM enables you to take snapshots of application data and save the snapshots to your local system.</p>
 
-        <p>You can take and save the following types of snapshots:</p>
-        <p><b>Profiler Snapshots</b></p>
+        <h2>Snapshot Types</h2>
+        <p>VisualVM
+            
+            You can take and save the following types of snapshots:</p>
+        
+        
+        <h3>Profiler Snapshots</h3>
         <p>Profiler snapshots capture profiling data at the moment the snapshot is taken</p>
         <ul>
             <li><b>Memory snapshots.</b> A memory snapshot captures profiling data on allocated objects.
@@ -17,10 +22,13 @@
             You can compare memory snapshots session on a local application.</li>
             <li><b>CPU snapshots.</b> You can take a CPU snapshot when you are using the profiler to application performance.</li>
         </ul>
-        <p><b>Application Snapshots</b></p>
-            <p>An application snapshot is an archive of profiler snapshots of an application. 
+        <h3>Application Snapshots</h3>
+            <p>An application snapshot is an archive of all the profiler snapshots of an application
+            that is saved as one file (<tt>.apps</tt>).
+            </p>
             You can take an application snapshot if you have memory or CPU snapshots
-            for the application. - These are saved under the Snapshots node in the Applications window.
+            for the application.
+            - These are saved under the Snapshots node in the Applications window.
             Application snapshots contains heap and thread dumps.
             You can take an application snapshot of a local application if you have already created
             heap or thread dumps.</p>
@@ -45,12 +53,6 @@
         </ul>
         
         
-        
-        
-        <h4>Application Snapshots</h4><a name="application"></a>
-        <p>An application snapshot combine enable you to save all snapshot from an application as one
-        file (<tt>.apps</tt>). When you open an application</p>
-
         
         
         

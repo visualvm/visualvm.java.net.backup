@@ -14,20 +14,21 @@
         both local applications and applications that are running on remote hosts.</p>
         
         <h3>Starting VisualVM</h3>
-        <p>After downloading and unzipping the VisualVM zip file, you start VisualVM by double-clicking the VisualVM
-        executable or typing the following command at the command line.<p>
-        <p><tt>jvisualvm</tt></p>
+        <p>After you download and extract the VisualVM zip archive to your local system, navigate to the <tt>bin</tt> directory of the expanded archive
+        and double-click the VisualVM executable or type the following at the command (shell) prompt:<p>
+        <p><tt>visualvm</tt></p>
+        <p>The first time that you launch VisualVM you are prompted to accept the license agreement.
+        On Windows, the default location for the VisualVM <tt>userdir</tt> is the following: </p>
+        <p><tt>C:\Documents and Settings\<i>&lt;USER&gt;</i>\Application Data\.visualvm\FCS</tt></p>
+        <p>To find the location of your VisualVM <tt>userdir</tt>, choose Help &gt; About from the main menu and click Details in the About VisualVM window.</p>
         
-        <!--<p>The VisualVM executable can be found in JDK_HOME/bin, where JDK_HOME is the directory in which the Java Development Kit (JDK) is installed. 
-        If this directory is in your system path, you can start JConsole by simply typing visualvm in a command (shell) prompt. 
-        Otherwise, you have to type the full path to the executable file.
-        -->
 
+<!--
         <h3>Command Syntax</h3>
 
         <p>For a complete reference on the syntax of the <tt>jvisualvm</tt> command, see the manual page: 
         <a href="#"><tt>jvisualvm</tt> man page</a>.</p>
-
+-->
 
         <h2>VisualVM Windows</h2>
         <p>When you start VisualVM, the main VisualVM window opens.
@@ -73,26 +74,16 @@
         </ul>
 
 
-        <h3>VisualVM Plugins</h3>
+        <h2>VisualVM Plugins</h2>
         <p>You can add functionality to VisualVM by installing VisualVM plugins from the VisualVM update center.</p>
         <p>You can develop plugins for VisualVM</p>
 
-<p>For more information about plugins, see the following documents:</p>        
-        
+        <p>For more information about plugins, see the following documents:</p>        
+        <ul>
+            <li><a href="plugins.html">Working with VisualVM Plugins</a></li>
+        </ul>
       <!--  <img src="images/overview.png"/><br>
-        <b>Figure 3: Application Tab</b>
-        <p>Each application tab has one or more displays that provide information
-        about the selected Java application.</p>
-        <h4>Overview</h4>
-        <p>The Overview display shows high-level information about the application:
-        its process ID, Java version used to run it, the name of the main class, etc.</p>
-        <h4>Monitor</h4>
-        <p>The Monitor display provides radio buttons so that you can select from 
-            four different graphs: Heap, Permanent Generation, Threads, and Classes.  Figure
-            4 shows the heap graph.  Total heap space is in red and the actual amount
-        of heap in use is shown in purple.</p>
-        <img src="images/monitor.png"/><br>
-        <b>Figure 4: Monitor Display</b>
+
         <h4>Profiler</h4>
         <p>The Profiler display (Figure 5) provides a user interface for tracking thread
             state, CPU bottlenecks, and memory usage patterns and problems.  It uses 
@@ -101,17 +92,7 @@
         <img src="images/profiling.png"/><br>
         <b>Figure 5: Profiler Display</b>
         
-        <a name="remote_applications"></a>
-        <h3>Remote Applications</h3>
-        <p>VisualVM can display information about Java applications that are running
-            on other systems.  To add another system, right-click the Remote entry
-            in the Applications window and then fill in the dialog that is shown in 
-            Figure 6. Note that the jstatd utility must be running on the remote
-            system - more information about jstatd is available 
-            <a href="http://java.sun.com/javase/6/docs/tooldocs/share/jstatd.html">
-        here</a>.</p>
-        <img src="images/remote.png"/><br>
-        <b>Figure 6: Add Remote Host</b>
+
         
         <a name="heap_dumps"></a>
         <h3>Heap Dump Files</h3>
@@ -140,27 +121,7 @@
             whether or not it should write a heap dump in the event of an
             OutOfMemoryError (OOME).</p>
         
-        <a name="mbean_browser"></a>
-        <h3>MBean Browser VisualVM Plugin</h3>
-        <p>The MBean Browser is a new VisualVM plugin available in the VisualVM
-        Plugin Center which provides the same functionality as the
-        <a href="http://java.sun.com/javase/6/docs/technotes/guides/management/jconsole.html#gdeap">JConsole's MBeans tab</a>.
-        In order to install it just choose Tools &gt; Plugins from the main menu
-        of VisualVM, select the VisualVM-MBeans plugin and click on the Install
-        button.</p>
-        <img src="images/mbean_browser_uc.png"/><br>
-        <b>Figure 9: MBean Browser plugin in the VisualVM Plugin Center</b>
-        <p>The MBean Browser plugin allows to browse the MBeans registered in the
-        out-of-the-box management agent's platform MBean server both in local and
-        remote Java applications. It also allows to get and set MBean attributes
-        and invoke MBean operations as well as subscribing for MBean notifications.</p>
-        <img src="images/mbean_browser.png"/><br>
-        <b>Figure 10: MBean Browser displays the attributes of the ClassLoading
-        MXBean in the local Notepad application</b>
-        <p>The MBean Browser will be enabled - by right-clicking in a given local
-        or remote application and choosing the Open item in the contextual menu - whenever JMX
-        is enabled in the target VM. See <a href="#jmx">Enabling JMX access in the target VM</a>
-        for more detailed information.</p>
+
 
         <a name="jconsole_plugins"></a>
         <h3>JConsole Plugins Wrapper VisualVM Plugin</h3>

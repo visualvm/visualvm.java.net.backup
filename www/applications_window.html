@@ -37,20 +37,18 @@
         
             <h3>Local Node</h3><a name="local"></a>
             <p>The Local node displays the name and process IDs (PID) of Java applications that are running on the same local JVM as VisualVM.
-            When you launch VisualVM and expand the local node, VisualVM automatically displays the currently running Java applications.
+            When you launch VisualVM and expand the Local node, VisualVM automatically displays the currently running Java applications.
             VisualVM is always listed as one of the local applications.
-            When a local Java application is launched, a node for that application appears under the Local node.</p>
+            When a local Java application is launched, a node for that application appears under the Local node.
+            The application node is removed when the application terminates.</p>
             
             <p>If you use VisualVM to take thread dumps, heap dumps or profiling snapshots of an application, 
-            they are displayed as sub-nodes below the application node.
-            The application nodes under the Local node are updated dynamically.
-            When an application starts, a node for the application is automatically added.
-            When an application is terminated, the node and sub-nodes for the application are removed.</p>
-            <p>You can right-click a dump or snapshot sub-node to save it to your local system.
-            You can create an application snapshot to collect and archive all the information collected about an application. 
-            
+            they are displayed as sub-nodes below the node for that application.
+            You can right-click a dump or snapshot sub-node to save it to your local system.
+            You can collect and archive all the information collected about an application and save it as an application snapshot. 
+            <!--
             To create an application snapshot, right-click the application node and choose Application Snapshot.
-            Saved application snapshots are visible below the <a href="#snapshots">Snapshots node</a> in the Applications window.</p>
+            Saved application snapshots are visible below the <a href="#snapshots">Snapshots node</a> in the Applications window.--></p>
 
 <!--            <p>Each local application has the following items available in the popup menu.</p>
             <ul>
@@ -70,7 +68,10 @@
             </ul>
     -->        
             <p>For more information about how to view data about local applications, see the following document:</p>
-            <ul><li>For more, see <a href="applications_local.html">Working with Local Applications</a>.</li></ul>
+            <ul>
+                <li><a href="applications_local.html">Working with Local Applications</a></li>
+                <li><a href="snapshots.html">Working with Snapshots</a></li>
+            </ul>
           
             <h3>Remote Node</h3><a name="remote"></a>
             <p>When VisualVM connects to a remote host, the remote host is listed as a node under the Remote node.
@@ -107,6 +108,8 @@
                 <li>Remove</li>
                 <li>Rename</li>
             </ul>
-            <p>For more about snapshots, see <a href="snapshots.html">Working with Snapshots</a>.</p>
+            <p>For more information about taking and saving snapshots, see the following document:</p>
+
+            <ul><li><a href="snapshots.html">Working with Snapshots</a></li></ul>
     </body>
 </html>
