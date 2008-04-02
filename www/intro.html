@@ -37,7 +37,7 @@
         title="screenshot of VisualVM window" />
         
         <h3>Applications Window</h3>
-        <p>The <a href="applications_window.html">Applications window</a> opens in the left side of the main VisualVM when you launch the application.
+        <p>The Applications window opens in the left side of the main VisualVM when you launch the application.
         The Applications window is the main point of entry for exploring the details of running applications.
         The Applications window uses a tree structure to enable you to quickly view the applications running on the local machine and any connected remote machines.
         You can also access core dumps (Solaris only) and saved snapshots from the Applications window.</p>
@@ -46,7 +46,7 @@
         opening application tabs, taking heap and thread dumps and opening snapshots in the main window.</p>
         
 
-        <p>For more details about how to use the Applications window to view and save data about applications, see the following documents:</p>
+        <p>For more details about how to use the Applications window to view and save data about applications, see the following pages:</p>
         <ul>
             <li><a href="applications_window.html">Using the Applications Window</a></li>
             <li><a href="applications_local.html">Working with Local Applications</a></li>
@@ -62,7 +62,7 @@
         that enables you to easily view and navigate the data.
         Saved thread dumps and heap dumps are also opened in the main window.</p>
         
-        <p>For information about the tabs used to display application data, see the following documents:</p>
+        <p>For information about the tabs used to display application data, see the following pages:</p>
         <ul>
             <li><a href="overview_tab.html">Overview Tab</a></li>
             <li><a href="monitor_tab.html">Monitor Tab</a></li>
@@ -75,121 +75,29 @@
 
 
         <h2>VisualVM Plugins</h2>
-        <p>You can add functionality to VisualVM by installing VisualVM plugins from the VisualVM update center.</p>
-        <p>You can develop plugins for VisualVM</p>
+        <p>You can add functionality to VisualVM by using the Plugins manager to install plugins from the VisualVM Plugins Center.
+        You can also extend the functionality of VisualVM by developing your own plugins that can then be added to an update center.</p>
 
-        <p>For more information about plugins, see the following documents:</p>        
+        <p>For example, installing the VisualVM-MBeans plugin adds an MBeans tab to the application tab 
+        that enables you to <a href="http://java.sun.com/javase/6/docs/technotes/guides/management/jconsole.html#gdeap">monitor and manage MBeans</a> 
+        from within VisualVM.</p>
+        <p><b>To install a VisualVM plugin:</b></p>
+        <ol>
+            <li>Choose Tools &gt; Plugins from the main menu.</li>
+            <li>In the Available Plugins tab, select the Install checkbox for the plugin. Click Install.</li>
+            <li>Step through and complete the plugin installer.<br/>
+        </ol>        
+        <img src="images/getstarted/vvm-plugins-window.png" alt="screenshot of Plugins window" 
+        title="Screenshot of Plugins window">
+        
+        
+
+        <p>For more information about VisualVM plugins, see the following documents:</p>        
         <ul>
             <li><a href="plugins.html">Working with VisualVM Plugins</a></li>
+            <li><a href="api-quickstart.html">Getting Started Extending VisualVM</a></li>
         </ul>
-      <!--  <img src="images/overview.png"/><br>
 
-        <h4>Profiler</h4>
-        <p>The Profiler display (Figure 5) provides a user interface for tracking thread
-            state, CPU bottlenecks, and memory usage patterns and problems.  It uses 
-            dynamic instrumentation of the Java application in order to provide this
-        information, so it introduces some overhead. </p>
-        <img src="images/profiling.png"/><br>
-        <b>Figure 5: Profiler Display</b>
-        
-
-        
-        <a name="heap_dumps"></a>
-        <h3>Heap Dump Files</h3>
-        <p>The VisualVM application can also read binay heap dump files that have 
-            been written by a Java Virtual Machine.  Note that it is not necessary to
-            open any Java applications in order to use this feature.  Just choose
-            Profile &gt; Load Heap Dump from the main menu of VisualVM.  Select 
-            a binary heap dump file and VisualVM will display detailed information
-        about that heap dump in its HeapWalker, as shown in Figure 7.</p>
-        <img src="images/hw.png"/><br>
-        <b>Figure 7: HeapWalker</b>
-        <p>The HeapWalker is useful for tracking down memory leaks - its Instances
-            view shows all object instances for a class.  You can right-click an object
-            in the References section and choose Find Nearest GC Root, as shown in 
-            Figure 8.  This will cause the HeapWalker to search for and then display
-            the nearest garbage collection root object.
-        </p>
-        <img src="images/gc.png"/><br>
-        <b>Figure 8: Find Nearest GC Root</b>
-        <h3>Collecting Thread and Heap Dumps</h3>
-        <p>As shown in the context menu in Figure 2, VisualVM can collect data from an application
-            as it is running.  Select Thread Dump from the context menu to create an ASCII file that contains
-            stack traces for each thread currently running in the application.  Select
-        Heap Dump from the context menu to create a binary heap dump file.</p>
-        <p>You can also enable and disable a flag that indicates to the JVM
-            whether or not it should write a heap dump in the event of an
-            OutOfMemoryError (OOME).</p>
-        
-
-
-        <a name="jconsole_plugins"></a>
-        <h3>JConsole Plugins Wrapper VisualVM Plugin</h3>
-        <p>This plugin wraps custom JConsole plugins and integrates them into VisualVM.
-        The aim of this plugin is to serve as a smooth migration path for JConsole plugin
-        developers. The custom JConsole plugins supplied using the jconsole.plugin.path
-        system property will be loaded into the VisualVM tool.</p>
-        <p><b>Usage:</b></p>
-        <p style="color: blue">$ visualvm [-J-Djconsole.plugin.path=&lt;plugin-path&gt;]</p>
-        <ul>
-            <li>where &lt;plugin-path&gt; specifies the paths to the jar files of the JConsole plugins
-            to look up. Multiple paths are separated by the path separator character of the platform.</li>
-        </ul>
-        <p>This plugin is available in the VisualVM Plugin Center. In order to install
-        it just choose Tools &gt; Plugins from the main menu of VisualVM, select the
-        VisualVM-JConsole plugin and click on the Install button.</p>
-        <img src="images/jconsole_plugins_uc.png"/><br>
-        <b>Figure 11: JConsole plugins in the VisualVM Plugin Center</b>
-        <p>The picture below shows an example of VisualVM running the JTop JConsole plugin
-        supplied with the JDK under &lt;jdk-home&gt;/demo/management/JTop/JTop.jar</p>
-        <img src="images/jconsole_plugins_jtop.png"/><br>
-        <b>Figure 12: JTop JConsole plugin running inside VisualVM.</b>
-        <p>The support for custom JConsole plugins in VisualVM will be enabled
-        - by right-clicking in a given local or remote application and choosing
-        the Open item in the contextual menu - whenever JMX is enabled in the
-        target VM. See <a href="#jmx">Enabling JMX access in the target VM</a>
-        for more detailed information.</p>
-
-        <a name="jmx"></a>
-        <h3>Enabling JMX access in the target VM</h3>
-        <p>The JMX access will be enabled in the target VM in the following cases:</p>
-            <ul>
-                <li>local process:</li>
-                <ul>
-                    <li>the local Java application is running on JDK 6 or higher
-                    (no special management system property needed)</li>
-                    <li>the local Java application is running on JDK 5 and has been
-                    started with the <b>-Dcom.sun.management.jmxremote</b> system property, e.g.<br>
-                <pre>$ java -Dcom.sun.management.jmxremote MyApp</pre></li>
-                </ul>
-                <li>remote process:</li>
-                <ul>
-                    <li>the remote Java application is running on JDK 5 or higher
-                    and has been started with a specific port for remote management
-                    and security has been disabled (both authentication and encryption), e.g.<br>
-                    <pre>$ java -Dcom.sun.management.jmxremote.port=&lt;port&gt; -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false MyApp</pre></li>
-                </ul>
-            </ul>
--->
-        <!--a name="feature_matrix"></a>
-        <h3>JDK Dependent Feature Matrix</h3>
-        <p>The VisualVM features that are available depend on the JDK version that
-            is used to run your application.  All features are available if your application
-            is running on JDK 6 or higher, but only a subset is available if your application
-            is running on JDK 1.4.2 or JDK 5.  The table below shows the available features.
-        </p>
-        <table border=1>
-            <tr><td><b>Feature</b></td><td style="text-align:center;" width="15%"><b>1.4.2 <small>local/remote</small></b></td><td style="text-align:center;" width="15%"><b>5 <small>local/remote</small></b></td><td style="text-align:center;" width="15%"><b>6 <small>local</small></b></td><td style="text-align:center;" width="15%"><b>6 <small>remote</small></b></td></tr>
-            <tr><td>Overview</td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td></tr>
-            <tr><td>System Properties (in Overview)</td><td style="text-align:center;">&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
-            <tr><td>Monitor</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td></tr>
-            <tr><td>Profiler</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
-            <tr><td>Thread Dump</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
-            <tr><td>Heap Dump</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
-            <tr><td>Enable Heap Dump on OOME</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
-            <tr><td>MBean Browser</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td></tr>
-            <tr><td>JConsole plugins</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td></tr>
-        </table-->
         
     </body>
 </html>

@@ -6,33 +6,44 @@
     <body>
         <h1>Working with Snapshots</h1>
         <hr />
-        <p>VisualVM enables you to take snapshots of application data and save the snapshots to your local system.</p>
+        <p>VisualVM enables you to take snapshots of application data and save the snapshots to your local system.
+        Snapshots are a convenient way to capture data about an application because
+        after a snapshot is saved it can be opened and viewed at any time.
+        The target application does not need to be running to view the snapshot. 
+        Snapshots can also be sent and viewed by other people.</p>
 
         <h2>Snapshot Types</h2>
-        <p>VisualVM
-            
-            You can take and save the following types of snapshots:</p>
+        <p>Snapshots are basically archives of captured data that can then be opened in VisualVM.
+        You can take and save the following types of snapshots:</p>
         
         
         <h3>Profiler Snapshots</h3>
-        <p>Profiler snapshots capture profiling data at the moment the snapshot is taken</p>
+        <p>Profiler snapshots capture profiling data at the moment the snapshot is taken.
+        You can take a profiler snapshot at any time during a profiling session.
+        When you take a profiler snapshot, a node representing the snapshot appears below the application
+        node in the Applications window and a temporary snapshot file is written to your local system.</p>
+        <p>VisualVM can take the following types of profiler snapshots</p>
         <ul>
-            <li><b>Memory snapshots.</b> A memory snapshot captures profiling data on allocated objects.
+            <li><b>Memory Snapshot.</b> A memory snapshot captures profiling data on allocated objects.
             You can take a memory snapshot when you are using the profiler to analyze memory usage.
             You can compare memory snapshots session on a local application.</li>
-            <li><b>CPU snapshots.</b> You can take a CPU snapshot when you are using the profiler to application performance.</li>
+            <li><b>CPU Snapshot.</b> You can take a CPU snapshot when you are using the profiler to analyze application performance.</li>
         </ul>
+        <p>If you want to view a profiler snapshot later, the snapshot must be explicitly saved to your local system, 
+        either as a profiler snapshot or archived in an application snapshot.</p>
+
         <h3>Application Snapshots</h3>
-            <p>An application snapshot is an archive of all the profiler snapshots of an application
-            that is saved as one file (<tt>.apps</tt>).
+            <p>An application snapshot is an archive of heap dumps, thread dumps and profiler snapshots of an application
+            that is then saved as one file (<tt>.apps</tt>).
+            An application also captures general JVM information about the such as the JVM version and arguments.  
             </p>
-            You can take an application snapshot if you have memory or CPU snapshots
-            for the application.
-            - These are saved under the Snapshots node in the Applications window.
+            <p>These are saved under the Snapshots node in the Applications window.
             Application snapshots contains heap and thread dumps.
             You can take an application snapshot of a local application if you have already created
             heap or thread dumps.</p>
         
+        
+        <h2>Taking Snapshots</h2>
         <p>When you take a memory or CPU snapshot, the snapshot opens in the application's tab in the main window.</p>
         <p>The Snapshots node lists profiling snapshots that are saved to your local system.</p>
             
