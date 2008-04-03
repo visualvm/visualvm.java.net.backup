@@ -28,7 +28,9 @@ for details and fix.</p><br>
 <p><b>Description:&nbsp;</b>There are no running applications shown for remote host in the Applications window on the left side.</p>
 <p><b>Resolution:&nbsp;&nbsp;</b>Make sure that the <code>jstatd</code> utility is running on the remote host you want to monitor.
 This is a requirement for VisualVM to be able to discover and access remote Java applications. More information about <code>jstatd</code> can be found
-in Remote Applications section of the <a href="description.html#remote_applications">Introduction to VisualVM</a> document.</p><br>
+in the Remote Applications section of the <a href="description.html#remote_applications">Introduction to VisualVM</a> document.</p>
+<p><b>Known limitation:&nbsp;</b>In this VisualVM release the <code>jstatd</code>'s default <code>port</code> and <code>rminame</code> must
+be used when starting the <code>jstatd</code> utility, i.e. the use of the <code>-p</code> and <code>-n</code> options is not supported.</p><br>
 
 <a name="xshare"></a>
 <h3>Profiler Tab Shows Warning About Class Sharing, Profiling Does Not Work</h3>
@@ -45,7 +47,7 @@ and <a href="http://bugs.sun.com/bugdatabase/view_bug.do;jsessionid=75eeb97f4042
     still take thread and heap dumps of applications running on JDK 6.0 on Mac OS X.</p><br>
 
 <a name="gfstatsdisabled"></a>
-<h3>Can Not Get The List Of Web Applications From GlassFish</h3>
+<h3>Cannot Get The List Of Web Applications From GlassFish</h3>
 <p><b>Description:&nbsp;</b>Opening the "Model" subnode of the GlassFish application hangs with "Please Wait" displayed</p>
 <p><b>Resolution:&nbsp;&nbsp;</b>This happens when monitoring of web applications is not allowed on the target server. In order to enable monitoring 
       you need to go to <i>Application Server/Monitor/Runtime/Configure Monitoring</i> from the GlassFish administration console and set
