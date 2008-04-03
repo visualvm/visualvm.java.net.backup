@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Working with Core Dumps</title>
+        <link rel="stylesheet" type="text/css" href="default.css" />
+    </head>
+    <body>
+        <h2>Working with Core Dumps</h2>
+        <p>When you start VisualVM, the Applications window is visible in the left of the VisualVM window.
+        The Applications window enables you to quickly view running local and remote applications. 
+        The Applications also displays core dumps and profiling snapshots saved to your local system.</p>
+        
+        <p>The Core Dump node is visible in the Applications window if VisualVM is running on Solaris or Linux.
+        Generally, VisualVm can only open a core dump if the core dump was taken on the same machine.
+        A core dump contains informaton on the JDK and kernel of the machine where the core dump was taken.
+        This information must match the JDK and kernel of the local system.
+        </p>
+        
+        <p>A core dump is a binary file capturing the entire heap contents at the moment the dump is captured.
+        If you have a core dump open, you can then view the heap dump and thread dump.
+        You can view the overview with information about the application and the system properties.
+        
+        If you take a heap or thread dump from the core dump, you can then save the dumps.
+        
+        <p>You can perform actions on listed items by right-clicking the node in the Applications 
+        window and choosing an action from the popup menu.</p>
+            
+      dum      When you open a core dump in VisualVm, a node for the core dump appears below the Core Dump node.
+            
+            Right-click the core dump node and choose Heap Dump or Thread Dump
+            When you extract the dump, a node for the dump appears under the core dump node
+            
+            <h4>VM Coredumps</h4><a name="coredump"></a>
+            
+    </body>
+</html>

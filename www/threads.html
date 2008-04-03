@@ -14,7 +14,10 @@
         <h3>Monitoring applications</h3>
 
         <p>VisualVM displays real-time, high-level data on thread activity in the Threads tab.
-        
+        The Threads tab is visible if VisualVM can make a JMX connection with the target application.
+        If the target application is a local application running on JDK 1.6, the JMX connection is made automatically.
+        If the target application is not running on JDK 1.6, you may need to explicitly establish a JMX connection 
+        with the JVM.
         </p>
         
         <p>By default the Threads tab displays a timeline of current thread activity. 
