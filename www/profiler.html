@@ -18,10 +18,10 @@
         <p>By default the profiling tool is not running until you are ready to profile the application.
         You can choose from the following profiling options:</p>
         <ul>
-            <li><b>CPU.</b> Choose this to profile the performance of the application. 
+            <li><b>CPU Profiling.</b> Choose this to profile the performance of the application. 
             The displayed results are the results that a Java application can obtain using the 
             <tt>java.lang.Runtime.totalMemory()</tt> and <tt>java.lang.Runtime.freeMemory()</tt> calls.</li>
-            <li><b>Memory.</b> Choose this to analyze the memory usage of the application.
+            <li><b>Memory Profiling.</b> Choose this to analyze the memory usage of the application.
             The results display the objects allocated by the application and the class allocating those objects.</li>
         </ul>
         <p>When you start a profiling session, VisualVM attaches to the running local application and starts collecting profiling data.
@@ -49,14 +49,12 @@
         <h4>Filtering profiling results</h4>
         <p>The filter box below the profiling results enables you to filter the displayed results according to the name of the method. 
         To filter the results, enter a term in the method name filter box, select which filtering method to use and press Return. 
-        You can see and select previous filter terms by clicking the arrow to the right of the method name filter box.
-        <!--To restore the full unfiltered list, click Clear Filter ( Clear Filter ) to the right of the method name filter box.--></p>
+        You can see and select previous filter terms by clicking the arrow to the right of the method name filter box.</p>
         
         
         <h3>CPU Profiling</h3>
         <p>This profile command returns detailed data on method-level CPU performance (execution time), showing the total execution time and number of invocations for each method.
-        You can choose to analyze the entire application, part of the application, or startup performance.</p>
-        <p>When analyzing application performance, VisualVM instruments all of the methods of the profiled application. 
+        When analyzing application performance, VisualVM instruments all of the methods of the profiled application. 
         Threads emit the "method entry" event when entering a method and generate the corresponding "method exit" event when exiting the method. 
         Both of these events contain timestamps. This data is processed in real time.</p>
 

@@ -7,14 +7,15 @@
         <h1>Monitoring Application Threads</h1>
         <hr />
         <p>VisualVM presents data for local and remote applications in a tab specific for that application.
-        Application tabs are displayed in the main window to the right of the Applications window and
-        you can have multiple application tabs open at one time.
+        Application tabs are displayed in the main window to the right of the Applications window. 
+        Multiple application tabs can be open at one time.
         Each application tab contains sub-tabs that display different types of information about the application.</p>
 
         <h3>Monitoring applications</h3>
 
         <p>VisualVM displays real-time, high-level data on thread activity in the Threads tab.
-        The Threads tab is visible if VisualVM can make a JMX connection with the target application.
+        The information displayed in the Threads tab is based on Java Management Extensions (JMX).
+        The Threads tab is visible if VisualVM can make a JMX connection with the target application and retrieve JMX instrumentation from the JVM.
         If the target application is a local application running on JDK 1.6, the JMX connection is made automatically.
         If the target application is not running on JDK 1.6, you may need to explicitly establish a JMX connection 
         with the JVM.
