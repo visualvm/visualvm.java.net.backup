@@ -26,7 +26,7 @@
   <li>Select 'Tools' then 'Plugins' in the VisualVM drop-down menus. You will see the following window.
     <p><img src="images/docs/adding-jconsole-plugins-tab.png" alt="Adding the JConsole plug-ins wrapper tab" width="843" height="557" /></p>
   </li>
-  <li>Check 'VisualVM-MBeans' and click 'Install'. </li>
+  <li>Check 'VisualVM-JConsole' and click 'Install'. </li>
   <li>Step through the on-screen  instructions.</li>
   <li>Now, if you highlight a running Java application, right-click, and  then select 'Open', you will see the JConsole Plugins tab in VisualVM's  right-hand window. However, no JConsole plug-ins are displayed in the tab yet, as shown below.
 <p> <img src="images/docs/jconsole-plugins-tab.png" alt="JConsole plug-in wrapper tab." width="880" height="489" /></p></li>
@@ -34,8 +34,7 @@
 <li>You can now import your custom JConsole plug-ins via the Tools | Options menu. </p>
 <p><img src="images/docs/options-panel.png" alt="The options panel." width="729" height="467" /></li>
 <li>Click on 'JConsole Plugins'. </li>
-<li>Click on 'Add JAR/Folder' and navigate to your JConsole plug-in's Java archive (JAR) file. An example JConsole plug-in called JTop is provided with the Java SE 6 platform. The JTop application is a JDK demonstration that shows the CPU usage of all  threads running in the application. This demo is useful for identifying threads that  have high CPU consumption, and it has been updated to be used as  a JConsole plug-in as well as a standalone GUI. to navigate to the JTop JConsole plug-in.
-  The  JAR file for the JTop plug-in is found <em>at <span class="style1">JDK_HOME</span></em><span class="style1">/demo/management/JTop/JTop.jar</span>, where <em><span class="style1">JDK_HOME</span></em> is the location where the JDK software is installed.
+<li>Click on 'Add JAR/Folder' and navigate to your JConsole plug-in's Java archive (JAR) file. An example JConsole plug-in called JTop is provided with the Java SE 6 platform. The JTop application is a JDK demonstration that shows the CPU usage of all  threads running in the application. This demo is useful for identifying threads that  have high CPU consumption, and it has been updated to be used as  a JConsole plug-in as well as a standalone GUI. The  JAR file for the JTop plug-in is found <em>at <span class="style1">JDK_HOME</span></em><span class="style1">/demo/management/JTop/JTop.jar</span>, where <em><span class="style1">JDK_HOME</span></em> is the location where the JDK software is installed.
   <p><img src="images/docs/select-jconsole-plugin.png" alt="Selecting the JConsole plug-in." width="731" height="467" />    </li>
 <li>Close the Options panel by clicking OK. 
 <li>In the main VisualVM interface,  close and then re-open the tab for the application you are monitoring. A JTop tab should now be visible in the JConsole Plugins tab.
