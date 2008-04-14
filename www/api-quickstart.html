@@ -135,13 +135,13 @@
         
         <ul>
             <li>Tabs
-            <br><tt>com.sun.tools.visualvm.core.ui.DataSourceViewsProvider
-            <br>/com.sun.tools.visualvm.core.ui.DataSourceView</tt>
+            <br><tt>com.sun.tools.visualvm.core.ui.DataSourceViewProvider
+            <br>/com.sun.tools.visualvm.core.ui.DataSourceViewManager</tt>
             <p>To make your tabs extendable, the following API must be extended:
             <br><tt>com.sun.tools.visualvm.core.ui.PluggableViewSupport</tt>
             <li>Subtabs
-            <br><tt>com.sun.tools.visualvm.core.ui.ViewPlugin
-            <br>/com.sun.tools.visualvm.core.ui.ViewPlugin.ViewDescriptor</tt>
+            <br><tt>com.sun.tools.visualvm.core.ui.ViewPluginProvider
+            <br>/com.sun.tools.visualvm.core.ui.PluggableDataSourceViewProvider</tt>
             <p>To integrate a subtab into one of the existing tabs, you need
             to initialize one or more of the following APIs:
             <br><tt>com.sun.tools.visualvm.core.dataview.monitor.MonitorViewSupport</tt>
@@ -211,7 +211,7 @@
             plugin should be built against the VisualVM binary that you
             registered above.
             
-            <li><b>Get the VisualVM Javadoc.</b> Get these from the "Beta API Docs"
+            <li><b>Get the VisualVM Javadoc.</b> Get these from the "Beta 2 API Docs"
                 link on the <a href="https://visualvm.dev.java.net/">https://visualvm.dev.java.net/</a>
             page.</li>
             
@@ -275,42 +275,28 @@ public void uninstalled() {
             
             <p><li>Create a class called "HelloWorldViewProvider", as follows:
             
-            <p><pre>class HelloWorldViewProvider implements DataSourceViewsProvider&lt;Application&gt; {
+            <p><pre>class HelloWorldViewProvider implements DataSourceViewProvider&lt;Application&gt; {
 
-    private Map&lt;Application, DataSourceView&gt; viewsCache = new HashMap();
     private static DataSourceViewsProvider&lt;Application&gt; instance =  new HelloWorldViewProvider();
 
     <b>@Override</b>
-    public boolean supportsViewsFor(Application application) {
+    public boolean supportsViewFor(Application application) {
         //Always shown:
         return true;
     }
 
     <b>@Override</b>
-    public synchronized Set<? extends DataSourceView> getViews(final Application application) {
-        
-        DataSourceView view = viewsCache.get(application);
-        
-        if (view == null) {
-            view = new HelloWorldView(application) {
-                @Override
-                public void removed() {
-                    super.removed();
-                    viewsCache.remove(application);
-                }
-            };
-            viewsCache.put(application, view);
-        }
-        
-        return Collections.singleton(view);
-    }
+    public synchronized DataSourceView createView(final Application application) {
+        return new HelloWorldView(application);
 
+    }
+    
     static void initialize() {
-        DataSourceWindowFactory.sharedInstance().addViewProvider(instance, Application.class);
+        DataSourceViewsManager.sharedInstance().addViewsProvider(instance, Application.class);
     }
     
     static void unregister() {
-        DataSourceWindowFactory.sharedInstance().removeViewProvider(instance);
+        DataSourceViewsManager.sharedInstance().removeViewsProvider(instance);
     }
     
 }</pre>
@@ -325,23 +311,16 @@ public void uninstalled() {
             <p><pre>class HelloWorldView extends DataSourceView {
 
     private DataViewComponent dvc;
-    private Application application;
-    private DataViewComponent view;
-    //Here we reuse an existing image:
-    private static final String IMAGE_PATH = "com/sun/tools/visualvm/core/ui/resources/coredump.png"; // NOI18N
+    //Reusing an image from the sources:
+    private static final String IMAGE_PATH = "com/sun/tools/visualvm/coredump/resources/coredump.png"; // NOI18N
 
     public HelloWorldView(Application application) {
         super("Hello World", new ImageIcon(Utilities.loadImage(IMAGE_PATH, true)).getImage(), 60);
-        this.application = application;
-        view = createViewComponent();
     }
 
     <b>@Override</b>
-    public DataViewComponent getView() {
-        return view;
-    }
-
-    private DataViewComponent createViewComponent() {
+    @Override
+    protected DataViewComponent createComponent() {
 
         <b>//Data area for master view:</b>
         JEditorPane generalDataArea = new JEditorPane();
@@ -371,13 +350,13 @@ public void uninstalled() {
 
         <b>//Add detail views to the component:</b>
         dvc.addDetailsView(new DataViewComponent.DetailsView(
-                "Hello World Details 1", null, panel, null), DataViewComponent.TOP_LEFT);
+                "Hello World Details 1", null, 10, panel, null), DataViewComponent.TOP_LEFT);
         dvc.addDetailsView(new DataViewComponent.DetailsView(
-                "Hello World Details 2", null, panel, null), DataViewComponent.TOP_RIGHT);
+                "Hello World Details 2", null, 10, panel, null), DataViewComponent.TOP_RIGHT);
         dvc.addDetailsView(new DataViewComponent.DetailsView(
-                "Hello World Details 3", null, panel, null), DataViewComponent.BOTTOM_RIGHT);
+                "Hello World Details 3", null, 10, panel, null), DataViewComponent.BOTTOM_RIGHT);
         dvc.addDetailsView(new DataViewComponent.DetailsView(
-                "Hello World Details 4", null, panel, null), DataViewComponent.BOTTOM_RIGHT);
+                "Hello World Details 4", null, 10, panel, null), DataViewComponent.BOTTOM_RIGHT);
 
         return dvc;
 
@@ -561,7 +540,7 @@ public void uninstalled() {
         recommended to consult the following resources:
         
         <ol>
-            <li><b>VisualVM Javadoc.</b> Get these from the "Beta API Docs"
+            <li><b>VisualVM Javadoc.</b> Get these from the "Beta 2 API Docs"
                 link on the <a href="https://visualvm.dev.java.net/">https://visualvm.dev.java.net/</a>
             page.</li>
             <li><b>VisualVM Developer FAQ.</b> A <a href="api-faq.html">complete list of typical questions</a>
@@ -597,7 +576,12 @@ public void uninstalled() {
             <li><b>Blog entries by Geertjan Wielenga.</b> Geertjan is
                 the technical writer responsible for documenting the VisualVM APIs.
                 While learning about the VisualVM APIs, he wrote a series of blog
-                entries about the VisualVM APIs he was learning about. The relevant
+                entries about the VisualVM APIs he was learning about. 
+                
+                <p><b>Note:</b> Several APIs have changed since these blog entries
+                were written, but they should at least give you an idea of what
+                is involved in each particular scenario described.
+                <p>The relevant
                 blog entries are as follows:
                 <p><ul>
                     <li><b><a href="http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm"> Getting Started Extending VisualVM (Part 1)</a>.</b>
