@@ -275,7 +275,7 @@ public void uninstalled() {
             
             <p><li>Create a class called "HelloWorldViewProvider", as follows:
             
-            <p><pre>class HelloWorldViewProvider implements DataSourceViewProvider&lt;Application&gt; {
+            <p><pre>class HelloWorldViewProvider extends DataSourceViewProvider&lt;Application&gt; {
 
     private static DataSourceViewProvider&lt;Application&gt; instance =  new HelloWorldViewProvider();
 
