@@ -277,7 +277,7 @@ public void uninstalled() {
             
             <p><pre>class HelloWorldViewProvider implements DataSourceViewProvider&lt;Application&gt; {
 
-    private static DataSourceViewsProvider&lt;Application&gt; instance =  new HelloWorldViewProvider();
+    private static DataSourceViewProvider&lt;Application&gt; instance =  new HelloWorldViewProvider();
 
     <b>@Override</b>
     public boolean supportsViewFor(Application application) {
