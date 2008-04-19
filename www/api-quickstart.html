@@ -324,7 +324,7 @@ public void uninstalled() {
     private static final String IMAGE_PATH = "com/sun/tools/visualvm/coredump/resources/coredump.png"; // NOI18N
 
     public HelloWorldView(Application application) {
-        super("Hello World", new ImageIcon(Utilities.loadImage(IMAGE_PATH, true)).getImage(), 60);
+        super(application, "Hello World", new ImageIcon(Utilities.loadImage(IMAGE_PATH, true)).getImage(), 60, false);
     }
 
     <b>@Override</b>
