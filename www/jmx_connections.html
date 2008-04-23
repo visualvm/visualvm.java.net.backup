@@ -1,0 +1,89 @@
+<!-- Copyright 2008 Sun Microsystems, Inc.  All Rights Reserved.  -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>VisualVM  JConsole  Plug-in  Wrapper Tab</title>
+<style type="text/css">
+<!--
+.style1 {font-family: "Courier New", Courier, monospace}
+.style3 {font-family: "Courier New", Courier, monospace; font-style: italic; }
+-->
+</style>
+</head>
+
+<body>
+<h1>Connecting to  JMX Agents Explicitly </h1>
+<hr />
+<p>Java Management Extentions (JMX)  technology can be used to monitor and manage any Java technology-based applications (Java applications) that are running in either a local or a remote Java Virtual Machine (JVM). Java applications are exposed for monitoring and management by JMX agents by setting the <span class="style1">com.sun.management.jmxremote.*</span> system properties when the applications are launched. Setting these system properties enables the Java platform, Standard Edition's (Java SE platform) <em>out-of-the-box</em> monitoring and management capability, automatically enabling the platform MBean server in the JVM software, and registering MBeans in that MBean server that expose the application for management by any appropriately configured JMX client application. VisualVM is one such JMX client application. This page describes how to  make explicit JMX connections from VisualVM  to running applications. The documents below  provide useful  background information. </p>
+<ul>
+  <li><strong>	</strong>For a very brief introduction to JMX technology, MBeans,  and the platform MBean server, and how to monitor and manage MBeans using VisualVM, see the <a href="mbeans_tab.html">VisualVM MBeans Tab</a> page. </li>
+  <li>For an introduction to the Java SE platform's out-of-the-box monitoring and management capability, see <a href="http://java.sun.com/javase/6/docs/technotes/guides/management/agent.html"><em>Monitoring and Management Using JMX Technology</em></a> in the <a href="http://java.sun.com/javase/6/docs/technotes/guides/management/toc.html">Java SE Platform Monitoring and Management Guide</a>. </li>
+</ul>
+<h2>Making an Explicit JMX Connection  </h2>
+<p>Before you can make an explicit JMX connection from VisualVM to a running application, this application must be started with the correct system properties. The system properties in question are the following:</p>
+<ul>
+  <li><code>com.sun.management.jmxremote.port</code>, to specify the port number through which the application will be exposed </li>
+  <li><code>com.sun.management.jmxremote.ssl</code>, to specify whether secure sockets layer (SSL) encyption will be activated to secure the connection to the application </li>
+  <li><code>com.sun.management.jmxremote.authenticate</code>, to specify whether the connection will be password protected</li>
+</ul>
+<h3>Local JMX Connection</h3>
+<p>This section shows an example of how to connect VisualVM to a local application via an explicit JMX connection.</p>
+<ol>
+  <li>Start the Java SE 6 platform's sample Notepad   application, setting the system properties to enable the Java SE platform's out-of-the-box monitoring and management capability, using the command shown below, where <span class="style3">$JAVA_HOME</span> is the location in which the Java Development Kit (JDK) is installed:
+    <pre>java -Dcom.sun.management.jmxremote.port=3333 \
+     -Dcom.sun.management.jmxremote.ssl=false \
+     -Dcom.sun.management.jmxremote.authenticate=false \
+     -jar <em>$JAVA_HOME</em>\demo\jfc\Notepad\Notepad.jar</pre>In the command above, the Notepad program is launched with the Java SE platform's out-of-the-box monitoring and management capability configured as follows:
+  
+    <ul>
+  <li>The Notepad application is exposed for monitoring and management via port 3333.</li>
+  <li>SSL encryption is deactivated.</li>
+  <li>Password authentication is deactivated.  </li>
+  </ul> 
+  </li>
+  <li>Start VisualVM on the same machine. </li>
+  <li>In VisualVM's Applications window, right click on the Local machine and select 'Add JMX Connection'. 
+    <p><img src="images/docs/add-jmx-local.png" alt="Adding a JMX connection to the local host."/></li>
+  <li>The   Add JMX Connection dialog box opens.
+    <p><img src="images/docs/add-jmx-connection-dialog.png" alt="The Add JMX Connection dialog." width="438" height="301" />
+  <p>The host name <span class="style1">localhost</span> is already filled in. You only need to add the port number on which the Notepad application is exposed for monitoring and management.</li>
+  <li>Click OK. The JMX connection will appear in the application tree, with a special JMX connection icon. 
+    <p><img src="images/docs/jmx-icon.png" alt="A JMX connection to the local host machine." width="285" height="191" /></li>
+  <li>Right click on the JMX connection, and select Open. The application exposed via the JMX connection can now be monitored and managed via VisualVM. 
+  <p><img src="images/docs/jmx-connection-rhpanel.png" alt="Monitoring an application via a JMX connection." width="607" height="485" /></li>
+</ol>
+<h3>Remote JMX Connection </h3>
+<p>You can also make explicit JMX connections to applications running on remote hosts, as explained below:</p>
+<ol>
+  <li>Right click on Remote in the Applications tree, and select Add Remote Host. 
+  <p><img src="images/docs/connect-remote-host.png" alt="Connecting to a remote host" width="283" height="184" /></li>
+  <li>Provide the name of the host you want to connect to in the Add Remote Host dialog, and click OK.
+    <p><img src="images/docs/add-remote-host.png" alt="Adding a remote host." width="368" height="162" /> </li>
+  <li>If <span class="style1">jstatd</span> is running on the remote host, you will see the Java applications that are running on that remote host. However, you will not necessarily be able to monitor and manage them in VisualVM if they were started by a different user to yourself. 
+    <p><img src="images/docs/remote-apps.png" alt="Applications running in a remote host." width="285" height="222" />  
+  <p>Furthermore, only applications that are exposed by the platform MBean server for each JVM software instance running in the remote host are visible. Other applications that have been exposed for remote monitoring and management via a different JMX agent to the platform MBean server can also be running on the remote host. To connect to these applications, you need an explicit JMX connection.  </li>
+  <li>Right click on the remote host name and select Add JMX Connection.
+
+    <p><img src="images/docs/add-jmx-remote.png" alt="Adding a JMX connection to a remote application." width="285" height="247" />      </li>
+  <li>Provide the port number for a running JMX agent, that has been started with the appropriate system properties to allow remote management.
+  Here the JMX agent has been exposed on port 2222 of the machine <span class="style1">curcuma</span>.
+  <p><img src="images/docs/add-jmx-remote2.png" alt="Adding a remote JMX connection." width="439" height="300" /> </li>
+  <li>If the JMX connection is secured, you will be prompted for a username and password.
+  <p><img src="images/docs/security-credentials.png" alt="JMX connector security credentials." width="405" height="167" /> </li>
+  <li>If you know the correct username and password, the JMX connection will be established, and the JMX connection will appear in the application tree, with a special JMX connection icon.
+  <p><img src="images/docs/remote-jmx-icon.png" alt="Remote JMX connection shown in application tree." width="285" height="224" /> </li>
+  <li>Right click on the remote JMX connection and select Open. You can now monitor and manage  remote applications via the JMX connection, and manipulate any MBeans that are registered in the MBean server exposed by this connection.
+  <p><img src="images/docs/remote-jmx-mbeans.png" alt="MBeans in a remote MBean server." width="604" height="482" /> </li>
+</ol>
+<h2>Further Reading About JMX Technology </h2>
+<p>For more information about JMX technology and monitoring and management of the Java SE platform, see the following documents.</p>
+<ul>
+  <li><a href="http://java.sun.com/docs/books/tutorial/jmx/index.html">JMX technology trail in the Java Tutorials</a></li>
+  <li><a target="_blank" href="http://java.sun.com/javase/6/docs/technotes/guides/jmx/index.html">JMX technology documentation for the Java SE platform</a></li>
+  <li><a target="_blank" href="http://java.sun.com/javase/6/docs/technotes/guides/management/">Monitoring and Management documentation for the Java SE Platform</a></li>
+</ul>
+<p>&nbsp;</p>
+</body>
+</html>
