@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!DOCTYPE module_updates PUBLIC "-//NetBeans//DTD Autoupdate Catalog 2.5//EN" "http://www.netbeans.org/dtds/autoupdate-catalog-2_5.dtd">
-<module_updates timestamp="45/50/13/07/03/2008">
+<module_updates timestamp="54/17/12/14/04/2008">
+
+
+<module_group name="Application Servers">
+
+<module codenamebase="net.java.visualvm.modules.glassfish" distribution="https://visualvm.dev.java.net/files/documents/7163/94693/net-java-visualvm-modules-glassfish.nbm" downloadsize="84914" homepage="https://visualvm.dev.java.net" license="C0B2B106" moduleauthor="Jaroslav Bachorik" needsrestart="false" releasedate="2008/04/28">
+    <manifest AutoUpdate-Show-In-Client="true" OpenIDE-Module="net.java.visualvm.modules.glassfish" OpenIDE-Module-Display-Category="Application Servers" OpenIDE-Module-Implementation-Version="080428" OpenIDE-Module-Java-Dependencies="Java &gt; 1.5" OpenIDE-Module-Long-Description="A sample plugin giving an overview of advanced monitoring capabilities of VisualVM. &#10;Enhances monitoring of GlassFish application server by adding specialized overview, new tab for monitoring HTTP Service and the ability to visually select and monitor any of the deployed web applications" OpenIDE-Module-Module-Dependencies="com.sun.appserv.management &gt; 1.0, com.sun.tools.visualvm.application/0 &gt; 1.0, com.sun.tools.visualvm.application.views/0 &gt; 1.0, com.sun.tools.visualvm.core/0 &gt; 1.0, com.sun.tools.visualvm.host/0 &gt; 1.0, com.sun.tools.visualvm.tools/0 &gt; 1.0, org.netbeans.lib.profiler.ui/1 = 080423, org.openide.dialogs &gt; 7.5.1, org.openide.modules &gt; 7.3.1, org.openide.util &gt; 7.10.1.1" OpenIDE-Module-Name="VisualVM-Glassfish" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="Enhaned monitoring of GlassFish application server" OpenIDE-Module-Specification-Version="1.0"/>
+    
+</module>
+
+</module_group>
+
+<module_group name="Libraries">
+
+<module autoload="true" codenamebase="com.sun.appserv.management" distribution="https://visualvm.dev.java.net/files/documents/7163/94690/com-sun-appserv-management.nbm" downloadsize="1438919" homepage="https://visualvm.dev.java.net" license="D5533D83" moduleauthor="" needsrestart="false" releasedate="2008/04/28">
+    <manifest AutoUpdate-Show-In-Client="false" OpenIDE-Module="com.sun.appserv.management" OpenIDE-Module-Display-Category="Libraries" OpenIDE-Module-Implementation-Version="080428" OpenIDE-Module-Java-Dependencies="Java &gt; 1.4" OpenIDE-Module-Long-Description="GlassFish AMX API Library Wrapper" OpenIDE-Module-Name="GlassFish AMX API" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="GlassFish AMX API Library Wrapper" OpenIDE-Module-Specification-Version="1.0"/>
+    
+</module>
+
+</module_group>
 
 <module_group name="Tools">
 
@@ -10,13 +29,13 @@
     
 </module>
 
-<module codenamebase="com.sun.tools.visualvm.modules.jconsole" distribution="https://visualvm.dev.java.net/files/documents/7163/91531/com-sun-tools-visualvm-modules-jconsole.nbm" downloadsize="29097" homepage="https://visualvm.dev.java.net" license="C0B2B106" moduleauthor="" needsrestart="false" releasedate="2008/03/28">
-    <manifest AutoUpdate-Show-In-Client="true" OpenIDE-Module="com.sun.tools.visualvm.modules.jconsole" OpenIDE-Module-Display-Category="Tools" OpenIDE-Module-Implementation-Version="080328" OpenIDE-Module-Java-Dependencies="Java &gt; 1.5" OpenIDE-Module-Long-Description="This VisualVM plugin for JConsole allows to integrate the custom JConsole plugins into VisualVM." OpenIDE-Module-Module-Dependencies="com.sun.tools.visualvm.application/0 &gt; 1.0, com.sun.tools.visualvm.core/0 &gt; 1.0, com.sun.tools.visualvm.host/0 &gt; 1.0, com.sun.tools.visualvm.tools/0 &gt; 1.0, org.jdesktop.layout/1 &gt; 1.4.1, org.netbeans.modules.options.api/1 &gt; 1.5.1, org.openide.awt &gt; 6.11.1.1, org.openide.modules &gt; 7.3, org.openide.util &gt; 7.10.0.1" OpenIDE-Module-Name="VisualVM-JConsole" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="JConsole Plugins" OpenIDE-Module-Specification-Version="1.0"/>
+<module codenamebase="com.sun.tools.visualvm.modules.jconsole" distribution="https://visualvm.dev.java.net/files/documents/7163/94691/com-sun-tools-visualvm-modules-jconsole.nbm" downloadsize="32159" homepage="https://visualvm.dev.java.net" license="C0B2B106" moduleauthor="" needsrestart="false" releasedate="2008/04/28">
+    <manifest AutoUpdate-Show-In-Client="true" OpenIDE-Module="com.sun.tools.visualvm.modules.jconsole" OpenIDE-Module-Display-Category="Tools" OpenIDE-Module-Implementation-Version="080428" OpenIDE-Module-Java-Dependencies="Java &gt; 1.5" OpenIDE-Module-Long-Description="This VisualVM plugin for JConsole allows to integrate the custom JConsole plugins into VisualVM." OpenIDE-Module-Module-Dependencies="com.sun.tools.visualvm.application/0 &gt; 1.0, com.sun.tools.visualvm.core/0 &gt; 1.0, com.sun.tools.visualvm.host/0 &gt; 1.0, com.sun.tools.visualvm.tools/0 &gt; 1.0, org.jdesktop.layout/1 &gt; 1.4.1, org.netbeans.modules.options.api/1 &gt; 1.5.1, org.openide.awt &gt; 6.11.1.1, org.openide.modules &gt; 7.3, org.openide.util &gt; 7.10.0.1, org.openide.windows &gt; 6.18.1" OpenIDE-Module-Name="VisualVM-JConsole" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="JConsole Plugins" OpenIDE-Module-Specification-Version="1.0"/>
     
 </module>
 
-<module codenamebase="com.sun.tools.visualvm.modules.mbeans" distribution="https://visualvm.dev.java.net/files/documents/7163/91530/com-sun-tools-visualvm-modules-mbeans.nbm" downloadsize="160046" homepage="https://visualvm.dev.java.net" license="C0B2B106" moduleauthor="" needsrestart="false" releasedate="2008/03/28">
-    <manifest AutoUpdate-Show-In-Client="true" OpenIDE-Module="com.sun.tools.visualvm.modules.mbeans" OpenIDE-Module-Display-Category="Tools" OpenIDE-Module-Implementation-Version="080328" OpenIDE-Module-Java-Dependencies="Java &gt; 1.5" OpenIDE-Module-Long-Description="The MBeans plugin integrates JConsole's MBeans tab functionality into VisualVM." OpenIDE-Module-Module-Dependencies="com.sun.tools.visualvm.application/0 &gt; 1.0, com.sun.tools.visualvm.core/0 &gt; 1.0, com.sun.tools.visualvm.tools/0 &gt; 1.0, org.jdesktop.layout/1 &gt; 1.4.1, org.netbeans.modules.options.api/0-1 &gt; 1.5.1, org.openide.awt &gt; 6.11.1.1, org.openide.modules &gt; 7.3, org.openide.util &gt; 7.10.0.1" OpenIDE-Module-Name="VisualVM-MBeans" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="MBeans" OpenIDE-Module-Specification-Version="1.0"/>
+<module codenamebase="com.sun.tools.visualvm.modules.mbeans" distribution="https://visualvm.dev.java.net/files/documents/7163/94692/com-sun-tools-visualvm-modules-mbeans.nbm" downloadsize="159976" homepage="https://visualvm.dev.java.net" license="C0B2B106" moduleauthor="" needsrestart="false" releasedate="2008/04/28">
+    <manifest AutoUpdate-Show-In-Client="true" OpenIDE-Module="com.sun.tools.visualvm.modules.mbeans" OpenIDE-Module-Display-Category="Tools" OpenIDE-Module-Implementation-Version="080428" OpenIDE-Module-Java-Dependencies="Java &gt; 1.5" OpenIDE-Module-Long-Description="The MBeans plugin integrates JConsole's MBeans tab functionality into VisualVM." OpenIDE-Module-Module-Dependencies="com.sun.tools.visualvm.application/0 &gt; 1.0, com.sun.tools.visualvm.core/0 &gt; 1.0, com.sun.tools.visualvm.tools/0 &gt; 1.0, org.jdesktop.layout/1 &gt; 1.4.1, org.netbeans.modules.options.api/0-1 &gt; 1.5.1, org.openide.awt &gt; 6.11.1.1, org.openide.modules &gt; 7.3, org.openide.util &gt; 7.10.0.1, org.openide.windows &gt; 6.18.1" OpenIDE-Module-Name="VisualVM-MBeans" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="MBeans" OpenIDE-Module-Specification-Version="1.0"/>
     
 </module>
 
