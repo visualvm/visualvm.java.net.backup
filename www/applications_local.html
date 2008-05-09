@@ -9,15 +9,15 @@
         <p>When you start VisualVM, each Java application running on a local JVM is displayed as a node under the Local node in the <a href="applications_window.html">Applications window</a>.
         You can expand an application node to see the profiler snapshots, thread dumps and heap dumps of the application.
         Right-clicking an application node or sub-node invokes a popup menu enabling you to choose various actions.</p>
-        <p><b>Note:</b> The list of local applications will always include VisualVM.</p>    
+        <p><b>Note:</b> The list of local applications always includes VisualVM.</p>    
  
-        <!--<p>A local application node generally has the following items available in the popup menu.</p>
+        <p>A local application node generally has the following items available in the popup menu.</p>
             <ul>
-                <li><b><a href="overview_tab.html">Open.</a></b> Opens the tab for the application in the main window.</li>
-                <li><b><a href="threads.html">Thread Dump.</a></b> Captures a thread dump for the application.
+                <li><a href="overview_tab.html"><b>Open.</b></a> Opens the tab for the application in the main window.</li>
+                <li><a href="threads.html"><b>Thread Dump.</b></a> Captures a thread dump for the application.
                 When you capture a thread dump, the thread dump opens in the main window and a node
                 for the thread dump appears under the application node.</li>
-                <li><b><a href="heapdump.html">Heap Dump.</a></b> Captures a heap dump for the application.
+                <li><a href="heapdump.html"><b>Heap Dump.</b></a> Captures a heap dump for the application.
                 When you capture a heap dump, the heap dump opens in the main window and a node
                 for the heap dump appears under the application node.</li>
                 <li><a href="profiler.html"><b>Profile.</b></a> Opens the Profiler tab for the application where you can choose to profile the application.</li>
@@ -31,14 +31,15 @@
                 <li><b>Enable Heap Dump on OOME.</b> Select this if you want VisualVM to automatically take a heap dump when
                 an OutOfMemoryException is encountered. The heap dump is save to XXX.</li>
             </ul>
-    -->
-        <img src="images/docs/applications-window.png" style="border:1px solid;" alt="screenshot of VisualVM window" 
-        title="screenshot of VisualVM window" />
+    
+        <img src="images/docs/applications-window-menu.png" style="border:1px solid;" alt="screenshot of VisualVM Applications window showing popup menu options" 
+        title="screenshot of VisualVM Applications window showing popup menu options" />
     
         <h3>Viewing Application Data</h3>
         <p>VisualVM displays data about each running local application in a dedicated tab in the main window.
         Each application tab has sub-tabs for the different types of application data.</p>
         <p>To open the application tab, right-click the application node in the Applications window and choose Open.
+        (Alternatively, double-click the application node.)
         When you click Open, the Overview tab of the application tab opens in the main window.</p>
         <p>For more see <a href="overview_tab.html">Application Overview</a></p>
 
