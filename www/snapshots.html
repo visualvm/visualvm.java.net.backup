@@ -62,9 +62,10 @@
         </ul>
 
         <h3>Application Snapshots</h3>
-            <p>An application snapshot is an archive of heap dumps, thread dumps and profiler snapshots of an application
-            that is then saved as one file (<tt>.apps</tt>).
-            An application snapshot also captures general JVM information about the JVM.
+            <p>An application snapshot captures the collected heap dumps, thread dumps and profiler snapshots of an application 
+            at the moment the snapshot is taken.
+            
+            An application snapshot also captures general information about the JVM.
             </p>
             <p>You take an application snapshot by right-clicking an application node in the Applications window
             and choosing Application Snapshot from the popup menu.
@@ -74,18 +75,17 @@
                 <li>An application snapshot node appears under the Snapshots node in the Applications window</li>
                 <li>Application data is saved in a folder in the the <tt>repository/snapshots</tt> folder in the VisualVM user dir</li>
             </ul>
-            
-            
             <p>Application snapshots are listed under the Snapshots node in the Applications window.
             Expand the application snapshot node to view the contents of the snapshot.</p>
             <img src="images/docs/application-snapshot-appwindow.png" style="border:1px solid;" alt="screenshot of Applications window showing application snapshots" 
             title="screenshot of Applications window showing application snapshots" />
 
-            <p>You can right-click an application snapshot node or any of the items listed under the application snapshot node to open the popup menu where you can choose to open, save,
+            <p>After you take an application snapshot, you can view and modify the contents
+            by expanding the application snapshot node in the Applications window.
+            You can right-click an application snapshot node or any of the items listed under the application snapshot node to open the popup menu where you can choose to open, save,
             rename and delete the item.
-            </p>
-
-
+            You can then save the application snapshot as a single application snapshot archive (<tt>.apps</tt>) to your local system.</p>
+            
             <p>The Overview tab of an application snapshot captures data about the JVM.</p>
             <img src="images/docs/application-snapshot-overview.png" style="border:1px solid;" alt="screenshot of Overview tab of an application snapshot" 
             title="screenshot of Overview tab of an application snapshot" />
