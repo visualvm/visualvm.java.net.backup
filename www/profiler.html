@@ -1,15 +1,17 @@
 <html>
     <head>
-        <title>Using the VisualVM Profiler</title>
+        <title>Profiling Applications with VisualVM</title>
         <link rel="stylesheet" type="text/css" href="default.css" />
     </head>
     <body>
-        <h1>Using the VisualVM Profiler</h1>
+        <h1>Profiling Applications with VisualVM</h1>
         <hr />
         <p>VisualVM presents data for local and remote applications in a tab specific for that application.
         You can have multiple application tabs open.
         Each application tab contains sub-tabs that display different types of information about the application.</p>
         
+        <h3>Profiling applications</h3>
+
         <p>The Profiler tab of an application enables you to start and stop the profiling session of a local application.
         Profiling results are displayed in the Profiler tab.
         You can use the toolbar to refresh the profiling results, invoke garbage collection 
@@ -30,18 +32,20 @@
         <h4>Using the toolbar</h4>
         <p>The Profiler toolbar has the following buttons that enable you to work with profiling results.</p>
         <ul>
-            <li><b>Autorefresh.</b>
-            Click to activate and deactivate Autorefresh of results. 
+            <li><b>Update Result Automatically.</b>
             When active, the displayed profiling results are automatically updated at short intervals (about 2 seconds). </li>
-            <!--<li><b>Take Snapshot</b>
-            Click this button takes a snapshot of the current profile data. When you take a snapshot, the snapshot is opened in a new tab in the Source Editor.</li>-->
+            <li><b>Update Result Now.</b>
+            Click to update results immediately.</li>
+            <li><b>Run Garbage Collection.</b>
+            Click to run garbage collection.</li>
             <li><b>Reset Collected Results.</b>
             Click to discard the already accumulated profiling results.</li>
-            <li><b>Run GC.</b>
-            Click to run garbage collection.</li>
-            <li>Take snapshot</li>
-            <li><b>Save results as image.</b>
-            Click this to save the current view of the profiling results as a <tt>.png</tt> image file.</li>
+            <li><b>Take Snapshot.</b>
+            Click this button takes a snapshot of the current profile data. 
+            When you take a snapshot, the snapshot is opened in a new sub-tab.</li>
+            <li><b>Save Current View.</b>
+            Click this to save the current view of the profiling results as a <tt>.png</tt> image file.
+            When you click the button you are prompted to choose the location where you want to save the image.</li>
         </ul>
         
         
@@ -51,6 +55,10 @@
         To filter the results, enter a term in the method name filter box, select which filtering method to use and press Return. 
         You can see and select previous filter terms by clicking the arrow to the right of the method name filter box.</p>
         
+        <h4>Modifying profiling settings</h4>
+        <p>The VisualVM profiling tool supplies default settings for profiling applications.
+        You can view the default settings by selecting the Settings checkbox in the Profiler tab.
+        You can modify the profiling settings when no profiling session is in progress. </p>
         
         <h3>CPU Profiling</h3>
         <p>This profile command returns detailed data on method-level CPU performance (execution time), showing the total execution time and number of invocations for each method.
@@ -58,8 +66,14 @@
         Threads emit the "method entry" event when entering a method and generate the corresponding "method exit" event when exiting the method. 
         Both of these events contain timestamps. This data is processed in real time.</p>
 
+        <p>Screenshot of Profiler tab showing CPU profiling results</p>
         <img src="images/docs/profiler-cpu.png" style="border:1px solid;" alt="screenshot of Profiler tab showing CPU profiling" 
         title="screenshot of Profiler tab showing CPU profiling" />
+
+        <p>Screenshot of Profiler tab showing CPU profiling settings</p>
+        <img src="images/docs/profiler-cpu-settings.png" style="border:1px solid;" alt="screenshot of Profiler tab showing CPU profiling" 
+        title="screenshot of Profiler tab showing CPU profiling" />
+
         
         <h3>Memory Profiling</h3>
         <p>When you analyse memory usage, VisualVM starts instrumenting the loaded classes and displays the total number of objects allocated by each class (including array classes) in a table. 
@@ -69,17 +83,26 @@
         The bytes allocated are also displayed as a graph representing the percentage of bytes as well as the total number of bytes allocated by each class.
         </p>
 
+       <p>Screenshot of Profiler tab showing memory profiling results</p>
         <img src="images/docs/profiler-memory.png" style="border:1px solid;" alt="screenshot of Profiler tab showing memory profiling" 
         title="screenshot of Profiler tab showing memory profiling" />
+       
+       <p>Screenshot of Profiler tab showing memory profiling settings</p>
+       <img src="images/docs/profiler-memory-settings.png" style="border:1px solid;" alt="screenshot of Profiler tab showing memory profiling settings" 
+        title="screenshot of Profiler tab showing memory profiling settings" />
+       
         <h3>Taking Profiler Snapshots</h3>
         <p>VisualVM enables you to take profiler snapshots to capture the results of a profiling session.
         A profiler snapshot captures the results at the moment the snapshot is taken.
         To take a snapshot, click the Take Snapshot of Collected Results button in the toolbar while a profiling session is in progress.
         When you take the snapshot, the snapshot opens as a tab in the application tab.
         A node for the snapshot also appears under the application node in the Applications window.</p>
-        
-        <img src="images/docs/profiler-memory-snapshot.png" style="border:1px solid;" alt="screenshot of Profiler tab showing memory profiling" 
-        title="screenshot of Profiler tab showing memory profiling" />
+       <p>Screenshot of memory profiling snapshot</p> 
+        <img src="images/docs/profiler-memory-snapshot.png" style="border:1px solid;" alt="screenshot of memory profiling snapshot" 
+        title="screenshot of memory profiling snapshot" />
+       <p>Screenshot of CPU profiling snapshot</p> 
+        <img src="images/docs/profiler-cpu-snapshot.png" style="border:1px solid;" alt="screenshot of CPU profiling snapshot" 
+        title="screenshot of CPU profiling snapshot" />
         
         <p>For more, see <a href="snapshots.html">Working with Snapshots</a></p>
     </body>
