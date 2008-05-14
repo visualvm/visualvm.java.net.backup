@@ -19,40 +19,44 @@
         stop and adding applications when they start.</p>
         
         <p>To add a remote host, right-click the Remote node, choose Add Remote Host and type the host name or IP address in the Add Remote Host dialog box.</p> 
+        <img src="images/docs/add-remote1.png" style="border:1px solid;" alt="Add Remote Host dialog box" 
+        title="Add Remote Host dialog box" />
         <p><b>Note:</b> To retrieve and display information on applications running on the remote host, the <tt>jstatd</tt> utility
         needs to be running on the remote host.
         To start the <tt>jstatd</tt> utility, type jstatd on the command line.
         The <tt>jstatd</tt> utility is included as part of JDK 6.
         <a href="http://java.sun.com/javase/6/docs/technotes/tools/share/jstatd.html">jstatd - Virtual Machine jstat Daemon</a>
         </p>
-        <p>When VisualVM is connected to a remote host, the following actions are available by right-clicking the application node:</p>
-        <ul>
-            <li>Remove</li>
-            <li>Rename</li>
-            <li>Add JMX Connection</li>
-        </ul>
+        <p>When VisualVM is connected to a remote host, a node for the remote host appears under the Remote node
+        in the Applications window. 
+        You can expand the remote host node to view the applications running on the remote host.</p>
+        <img src="images/docs/remote-applications-glassfish.png" style="border:1px solid;" alt="Remote node in Applications window" 
+        title="Remote node in Applications window showing application running on remote host" />
             
             
         <h3>Viewing Application Data</h3>
         <p>VisualVM displays data about each running remote application in a dedicated tab in the main window.
         By default, the application tab is closed.</p>
         <p>To open the application tab, right-click the application node in the Applications window and choose Open.
+        (Alternatively, you can double-click the application node.)
         When you click Open, the Overview tab of the application tab opens in the main window.</p>
-        <p>For more see the following document:</p>
+        
+        <img src="images/docs/remote-overview.png" style="border:1px solid;" alt="Overview tab of remote application" 
+        title="Overview tab of remote application" />
+       
+        <p>You can use the sub-tabs in the application tab to view details about the application.<br/>
+        <b>Note.</b> You cannot profile a remote application.</p>
+        
+        <p>For more see the following documents:</p>
         <ul>
             <li><a href="overview_tab.html">Viewing Application Overview</a></li>
             <li><a href="monitor_tab.html">Monitoring an Application</a></li>
-            <li><a href="threads.html">Monitoring Threads</a></li>
+            <li><a href="threads.html">Monitoring Application Threads</a></li>
         </ul>
-
-
-        <h3>Monitoring Application Activity</h3>
-        <p>You can use VisualVM to monitor a remote application and view high-level data on thread activity 
-        and memory heap and garbage collection in the VM.</p>
-        <p>For more see the following document:</p>
-        <ul><li><a href="monitor_tab.html">Monitoring an Application</a></li></ul>
         
 
+        <hr/>
+        <p><a href="docindex.html">Return to the VisualVM Documentation index</a></p>
             
             
 
