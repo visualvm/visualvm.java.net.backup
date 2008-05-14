@@ -22,13 +22,13 @@
         <p>Profiler snapshots capture profiling data at the moment the snapshot is taken.
         You can take a profiler snapshot at any time during a profiling session.
         When you take a profiler snapshot, a node representing the snapshot appears below the application
-        node in the Applications window and a temporary snapshot file is written to your local system.</p>
+        node in the Applications window and a temporary snapshot file is written to your local system in the VisualVM userdir.</p>
         <p>VisualVM can take the following types of profiler snapshots</p>
         <ul>
             <li><b>Memory Snapshot.</b> A memory snapshot captures profiling data on allocated objects.
-            You can take a memory snapshot when you are using the profiler to analyze memory usage.
-            You can compare memory snapshots session on a local application.</li>
-            <li><b>CPU Snapshot.</b> You can take a CPU snapshot when you are using the profiler to analyze application performance.</li>
+            You can take a memory snapshot when you are using the profiler to analyze memory usage.</li>
+            <li><b>CPU Snapshot.</b> A CPU snapshot captures data on the performance of the application.
+            You can take a CPU snapshot when you are using the profiler to analyze application performance.</li>
         </ul>
         
         <p>Screenshot of memory profiling snapshot</p> 
@@ -42,23 +42,22 @@
         either as a profiler snapshot or archived in an application snapshot.</p>
         
         <h4>Taking Profiler Snapshots</h4>
-        <p>When you take a memory or CPU snapshot, the snapshot opens in the application's tab in the main window.</p>
-        <p>The Snapshots node lists profiling snapshots that are saved to your local system.</p>
+        <p>You can take a profiler snapshot during a profiling session.
+        When you take a memory or CPU snapshot, the snapshot opens in the application's tab in the main window.</p>
             
-            <p>To take a snapshot during a profiling session, do one of the following:</p>
+        <p>To take a snapshot, do one of the following:</p>
             <ul>
                 <li>Click the Take Snapshot of Collected Results button in the Profiler tab</li>
                 <li>Right-click the application node and choose Profiler Snapshot.</li>
             </ul>
         
-        
         <p>The snapshot toolbar enables you to do the following:</p>
         <ul>
-            <li>Save Snapshot to Custom File</li>
-            <li>Save Current View to Image</li>
-            <li>Find in Results</li>
-            <li>Find Next Occurence - find next occurence of search term <!-- TODO --></li>
-            <li>Find Previous Occurence -find previous occurence of search term <!-- TODO --></li>
+            <li><b>Save Snapshot to Custom File.</b> Click to save snapshot as Snapshot file (<tt>.nps</tt> to you local system).</li>
+            <li><b>Save Current View to Image.</b> Click to save snapshot as an image (<tt>.png</tt> to you local system)</li>
+            <li><b>Find in Results.</b> Click to find a search term in the profiling results.</li>
+            <li><b>Find Next Occurence.</b> Click to find next occurence of search term </li>
+            <li><b>Find Previous Occurence.</b> Click to find previous occurence of search term </li>
         </ul>
 
         <h3>Application Snapshots</h3>
