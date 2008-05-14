@@ -12,17 +12,33 @@
         <p>The Core Dump node is visible in the Applications window if VisualVM is running on Solaris or Linux.
         Generally, VisualVm can only open a core dump if the core dump was taken on the same machine.
         A core dump contains informaton on the JDK and kernel of the machine where the core dump was taken.
-        This information must match the JDK and kernel of the local system.
+        To open the core dump in VisualVM, this information must match the JDK and kernel of the local system.
         </p>
         
         <p>A core dump is a binary file capturing the entire heap contents at the moment the dump is captured.
-        When you open a core dump in VisualVm, a node for the core dump appears below the Core Dump node.
-        You can right-click the core dump node and choose Heap Dump or Thread Dump
-        to view the heap dump and thread dump from the core dump.
-        You can then save the thread dump and heap dump to your local system.
+        When you load a core dump in VisualVM, a node for the core dump appears below the Core Dump node.</p>
+        
+        <img src="images/docs/coredump-app-window.png" style="border:1px solid;" alt="screenshot of Applications window showing Core Dump node" 
+        title="Applications window showing expanded Core Dump node" />
+        
+        <p>To view an overview of the core dump, right-click the core dump node and choose Open.
+        (Alternatively, double-click the node.)</p>
+        <img src="images/docs/coredump-overview.png" style="border:1px solid;" alt="screenshot of Overview tab of core dump" 
+        title="Overview tab of core dump" />
+        
+        
+        
+        <p>You can right-click the core dump node and choose Heap Dump or Thread Dump
+        to view the heap dump and thread dump from the core dump.</p>
+        <img src="images/docs/coredump-threaddump.png" style="border:1px solid;" alt="screenshot of Overview tab of core dump" 
+        title="threaddump tab of core dump" />
+        
+        <p>You can then save the thread dump and heap dump to your local system.
         The core dump overview tab displays information about the application and the system properties.</p>
         
-        
+        <hr/>
+        <p><a href="docindex.html">Return to the VisualVM Documentation index</a></p>
+
             
             
     </body>
