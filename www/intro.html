@@ -7,7 +7,7 @@
         <h1>Introduction to VisualVM</h1>
         <hr />
         <p>VisualVM is a tool that provides a visual interface for viewing detailed information about Java applications 
-        while they are running on the Java Virtual Machine (JVM).
+        while they are running on a Java Virtual Machine (JVM).
         VisualVM organizes JVM data that is retrieved by the JDK tools and presents the information in a way that
         enables you to quickly view data on multiple Java applications.
         You can view data on local applications and applications that are running on remote hosts.
@@ -42,13 +42,13 @@
         <p>The Applications window opens in the left side of the main VisualVM window when you launch the application.
         The Applications window is the main point of entry for exploring the details of running applications.
         The Applications window uses a tree structure to enable you to quickly view the applications running on the local machine and any connected remote machines.
-        You can also access core dumps (Solaris only) and saved snapshots from the Applications window.</p>
+        You can also access core dumps (Solaris/Linux) and saved snapshots from the Applications window.</p>
 
         <p>Right-clicking a node in the Applications window opens a popup menu that enables you to perform actions related to that node, including
         opening application tabs, taking heap and thread dumps and opening snapshots in the main window.</p>
         
 
-        <p>For more details about how to use the Applications window to view and save data about applications, see the following pages:</p>
+        <p>For more details about how to use the Applications window to view and save data, see the following pages:</p>
         <ul>
             <li><a href="applications_window.html">Using the Applications Window</a></li>
             <li><a href="applications_local.html">Working with Local Applications</a></li>
@@ -65,11 +65,11 @@
         
         <p>For information about the application data that can be displayed in the main window, see the following pages:</p>
         <ul>
-            <li><a href="overview_tab.html">Application Overview</a></li>
-            <li><a href="monitor_tab.html">Monitoring an Application</a></li>
-            <li><a href="threads.html">Monitoring Threads</a></li>
+            <li><a href="overview_tab.html">Application Overview Tab</a></li>
+            <li><a href="monitor_tab.html">Monitoring an Application in the Monitor Tab</a></li>
+            <li><a href="threads.html">Monitoring Threads in the Threads Tab</a></li>
             <li><a href="heapdump.html">Browsing a Heap Dump</a></li>
-            <li><a href="profiler.html">Profiling an Application</a> (local applications only)</li>
+            <li><a href="profiler.html">Profiling an Application in the Profiler Tab</a> (local applications only)</li>
             <li><a href="mbeans_tab.html">MBeans Tab</a> (requires MBeans plugin)</li>
         </ul>
 
@@ -78,7 +78,7 @@
         <p>You can add functionality to VisualVM by using the Plugins manager to install plugins from the VisualVM Plugins Center.
         You can also extend the functionality of VisualVM by developing your own plugins that can then be added to an update center.</p>
 
-        <p>For example, installing the VisualVM-MBeans plugin adds an MBeans tab to the application tab 
+        <p>For example, installing the VisualVM-MBeans plugin adds an <a href="mbeans_tab.html">MBeans tab</a> to the application tab 
         that enables you to <a href="http://java.sun.com/javase/6/docs/technotes/guides/management/jconsole.html#gdeap">monitor and manage MBeans</a> 
         from within VisualVM.</p>
         <p><b>To install a VisualVM plugin:</b></p>
@@ -92,7 +92,7 @@
         
         
 
-        <p>For more information about VisualVM plugins, see the following documents:</p>        
+        <p>For more information about creating VisualVM plugins, see the following documents:</p>        
         <ul>
             <!--<li><a href="plugins.html">Working with VisualVM Plugins</a></li>-->
             <li><a href="api-quickstart.html">Getting Started Extending VisualVM</a></li>
