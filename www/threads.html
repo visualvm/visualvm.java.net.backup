@@ -13,24 +13,26 @@
 
         <h3>Monitoring Thread Activity</h3>
 
-        <p>VisualVM displays real-time, high-level data on thread activity in the Threads tab.
-        The information displayed in the Threads tab is based on Java Management Extensions (JMX).
+        <p>VisualVM displays real-time, high-level data on thread activity in the Threads tab.<br/>
+        <b>Note:</b> The information displayed in the Threads tab is based on Java Management Extensions (JMX).
         The Threads tab is visible if VisualVM can make a JMX connection with the target application and retrieve JMX instrumentation from the JVM.
         If the target application is a local application running on JDK 1.6, the JMX connection is made automatically.
         If the target application is not running on JDK 1.6, you may need to explicitly establish a JMX connection 
-        with the JVM.
-        </p>
+        with the JVM. for more on establishing a JMX connection, see the following document:</p> 
+        <ul>
+            <li><a href="jmx_connections.html">Connecting to JMX Agents Explicitly</a></li>
+        </ul>
         
         <p>By default the Threads tab displays a timeline of current thread activity. 
         You can click a thread in the timeline to view details about that thread in the Details tab.</p>
         
         <h4>Timeline Tab</h4>
         <p>This tab displays a timeline with real-time thread states. 
-        Clicking the buttons in the Timeline toolbar enables you to zoom in/out on the current view and switch to the Scale to Fit mode. 
+        Use the buttons in the Timeline toolbar to zoom in/out on the current view and to switch to the Scale to Fit mode. 
         The drop-down list enables you to select which threads are displayed.
         You can choose to view all threads, live threads or finished threads. 
-        You can also select a single thread or multiple threads a subset of threads to display. 
-        You can double-clicking on a thread timeline to open that thread in the Details tab.</p>
+        You can also select a single thread or multiple threads to display a subset of the threads. 
+        You can double-click on a thread timeline to open that thread in the Details tab.</p>
 
         <p>A timeline for each thread provides a quick overview of the thread's activity.</p>
         <img src="images/docs/thread-timeline-screen.png" style="border:1px solid;" alt="screenshot of timeline in Threads tab" 
@@ -61,7 +63,7 @@
         <p>When you print a thread dump in VisualVM, the tool prints a stack trace of the active threads of the application.
         Using VisualVM to take a thread dump can be very convenient in cases where you do not have a command-line console for the application.
         You can use a stack trace to help diagnose a number of issues such as deadlocks or when an application hangs.</p>
-        <p>Screenshot of thread dump (stack trace) in thread dump sub-tab</p>
+        <p>Screenshot of thread dump (stack trace) in thread dump sub-tab.</p>
         <img src="images/docs/thread-dump-screen.png" style="border:1px solid;" alt="screenshot of timeline in Threads tab" 
         title="screenshot of thread dump (stack trace) in thread dump sub-tab" />
         
