@@ -433,7 +433,7 @@ public void uninstalled() {
         
         <h3><a name="wizard-1"></a>Using the VisualVM View Template</h3>
         
-        <p>The VisualVM View template creates a new tab for the application type
+        <p><p>The VisualVM View template creates a new tab for the application type
         of your choice.
         
         <ol>
@@ -445,7 +445,7 @@ public void uninstalled() {
         project, choose Properties, open the Libraries tab, and check the
         NetBeans Platform drop-down. You should see an installation of VisualVM there.
         <p><li>Right-click the project node in the Projects window
-        and choose New Other. In the New File wizard, choose "VisualVM View",
+        and choose New | Other. In the New File wizard, choose "VisualVM View",
         as shown below:
         <p><p><img src="images/api-quickstart/visualvm-view-2.png" border="1"/>
         <p><li>Click Next and fill out the wizard step as follows:
@@ -469,15 +469,60 @@ public void uninstalled() {
         <p><p><img src="images/api-quickstart/visualvm-view-1.png" border="1"/></li>
         <p><li>Click Finish and the Projects window should show the new classes
         and the existing files indicated in the screenshot above should be changed.
+        <p><p><img src="images/api-quickstart/visualvm-view-3.png" border="1"/></li>
         <p><li>Run the project, open the relevant data source and notice that you
         have a new tab with the display name that you set in the "Prefix" field.
         </ol>  
         
-        
         <h3><a name="wizard-2"></a>Using the VisualVM Application Type Template</h3>
         
-        <p>The VisualVM ApplicationType template registers a new application type, via
+        <p>The VisualVM Application Type template registers a new application type, via
         its main class, with VisualVM.
+        
+        <ol>
+        <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=6664">Download the template</a>
+        from the Plugin Portal and install it into the IDE via Tools | Plugins | Downloaded.</li>
+        <p><li>Create a new module or use an existing module.
+        <p><li>Make sure to set an installation of VisualVM as the NetBeans Platform
+        for the project. To check that this has been set, right-click the
+        project, choose Properties, open the Libraries tab, and check the
+        NetBeans Platform drop-down. You should see an installation of VisualVM there.
+        <p><li>Right-click the project node in the Projects window
+        and choose New | Other. In the New File wizard, choose "VisualVM Application",
+        as shown below:
+        <p><p><img src="images/api-quickstart/visualvm-app-1.png" border="1"/>
+        <p><li>Click Next and fill out the wizard step as follows:
+        <ul>
+            <li><b>Prefix.</b> The prefix of the classes that will be generated.
+            For example, if you type "Anagram", the classes that will be generated
+            will be called "AnagramInstaller", "AnagramApplicationType", and 
+            "AnagramApplicationTypeFactory".
+            In addition, the display name for the application in the VisualVM
+            explorer view will be "Anagram". All of these can be changed after you complete
+            the wizard, should you want to do so.</li>
+            <li><b>Main Class.</b> The main class of the application for which
+            you are creating a new VisualVM application type. By default, the
+            value <tt>com.toy.anagrams.ui.Anagrams</tt> is filled in because that is
+            the main class of one of the samples that is shipped with NetBeans IDE.
+            You can change the value to the main class of your own class or leave
+            it as it is for testing purposes and then change the value in the code
+            later.</li>
+            <li><b>Package.</b> The name of the package where the classes will
+            be created.</li>
+        </ul>
+        <p>You should now see something like this:
+        <p><p><img src="images/api-quickstart/visualvm-app-2.png" border="1"/></li>
+        <p><li>Click Finish and the Projects window should show the new classes
+        and the existing files indicated in the screenshot above should be changed.
+        <p><p><img src="images/api-quickstart/visualvm-app-3.png" border="1"/></li>
+        <p><li>Run the project. VisualVM starts up, installing the module. You should
+        see no changes at all, unless the application for which you created the
+        application type is already running. If it is not running, run the application.
+        When you do so, you should see that the prefix that you set in the wizard
+        is the display name of the application in the explorer view and that a distinct
+        icon is used to identify your application:
+        <p><p><img src="images/api-quickstart/visualvm-app-4.png" border="1"/></li>
+        </ol>  
         
         <h2 class="tutorial"><a name="api"></a>VisualVM API Reference</h2>
         
