@@ -79,6 +79,11 @@
                             <li><a href="#preparing">Preparing to Extend VisualVM</a></li>
                             <li><a href="#hello">Creating a "Hello World" Plugin</a></li>
                             <li><a href="#trouble">Troubleshooting</a></li>
+                            <li><a name="#wizard">Using VisualVM File Wizards</a></li>
+                            <ul>
+                              <li><a name="wizard-1">Using the VisualVM View Template</a></li>
+                              <li><a name="wizard-2">Using the VisualVM Application Type Template</a></li>
+                            </ul>
                             <li><a href="#api">VisualVM API Reference</a>
                             <li><a href="#further">Further Reading</a></li>
                         </ul> 
@@ -190,7 +195,7 @@
             create need to therefore also make use of JDK 6 and
             not any earlier version of the JDK.
             
-            <li><b>Install NetBeans IDE 6.0.</b> Though you are free to use
+            <li><b>Install NetBeans IDE 6.0/6.1.</b> Though you are free to use
             any editor or IDE to develop VisualVM plugins, NetBeans IDE
             is optimized for plugin development for VisualVM. For example,
             the VisualVM plugin project structure, as well as several
@@ -211,7 +216,7 @@
             plugin should be built against the VisualVM binary that you
             registered above.
             
-            <li><b>Get the VisualVM Javadoc.</b> Get these from the "Beta 2 API Docs"
+            <li><b>Get the VisualVM Javadoc.</b> Get these from the "1.0 API Docs"
                 link on the <a href="https://visualvm.dev.java.net/">https://visualvm.dev.java.net/</a>
             page.</li>
             
@@ -381,7 +386,7 @@ public void uninstalled() {
         </ol>
         <p>Congratulations you have completed the Hello World scenario!
         
-           <h2><a name="trouble"></a>Troubleshooting</h2>
+        <h2><a name="trouble"></a>Troubleshooting</h2>
         
         <p>If the instructions for the Hello World sample, as described above,
         do not work for you, do the following:
@@ -409,6 +414,30 @@ public void uninstalled() {
         <li>Run the project, and the result should be the same as the last step
         of the previous section.
         </ol>  
+        
+        <h2><a name="wizard"></a>Using VisualVM File Wizards</h2>
+        
+        <p>The NetBeans Plugin Portal provides two wizards that you might find
+        helpful when getting started extending VisualVM:
+        
+        <ul>
+            <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=6503">VisualVM View Template</a>.</li>
+            <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=6664">VisualVM Application Type Template</a>.</li>
+        </ul>
+        
+        <p>In this section, you are introduced to these templates, shown how to
+        get started with them, and instructed on what to do once you've used them
+        to generate your code.
+        
+        <h3><a name="wizard-1"></a>Using the VisualVM View Template</h3>
+        
+        <p>The VisualVM View template creates a new tab for the application type
+        of your choice.
+        
+        <h3><a name="wizard-2"></a>Using the VisualVM Application Type Template</h3>
+        
+        <p>The VisualVM ApplicationType template registers a new application type, via
+        its main class, with VisualVM.
         
         <h2 class="tutorial"><a name="api"></a>VisualVM API Reference</h2>
         
@@ -575,7 +604,7 @@ public void uninstalled() {
         recommended to consult the following resources:
         
         <ol>
-            <li><b>VisualVM Javadoc.</b> Get these from the "Beta 2 API Docs"
+            <li><b>VisualVM Javadoc.</b> Get these from the "1.0 API Docs"
                 link on the <a href="https://visualvm.dev.java.net/">https://visualvm.dev.java.net/</a>
             page.</li>
             <li><b>VisualVM Developer FAQ.</b> A <a href="api-faq.html">complete list of typical questions</a>
