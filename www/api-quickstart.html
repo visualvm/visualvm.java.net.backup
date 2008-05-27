@@ -586,10 +586,18 @@ public class DemoAction extends SingleDataSourceAction&lt;Application&gt; {
 </pre>        
         
         
-        </ol>  
-        <p>Run the project. VisualVM will start up, the module will be installed,
+         
+        <p><li>Run the project. VisualVM will start up, the module will be installed,
         and when you right-click on an Application node, you should see the menu item
         shown at the start of this section.
+        
+        <p><li>To change the position of the menu item, expand the <tt>layer.xml</tt> file,
+        expand "this layer in context", find the menu item's node in VisualVM/ExplorerPopupSelection
+        and drag it to a different position. When you do so, a new int value will
+        be generated in the <tt>layer.xml</tt> file above, replacing the "3000" that
+        you see there.
+        
+        </ol> 
         
         
         
