@@ -84,6 +84,7 @@
                               <li><a href="#wizard-1">Using the VisualVM View Template</a></li>
                               <li><a href="#wizard-2">Using the VisualVM Application Type Template</a></li>
                             </ul>
+                            <li><a href="#menu-item">Adding a Menu Item on an Explorer Node</a></li>
                             <li><a href="#api">VisualVM API Reference</a>
                             <li><a href="#further">Further Reading</a></li>
                         </ul> 
@@ -523,6 +524,71 @@ public void uninstalled() {
         icon is used to identify your application:
         <p><p><img src="images/api-quickstart/visualvm-app-4.png" border="1"/></li>
         </ol>  
+        
+        
+        <h2><a name="menu-item"></a>Adding a Menu Item on an Explorer Node</h2>
+        
+        <p>In this section, we will add a menu item on the application type node,
+        as shown below:
+        
+        <p><p><img src="images/api-quickstart/add-menu-item.png" border="1"/>
+        
+        <ol>
+        <li>Create a new Java source file with this content:
+        
+<p><pre>package org.netbeans.demo;
+
+import com.sun.tools.visualvm.application.Application;
+import com.sun.tools.visualvm.core.ui.actions.SingleDataSourceAction;
+import java.awt.event.ActionEvent;
+import javax.swing.Action;
+import javax.swing.JOptionPane;
+
+public class DemoAction extends SingleDataSourceAction&lt;Application&gt; {
+
+    public DemoAction() {
+        super(Application.class);
+        putValue(Action.NAME, "Demo");
+        putValue(Action.SHORT_DESCRIPTION, "Demoes a menu item");
+    }
+
+    @Override
+    protected void actionPerformed(Application arg0, ActionEvent arg1) {
+        JOptionPane.showMessageDialog(null, "hello");
+    }
+
+    @Override
+    protected boolean isEnabled(Application arg0) {
+        return true;
+    }
+    
+}</pre>        
+        
+        <li>Add these tags to the <tt>layer.xml</tt> file:
+        
+<pre>
+    &lt;folder name="Actions"&gt;
+        &lt;folder name="Other"&gt;
+            &lt;file name="org-netbeans-demomodule1-DemoAction.instance"/&gt;
+        &lt;/folder&gt;
+    &lt;/folder&gt;
+    &lt;folder name="VisualVM"&gt;
+        &lt;folder name="ExplorerPopupSelection"&gt;
+            &lt;file name="org-netbeans-demomodule1-DemoAction.shadow"&gt;
+                &lt;attr name="originalFile" stringvalue="Actions/Other/org-netbeans-demomodule1-DemoAction.instance"/&gt;
+                &lt;attr name="position" intvalue="3000"/&gt;
+            &lt;/file&gt;
+        &lt;/folder&gt;
+    &lt;/folder&gt;            
+</pre>        
+        
+        
+        </ol>  
+        <p>Run the project. VisualVM will start up, the module will be installed,
+        and when you right-click on an Application node, you should see the menu item
+        shown at the start of this section.
+        
+        
         
         <h2 class="tutorial"><a name="api"></a>VisualVM API Reference</h2>
         
