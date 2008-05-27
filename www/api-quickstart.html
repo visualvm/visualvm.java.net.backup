@@ -297,15 +297,6 @@ public void uninstalled() {
 
     }
     
-    <b>@Override</b>
-    public boolean supportsSaveViewsFor(Application arg0) {
-        return false;
-    }
-
-    <b>@Override</b>
-    public void saveViews(Application arg0, Snapshot arg1) {
-    }
-    
     static void initialize() {
         DataSourceViewsManager.sharedInstance().addViewsProvider(instance, Application.class);
     }
