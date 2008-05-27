@@ -557,6 +557,9 @@ public class DemoAction extends SingleDataSourceAction&lt;Application&gt; {
         JOptionPane.showMessageDialog(null, "hello");
     }
 
+    //Here you can determine whether the menu item is enabled,
+    //depending on the application type that is selected. In this
+    //example, the menu item is enabled for all application types:
     @Override
     protected boolean isEnabled(Application arg0) {
         return true;
