@@ -78,6 +78,7 @@
                             <li><a href="#entry">Introducing the VisualVM Entry Points</a>
                             <li><a href="#preparing">Preparing to Extend VisualVM</a></li>
                             <li><a href="#hello">Creating a "Hello World" Plugin</a></li>
+                            <li><a href="#trouble">Troubleshooting</a></li>
                             <li><a href="#api">VisualVM API Reference</a>
                             <li><a href="#further">Further Reading</a></li>
                         </ul> 
@@ -380,7 +381,34 @@ public void uninstalled() {
         </ol>
         <p>Congratulations you have completed the Hello World scenario!
         
-          
+           <h2><a name="trouble"></a>Troubleshooting</h2>
+        
+        <p>If the instructions for the Hello World sample, as described above,
+        do not work for you, do the following:
+        
+        <ol>
+        <li>Use the "Download Sample" link at the top of this page to
+        download the sample.
+        <p><li>Install the downloaded NBM file into NetBeans IDE via Tools | Plugins | Downloaded.
+        <p><li>Open the New Project wizard (Ctrl-Shift-N) and find
+        the sample in the Samples | NetBeans Modules category, as
+        shown here:
+        <p><p><img src="images/api-quickstart/trouble-1.png" border="1"/>
+        <p><li>Complete the wizard and, if you have not set VisualVM as
+        your NetBeans Platform, you will see the project, together with
+        some error badges, as shown here:
+        <p><p><img src="images/api-quickstart/trouble-2.png" border="1"/>
+        <p><li>Choose Tools | NetBeans Platforms, click Add Platform, and browse to the installation
+        folder of VisualVM, to register it:
+        <p><p><img src="images/api-quickstart/trouble-3.png" border="1"/>
+        <p>Click Next and then click Finish.
+        <li>Right-click the "HelloVisualVM" project node in the Projects window
+        and choose Properties. In the Libraries panel, choose VisualVM as your
+        NetBeans Platform. When you close the Project Properties dialog, the
+        error marks should no longer be present.
+        <li>Run the project, and the result should be the same as the last step
+        of the previous section.
+        </ol>  
         
         <h2 class="tutorial"><a name="api"></a>VisualVM API Reference</h2>
         
