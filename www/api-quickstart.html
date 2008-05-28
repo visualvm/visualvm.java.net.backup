@@ -83,8 +83,8 @@
                             <ul>
                               <li><a href="#wizard-1">Using the VisualVM View Template</a></li>
                               <li><a href="#wizard-2">Using the VisualVM Application Type Template</a></li>
+                              <li><a href="#wizard-3">Using the VisualVM Action Template</a></li>
                             </ul>
-                            <li><a href="#menu-item">Adding a Menu Item on an Explorer Node</a></li>
                             <li><a href="#api">VisualVM API Reference</a>
                             <li><a href="#further">Further Reading</a></li>
                         </ul> 
@@ -411,12 +411,13 @@ public void uninstalled() {
         
         <h2><a name="wizard"></a>Using VisualVM File Wizards</h2>
         
-        <p>The NetBeans Plugin Portal provides two wizards that you might find
+        <p>The NetBeans Plugin Portal provides wizards that you might find
         helpful when getting started extending VisualVM:
         
         <ul>
             <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=6503">VisualVM View Template</a>.</li>
             <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=6664">VisualVM Application Type Template</a>.</li>
+            <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=9962">VisualVM Action Template</a>.</li>
         </ul>
         
         <p>In this section, you are introduced to these templates, shown how to
@@ -516,78 +517,56 @@ public void uninstalled() {
         <p><p><img src="images/api-quickstart/visualvm-app-4.png" border="1"/></li>
         </ol>  
         
+        <h3><a name="wizard-3"></a>Using the VisualVM Action Template</h3>
         
-        <h2><a name="menu-item"></a>Adding a Menu Item on an Explorer Node</h2>
-        
-        <p>In this section, we will add a menu item on the application type node,
-        as shown below:
-        
-        <p><p><img src="images/api-quickstart/add-menu-item.png" border="1"/>
+        <p>The VisualVM Application Type template creates a new action for nodes
+        in the VisualVM explorer view and registers it in the <tt>layer.xml</tt> file.
         
         <ol>
-        <li>Create a new Java source file with this content:
-        
-<p><pre>package org.netbeans.demo;
-
-import com.sun.tools.visualvm.application.Application;
-import com.sun.tools.visualvm.core.ui.actions.SingleDataSourceAction;
-import java.awt.event.ActionEvent;
-import javax.swing.Action;
-import javax.swing.JOptionPane;
-
-public class DemoAction extends SingleDataSourceAction&lt;Application&gt; {
-
-    public DemoAction() {
-        super(Application.class);
-        putValue(Action.NAME, "Demo");
-        putValue(Action.SHORT_DESCRIPTION, "Demoes a menu item");
-    }
-
-    @Override
-    protected void actionPerformed(Application arg0, ActionEvent arg1) {
-        JOptionPane.showMessageDialog(null, "hello");
-    }
-
-    //Here you can determine whether the menu item is enabled,
-    //depending on the application type that is selected. In this
-    //example, the menu item is enabled for all application types:
-    @Override
-    protected boolean isEnabled(Application arg0) {
-        return true;
-    }
-    
-}</pre>        
-        
-        <li>Add these tags to the <tt>layer.xml</tt> file:
-        
-<pre>
-    &lt;folder name="Actions"&gt;
-        &lt;folder name="Other"&gt;
-            &lt;file name="org-netbeans-demomo-DemoAction.instance"/&gt;
-        &lt;/folder&gt;
-    &lt;/folder&gt;
-    &lt;folder name="VisualVM"&gt;
-        &lt;folder name="ExplorerPopupSelection"&gt;
-            &lt;file name="org-netbeans-demo-DemoAction.shadow"&gt;
-                &lt;attr name="originalFile" stringvalue="Actions/Other/org-netbeans-demo-DemoAction.instance"/&gt;
-                &lt;attr name="position" intvalue="3000"/&gt;
-            &lt;/file&gt;
-        &lt;/folder&gt;
-    &lt;/folder&gt;            
-</pre>        
-        
-        
-         
-        <p><li>Run the project. VisualVM will start up, the module will be installed,
-        and when you right-click on an Application node, you should see the menu item
-        shown at the start of this section.
-        
-        <p><li>To change the position of the menu item, expand the <tt>layer.xml</tt> file,
+        <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=9962">Download the template</a>
+        from the Plugin Portal and install it into the IDE via Tools | Plugins | Downloaded.</li>
+        <p><li>Create a new module or use an existing module.
+        <p><li>Make sure to set an installation of VisualVM as the NetBeans Platform
+        for the project. To check that this has been set, right-click the
+        project, choose Properties, open the Libraries tab, and check the
+        NetBeans Platform drop-down. You should see an installation of VisualVM there.
+        <p><li>Right-click the project node in the Projects window
+        and choose New | Other. In the New File wizard, choose "VisualVM Action",
+        as shown below:
+        <p><p><img src="images/api-quickstart/new-exp-action-vvm-4.png" border="1"/>
+        <p><li>Click Next and fill out the wizard step as follows:
+        <ul>
+            <li><b>Prefix.</b> The prefix of the class that will be generated.
+            For example, if you type "Sample", the class that will be generated
+            will be called "SampleAction".
+            In addition, the display name in the menu item that will be generated by the
+            wizard will be "Sample". All of these can be changed after you complete
+            the wizard, should you want to do so.</li>
+            <li><b>Data Source.</b> An explorer menu item applies to a specific data source
+            or to all data sources. They are all listed in the drop-down:
+            <p><p><img src="images/api-quickstart/new-exp-action-vvm-4.png" border="1"/>
+            <p>If you choose "DataSource" in the drop-down, the
+            menu item will be available to <i>all</i> data sources, while it will only
+            be available to a specific data source, such as "Application", if the
+            data source in question is selected. This can also be changed afterwards, should
+            you want to do so.</li>
+            <li><b>Package.</b> The name of the package where the class will
+            be created.</li>
+        </ul>        
+        <p>You should now see something like this:
+        <p><p><img src="images/api-quickstart/new-exp-action-vvm-1.png" border="1"/></li>
+        <p><li>Click Finish and the Projects window should show the new action class
+        and the existing files indicated in the screenshot above should be changed.
+        <p><li>Run the project. VisualVM starts up, installing the module. Right-click
+        the node of the type of data source for which you created the action. For
+        example, if you selected "Application", right-click an application node and
+        then you should see the new menu item, as shown below:
+        <p><p><img src="images/api-quickstart/new-exp-action-vvm-3.png" border="1"/></li>
+        <p><li>To change the position of the menu item, go back to the IDE, expand the <tt>layer.xml</tt> file,
         expand "this layer in context", find the menu item's node in VisualVM/ExplorerPopupSelection
         and drag it to a different position. When you do so, a new int value will
         be generated in the <tt>layer.xml</tt> file above, replacing the "3000" that
         you see there.
-        
         </ol> 
         
         
