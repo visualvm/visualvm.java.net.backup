@@ -136,36 +136,25 @@
         pattern. In that light, the main VisualVM APIs are as follows:
         
         <ul>
-            <li>Tabs
-            <br><tt>com.sun.tools.visualvm.core.ui.DataSourceViewProvider
-            <br>/com.sun.tools.visualvm.core.ui.DataSourceViewManager</tt>
-            <p>To make your tabs extendable, the following API must be extended:
-            <br><tt>com.sun.tools.visualvm.core.ui.PluggableViewSupport</tt>
-            <li>Subtabs
-            <br><tt>com.sun.tools.visualvm.core.ui.ViewPluginProvider
-            <br>/com.sun.tools.visualvm.core.ui.PluggableDataSourceViewProvider</tt>
-            <p>To integrate a subtab into one of the existing tabs, you need
-            to initialize one or more of the following APIs:
-            <br><tt>com.sun.tools.visualvm.core.dataview.monitor.MonitorViewSupport</tt>
-            <br><tt>com.sun.tools.visualvm.core.dataview.overview.OverviewViewSupport</tt>
-            <br><tt>com.sun.tools.visualvm.core.dataview.threads.ThreadsViewSupport</tt>
-            <br><tt>com.sun.tools.visualvm.core.heapdump.HeapDumpSupport</tt>
-            <br><tt>com.sun.tools.visualvm.core.threaddump.ThreadDumpSupport</tt>
-            <li>Menu Items
-            <br><tt>com.sun.tools.visualvm.core.explorer.ExplorerActionsProvider
-            <br>/javax.swing.AbstractAction</tt>
-            <li>Application Types
-            <br><tt>com.sun.tools.visualvm.application.type.MainClassApplicationTypeFactory
-            <br>/com.sun.tools.visualvm.application.type.ApplicationType</tt>
-            <li>Data Sources
-            <br><tt>com.sun.tools.visualvm.core.datasource.DefaultDataSourceProvider
-            <br>/com.sun.tools.visualvm.core.datasource.AbstractDataSource</tt>
-            <br>You also need to extend the following:
-            <br><tt>com.sun.tools.visualvm.core.model.dsdescr.DataSourceDescriptor</tt>
+            <li><b>Tabs</b>
+            <br><tt>com.sun.tools.visualvm.core.ui.DataSourceViewProvider</tt>
+            <br>/<tt>com.sun.tools.visualvm.core.ui.DataSourceView</tt>
+            <p>To make your tabs extendable, the following API must be extended,
+            instead of com.sun.tools.visualvm.core.ui.DataSourceViewProvider:
+            <br><tt>com.sun.tools.visualvm.core.ui.PluggableDataSourceViewProvider</tt>
+            <li><b>Subtabs</b>
+            <br><tt>com.sun.tools.visualvm.core.ui.DataSourceViewPluginProvider</tt>
+            <br>/<tt>com.sun.tools.visualvm.core.ui.DataSourceViewPlugin</tt>
+            <li><b>Menu Items</b>
+            <br><tt>com.sun.tools.visualvm.core.ui.actions.SingleDataSourceAction</tt>
+            <li><b>Application Types</b>
+            <br><tt>com.sun.tools.visualvm.application.type.MainClassApplicationTypeFactory</tt>
+            <br>/<tt>com.sun.tools.visualvm.application.type.ApplicationType</tt>
+            <li><b>Data Sources</b>
             <br><tt>com.sun.tools.visualvm.core.model.AbstractModelProvider</tt>
-            
+            <br>/<tt>com.sun.tools.visualvm.core.datasource.descriptor.DataSourceDescriptor</tt>
+            <br>/<tt>com.sun.tools.visualvm.core.datasource.DataSource</tt>
         </ul>    
-        
         
         <p><p>The lifecycle of a VisualVM plugin is determined by a <tt>ModuleInstall</tt> class,
         which comes from the NetBeans APIs. Whenever you implement a new entry point into
