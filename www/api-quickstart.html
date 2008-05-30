@@ -39,13 +39,18 @@
     </td>
   </tr>
 </table>
-
+    
+        <p>VisualVM is a tool for visualizing data sources. By default, it visualizes
+        the following types of data sources&#8212;applications, hosts, snapshots, core dumps,
+        heap dumps, and thread dumps. These data sources are visualized in VisualVM so
+        that they can be monitored for purposes of analysis, management, and troubleshooting.
 
         
         <p>In this tutorial you will be
-        introduced to the VisualVM APIs and you will be shown how to get
-        started using them
-        to extend VisualVM. 
+        introduced to the VisualVM APIs so that you can provide additional
+        features to VisualVM. Principally, you will be shown how to get
+        started using them and be given pointers for further resources, such
+        as templates and samples. 
         
         <p>In general, there are two types of reasons
         why you would want to extend VisualVM:
@@ -99,31 +104,32 @@
             create new tabs just like these. Optionally, your own tabs can be
             extendable so that others can plug subtabs into your tabs.
             Your tabs can either be available
-            to all application types or to specific application types.
+            for all data sources in VisualVM or to specific types of data sources.
             <li><b>Subtab extension.</b> Within tabs
             such as those listed above, you can provide
             new subtabs. However, this is only possible if the tab has been
-            created to be "pluggable". The following tabs are all pluggable:
-            "Overview", "Monitor", "Threads", "Heap Dump", "Host". When you create a new subtab, 
+            defined to be "pluggable", which is explained below. The following tabs are all pluggable:
+            "Overview", "Monitor", "Threads", "Heap Dump", and "Host". When you create a new subtab, 
             you can specify its position in relation to the other subtabs within the tab.
-            Subtabs can either be available to all application types or to specific application
-            types.
-            <li><b>Menu extension.</b> An application type, and its subnodes,
+            Subtabs can either be available for all data sources or for specific data
+            sources.
+            <li><b>Menu extension.</b> A data source, and its subnodes,
             can have one or more menu items added to their contextual menus.
-            <li><b>Application type extension.</b> Not only can you extend
-            existing application types, as described above, but you can also
-            register new application types. You can do this to do 
+            <li><b>Application type extension.</b> By default, all applications
+            visualized in VisualVM are treated equally, that is, they all have the same icons
+            and tabs, except if a plugin is provided to provide additional functionality.
+            You might also want to provide functionality for a specific application,
+            which means that you would need to define a new application type.
+            You can do this to do 
             something as simple as provide a distinguishing icon for a
             running instance of your application. Alternatively, you might
             want to provide a lot of functionality, including graphs, to show
-            the processing of your application. The starting point for this
-            application-specific functionality is to implement a new
-            application type.
-            <li><b>Data source extension.</b> The "application type" is only
+            the processing of your specific application.
+            <li><b>Data source extension.</b> The "Application" data source is only
             one of the types of data sources that can be monitored and managed
-            in VisualVM. For example, another of the data sources is the "host type",
-            which lets you monitor and manage local and remote hosts. In addition,
-            you can create new data sources, in situations where you want to
+            in VisualVM. Another of the data sources is the "Host" data source,
+            which lets you monitor and manage local and remote hosts.
+            You might want to create new data sources, in situations where you want to
             monitor and manage a type of data source that VisualVM does not cater
             for by default.
         </ul>    
