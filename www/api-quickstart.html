@@ -79,12 +79,8 @@
                             <li><a href="#preparing">Preparing to Extend VisualVM</a></li>
                             <li><a href="#hello">Creating a "Hello World" Plugin</a></li>
                             <li><a href="#trouble">Troubleshooting</a></li>
-                            <li><a href="#wizard">Using VisualVM File Wizards</a></li>
-                            <ul>
-                              <li><a href="#wizard-1">Using the VisualVM View Template</a></li>
-                              <li><a href="#wizard-2">Using the VisualVM Application Type Template</a></li>
-                              <li><a href="#wizard-3">Using the VisualVM Action Template</a></li>
-                            </ul>
+                            <li><a href="#wizard">VisualVM File Templates</a></li>
+                            <li><a href="#sample">VisualVM API Samples</a></li>
                             <li><a href="#api">VisualVM API Reference</a>
                             <li><a href="#further">Further Reading</a></li>
                         </ul> 
@@ -409,167 +405,37 @@ public void uninstalled() {
         <p>Now inspect the sources of the sample and compare them to your own
         to see where the problem is.
         
-        <h2><a name="wizard"></a>Using VisualVM File Wizards</h2>
+        <h2><a name="wizard"></a>VisualVM File Templates</h2>
         
         <p>The NetBeans Plugin Portal provides wizards that you might find
         helpful when getting started extending VisualVM:
         
         <ul>
-            <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=6503">VisualVM View Template</a>.</li>
-            <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=6664">VisualVM Application Type Template</a>.</li>
-            <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=9962">VisualVM Action Template</a>.</li>
+            <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=6503">VisualVM View Template.</a>
+             Gives you the Java classes needed for creating a new tab for a specified
+             data source, together with the applicable
+             project dependencies.</li>
+            <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=6664">VisualVM Application Type Template.</a>
+            Gives you the Java classes needed for VisualVM to recognize a new Java application, via
+            its main class, so that a new node will be created with a unique display name and icon,
+            for the specified application, together with the applicable project dependencies.</li>
+            <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=9962">VisualVM Action Template.</a>
+            Gives you the Java class, layer.xml entries, and project dependencies for
+            a new menu item in the explorer view for a specified data source.</li>
         </ul>
         
-        <p>In this section, you are introduced to these templates, shown how to
-        get started with them, and instructed on what to do once you've used them
-        to generate your code.
+        <p>In each case, the Plugin Portal page describes the steps to take when
+        using the template and it also shows you most of the code that is generated for you.
         
-        <h3><a name="wizard-1"></a>Using the VisualVM View Template</h3>
+         <h2><a name="sample"></a>VisualVM API Samples</h2>
         
-        <p><p>The VisualVM View template creates a new tab for the data source
-        of your choice.
+        <p>The NetBeans Plugin Portal provides a collection of 7 samples, covering
+        the most common ways in which you would want to plug into VisualVM:
         
-        <ol>
-        <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=6503">Download the template</a>
-        from the Plugin Portal and install it into the IDE via Tools | Plugins | Downloaded.</li>
-        <p><li>Create a new module or use an existing module.
-        <p><li>Make sure to set an installation of VisualVM as the NetBeans Platform
-        for the project. To check that this has been set, right-click the
-        project, choose Properties, open the Libraries tab, and check the
-        NetBeans Platform drop-down. You should see an installation of VisualVM there.
-        <p><li>Right-click the project node in the Projects window
-        and choose New | Other. In the New File wizard, choose "VisualVM View",
-        as shown below:
-        <p><p><img src="images/api-quickstart/visualvm-view-2.png" border="1"/>
-        <p><li>Click Next and fill out the wizard step as follows:
-        <ul>
-            <li><b>Prefix.</b> The prefix of the classes that will be generated.
-            For example, if you type "Demo", the classes that will be generated
-            will be called "DemoInstaller", "DemoView", and "DemoViewProvider".
-            In addition, the display name in the tab that will be generated by the
-            wizard will be "Demo". All of these can be changed after you complete
-            the wizard, should you want to do so.</li>
-            <li><b>Data Source.</b> A view applies to a specific data source
-            or to all data sources. If you choose "DataSource" in the drop-down, the
-            view will be available to <i>all</i> data sources, while it will only
-            be available to a specific data source, such as "Application", if the
-            data source in question is selected. This can also be changed afterwards, should
-            you want to do so.</li>
-            <li><b>Package.</b> The name of the package where the classes will
-            be created.</li>
-        </ul>
-        <p>You should now see something like this:
-        <p><p><img src="images/api-quickstart/visualvm-view-1.png" border="1"/></li>
-        <p><li>Click Finish and the Projects window should show the new classes
-        and the existing files indicated in the screenshot above should be changed.
-        <p><p><img src="images/api-quickstart/visualvm-view-3.png" border="1"/></li>
-        <p><li>Run the project, open the relevant data source and notice that you
-        have a new tab with the display name that you set in the "Prefix" field.
-        </ol>  
+        <p><img src="http://plugins.netbeans.org/nbpluginportal/files/images/1212076297454_vvm-samples-0.png" border="1"/>
         
-        <h3><a name="wizard-2"></a>Using the VisualVM Application Type Template</h3>
-        
-        <p>The VisualVM Application Type template registers a new application type, via
-        its main class, with VisualVM.
-        
-        <ol>
-        <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=6664">Download the template</a>
-        from the Plugin Portal and install it into the IDE via Tools | Plugins | Downloaded.</li>
-        <p><li>Create a new module or use an existing module.
-        <p><li>Make sure to set an installation of VisualVM as the NetBeans Platform
-        for the project. To check that this has been set, right-click the
-        project, choose Properties, open the Libraries tab, and check the
-        NetBeans Platform drop-down. You should see an installation of VisualVM there.
-        <p><li>Right-click the project node in the Projects window
-        and choose New | Other. In the New File wizard, choose "VisualVM Application",
-        as shown below:
-        <p><p><img src="images/api-quickstart/visualvm-app-1.png" border="1"/>
-        <p><li>Click Next and fill out the wizard step as follows:
-        <ul>
-            <li><b>Prefix.</b> The prefix of the classes that will be generated.
-            For example, if you type "Anagram", the classes that will be generated
-            will be called "AnagramInstaller", "AnagramApplicationType", and 
-            "AnagramApplicationTypeFactory".
-            In addition, the display name for the application in the VisualVM
-            explorer view will be "Anagram". All of these can be changed after you complete
-            the wizard, should you want to do so.</li>
-            <li><b>Main Class.</b> The main class of the application for which
-            you are creating a new VisualVM application type. By default, the
-            value <tt>com.toy.anagrams.ui.Anagrams</tt> is filled in because that is
-            the main class of one of the samples that is shipped with NetBeans IDE.
-            You can change the value to the main class of your own class or leave
-            it as it is for testing purposes and then change the value in the code
-            later.</li>
-            <li><b>Package.</b> The name of the package where the classes will
-            be created.</li>
-        </ul>
-        <p>You should now see something like this:
-        <p><p><img src="images/api-quickstart/visualvm-app-2.png" border="1"/></li>
-        <p><li>Click Finish and the Projects window should show the new classes
-        and the existing files indicated in the screenshot above should be changed.
-        <p><p><img src="images/api-quickstart/visualvm-app-3.png" border="1"/></li>
-        <p><li>Run the project. VisualVM starts up, installing the module. You should
-        see no changes at all, unless the application for which you created the
-        application type is already running. If it is not running, run the application.
-        When you do so, you should see that the prefix that you set in the wizard
-        is the display name of the application in the explorer view and that a distinct
-        icon is used to identify your application:
-        <p><p><img src="images/api-quickstart/visualvm-app-4.png" border="1"/></li>
-        </ol>  
-        
-        <h3><a name="wizard-3"></a>Using the VisualVM Action Template</h3>
-        
-        <p>The VisualVM Action template creates a new action for nodes
-        in the VisualVM explorer view and registers it in the <tt>layer.xml</tt> file.
-        
-        <ol>
-        <li><a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=9962">Download the template</a>
-        from the Plugin Portal and install it into the IDE via Tools | Plugins | Downloaded.</li>
-        <p><li>Create a new module or use an existing module.
-        <p><li>Make sure to set an installation of VisualVM as the NetBeans Platform
-        for the project. To check that this has been set, right-click the
-        project, choose Properties, open the Libraries tab, and check the
-        NetBeans Platform drop-down. You should see an installation of VisualVM there.
-        <p><li>Right-click the project node in the Projects window
-        and choose New | Other. In the New File wizard, choose "VisualVM Action",
-        as shown below:
-        <p><p><img src="images/api-quickstart/new-exp-action-vvm-4.png" border="1"/>
-        <p><li>Click Next and fill out the wizard step as follows:
-        <ul>
-            <li><b>Prefix.</b> The prefix of the class that will be generated.
-            For example, if you type "Sample", the class that will be generated
-            will be called "SampleAction".
-            In addition, the display name in the menu item that will be generated by the
-            wizard will be "Sample". All of these can be changed after you complete
-            the wizard, should you want to do so.</li>
-            <li><b>Data Source.</b> An explorer menu item applies to a specific data source
-            or to all data sources. They are all listed in the drop-down:
-            <p><p><img src="images/api-quickstart/new-exp-action-vvm-2.png" border="1"/>
-            <p>If you choose "DataSource" in the drop-down, the
-            menu item will be available to <i>all</i> data sources, while it will only
-            be available to a specific data source, such as "Application", if the
-            data source in question is selected. This can also be changed afterwards, should
-            you want to do so.</li>
-            <li><b>Package.</b> The name of the package where the class will
-            be created.</li>
-        </ul>        
-        <p>You should now see something like this:
-        <p><p><img src="images/api-quickstart/new-exp-action-vvm-1.png" border="1"/></li>
-        <p><li>Click Finish and the Projects window should show the new action class
-        and the existing files indicated in the screenshot above should be changed.
-        <p><li>Run the project. VisualVM starts up, installing the module. Right-click
-        the node of the type of data source for which you created the action. For
-        example, if you selected "Application", right-click an application node and
-        then you should see the new menu item, as shown below:
-        <p><p><img src="images/api-quickstart/new-exp-action-vvm-3.png" border="1"/></li>
-        <p><li>To change the position of the menu item, go back to the IDE, expand the <tt>layer.xml</tt> file,
-        expand "this layer in context", find the menu item's node in VisualVM/ExplorerPopupSelection
-        and drag it to a different position. When you do so, a new int value will
-        be generated in the <tt>layer.xml</tt> file above, replacing the "3000" that
-        you see there.
-        </ol> 
-        
-        
+        <p>Go <a href="http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=10000">here to get the samples</a>,
+        which are <a href="http://java.dzone.com/announcements/visualvm-sample-collection-10">described here on Javalobby</a>.
         
         <h2 class="tutorial"><a name="api"></a>VisualVM API Reference</h2>
         
