@@ -44,7 +44,6 @@
         the following types of data sources&#8212;applications, hosts, snapshots, core dumps,
         heap dumps, and thread dumps. These data sources are visualized in VisualVM so
         that they can be monitored for purposes of analysis, management, and troubleshooting.
-
         
         <p>In this tutorial you will be
         introduced to the VisualVM APIs so that you can provide additional
@@ -173,7 +172,6 @@
         <tt>ModuleInstall.uninstalled</tt> method. You will be shown some typical
         registration/deregistration code in the "Hello World" scenario that follows.
         
-        
         <h2><a name="preparing"></a>Preparing to Extend VisualVM</h2>
         
         <p>When you are planning to extend VisualVM, you need to
@@ -212,13 +210,9 @@
                 link on the <a href="https://visualvm.dev.java.net/">https://visualvm.dev.java.net/</a>
             page.</li>
             
-            
-            
         </ul>
         
-        
         <h2><a name="hello"></a>Creating a "Hello World" Plugin</h2>
-        
         
         <p>Now, we'll say "Hello World". We will create a new tab that looks as follows:
         
@@ -433,9 +427,15 @@ public void uninstalled() {
         which are <a href="http://java.dzone.com/announcements/visualvm-sample-collection-10">described here on Javalobby</a>.
         
         <h2 class="tutorial"><a name="api"></a>Appendix C: VisualVM API Reference</h2>
-        
-        <p>A brief overview of the packages provided by the VisualVM APIs, together
-        with FAQs that relate to the packages in question:
+        <p>When you check out the VisualVM sources, you
+        will find that the following modules make up
+        the application. Each provides a set of APIs
+        that you can use to extend the module in question:
+        <p><img src="images/api-quickstart/vvm-sources.png" border="1"/>
+        <p>A brief overview of the API-related packages provided 
+        by the VisualVM modules that you see above, together
+        with FAQs that you might have about concepts
+        relating to the packages in question:
         <br>
         <table class="ct">
             <tbody>
@@ -464,17 +464,17 @@ public void uninstalled() {
                     <td class="ct"></td>
                 </tr>
                 <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.dataview.monitor</td>
+                    <td class="ct">com.sun.tools.visualvm.application.views.monitor</td>
                     <td class="ct">Provides the entry point into the "Monitor" tab.</td>
                     <td class="ct"><ul><li><a href="api-faq.html#how-create-tabs">How do I extend the Monitor tab?</a></ul></td>
                 </tr>
                 <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.dataview.overview</td>
+                    <td class="ct">com.sun.tools.visualvm.application.views.overview</td>
                     <td class="ct">Provides the entry point into the "Overview" tab.</td>
                     <td class="ct"><ul><li><a href="api-faq.html#how-create-tabs">How do I extend the Overview tab?</a></ul></td>
                 </tr>
                 <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.dataview.threads</td>
+                    <td class="ct">com.sun.tools.visualvm.application.views.threads</td>
                     <td class="ct">Provides the entry point into the "Threads" tab.</td>
                     <td class="ct"><ul><li><a href="api-faq.html#how-create-tabs">How do I extend the Threads tab?</a></ul></td>
                 </tr>
@@ -490,7 +490,7 @@ public void uninstalled() {
                 </ul></td>
                 </tr>
                 <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.heapdump</td>
+                    <td class="ct">com.sun.tools.visualvm.heapdump</td>
                     <td class="ct">Provides the entry point into the "Heap Dump" tab.</td>
                     <td class="ct"><ul><li><a href="api-faq.html#how-create-tabs">How do I extend the Heap Dump tab?</a></ul></td>
                 </tr>
@@ -502,7 +502,7 @@ public void uninstalled() {
                     <td class="ct"></td>
                 </tr>
                 <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.model.apptype</td>
+                    <td class="ct">com.sun.tools.visualvm.application.type</td>
                     <td class="ct">Provides predefined generic application types. 
                         For example, an application type is provided for Java Web Start
                         applications, so that when an application is deployed via
@@ -518,13 +518,13 @@ public void uninstalled() {
                     <li><a href="api-faq.html#how-add-menu-items">How do I add contextual menu items to my application type?</a></ul></td>
                 </tr>
                 <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.model.dsdescr</td>
+                    <td class="ct">com.sun.tools.visualvm.core.datasource.descriptor</td>
                     <td class="ct">Provides classes that you need to use when
                     creating new data sources, such as new application types.</td>
                     <td class="ct"></td>
                 </tr>
                 <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.model.host</td>
+                    <td class="ct">com.sun.tools.visualvm.host</td>
                     <td class="ct">Provides a common interface for 
                         <tt>DataSources</tt> that represent a host, that is, localhost or remote host.
                     </td>
@@ -533,7 +533,7 @@ public void uninstalled() {
                 <li><a href="api-faq.html#how-extend-host-overview">How do I extend the Host "Overview" tab?</a></ul></td>
                 </tr>
                 <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.model.jmx</td>
+                    <td class="ct">com.sun.tools.visualvm.jmx</td>
                     <td class="ct">Provides classes that let you work with Java
                         Management Extensions (JMX). For example, you can check
                         whether JMX is enabled for an application and then
@@ -542,7 +542,7 @@ public void uninstalled() {
                     for an application?</a></ul></td>
                 </tr>
                 <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.model.jvm</td>
+                    <td class="ct">com.sun.tools.visualvm.jvm</td>
                     <td class="ct">Provides classes that let you define
                         functionality for specific versions of the JVM. For example,
                         there is a "SunJVM_6" class, as well as a "SunJVM_7" class. Per class,
@@ -558,14 +558,14 @@ public void uninstalled() {
                     <td class="ct"></td>
                 </tr>
                 <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.snapshot</td>
+                    <td class="ct">com.sun.tools.visualvm.application.snapshot</td>
                     <td class="ct">Provides entry points into snapshots.
                         For example, you can retrieve a list of registered
                     snapshots.</td>
                     <td class="ct"></td>
                 </tr>
                 <tr>
-                    <td class="ct">com.sun.tools.visualvm.core.threaddump</td>
+                    <td class="ct">com.sun.tools.visualvm.threaddump</td>
                     <td class="ct">Provides the entry point into the "Thread Dump" tab.</td>
                     <td class="ct"><ul><li><a href="api-faq.html#how-create-tabs">How do I extend the Thread Dump tab?</a></ul></td>
                 </tr>
