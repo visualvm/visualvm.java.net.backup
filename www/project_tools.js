@@ -29,6 +29,9 @@ function hideUnwantedElements() {
 
     // Hide banner area
 //    hideElementById("banner");
+    alert(document.getElementById("banner").parentNode);
+    alert(document.getElementById("banner").parentNode.parentNode);
+    hideElement(document.getElementById("banner").parentNode.parentNode);
 
     // Hide navigation tabs
     hideElementById("toptabs");
