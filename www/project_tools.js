@@ -101,7 +101,7 @@ function createHeader() {
     headerHTML.push("            <div id=\"loginbar_clear\"></div>");
     headerHTML.push("      </div>");
 
-    headerHTML.push("      <div id=\"logo\" style=\"background: url('imgs/header_filler.png') repeat-x;\"><img src=\"imgs/header.png\"/></div>");
+    headerHTML.push("      <div id=\"logo\" style=\"background: url('brandingtest/imgs/header_filler.png') repeat-x;\"><img src=\"brandingtest/imgs/header.png\"/></div>");
 
     headerHTML.push("      <div id=\"menu\">");
     headerHTML.push("            <a class=\"menu_link\" href=\"#\">Home</a><a class=\"menu_link\" href=\"#\">Features</a><a class=\"menu_link\" href=\"#\">Download</a><a class=\"menu_link\" href=\"#\">Documentation</a><a class=\"menu_link\" href=\"#\">Plugins</a>");
