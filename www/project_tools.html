@@ -1,0 +1,10 @@
+<script>
+    var display = document.getElementById("main").parentNode.style.display;
+    document.getElementById("main").parentNode.style.display = "none";
+
+    window.onload = function() {
+        var left = document.getElementById("breadcrumbs");
+        left.style.display = "none";
+        document.getElementById("main").parentNode.style.display = display;
+    };
+</script>
