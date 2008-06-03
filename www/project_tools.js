@@ -143,7 +143,7 @@ if (customizeSite == "true") {
         // Hide unwanted default CollabNet elements
         hideUnwantedElements();
 
-//        createHeader();
+        createHeader();
 
         // Show page contents
         document.body.style.display = "block";
