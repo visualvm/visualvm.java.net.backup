@@ -1,10 +1,29 @@
 <script>
-    var display = document.getElementById("main").parentNode.style.display;
-    document.getElementById("main").parentNode.style.display = "none";
+    
+    function setCookie( name, value, path, domain, secure ) {
+        var cookie_string = name + "=" + escape(value);
+        cookie_string += "; expires=" + new Date(2020, 12, 31).toGMTString();
+        document.cookie = cookie_string;
+    }
 
-    window.onload = function() {
-        var left = document.getElementById("breadcrumbs");
-        left.style.display = "none";
-        document.getElementById("main").parentNode.style.display = display;
-    };
+    function getCookie(cookie_name) {
+        var results = document.cookie.match ('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
+        if (results) return unescape(results[2]);
+        else return null;
+    }
+    
+    var CUSTOMIZE_SITE = "customize_site_cookie";
+    var customizeSite = getCookie(CUSTOMIZE_SITE);
+    
+    if (customizeSite == "true") {
+        var display = document.getElementById("main").parentNode.style.display;
+        document.getElementById("main").parentNode.style.display = "none";
+
+        window.onload = function() {
+            var left = document.getElementById("breadcrumbs");
+            left.style.display = "none";
+            document.getElementById("main").parentNode.style.display = display;
+        };
+    }
+    
 </script>
