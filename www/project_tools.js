@@ -28,9 +28,6 @@ function hideUnwantedElements() {
     hideElementById("collabnet");
 
     // Hide banner area
-//    hideElementById("banner");
-    alert(document.getElementById("banner").parentNode);
-    alert(document.getElementById("banner").parentNode.parentNode);
     hideElement(document.getElementById("banner").parentNode.parentNode);
 
     // Hide navigation tabs
@@ -108,9 +105,9 @@ function createHeader() {
     containerElement.id = "containerElement";
     containerElement.innerHTML = headerHTML.join('');
 
-    // Inject header <div> before hidden banner
-    var bannerElement = document.getElementById("banner");
-    bannerElement.parentNode.insertBefore(containerElement, bannerElement);
+    // Inject header <div> between hidden banner and toptabs
+    var topTabsElement = document.getElementById("toptabs");
+    document.body.insertBefore(containerElement, topTabsElement);
 }
 
 
