@@ -1,13 +1,13 @@
-// Sets "long-life" cookie
-function setCookie( name, value, path, domain, secure ) {
+// Sets "long-life" cookie (expires December 31th, 2020)
+function setCookie(name, value) {
     var cookie_string = name + "=" + escape(value);
     cookie_string += "; expires=" + new Date(2020, 12, 31).toGMTString();
     document.cookie = cookie_string;
 }
 
 // Gets cookie
-function getCookie(cookie_name) {
-    var results = document.cookie.match ('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
+function getCookie(name) {
+    var results = document.cookie.match ('(^|;) ?' + name + '=([^;]*)(;|$)');
     if (results) return unescape(results[2]);
     else return null;
 }
@@ -136,9 +136,6 @@ var customizeSite = getCookie(CUSTOMIZE_SITE);
 
 if (customizeSite == "true") {
     // Hide page contents while doing customizations
-    //var documentRoot = document.getElementById("main").parentNode;
-    //var documentRootDisplay = documentRoot.style.display;
-    //hideElement(documentRoot);
     hideElement(document.body);
 
     // window.onload hook making the customizations
@@ -146,7 +143,7 @@ if (customizeSite == "true") {
         // Hide unwanted default CollabNet elements
         hideUnwantedElements();
 
-        createHeader();
+//        createHeader();
 
         // Show page contents
         document.body.style.display = "block";
