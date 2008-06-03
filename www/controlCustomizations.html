@@ -1,0 +1,25 @@
+<script>
+    
+    function setCookie( name, value, path, domain, secure ) {
+        var cookie_string = name + "=" + escape(value);
+        cookie_string += "; expires=" + new Date(2020, 12, 31).toGMTString();
+        document.cookie = cookie_string;
+    }
+
+    function getCookie(cookie_name) {
+        var results = document.cookie.match ('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
+        if (results) return unescape(results[2]);
+        else return null;
+    }
+    
+    var CUSTOMIZE_SITE = "customize_site_cookie";
+    var customizeSite = getCookie(CUSTOMIZE_SITE);
+    
+    var html =  "Customizations currently enabled: <b>" + (customizeSite == "true" ? "YES" : "NO") + "</b><br>"
+    if (customizeSite == "true")
+        html += "<a href=\"javascript:setCookie(CUSTOMIZE_SITE, 'false'); history.go(0);\">Disable customizations</a>"
+    else
+        html += "<a href=\"javascript:setCookie(CUSTOMIZE_SITE, 'true'); history.go(0);\">Enable customizations</a>"
+    document.write(html);
+    
+</script>
