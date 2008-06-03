@@ -92,15 +92,24 @@ function createHeader() {
 
     // Create header <div>
     var headerHTML = [];
-    headerHTML.push("<div style=\"background: yellow; padding: 2px;\">");
-    headerHTML.push("  <div style=\"float: left;\">");
-    headerHTML.push(   tasksMessage);
-    headerHTML.push("  </div>");
-    headerHTML.push("  <div style=\"float: right;\">");
-    headerHTML.push(   loginMessage);
-    headerHTML.push("  </div>");
-    headerHTML.push("  <div style=\"clear: both;\"></div>");
+    
+    headerHTML.push("<div id=\"header\">");
+
+    headerHTML.push("      <div id=\"loginbar\">");
+    headerHTML.push("            <div id=\"loginbar_message\">" + tasksMessage + "</div>");
+    headerHTML.push("            <div id=\"loginbar_login\">" + loginMessage + "</div>");
+    headerHTML.push("            <div id=\"loginbar_clear\"></div>");
+    headerHTML.push("      </div>");
+
+    headerHTML.push("      <div id=\"logo\" style=\"background: url('imgs/header_filler.png') repeat-x;\"><img src=\"imgs/header.png\"/></div>");
+
+    headerHTML.push("      <div id=\"menu\">");
+    headerHTML.push("            <a class=\"menu_link\" href=\"#\">Home</a><a class=\"menu_link\" href=\"#\">Features</a><a class=\"menu_link\" href=\"#\">Download</a><a class=\"menu_link\" href=\"#\">Documentation</a><a class=\"menu_link\" href=\"#\">Plugins</a>");
+    headerHTML.push("             |&nbsp;<a class=\"menu_link_minor\" href=\"#\">Sources</a><a class=\"menu_link_minor\" href=\"#\">Issues</a><a class=\"menu_link_minor\" href=\"#\">Mailing Lists</a><!--a class=\"menu_link_minor\" href=\"#\">Documents & Files</a-->");
+    headerHTML.push("      </div>");
+
     headerHTML.push("</div>");
+    
     var containerElement = document.createElement("div");
     containerElement.id = "containerElement";
     containerElement.innerHTML = headerHTML.join('');
