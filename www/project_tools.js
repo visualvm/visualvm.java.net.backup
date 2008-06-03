@@ -28,7 +28,7 @@ function hideUnwantedElements() {
     hideElementById("collabnet");
 
     // Hide banner area
-    hideElementById("banner");
+//    hideElementById("banner");
 
     // Hide navigation tabs
     hideElementById("toptabs");
