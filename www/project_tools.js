@@ -151,6 +151,9 @@ var customizeSite = getCookie(CUSTOMIZE_SITE);
 if (customizeSite == "true") {
     // Hide page contents while doing customizations
     hideElement(document.body);
+    
+    // Import custom css styles
+    document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/project_tools.css"/>');
 
     // window.onload hook making the customizations
     addLoadEventHandler(function() {
