@@ -43,13 +43,12 @@ body {
 	border-top: 1px solid #5b83a9;
 	border-bottom: 1px solid #5b83a9;
 	background: #b7d4e2;
-	padding: 4px 8px 4px 8px !important;
-        margin: 0px !important;
-	font-size: 11px !important;
+	padding: 4px 8px 4px 8px;
+	font-size: 11px;
 }
 
-a.menu_link {
-        font-size: 11px !important;
+menu_link {
+        font-size: 11px;
 	font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
 	text-decoration: none;
 	font-weight: bold;
@@ -57,21 +56,21 @@ a.menu_link {
 	color: #2f4353 !important;
 }
 
-a.menu_link:hover {
+menu_link:hover {
 	text-decoration: none;
 	background: #2f4353;
 	color: #c7e4f2 !important;
 }
 
-a.menu_link_minor {
-        font-size: 11px !important;
+menu_link_minor {
+        font-size: 11px;
 	font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
 	text-decoration: none;
 	padding: 4px 8px 4px 8px;
 	color: #3f5363 !important;
 }
 
-a.menu_link_minor:hover {
+menu_link_minor:hover {
 	text-decoration: none;
 	background: #2f4353;
 	color: #c7e4f2 !important;
