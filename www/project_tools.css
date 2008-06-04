@@ -3,12 +3,12 @@ visualvm.dev.java.net header
 Author: Jiri Sedlacek
 */
 
-/* body {
+#header {
 	padding: 0px;
 	margin: 0px;
 	font-size: 20px;
 	font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
-} */
+}
 
 #loginbar {
 	background: #5b83a9;
