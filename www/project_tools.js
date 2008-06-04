@@ -157,8 +157,8 @@ if (customizeSite == "true") {
         // Hide unwanted default CollabNet elements
         hideUnwantedElements();
         
-        // Import custom css styles
-        document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/project_tools.css"/>');
+//        // Import custom css styles
+//        document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/project_tools.css"/>');
 
         createHeader();
 
