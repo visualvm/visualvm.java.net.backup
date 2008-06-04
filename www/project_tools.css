@@ -47,33 +47,33 @@ body {
 	font-size: 11px;
 }
 
-.menu_link {
+a.menu_link {
         font-size: 11px;
 	font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
 	text-decoration: none;
 	font-weight: bold;
 	padding: 4px 8px 4px 8px;
-	color: #2f4353 !important;
+	color: #2f4353;
 }
 
-.menu_link:hover {
+a.menu_link:hover {
 	text-decoration: none;
 	background: #2f4353;
-	color: #c7e4f2 !important;
+	color: #c7e4f2;
 }
 
-.menu_link_minor {
+a.menu_link_minor {
         font-size: 11px;
 	font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
 	text-decoration: none;
 	padding: 4px 8px 4px 8px;
-	color: #3f5363 !important;
+	color: #3f5363;
 }
 
-.menu_link_minor:hover {
+a.menu_link_minor:hover {
 	text-decoration: none;
 	background: #2f4353;
-	color: #c7e4f2 !important;
+	color: #c7e4f2;
 }
 
 .menu_link_highlight {
