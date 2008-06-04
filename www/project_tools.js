@@ -163,7 +163,7 @@ if (customizeSite == "true") {
         createHeader();
 
         // Show page contents
-        document.body.style.display="block";
+        document.getElementById("main").parentNode.style.display="block";
 
 	// jump to anchor if one is given
 	if (window.location.hash != null && window.location.hash != "")
