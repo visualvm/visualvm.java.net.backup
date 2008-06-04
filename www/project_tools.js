@@ -93,24 +93,24 @@ function createHeader() {
     // Create header <div>
     var headerHTML = [];
     
-    headerHTML.push("<div id=\"header\">");
+    headerHTML.push("<div id='header'>");
     
-    headerHTML.push("  <div id=\"loginbar\">");
-    headerHTML.push("    <div id=\"loginbar_message\">" + tasksMessage + "</div>");
-    headerHTML.push("    <div id=\"loginbar_login\">" + loginMessage + "</div>");
-    headerHTML.push("    <div id=\"loginbar_clear\"></div>");
+    headerHTML.push("  <div id='loginbar'>");
+    headerHTML.push("    <div id='loginbar_message'>" + tasksMessage + "</div>");
+    headerHTML.push("    <div id='loginbar_login'>" + loginMessage + "</div>");
+    headerHTML.push("    <div id='loginbar_clear'></div>");
     headerHTML.push("  </div>");
     
-    headerHTML.push("  <div id=\"logo\"><img src=\"brandingtest/imgs/header.png\"/></div>");
-    headerHTML.push("  <div id=\"menu\">");
-    headerHTML.push("    <a class=\"menu_link\" href=\"#\">Home</a>");
-    headerHTML.push("    <a class=\"menu_link\" href=\"#\">Features</a>");
-    headerHTML.push("    <a class=\"menu_link\" href=\"#\">Download</a>");
-    headerHTML.push("    <a class=\"menu_link\" href=\"#\">Documentation</a>");
-    headerHTML.push("    <a class=\"menu_link\" href=\"#\">Plugins</a>|&nbsp;");
-    headerHTML.push("    <a class=\"menu_link_minor\" href=\"#\">Sources</a>");
-    headerHTML.push("    <a class=\"menu_link_minor\" href=\"#\">Issues</a>");
-    headerHTML.push("    <a class=\"menu_link_minor\" href=\"#\">Mailing Lists</a>");
+    headerHTML.push("  <div id='logo'><img src='brandingtest/imgs/header.png'/></div>");
+    headerHTML.push("  <div id='menu'>");
+    headerHTML.push("    <a class='menu_link' href='#'>Home</a>");
+    headerHTML.push("    <a class='menu_link' href='#'>Features</a>");
+    headerHTML.push("    <a class='menu_link' href='#'>Download</a>");
+    headerHTML.push("    <a class='menu_link' href='#'>Documentation</a>");
+    headerHTML.push("    <a class='menu_link' href='#'>Plugins</a>|&nbsp;");
+    headerHTML.push("    <a class='menu_link_minor' href='#'>Sources</a>");
+    headerHTML.push("    <a class='menu_link_minor' href='#'>Issues</a>");
+    headerHTML.push("    <a class='menu_link_minor' href='#'>Mailing Lists</a>");
     headerHTML.push("  </div>");
     
     headerHTML.push("</div>");
