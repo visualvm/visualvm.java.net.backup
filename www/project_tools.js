@@ -158,7 +158,7 @@ if (customizeSite == "true") {
         hideUnwantedElements();
         
 //        // Import custom css styles
-//        document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/project_tools.css"/>');
+        document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/project_tools.css"/>');
 
         createHeader();
 
