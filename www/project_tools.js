@@ -132,8 +132,8 @@ function addLoadEventHandler(func) {
         window.onload = func;
     } else {
         window.onload = function() {
-            if (oldonload) oldonload();
             func();
+            if (oldonload) oldonload();
         }
     }
 }
@@ -169,4 +169,6 @@ if (customizeSite == "true") {
 //	if (window.location.hash != null && window.location.hash != "")
 //		window.location.hash = window.location.hash;
     });
+} else {
+    document.body.style.display="block";
 }
