@@ -37,6 +37,7 @@ body {
 
 #logo {
         background: url("brandingtest/imgs/header_filler.png") repeat-x;
+        height: 76px !important;
 }
 
 #menu {
