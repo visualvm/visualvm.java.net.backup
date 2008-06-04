@@ -11,11 +11,11 @@
         You can open binary format heap dump files (<tt>.hprof</tt>) saved on your local system 
         or use VisualVM to take heap dumps of running applications.</p>
         
-        <p>A heap dump is a snapshot of all the objects in the JVM heap at a certain point in time.
-        The JVM allocates memory for objects from the heap for all class instances and arrays. 
+        <p>A heap dump is a snapshot of all the objects in the Java Virtual Machine (JVM) heap at a certain point in time.
+        The JVM software allocates memory for objects from the heap for all class instances and arrays. 
         The garbage collector reclaims the heap memory when an object is no longer needed and there are no references to the object.
         By examining the heap you can locate where objects are created and find the references to those objects in the source.
-        If the JVM is failing to remove unneeded objects from the heap, VisualVM can help you locate the nearest garbage collecting root for the object.</p>
+        If the JVM software is failing to remove unneeded objects from the heap, VisualVM can help you locate the nearest garbage collecting root for the object.</p>
          
         <h4>Opening a Heap Dump File</h4>
         <p>If you have a heap dump file saved on your local system, you can open the file in VisualVM by choosing File &gt; Load from the main menu.
