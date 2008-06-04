@@ -149,25 +149,24 @@ var customizeSite = getCookie(CUSTOMIZE_SITE);
 
 
 if (customizeSite == "true") {
-    // Hide page contents while doing customizations
-    hideElement(document.body);
+//    // Hide page contents while doing customizations
+//    hideElement(document.body);
+    
+    //document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/project_tools.css"/>');
     
     // window.onload hook making the customizations
     addLoadEventHandler(function() {
         // Hide unwanted default CollabNet elements
         hideUnwantedElements();
         
-//        // Import custom css styles
-        document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/project_tools.css"/>');
-
         createHeader();
 
         // Show page contents
         document.body.style.display="block";
 
-//	// jump to anchor if one is given
-//	if (window.location.hash != null && window.location.hash != "")
-//		window.location.hash = window.location.hash;
+	// jump to anchor if one is given
+	if (window.location.hash != null && window.location.hash != "")
+		window.location.hash = window.location.hash;
     });
 } else {
     document.body.style.display="block";
