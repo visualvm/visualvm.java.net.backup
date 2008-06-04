@@ -47,7 +47,7 @@ body {
 	font-size: 11px;
 }
 
-menu_link {
+.menu_link {
         font-size: 11px;
 	font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
 	text-decoration: none;
@@ -56,13 +56,13 @@ menu_link {
 	color: #2f4353 !important;
 }
 
-menu_link:hover {
+.menu_link:hover {
 	text-decoration: none;
 	background: #2f4353;
 	color: #c7e4f2 !important;
 }
 
-menu_link_minor {
+.menu_link_minor {
         font-size: 11px;
 	font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
 	text-decoration: none;
@@ -70,7 +70,7 @@ menu_link_minor {
 	color: #3f5363 !important;
 }
 
-menu_link_minor:hover {
+.menu_link_minor:hover {
 	text-decoration: none;
 	background: #2f4353;
 	color: #c7e4f2 !important;
