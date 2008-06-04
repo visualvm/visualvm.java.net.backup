@@ -6,14 +6,14 @@ Author: Jiri Sedlacek
 #header {
 	padding: 0px;
 	margin: 0px;
-	font-size: 11px;
+	font-size: 3px;
 	font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
 }
 
 #loginbar {
 	background: #5b83a9;
 	padding: 3px 8px 3px 8px;
-	font-size: 5px;
+	font-size: 10px;
 	color: #c7e4f2;
 }
 
