@@ -53,13 +53,13 @@ a.menu_link {
 	text-decoration: none;
 	font-weight: bold;
 	padding: 4px 8px 4px 8px;
-	color: #2f4353;
+	color: #2f4353 !important;
 }
 
 a.menu_link:hover {
 	text-decoration: none;
 	background: #2f4353;
-	color: #c7e4f2;
+	color: #c7e4f2 !important;
 }
 
 a.menu_link_minor {
@@ -67,20 +67,13 @@ a.menu_link_minor {
 	font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
 	text-decoration: none;
 	padding: 4px 8px 4px 8px;
-	color: #3f5363;
+	color: #3f5363 !important;
 }
 
 a.menu_link_minor:hover {
 	text-decoration: none;
 	background: #2f4353;
-	color: #c7e4f2;
-}
-
-.menu_link_highlight {
-	text-decoration: none;
-	font-weight: bold; 
-	border: 4px solid #c7e4f2;
-	color: #0f2333;
+	color: #c7e4f2 !important;
 }
 
 #contents {
