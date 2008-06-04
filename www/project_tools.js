@@ -153,7 +153,7 @@ if (customizeSite == "true") {
     hideElement(document.body);
     
     // Import custom css styles
-    document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/project_tools.css"/>');
+//    document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/project_tools.css"/>');
 
     // window.onload hook making the customizations
     addLoadEventHandler(function() {
