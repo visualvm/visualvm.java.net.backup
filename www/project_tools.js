@@ -107,7 +107,8 @@ function createHeader() {
     headerHTML.push("    <a class='menu_link' href='#'>Features</a>");
     headerHTML.push("    <a class='menu_link' href='#'>Download</a>");
     headerHTML.push("    <a class='menu_link' href='#'>Documentation</a>");
-    headerHTML.push("    <a class='menu_link' href='#'>Plugins</a>&nbsp;|&nbsp;");
+    headerHTML.push("    <a class='menu_link' href='#'>Plugins</a>");
+    headerHTML.push("    &nbsp;|&nbsp;");
     headerHTML.push("    <a class='menu_link_minor' href='#'>Sources</a>");
     headerHTML.push("    <a class='menu_link_minor' href='#'>Issues</a>");
     headerHTML.push("    <a class='menu_link_minor' href='#'>Mailing Lists</a>");
