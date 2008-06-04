@@ -150,7 +150,7 @@ var customizeSite = getCookie(CUSTOMIZE_SITE);
 
 if (customizeSite == "true") {
     // Hide page contents while doing customizations
-    hideElement(document.getElementById("main").parentNode);
+    hideElement(document.body);
     
     // window.onload hook making the customizations
     addLoadEventHandler(function() {
@@ -163,10 +163,10 @@ if (customizeSite == "true") {
         createHeader();
 
         // Show page contents
-        document.getElementById("main").parentNode.style.display="block";
+        document.body.style.display="block";
 
-	// jump to anchor if one is given
-	if (window.location.hash != null && window.location.hash != "")
-		window.location.hash = window.location.hash;
+//	// jump to anchor if one is given
+//	if (window.location.hash != null && window.location.hash != "")
+//		window.location.hash = window.location.hash;
     });
 }
