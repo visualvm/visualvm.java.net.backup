@@ -1,3 +1,6 @@
 body {
-    font-size: 20px !important;
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px !important;
+    font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif !important;
 }
