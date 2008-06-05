@@ -51,7 +51,7 @@ body {
     padding: 0px;
     margin: 0px;
     font-size: 12px;
-    font-family: "Courier New", Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    font-family: "Courier New", Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif !important;
 }
 
 
