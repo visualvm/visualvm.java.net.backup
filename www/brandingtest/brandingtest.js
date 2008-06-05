@@ -64,15 +64,15 @@ function createHeader() {
     
     headerHTML.push("  <div id='logo'><img src='https://visualvm.dev.java.net/brandingtest/imgs/header.png'/></div>");
     headerHTML.push("  <div id='menu'>");
-    headerHTML.push("    <a class='menu_link' href='#'>Home</a>");
-    headerHTML.push("    <a class='menu_link' href='#'>Features</a>");
-    headerHTML.push("    <a class='menu_link' href='#'>Download</a>");
-    headerHTML.push("    <a class='menu_link' href='#'>Documentation</a>");
-    headerHTML.push("    <a class='menu_link' href='#'>Plugins</a>");
+    headerHTML.push("    <a class='menu_link' href='https://visualvm.dev.java.net'>Home</a>");
+    headerHTML.push("    <a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/features.html'>Features</a>");
+    headerHTML.push("    <a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/download.html'>Download</a>");
+    headerHTML.push("    <a class='menu_link' href='https://visualvm.dev.java.net/docindex.html'>Documentation</a>");
+    headerHTML.push("    <a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/plugins.html'>Plugins</a>");
     headerHTML.push("    &nbsp;|&nbsp;");
-    headerHTML.push("    <a class='menu_link_minor' href='#'>Sources</a>");
-    headerHTML.push("    <a class='menu_link_minor' href='#'>Issues</a>");
-    headerHTML.push("    <a class='menu_link_minor' href='#'>Mailing Lists</a>");
+    headerHTML.push("    <a class='menu_link_minor' href='https://visualvm.dev.java.net/source/browse/visualvm/'>Sources</a>");
+    headerHTML.push("    <a class='menu_link_minor' href='https://visualvm.dev.java.net/servlets/ProjectIssues'>Issues</a>");
+    headerHTML.push("    <a class='menu_link_minor' href='https://visualvm.dev.java.net/servlets/ProjectMailingListList'>Mailing Lists</a>");
     headerHTML.push("  </div>");
     
     headerHTML.push("</div>");
