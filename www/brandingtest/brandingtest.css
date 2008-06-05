@@ -1,6 +1,21 @@
-body {
-    padding: 0px;
-    margin: 0px;
-    font-size: 12px !important;
-    font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif !important;
+div#collabnet {
+    display: none;
+}
+
+div.topline {
+    display: none;
+}
+
+div#toptabs {
+    display: none;
+}
+
+div#breadcrumbs {
+    display: none;
+}
+
+
+
+div#footer {
+    display: none;
 }
