@@ -18,6 +18,14 @@ td#navcol {
     display: none;
 }
 
+div#apphead {
+    display: none;
+}
+
+p.tasknav {
+    display: none;
+}
+
 table.axial {
     display: none;
 }
