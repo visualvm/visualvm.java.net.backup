@@ -14,6 +14,10 @@ div#breadcrumbs {
     display: none;
 }
 
+td#navcol {
+    display: none;
+}
+
 
 
 div#footer {
