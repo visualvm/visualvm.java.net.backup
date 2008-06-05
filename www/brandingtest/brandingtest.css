@@ -58,7 +58,7 @@ small, .small, div#footer, #login, .tabs th, .tabs td, #toptabs th, #toptabs td,
 body {
     padding: 0px;
     margin: 0px;
-    font-size: 12px;
+    font-size: 19px;
 }
 
 
@@ -75,14 +75,14 @@ body {
     color: #c7e4f2;
 }
 
-div#loginbar a {
-    color: #c7e4f2;
-    text-decoration: underline;
+div#loginbar a, div#loginbar a:visited {
+    color: #c7e4f2 !important;
+    text-decoration: underline !important;
 }
 
 div#loginbar a:hover {
-    color: #ffffff;
-    text-decoration: none;
+    color: #ffffff !important;
+    text-decoration: none !important;
 }
 
 #loginbar_message {
