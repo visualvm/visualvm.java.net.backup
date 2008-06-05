@@ -102,6 +102,7 @@ div#loginbar a:hover {
 }
 
 #menu {
+    font-size: 11px;
     border-top: 1px solid #5b83a9;
     border-bottom: 1px solid #5b83a9;
     background: #b7d4e2;
