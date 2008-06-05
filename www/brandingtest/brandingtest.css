@@ -58,7 +58,7 @@ small, .small, div#footer, #login, .tabs th, .tabs td, #toptabs th, #toptabs td,
 body {
     padding: 0px;
     margin: 0px;
-    font-size: 19px;
+    font-size: 13px;
 }
 
 
@@ -82,7 +82,6 @@ div#loginbar a, div#loginbar a:visited {
 
 div#loginbar a:hover {
     color: #ffffff !important;
-    text-decoration: none !important;
 }
 
 #loginbar_message {
