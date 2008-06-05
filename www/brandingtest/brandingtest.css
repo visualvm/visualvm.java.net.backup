@@ -76,7 +76,13 @@ body {
 }
 
 div#loginbar a {
-    color: red !important;
+    color: #c7e4f2;
+    text-decoration: underline;
+}
+
+div#loginbar a:hover {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 #loginbar_message {
