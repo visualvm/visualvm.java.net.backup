@@ -100,3 +100,30 @@ div#loginbar a:hover {
     background: url("https://visualvm.dev.java.net/brandingtest/imgs/header_filler.png") repeat-x;
 
 }
+
+#menu {
+    border-top: 1px solid #5b83a9;
+    border-bottom: 1px solid #5b83a9;
+    background: #b7d4e2;
+    padding: 4px 8px 4px 8px;
+}
+
+#menu a.menu_link, #menu a.menu_link_minor {
+    text-decoration: none;
+    padding: 4px 8px 4px 8px;
+}
+
+#menu a.menu_link, #menu a.menu_link:visited {
+    font-weight: bold;
+    color: #2f4353 !important;
+}
+
+#menu a.menu_link_minor, #menu a.menu_link_minor:visited {
+    color: #3f5363 !important;
+}
+
+#menu a.menu_link:hover, #menu a.menu_link_minor:hover {
+    text-decoration: none;
+    background: #2f4353;
+    color: #c7e4f2 !important;
+}

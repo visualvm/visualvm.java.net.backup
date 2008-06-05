@@ -63,17 +63,17 @@ function createHeader() {
     headerHTML.push("  </div>");
     
     headerHTML.push("  <div id='logo'><img src='https://visualvm.dev.java.net/brandingtest/imgs/header.png'/></div>");
-//    headerHTML.push("  <div id='menu'>");
-//    headerHTML.push("    <a class='menu_link' href='#'>Home</a>");
-//    headerHTML.push("    <a class='menu_link' href='#'>Features</a>");
-//    headerHTML.push("    <a class='menu_link' href='#'>Download</a>");
-//    headerHTML.push("    <a class='menu_link' href='#'>Documentation</a>");
-//    headerHTML.push("    <a class='menu_link' href='#'>Plugins</a>");
-//    headerHTML.push("    &nbsp;|&nbsp;");
-//    headerHTML.push("    <a class='menu_link_minor' href='#'>Sources</a>");
-//    headerHTML.push("    <a class='menu_link_minor' href='#'>Issues</a>");
-//    headerHTML.push("    <a class='menu_link_minor' href='#'>Mailing Lists</a>");
-//    headerHTML.push("  </div>");
+    headerHTML.push("  <div id='menu'>");
+    headerHTML.push("    <a class='menu_link' href='#'>Home</a>");
+    headerHTML.push("    <a class='menu_link' href='#'>Features</a>");
+    headerHTML.push("    <a class='menu_link' href='#'>Download</a>");
+    headerHTML.push("    <a class='menu_link' href='#'>Documentation</a>");
+    headerHTML.push("    <a class='menu_link' href='#'>Plugins</a>");
+    headerHTML.push("    &nbsp;|&nbsp;");
+    headerHTML.push("    <a class='menu_link_minor' href='#'>Sources</a>");
+    headerHTML.push("    <a class='menu_link_minor' href='#'>Issues</a>");
+    headerHTML.push("    <a class='menu_link_minor' href='#'>Mailing Lists</a>");
+    headerHTML.push("  </div>");
     
     headerHTML.push("</div>");
     
@@ -97,7 +97,7 @@ var CUSTOMIZE_SITE = "customize_site_cookie";
 var customizeSite = getCookie(CUSTOMIZE_SITE);
 
 
-if (customizeSite == "true") {
+if (customizeSite == "true") { // Site branding is customized
     
     // Apply custom css style
     document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/brandingtest/brandingtest.css"/>');
@@ -115,7 +115,8 @@ if (customizeSite == "true") {
 	if (window.location.hash != null && window.location.hash != "")
 		window.location.hash = window.location.hash;
     });
-} else {
+    
+} else { // Site branding is default one
     
     // Show non-customized page contents
     document.body.style.display="block";
