@@ -51,6 +51,10 @@ body, h1, h2, h3, h4, h5, h6, p, td, table td, input, select {
     font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif !important;
 }
 
+small, .small, div#footer, #login, .tabs th, .tabs td, #toptabs th, #toptabs td, #bodycol .tabs th, #bodycol .tabs td,	#navcol, input, select, .paginate, .functnbar, .functnbar2, .functnbar3, .functnbar4, #breadcrumbs, .courtesylinks, .colbar, .tasknav, #sidebar, .legend, .bars, #rightcol div.www, #rightcol div.siteinfo, .expandwidget, .collapsewidget, #additemlink {
+    font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif !important;
+}
+
 body {
     padding: 0px;
     margin: 0px;
