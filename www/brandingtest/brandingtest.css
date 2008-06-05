@@ -69,18 +69,22 @@ body {
 */
 
 #loginbar {
-	background: #5b83a9;
-	padding: 3px 8px 3px 8px;
-	font-size: 10px;
-	color: #c7e4f2;
+    background: #5b83a9;
+    padding: 3px 8px 3px 8px;
+    font-size: 10px;
+    color: #c7e4f2;
+}
+
+div#loginbar a {
+    color: red !important;
 }
 
 #loginbar_message {
-	float: left;
+    float: left;
 }
 
 #loginbar_login {
-	float: right;
+    float: right;
 }
 
 #loginbar_clear {
