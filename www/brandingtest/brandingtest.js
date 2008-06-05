@@ -62,7 +62,7 @@ function createHeader() {
     headerHTML.push("    <div id='loginbar_clear'></div>");
     headerHTML.push("  </div>");
     
-//    headerHTML.push("  <div id='logo'><img src='brandingtest/imgs/header.png'/></div>");
+    headerHTML.push("  <div id='logo'><img src='https://visualvm.dev.java.net/brandingtest/imgs/header.png'/></div>");
 //    headerHTML.push("  <div id='menu'>");
 //    headerHTML.push("    <a class='menu_link' href='#'>Home</a>");
 //    headerHTML.push("    <a class='menu_link' href='#'>Features</a>");

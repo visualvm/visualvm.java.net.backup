@@ -70,7 +70,7 @@ body {
 
 #loginbar {
     background: #5b83a9;
-    padding: 1px 8px 3px 8px;
+    padding: 2px 8px 3px 8px;
     font-size: 10px;
     color: #c7e4f2;
 }
@@ -93,5 +93,10 @@ div#loginbar a:hover {
 }
 
 #loginbar_clear {
-	clear: both;
+    clear: both;
+}
+
+#logo {
+    background: url("https://visualvm.dev.java.net/brandingtest/imgs/header_filler.png") repeat-x;
+
 }
