@@ -47,11 +47,14 @@ div#footer {
  -------------------------------------------------------------------------------
 */
 
+body, h1, h2, h3, h4, h5, h6, p, td, table td, input, select { 
+    font-family: "Courier New", Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif !important;
+}
+
 body {
     padding: 0px;
     margin: 0px;
     font-size: 12px;
-    font-family: "Courier New", Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif !important;
 }
 
 
