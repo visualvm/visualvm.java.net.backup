@@ -157,7 +157,7 @@ div#loginbar a:hover {
 #cfooter {
     font-size: 11px;
     margin-top: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     padding-top: 5px;
     border-top: 1px solid #5b83a9;
 }
@@ -184,10 +184,12 @@ div#loginbar a:hover {
     font-size: 11px !important;
     color: #555555 !important;
     text-align: right;
+    text-decoration: underline !important;
 }
 
 #project_links a, #project_links a:visited {
     color: #555555 !important;
+    text-decoration: underline !important;
 }
 
 #portal_links {
@@ -199,10 +201,12 @@ div#loginbar a:hover {
 
 #portal_links a, #portal_links a:visited {
     color: #888888 !important;
+    text-decoration: none !important;
 }
 
 #project_links a:hover, #portal_links a:hover {
     color: black !important;
+    text-decoration: underline !important;
 }
 
 #cfooter img {
