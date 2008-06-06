@@ -54,31 +54,27 @@ function createHeader() {
     // Create header <div>
     var headerHTML = [];
     
-    headerHTML.push("<div id='header'>");
+    headerHTML.push("<div id='loginbar'>");
+    headerHTML.push("  <div id='loginbar_message'>" + tasksMessage + "</div>");
+    headerHTML.push("  <div id='loginbar_login'>" + loginMessage + "</div>");
+    headerHTML.push("  <div id='loginbar_clear'></div>");
+    headerHTML.push("</div>");
     
-    headerHTML.push("  <div id='loginbar'>");
-    headerHTML.push("    <div id='loginbar_message'>" + tasksMessage + "</div>");
-    headerHTML.push("    <div id='loginbar_login'>" + loginMessage + "</div>");
-    headerHTML.push("    <div id='loginbar_clear'></div>");
-    headerHTML.push("  </div>");
-    
-    headerHTML.push("  <div id='logo'><img src='https://visualvm.dev.java.net/brandingtest/imgs/header.png'/></div>");
-    headerHTML.push("  <div id='menu'>");
-    headerHTML.push("    <a class='menu_link' href='https://visualvm.dev.java.net'>Home</a>");
-    headerHTML.push("    <a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/features.html'>Features</a>");
-    headerHTML.push("    <a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/download.html'>Download</a>");
-    headerHTML.push("    <a class='menu_link' href='https://visualvm.dev.java.net/docindex.html'>Documentation</a>");
-    headerHTML.push("    <a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/plugins.html'>Plugins</a>");
-    headerHTML.push("    &nbsp;|&nbsp;");
-    headerHTML.push("    <a class='menu_link_minor' href='https://visualvm.dev.java.net/source/browse/visualvm/'>Sources</a>");
-    headerHTML.push("    <a class='menu_link_minor' href='https://visualvm.dev.java.net/servlets/ProjectIssues'>Issues</a>");
-    headerHTML.push("    <a class='menu_link_minor' href='https://visualvm.dev.java.net/servlets/ProjectMailingListList'>Mailing Lists</a>");
-    headerHTML.push("  </div>");
-    
+    headerHTML.push("<div id='logo'><img src='https://visualvm.dev.java.net/brandingtest/imgs/header.png'/></div>");
+    headerHTML.push("<div id='menu'>");
+    headerHTML.push("  <a class='menu_link' href='https://visualvm.dev.java.net'>Home</a>");
+    headerHTML.push("  <a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/features.html'>Features</a>");
+    headerHTML.push("  <a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/download.html'>Download</a>");
+    headerHTML.push("  <a class='menu_link' href='https://visualvm.dev.java.net/docindex.html'>Documentation</a>");
+    headerHTML.push("  <a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/plugins.html'>Plugins</a>");
+    headerHTML.push("  &nbsp;|&nbsp;");
+    headerHTML.push("  <a class='menu_link_minor' href='https://visualvm.dev.java.net/source/browse/visualvm/'>Sources</a>");
+    headerHTML.push("  <a class='menu_link_minor' href='https://visualvm.dev.java.net/servlets/ProjectIssues'>Issues</a>");
+    headerHTML.push("  <a class='menu_link_minor' href='https://visualvm.dev.java.net/servlets/ProjectMailingListList'>Mailing Lists</a>");
     headerHTML.push("</div>");
     
     var containerElement = document.createElement("div");
-    containerElement.id = "containerElement";
+    containerElement.id = "header";
     containerElement.innerHTML = headerHTML.join('');
 
     // Inject header <div> between hidden banner and toptabs
