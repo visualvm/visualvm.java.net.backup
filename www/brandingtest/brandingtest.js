@@ -120,7 +120,8 @@ function createFooter() {
     var containerElement = document.createElement("div");
     containerElement.id = "footer";
     containerElement.innerHTML = footerHTML.join('');
-
+alert(containerElement);
+alert(containerElement.innerHTML);
     // Inject footer <div> at the end of the document
     document.body.appendChild(containerElement);
 }

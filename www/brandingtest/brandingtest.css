@@ -154,24 +154,24 @@ div#loginbar a:hover {
  -------------------------------------------------------------------------------
 */
 
-#footer {
+#cfooter {
     margin-top: 10px;
     padding-top: 5px;
     border-top: 1px solid #5b83a9;
 }
 
-#footer_links_container {
+#cfooter_links_container {
 	float: left;
 	width: 100%;
 	margin-right: -99%;
 }
 
-#footer_links {
+#cfooter_links {
         margin-top: 3px;
 	margin-right: 272px;
 }
 
-#footer_logos {
+#cfooter_logos {
 	float: right;
         text-align: right;
 	width: 255px;
@@ -201,11 +201,11 @@ div#loginbar a:hover {
     color: black;
 }
 
-#footer img {
+#cfooter img {
     border: 0px;
     vertical-align: middle;
 }
 
-#footer_clear {
+#cfooter_clear {
 	clear: both;
 }
