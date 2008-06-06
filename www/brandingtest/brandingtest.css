@@ -157,7 +157,7 @@ div#loginbar a:hover {
 #cfooter {
     font-size: 11px;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     padding-top: 5px;
     border-top: 1px solid #5b83a9;
 }
@@ -184,7 +184,6 @@ div#loginbar a:hover {
     font-size: 11px !important;
     color: #555555 !important;
     text-align: right;
-    text-decoration: underline !important;
 }
 
 #project_links a, #project_links a:visited {
