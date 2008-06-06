@@ -77,9 +77,52 @@ function createHeader() {
     containerElement.id = "header";
     containerElement.innerHTML = headerHTML.join('');
 
-    // Inject header <div> between hidden banner and toptabs
+    // Inject header <div> before collabnet section
     var topTabsElement = document.getElementById("collabnet");
     document.body.insertBefore(containerElement, topTabsElement);
+}
+
+// Creates custom footer
+function createFooter() {
+    // Create footer <div>
+    var footerHTML = [];
+    
+    footerHTML.push("<div id='footer_links_container'>");
+    footerHTML.push("  <div id='footer_links'>");
+
+    footerHTML.push("    <div id='project_links'>");
+    footerHTML.push("      Owners: <a href='mailto:jsedlacek@dev.java.net'>Jiri Sedlacek</a>, <a href='mailto:thurka@dev.java.net'>Tomas Hurka</a> |");
+    footerHTML.push("      License: <a href='https://visualvm.dev.java.net/legal/gplv2+ce.html'>GPLv2&nbsp;+&nbsp;CE</a> |");
+    footerHTML.push("      <a href='mailto:feedback@visualvm.dev.java.net'>Feedback</a> |");
+    footerHTML.push("      <a href='javascript:setCookie(CUSTOMIZE_SITE, \"false\"); history.go(0);'>Default Theme</a>");
+    footerHTML.push("    </div>");
+            
+    footerHTML.push("    <div id='portal_links'>");
+    footerHTML.push("      <a href='http://java.net/terms.csp'>Terms of Use</a> |");
+    footerHTML.push("      <a href='http://www.sun.com/privacy'>Privacy</a> |");
+    footerHTML.push("      <a href='http://www.sun.com/suntrademarks/'>Trademarks</a> |");
+    footerHTML.push("      <a href='https://java-net.dev.java.net/sitemap.html'>Site Map</a>");
+    footerHTML.push("    </div>");
+
+    footerHTML.push("  </div>");
+    footerHTML.push("</div>");
+
+    footerHTML.push("<div id='footer_logos'>");
+            
+    footerHTML.push("  <a href='http://www.sun.com/'><img src='https://visualvm.dev.java.net/branding/images/logo_sun_small.gif'/></a>");
+    footerHTML.push("  <a href='http://www.oreilly.com/'><img src='https://visualvm.dev.java.net/branding/images/montague_logo_oreilly.gif'/></a>");
+    footerHTML.push("  <a href='http://www.collab.net/special/clickpbc0502.html'><img src='https://visualvm.dev.java.net/branding/images/poweredby.gif'/></a>");
+            
+    footerHTML.push("</div>");
+
+    footerHTML.push("<div id='footer_clear'></div>");
+    
+    var containerElement = document.createElement("div");
+    containerElement.id = "footer";
+    containerElement.innerHTML = footerHTML.join('');
+
+    // Inject footer <div> at the end of the document
+    document.body.appendChild(containerElement);
 }
 
 
@@ -103,6 +146,9 @@ if (customizeSite == "true") { // Site branding is customized
         
         // Create custom header
         createHeader();
+        
+        // Create custom footer
+        createFooter();
 
         // Show page contents
         document.body.style.display="block";
