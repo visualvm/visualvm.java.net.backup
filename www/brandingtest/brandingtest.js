@@ -87,8 +87,8 @@ function createFooter() {
     // Create footer <div>
     var footerHTML = [];
     
-    footerHTML.push("<div id='footer_links_container'>");
-    footerHTML.push("  <div id='footer_links'>");
+    footerHTML.push("<div id='cfooter_links_container'>");
+    footerHTML.push("  <div id='cfooter_links'>");
 
     footerHTML.push("    <div id='project_links'>");
     footerHTML.push("      Owners: <a href='mailto:jsedlacek@dev.java.net'>Jiri Sedlacek</a>, <a href='mailto:thurka@dev.java.net'>Tomas Hurka</a> |");
@@ -107,7 +107,7 @@ function createFooter() {
     footerHTML.push("  </div>");
     footerHTML.push("</div>");
 
-    footerHTML.push("<div id='footer_logos'>");
+    footerHTML.push("<div id='cfooter_logos'>");
             
     footerHTML.push("  <a href='http://www.sun.com/'><img src='https://visualvm.dev.java.net/branding/images/logo_sun_small.gif'/></a>");
     footerHTML.push("  <a href='http://www.oreilly.com/'><img src='https://visualvm.dev.java.net/branding/images/montague_logo_oreilly.gif'/></a>");
@@ -115,13 +115,12 @@ function createFooter() {
             
     footerHTML.push("</div>");
 
-    footerHTML.push("<div id='footer_clear'></div>");
+    footerHTML.push("<div id='cfooter_clear'></div>");
     
     var containerElement = document.createElement("div");
-    containerElement.id = "footer";
+    containerElement.id = "cfooter";
     containerElement.innerHTML = footerHTML.join('');
-alert(containerElement);
-alert(containerElement.innerHTML);
+    
     // Inject footer <div> at the end of the document
     document.body.appendChild(containerElement);
 }

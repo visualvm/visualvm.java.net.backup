@@ -155,7 +155,9 @@ div#loginbar a:hover {
 */
 
 #cfooter {
+    font-size: 11px;
     margin-top: 10px;
+    margin-bottom: 15px;
     padding-top: 5px;
     border-top: 1px solid #5b83a9;
 }
@@ -179,26 +181,28 @@ div#loginbar a:hover {
 }
 
 #project_links {
-    color: #555555;
+    font-size: 11px !important;
+    color: #555555 !important;
     text-align: right;
 }
 
 #project_links a, #project_links a:visited {
-    color: #555555;
+    color: #555555 !important;
 }
 
 #portal_links {
-    color: #888888;
+    font-size: 11px !important;
+    color: #888888 !important;
     margin-top: 3px;
     text-align: right;
 }
 
 #portal_links a, #portal_links a:visited {
-    color: #888888;
+    color: #888888 !important;
 }
 
 #project_links a:hover, #portal_links a:hover {
-    color: black;
+    color: black !important;
 }
 
 #cfooter img {
