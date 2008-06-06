@@ -13,6 +13,18 @@ function getCookie(name) {
     else return null;
 }
 
+// Enables custom theme
+function enableTheme() {
+    setCookie(CUSTOMIZE_SITE, "true");
+    history.go(0);
+}
+
+// Disables custom theme
+function disableTheme() {
+    setCookie(CUSTOMIZE_SITE, "false");
+    history.go(0);
+}
+
 // Adds new window.onload handler (FIFO)
 function addLoadEventHandler(func) {
     var oldonload = window.onload;
@@ -94,7 +106,7 @@ function createFooter() {
     footerHTML.push("      Owners: <a href='mailto:jsedlacek@dev.java.net'>Jiri Sedlacek</a>, <a href='mailto:thurka@dev.java.net'>Tomas Hurka</a> |");
     footerHTML.push("      License: <a href='https://visualvm.dev.java.net/legal/gplv2+ce.html'>GPLv2&nbsp;+&nbsp;CE</a> |");
     footerHTML.push("      <a href='mailto:feedback@visualvm.dev.java.net'>Feedback</a> |");
-    footerHTML.push("      <a href='javascript:setCookie(CUSTOMIZE_SITE, \"false\"); history.go(0);'>Default Theme</a>");
+    footerHTML.push("      <a href='javascript:disableTheme();'>Default Theme</a>");
     footerHTML.push("    </div>");
             
     footerHTML.push("    <div id='portal_links'>");
