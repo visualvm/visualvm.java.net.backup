@@ -73,8 +73,8 @@ function createHeader() {
     headerHTML.push("</div>");
     
     headerHTML.push("<div id='logobar'>");
-    headerHTML.push("<div id='visualvm_logo'><a href='https://visualvm.dev.java.net'><img src='brandingtest/imgs/header.png'/></a></div>");
-    headerHTML.push("<div id='javanet_logo'><a href='http://www.java.net/'><img src='brandingtest/imgs/javanet_member.png'/></a></div>");
+    headerHTML.push("<div id='visualvm_logo'><a href='https://visualvm.dev.java.net'><img src='https://visualvm.dev.java.net/brandingtest/imgs/header.png'/></a></div>");
+    headerHTML.push("<div id='javanet_logo'><a href='http://www.java.net/'><img src='https://visualvm.dev.java.net/brandingtest/imgs/javanet_member.png'/></a></div>");
     headerHTML.push("<div id='logobar_clear'></div>");
     headerHTML.push("</div>");
     
