@@ -113,9 +113,25 @@ div#loginbar a:hover {
     clear: both;
 }
 
-#logo {
-    background: url("https://visualvm.dev.java.net/brandingtest/imgs/header_filler.png") repeat-x;
-    height: 76px;
+#logobar {
+        background: url('imgs/header_filler.png') repeat-x;
+        height: 76px;
+}
+
+#logobar img {
+    border: 0px;
+}
+
+#visualvm_logo {
+    float: left;
+}
+
+#javanet_logo {
+    float: right;
+}
+
+#logobar_clear {
+    clear: both;
 }
 
 #menu {
@@ -214,5 +230,5 @@ div#loginbar a:hover {
 }
 
 #cfooter_clear {
-	clear: both;
+    clear: both;
 }
