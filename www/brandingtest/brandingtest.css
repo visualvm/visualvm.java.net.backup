@@ -121,8 +121,8 @@ div#loginbar a:hover {
 }
 
 #logobar {
-        background: url('imgs/header_filler.png') repeat-x;
-        height: 76px;
+        background: url('imgs/header_filler_small.png') repeat-x;
+        height: 60px;
 }
 
 #logobar img {
