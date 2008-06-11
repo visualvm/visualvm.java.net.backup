@@ -59,7 +59,7 @@ body {
     font-size: 13px !important;
 }
 
-body, #bodycol, #midcol {
+body, #bodycol {
     border: 0px !important;
     padding: 0px !important;
     margin: 0px !important;
@@ -96,7 +96,9 @@ th, td {
  -------------------------------------------------------------------------------
 */
 
-
+#header {
+    margin-bottom: 10px;
+}
 
 #loginbar {
     background: #5b83a9;
