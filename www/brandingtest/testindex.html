@@ -1,0 +1,167 @@
+<html>
+<head>
+    
+    <title>Test VisualVM Home</title>
+        
+        <style>
+
+            #contents table {
+                background: #e5f2f8 url(imgs/test.jpg) no-repeat;
+                vertical-align: top;
+                border: 0px;
+                padding: 0px;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            
+            #contents_mid td {
+                border-top: 1px solid #8bb3d9;
+            }
+            
+            .no_background {
+                background-color: white;
+                background-image: none;
+            }
+            
+            #contents_top td {
+                padding-top: 30px;
+                padding-bottom: 10px;
+            }
+            
+            #top_links a {
+                display: block;
+                white-space: nowrap;
+                font-size: 18px;
+                text-decoration: none;
+                color: #2f4353;
+                border: 1px solid transparent;
+                margin: 0px;
+                margin-right: 10px;
+                padding: 2px 30px 2px 10px;
+            }
+            
+            #top_links a:hover {
+                text-decoration: none;
+                color: black;
+                border: 1px solid #87a4b2;
+            }
+            
+            #top_links img {
+                border: 0px;
+                margin-right: 6px;
+                vertical-align: middle;
+            }
+            
+            #top_info {
+                vertical-align: bottom;
+                font-size: 12px;
+                font-weight: bold;
+                color: gray;
+                padding: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            .news {
+                padding: 10px;
+                font-size: 12px;
+            }
+            
+            .users {
+                padding: 10px;
+                font-size: 12px;
+            }
+            
+        </style>
+</head>
+
+<body>
+
+<div id="contents">
+    <table>
+            
+        <tr id="contents_top">
+            <td id="top_info">
+                VisualVM is a visual tool integrating several commandline JDK tools and lightweight profiling capabilities. Designed for both production and development time use, it further enhances the capability of monitoring and performance analysis for the Java SE platform.
+            </td>
+            <td id="top_links">
+                <a href="#"><img src="imgs/testicon.png"/>Features</a>
+                <a href="#"><img src="imgs/testicon.png"/><b>Download</b></a>
+                <a href="#"><img src="imgs/testicon.png"/>Documentation</a>
+                <a href="#"><img src="imgs/testicon.png"/>Plugins</a>
+            </td>
+        </tr>
+            
+        <tr id="contents_mid" class="no_background">
+                <td class="no_background" style="padding: 5px; padding-right: 0px; vertical-align: top;">
+                    
+                    <h3>News</h3>
+                    <div class="news">
+                    <p style="margin-top: 0px; margin-bottom: 5px;"><b><i>May 6th, 2008:</i></b> VisualVM 1.0 RC released. This is mainly a stabilization
+                      release: many bugs have been fixed and performance and memory management have been significantly improved. The only new feature is
+                      the Start Page which contains useful links to VisualVM documentation and JDK monitoring and troubleshooting guides.
+                      Sources for this release are available in <a href="https://visualvm.dev.java.net/source/browse/visualvm/visualvm/?only_with_tag=release10"><code>release10</code></a> branch.
+                      </p>
+
+                      <p style="margin-top: 0px; margin-bottom: 5px;"><b><i>April 14th, 2008:</i></b> VisualVM Beta 2 released. Application Snapshots have been
+                      improved (Overview tab can now be saved) and many minor improvements have been done. API and code have been cleaned up and several serious
+                      bugs have been fixed. Sources for this release are available in <a href="https://visualvm.dev.java.net/source/browse/visualvm/visualvm/?only_with_tag=visualvm_beta2"><code>visualvm_beta2</code></a> branch.
+                      </p>
+
+                      <p style="margin-top: 0px; margin-bottom: 5px;"><b><i>March 7th, 2008:</i></b> VisualVM Beta released. There are many new features in this release:
+                      applications defined by JMX connection, application snapshots, defined hosts and VM coredumps persistence, Load & Save As for thread dumps and heap dumps,
+                      autodiscovery of jstatd started after defining remote host, improved support for JRockit VMs, new icons, main menu & toolbar cleanup, customizable Options,
+                      GlassFish plugin on Plugin Center. Sources are available in <a href="https://visualvm.dev.java.net/source/browse/visualvm/visualvm/?only_with_tag=visualvm_beta"><code>visualvm_beta</code></a> branch.
+                      </p>
+                     </div>
+          
+                </td>
+                <td class="contents_bar" class="no_background" style="padding: 5px; vertical-align: top;">
+                    <h3>Users</h3>
+                    <div class="users">
+                        <ul>
+                            <li><a href="#">Getting Started</a></li>
+                            <li><a href="#">Troubleshooting Guide</a></li>
+                            <li><a href="#">Report a Bug</a></li>
+                            <li><a href="#">Request a Feature</a></li>
+                            <li><a href="#">Send Feedback</a></li>
+                        </ul>
+                    </div>
+                    
+                    <h3>Developers</h3>
+                    <div class="users">
+                        <ul>
+                            <li><a href="#">Build Guide</a></li>
+                            <li><a href="#">Online JavaDoc</a></li>
+                            <li><a href="#">Sample Projects</a></li>
+                        </ul>
+                    </div>
+                    
+                    <h3>Contributors</h3>
+                    <div class="users">
+                        <ul>
+                            <li><a href="#">Contribution Guideline</a></li>
+                            <li><a href="#">Pool of Tasks</a></li>
+                        </ul>
+                    </div>
+                    
+                    <h3>Project Tools</h3>
+                    <div class="users">
+                        <ul>
+                            <li><a href="#">Membership</a></li>
+                            <li><a href="#">Announcements</a></li>
+                            <li><a href="#">Discussion forums</a></li>
+                            <li><a href="#">Mailing lists</a></li>
+                            <li><a href="#">Documents & files</a></li>
+                            <li><a href="#">CVS</a></li>
+                            <li><a href="#">Issue tracker</a></li>
+                        </ul>
+                    </div>
+                </td>
+        </tr>
+            
+    </table>
+</div>
+
+</body>
+</html>
