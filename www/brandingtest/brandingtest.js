@@ -73,13 +73,13 @@ function createHeader() {
     headerHTML.push("</div>");
     
     headerHTML.push("<div id='logobar'>");
-    headerHTML.push("<div id='visualvm_logo'><a href='https://visualvm.dev.java.net'><img src='https://visualvm.dev.java.net/brandingtest/imgs/header.png'/></a></div>");
-    headerHTML.push("<div id='javanet_logo'><a href='http://www.java.net/'><img src='https://visualvm.dev.java.net/brandingtest/imgs/javanet_member.png'/></a></div>");
+    headerHTML.push("<div id='visualvm_logo'><a href='https://visualvm.dev.java.net/brandingtest/testindex.html'><img src='https://visualvm.dev.java.net/brandingtest/imgs/header_small.png'/></a></div>");
+    headerHTML.push("<div id='javanet_logo'><a href='http://www.java.net/'><img src='https://visualvm.dev.java.net/brandingtest/imgs/javanet_member_small.png'/></a></div>");
     headerHTML.push("<div id='logobar_clear'></div>");
     headerHTML.push("</div>");
     
     headerHTML.push("<div id='menu'>");
-    headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net'>Home</a>");
+    headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/testindex.html'>Home</a>");
     headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/features.html'>Features</a>");
     headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/download.html'>Download</a>");
     headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net/docindex.html'>Documentation</a>");
