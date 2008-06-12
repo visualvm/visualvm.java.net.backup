@@ -11,54 +11,15 @@
                 margin: 0px !important;
             }
 
-            #contents table {
-                background: #e5f2f8 url(imgs/test.jpg) no-repeat;
-                vertical-align: top;
+            #top_div table {
                 border: 0px;
                 padding: 0px;
                 border-collapse: collapse;
                 width: 100%;
             }
             
-            #contents_mid td {
-                border-top: 1px solid #8bb3d9;
-            }
-            
-            .no_background {
-                background-color: white;
-                background-image: none;
-            }
-            
-            #contents_top td {
-                padding-top: 30px;
-                padding-bottom: 10px;
-            }
-            
-            #top_links a {
-                display: block !important;
-                white-space: nowrap !important;
-                font-size: 18px !important;
-                text-decoration: none !important;
-                color: #2f4353 !important;
-                border: 1px solid transparent !important;
-                margin: 0px !important;
-                margin-right: 10px !important;
-                padding: 2px 30px 2px 10px !important;
-            }
-            
-            #top_links a:hover {
-                text-decoration: none !important;
-                color: black !important;
-                border: 1px solid #87a4b2 !important;
-            }
-            
-            #top_links img {
-                border: 0px;
-                margin-right: 6px;
-                vertical-align: middle;
-            }
-            
-            #top_info {
+            #top_div_info {
+                background: white url(imgs/main_background.jpg) no-repeat;
                 vertical-align: bottom;
                 font-size: 12px;
                 font-weight: bold;
@@ -68,14 +29,37 @@
                 padding-right: 20px;
             }
             
-            .news {
-                padding: 10px;
-                font-size: 12px;
+            #top_div_links {
+                background: #f47123 url(imgs/main_links_background.png) repeat-y;
+                padding: 0px;
+                padding-top: 30px;
+                padding-bottom: 10px;
             }
             
-            .users {
-                padding: 10px;
-                font-size: 12px;
+            #top_div_links img {
+                border: 0px;
+                margin-right: 15px;
+                vertical-align: top;
+            }
+            
+            #top_div_links a {
+                display: block;
+                white-space: nowrap;
+                font-size: 20px;
+                text-decoration: none;
+                color: white;
+                border-top: 1px solid transparent;
+                border-bottom: 1px solid transparent;
+                margin: 0px;
+                margin-left: 20px;
+                padding: 5px 30px 5px 25px;
+            }
+            
+            #top_div_links a:hover {
+                background: #e36920;
+                text-decoration: none;
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
             }
             
         </style>
@@ -83,17 +67,17 @@
         <script type="text/javascript">
             
             // Adds new window.onload handler (LIFO)
-            function addFirstLoadEventHandler(func) {
-                var oldonload = window.onload;
-                if (typeof window.onload != 'function') {
-                    window.onload = func;
-                } else {
-                    window.onload = function() {
-                        func();
-                        if (oldonload) oldonload();
-                    }
-                }
-            }
+            //function addFirstLoadEventHandler(func) {
+            //    var oldonload = window.onload;
+            //    if (typeof window.onload != 'function') {
+            //        window.onload = func;
+            //    } else {
+            //        window.onload = function() {
+            //            func();
+            //            if (oldonload) oldonload();
+            //        }
+            //    }
+            //}
             
             function initProjectTools() {
                 var visualvmProjectTools = document.getElementById("visualvmprojecttools");
@@ -116,11 +100,29 @@
 </head>
 
 <body>
+    
+<div id="top_div">
+    <table>
+        
+        <tr>
+            <td id="top_div_info">
+                VisualVM is a visual tool integrating several commandline JDK tools and lightweight profiling capabilities. Designed for both production and development time use, it further enhances the capability of monitoring and performance analysis for the Java SE platform.
+            </td>
+            <td id="top_div_links">
+                <a href="https://visualvm.dev.java.net/brandingtest/features.html"><img src="imgs/main_links_icon.png"/>Features</a>
+                <a href="https://visualvm.dev.java.net/brandingtest/download.html"><img src="imgs/main_links_icon.png"/><b>Download</b></a>
+                <a href="https://visualvm.dev.java.net/docindex.html"><img src="imgs/main_links_icon.png"/>Documentation</a>
+                <a href="https://visualvm.dev.java.net/brandingtest/plugins.html"><img src="imgs/main_links_icon.png"/>Plugins</a>
+            </td>
+        </tr>
+        
+    </table>
+</div>
 
 <div id="contents">
     <table>
             
-        <tr id="contents_top">
+        <!--tr id="contents_top">
             <td id="top_info">
                 VisualVM is a visual tool integrating several commandline JDK tools and lightweight profiling capabilities. Designed for both production and development time use, it further enhances the capability of monitoring and performance analysis for the Java SE platform.
             </td>
@@ -130,7 +132,7 @@
                 <a href="#"><img src="imgs/testicon.png"/>Documentation</a>
                 <a href="#"><img src="imgs/testicon.png"/>Plugins</a>
             </td>
-        </tr>
+        </tr-->
             
         <tr id="contents_mid" class="no_background">
                 <td class="no_background" style="padding: 5px; padding-right: 0px; vertical-align: top;">
