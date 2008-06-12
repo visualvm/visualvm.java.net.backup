@@ -95,9 +95,18 @@
                 }
             }
             
-            addFirstLoadEventHandler(function() {
-                alert("First load event...");
-            });
+            function initProjectTools() {
+                var visualvmProjectTools = document.getElementById("visualvmprojecttools");
+                var projectTools = document.getElementById("projecttools");
+                var projectToolsLinks = projectTools.getElementsByTagName("a");
+                for (var i = 1; i < projectToolsLinks.length; i++) {
+                    var projectToolsLink = projectToolsLinks[i];
+                    visualvmProjectTools.appendChild(projectToolsLink);
+                    alert(projectToolsLink.innerHTML + " added to " + visualvmProjectTools);
+                }
+            }
+            
+            addFirstLoadEventHandler(initProjectTools());
         </script>
 
 </head>
@@ -173,16 +182,7 @@
                     </div>
                     
                     <h3>Project Tools</h3>
-                    <div class="users">
-                        <ul>
-                            <li><a href="#">Membership</a></li>
-                            <li><a href="#">Announcements</a></li>
-                            <li><a href="#">Discussion forums</a></li>
-                            <li><a href="#">Mailing lists</a></li>
-                            <li><a href="#">Documents & files</a></li>
-                            <li><a href="#">CVS</a></li>
-                            <li><a href="#">Issue tracker</a></li>
-                        </ul>
+                    <div id="visualvmprojecttools" class="users">
                     </div>
                 </td>
         </tr>
