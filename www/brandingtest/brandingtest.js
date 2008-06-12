@@ -26,7 +26,20 @@ function disableTheme() {
 }
 
 // Adds new window.onload handler (FIFO)
-function addLoadEventHandler(func) {
+function addLastLoadEventHandler(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function() {
+            if (oldonload) oldonload();
+            func();
+        }
+    }
+}
+
+// Adds new window.onload handler (LIFO)
+function addFirstLoadEventHandler(func) {
     var oldonload = window.onload;
     if (typeof window.onload != 'function') {
         window.onload = func;
@@ -159,7 +172,7 @@ if (customizeSite == "true") { // Site branding is customized
     document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/brandingtest/brandingtest.css"/>');
     
     // window.onload hook making the customizations
-    addLoadEventHandler(function() {
+    addLastLoadEventHandler(function() {
         
         // Create custom header
         createHeader();
