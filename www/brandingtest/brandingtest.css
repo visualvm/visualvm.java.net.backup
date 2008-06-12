@@ -178,6 +178,50 @@ div#loginbar a:hover {
 
 /*
  -------------------------------------------------------------------------------
+ --- STYLE FOR CONTENTS                                                      ---
+ -------------------------------------------------------------------------------
+*/
+
+#contents_div {
+    margin: 8px;
+    margin-top: 15px;
+    padding: 0px;
+}
+
+#contents_contents {
+    float: left;
+    width: 100%;
+    margin-right: -99%;
+}
+
+#contents_main {
+    margin-right: 252px;
+    vertical-align: top;
+}
+
+#contents_hints {
+    float: right;
+    width: 240px;
+    vertical-align: top;
+}
+
+#contents_clear {
+    clear: both;
+}
+
+#contents_div a, #contents_div a:visited, #contents_div a:link.selfref, #contents_div a:visited.selfref {
+	color: #5b83a9 !important;
+	text-decoration: underline !important;
+}
+
+#contents_div a:hover {
+	color: #f47123 !important;
+	text-decoration: underline !important;
+}
+
+
+/*
+ -------------------------------------------------------------------------------
  --- STYLE FOR FOOTER                                                        ---
  -------------------------------------------------------------------------------
 */
@@ -191,21 +235,21 @@ div#loginbar a:hover {
 }
 
 #cfooter_links_container {
-	float: left;
-	width: 100%;
-	margin-right: -99%;
+    float: left;
+    width: 100%;
+    margin-right: -99%;
 }
 
 #cfooter_links {
-        margin-top: 3px;
-	margin-right: 272px;
+    margin-top: 3px;
+    margin-right: 272px;
 }
 
 #cfooter_logos {
-	float: right;
-        text-align: right;
-	width: 255px;
-        border-left: 2px solid #cccccc;
+    float: right;
+    text-align: right;
+    width: 255px;
+    border-left: 2px solid #cccccc;
 }
 
 #project_links {

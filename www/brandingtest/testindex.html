@@ -121,81 +121,93 @@
     </table>
 </div>
 
-<div id="contents">
-    <table>
+<div id="contents_div">
+    
+    <div id="contents_contents">
+        <div id="contents_main">
             
-        <!--tr id="contents_top">
-            <td id="top_info">
-                VisualVM is a visual tool integrating several commandline JDK tools and lightweight profiling capabilities. Designed for both production and development time use, it further enhances the capability of monitoring and performance analysis for the Java SE platform.
-            </td>
-            <td id="top_links">
-                <a href="#"><img src="imgs/testicon.png"/>Features</a>
-                <a href="#"><img src="imgs/testicon.png"/><b>Download</b></a>
-                <a href="#"><img src="imgs/testicon.png"/>Documentation</a>
-                <a href="#"><img src="imgs/testicon.png"/>Plugins</a>
-            </td>
-        </tr-->
-            
-        <tr id="contents_mid" class="no_background">
-                <td class="no_background" style="padding: 5px; padding-right: 0px; vertical-align: top;">
-                    
-                    <h3>News</h3>
-                    <div class="news">
+            <h3>News</h3>
+                <div id="news">
                     <p style="margin-top: 0px; margin-bottom: 5px;"><b><i>May 6th, 2008:</i></b> VisualVM 1.0 RC released. This is mainly a stabilization
-                      release: many bugs have been fixed and performance and memory management have been significantly improved. The only new feature is
-                      the Start Page which contains useful links to VisualVM documentation and JDK monitoring and troubleshooting guides.
-                      Sources for this release are available in <a href="https://visualvm.dev.java.net/source/browse/visualvm/visualvm/?only_with_tag=release10"><code>release10</code></a> branch.
-                      </p>
+                        release: many bugs have been fixed and performance and memory management have been significantly improved. The only new feature is
+                        the Start Page which contains useful links to VisualVM documentation and JDK monitoring and troubleshooting guides.
+                        Sources for this release are available in <a href="https://visualvm.dev.java.net/source/browse/visualvm/visualvm/?only_with_tag=release10"><code>release10</code></a> branch.
+                    </p>
 
-                      <p style="margin-top: 0px; margin-bottom: 5px;"><b><i>April 14th, 2008:</i></b> VisualVM Beta 2 released. Application Snapshots have been
-                      improved (Overview tab can now be saved) and many minor improvements have been done. API and code have been cleaned up and several serious
-                      bugs have been fixed. Sources for this release are available in <a href="https://visualvm.dev.java.net/source/browse/visualvm/visualvm/?only_with_tag=visualvm_beta2"><code>visualvm_beta2</code></a> branch.
-                      </p>
+                    <p style="margin-top: 0px; margin-bottom: 5px;"><b><i>April 14th, 2008:</i></b> VisualVM Beta 2 released. Application Snapshots have been
+                        improved (Overview tab can now be saved) and many minor improvements have been done. API and code have been cleaned up and several serious
+                        bugs have been fixed. Sources for this release are available in <a href="https://visualvm.dev.java.net/source/browse/visualvm/visualvm/?only_with_tag=visualvm_beta2"><code>visualvm_beta2</code></a> branch.
+                    </p>
 
-                      <p style="margin-top: 0px; margin-bottom: 5px;"><b><i>March 7th, 2008:</i></b> VisualVM Beta released. There are many new features in this release:
-                      applications defined by JMX connection, application snapshots, defined hosts and VM coredumps persistence, Load & Save As for thread dumps and heap dumps,
-                      autodiscovery of jstatd started after defining remote host, improved support for JRockit VMs, new icons, main menu & toolbar cleanup, customizable Options,
-                      GlassFish plugin on Plugin Center. Sources are available in <a href="https://visualvm.dev.java.net/source/browse/visualvm/visualvm/?only_with_tag=visualvm_beta"><code>visualvm_beta</code></a> branch.
-                      </p>
-                     </div>
-          
-                </td>
-                <td class="contents_bar" class="no_background" style="padding: 5px; vertical-align: top;">
-                    <h3>Users</h3>
-                    <div class="users">
-                        <ul>
-                            <li><a href="#">Getting Started</a></li>
-                            <li><a href="#">Troubleshooting Guide</a></li>
-                            <li><a href="#">Report a Bug</a></li>
-                            <li><a href="#">Request a Feature</a></li>
-                            <li><a href="#">Send Feedback</a></li>
-                        </ul>
-                    </div>
-                    
-                    <h3>Developers</h3>
-                    <div class="users">
-                        <ul>
-                            <li><a href="#">Build Guide</a></li>
-                            <li><a href="#">Online JavaDoc</a></li>
-                            <li><a href="#">Sample Projects</a></li>
-                        </ul>
-                    </div>
-                    
-                    <h3>Contributors</h3>
-                    <div class="users">
-                        <ul>
-                            <li><a href="#">Contribution Guideline</a></li>
-                            <li><a href="#">Pool of Tasks</a></li>
-                        </ul>
-                    </div>
-                    
-                    <h3>Project Tools</h3>
-                    <div id="visualvmprojecttools" class="users">
-                    </div>
-                </td>
-        </tr>
+                    <p style="margin-top: 0px; margin-bottom: 5px;"><b><i>March 7th, 2008:</i></b> VisualVM Beta released. There are many new features in this release:
+                        applications defined by JMX connection, application snapshots, defined hosts and VM coredumps persistence, Load & Save As for thread dumps and heap dumps,
+                        autodiscovery of jstatd started after defining remote host, improved support for JRockit VMs, new icons, main menu & toolbar cleanup, customizable Options,
+                        GlassFish plugin on Plugin Center. Sources are available in <a href="https://visualvm.dev.java.net/source/browse/visualvm/visualvm/?only_with_tag=visualvm_beta"><code>visualvm_beta</code></a> branch.
+                    </p>
+                </div>
             
-    </table>
+            <div class="h2" id="subprojects">
+                <h2>Subprojects</h2>
+
+                <table width="100%">
+                    <tr>
+                        <th>Name</th>
+                        <th>Summary</th> 
+                    </tr>
+
+                    <tr class="a"> 
+                        <td><a href="https://btrace.dev.java.net/">btrace</a></td>
+                        <td>BTrace - dynamic, safe tracing system for the Java platform</td>
+                    </tr>
+
+                    <tr class="b"> 
+                        <td><a href="https://gchisto.dev.java.net/">gchisto</a></td>
+                        <td>A garbage collection log visualization tool.</td>
+                    </tr>
+                </table> 
+            </div>
+            
+        </div>
+    </div>
+    
+    <div id="contents_hints">
+        
+        <h3>Users</h3>
+        <div class="users">
+            <ul>
+                <li><a href="#">Getting Started</a></li>
+                <li><a href="#">Troubleshooting Guide</a></li>
+                <li><a href="#">Report a Bug</a></li>
+                <li><a href="#">Request a Feature</a></li>
+                <li><a href="#">Send Feedback</a></li>
+            </ul>
+        </div>
+
+        <h3>Developers</h3>
+        <div class="users">
+            <ul>
+                <li><a href="#">Build Guide</a></li>
+                <li><a href="#">Online JavaDoc</a></li>
+                <li><a href="#">Sample Projects</a></li>
+            </ul>
+        </div>
+
+        <h3>Contributors</h3>
+        <div class="users">
+            <ul>
+                <li><a href="#">Contribution Guideline</a></li>
+                <li><a href="#">Pool of Tasks</a></li>
+            </ul>
+        </div>
+
+        <h3>Project Tools</h3>
+        <div id="visualvmprojecttools" class="users">
+        </div>
+        
+    </div>
+    
+    <div id="contents_clear"></div>
+
 </div>
 
 <div id="contents_div">
