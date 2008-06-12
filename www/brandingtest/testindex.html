@@ -96,16 +96,16 @@
             }
             
             function initProjectTools() {
-                alert("Init project tools...");
                 var visualvmProjectTools = document.getElementById("visualvmprojecttools");
                 var projectTools = document.getElementById("projecttools");
                 var projectToolsLinks = projectTools.getElementsByTagName("a");
                 for (var i = 1; i < projectToolsLinks.length; i++) {
+                    alert("i=" + i + ", length=" + projectToolsLinks.length + ", current link: " + projectToolsLinks[i].innerHTML);
                     var linkContainer = document.createElement("div");
                     linkContainer.className = "hintLink";
                     linkContainer.appendChild(projectToolsLinks[i]);
                     visualvmProjectTools.appendChild(linkContainer);
-                    alert(linkContainer.innerHTML + " added");
+                    //alert(linkContainer.innerHTML + " added");
                 }
             }
             
