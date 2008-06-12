@@ -99,7 +99,7 @@
                 var visualvmProjectTools = document.getElementById("visualvmprojecttools");
                 var projectTools = document.getElementById("projecttools");
                 var projectToolsLinks = projectTools.getElementsByTagName("a");
-                for (var i = 1; i < projectToolsLinks.length; i++) {
+                for (var i = 1; i < projectToolsLinks.length;) {
                     alert("i=" + i + ", length=" + projectToolsLinks.length + ", current link: " + projectToolsLinks[i].innerHTML);
                     var linkContainer = document.createElement("div");
                     linkContainer.className = "hintLink";
