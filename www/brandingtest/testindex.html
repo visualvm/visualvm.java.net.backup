@@ -101,9 +101,11 @@
                 var projectTools = document.getElementById("projecttools");
                 var projectToolsLinks = projectTools.getElementsByTagName("a");
                 for (var i = 1; i < projectToolsLinks.length; i++) {
-                    var projectToolsLink = projectToolsLinks[i];
-                    //visualvmProjectTools.appendChild(projectToolsLink);
-                    alert(projectToolsLink.innerHTML + " added to " + visualvmProjectTools);
+                    var linkContainer = document.createElement("div");
+                    linkContainer.className = "hintLink";
+                    linkContainer.appendChild(projectToolsLinks[i]);
+                    visualvmProjectTools.appendChild(linkContainer);
+                    alert(linkContainer.innerHTML + " added");
                 }
             }
             
