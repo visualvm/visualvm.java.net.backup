@@ -57,15 +57,12 @@ small, .small, div#footer, #login, .tabs th, .tabs td, #toptabs th, #toptabs td,
 
 body {
     font-size: 13px !important;
-}
-
-body {
     border: 0px !important;
     padding: 0px !important;
     margin: 0px !important;
 }
 
-h2, h3, h4 {
+h2, h3 {
     border: 1px solid #8bb3d9 !important;
     border-bottom: 1px solid #e5f2f8 !important;
     background: #e5f2f8 !important;

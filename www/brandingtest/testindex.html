@@ -69,17 +69,17 @@
         <script type="text/javascript">
             
             // Adds new window.onload handler (LIFO)
-            //function addFirstLoadEventHandler(func) {
-            //    var oldonload = window.onload;
-            //    if (typeof window.onload != 'function') {
-            //        window.onload = func;
-            //    } else {
-            //        window.onload = function() {
-            //            func();
-            //            if (oldonload) oldonload();
-            //        }
-            //    }
-            //}
+            function addFirstLoadEventHandler(func) {
+                var oldonload = window.onload;
+                if (typeof window.onload != 'function') {
+                    window.onload = func;
+                } else {
+                    window.onload = function() {
+                        func();
+                        if (oldonload) oldonload();
+                    }
+                }
+            }
             
             function initProjectTools() {
                 var visualvmProjectTools = document.getElementById("visualvmprojecttools");
@@ -196,6 +196,31 @@
         </tr>
             
     </table>
+</div>
+
+<div id="contents_div">
+
+    <div class="h2" id="subprojects">
+        <h2>Subprojects</h2>
+
+        <table width="100%">
+            <tr>
+                <th>Name</th>
+                <th>Summary</th> 
+            </tr>
+            
+            <tr class="a"> 
+                <td><a href="https://btrace.dev.java.net/">btrace</a></td>
+                <td>BTrace - dynamic, safe tracing system for the Java platform</td>
+            </tr>
+
+            <tr class="b"> 
+                <td><a href="https://gchisto.dev.java.net/">gchisto</a></td>
+                <td>A garbage collection log visualization tool.</td>
+            </tr>
+        </table> 
+    </div>
+
 </div>
 
 </body>
