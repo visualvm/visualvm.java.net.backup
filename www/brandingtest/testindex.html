@@ -180,14 +180,14 @@
                 contentsHints.appendChild(projectToolsHeader);
                 
                 projectTools2 = document.createElement("div");
-                //var projectTools = document.getElementById("projecttools");
-                //var projectToolsLinks = projectTools.getElementsByTagName("a");
-                //for (var i = 1; i < projectToolsLinks.length;) {
-                //    var linkContainer = document.createElement("div");
-                //    linkContainer.className = "hintLink";
-                //    linkContainer.appendChild(projectToolsLinks[i]);
-                //    projectTools2.appendChild(linkContainer);
-                //}
+                var projectTools = document.getElementById("projecttools");
+                var projectToolsLinks = projectTools.getElementsByTagName("a");
+                for (var i = 1; i < projectToolsLinks.length;) {
+                    var linkContainer = document.createElement("div");
+                    linkContainer.className = "hintLink";
+                    linkContainer.appendChild(projectToolsLinks[i]);
+                    projectTools2.appendChild(linkContainer);
+                }
                 projectTools2.style.display = showToolsCookie == "true" ? "block" : "none";
                 contentsHints.appendChild(projectTools2);
                 
