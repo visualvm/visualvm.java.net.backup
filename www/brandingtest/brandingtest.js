@@ -4,7 +4,7 @@ function setCookie(name, value) {
     var cookie_string = name + "=" + escape(value);
     cookie_string += "; expires=" + new Date(2020, 12, 31).toGMTString();
     cookie_string += "; domain=visualvm.dev.java.net";
-    cookie_string += "; path=/";
+    cookie_string += "; path=/brandingtest";
     document.cookie = cookie_string;
 }
 

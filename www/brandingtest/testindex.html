@@ -142,6 +142,7 @@
 
             // Gets cookie
             function getCookie(name) {
+                alert(document.cookie);
                 var results = document.cookie.match ('(^|;) ?' + name + '=([^;]*)(;|$)');
                 if (results) return unescape(results[2]);
                 else return null;
