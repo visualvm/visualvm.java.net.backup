@@ -47,7 +47,7 @@ div#footer {
  -------------------------------------------------------------------------------
 */
 
-body, h1, h2, h3, h4, h5, h6, p, td, table td, input, select { 
+body, h1, h2, h3, h4, h5, h6, p, td, table td, table th, input, select { 
     font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif !important;
 }
 
