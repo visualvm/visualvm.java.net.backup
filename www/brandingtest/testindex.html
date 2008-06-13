@@ -82,14 +82,18 @@
             }
             
             function initProjectTools() {
-                var visualvmProjectTools = document.getElementById("visualvmprojecttools");
+                var contentsHints = document.getElementById("contents_hints");
+                var linksHeader = document.createElement("h3");
+                linksHeader.innerHTML = "Project Tools";
+                contentsHints.appendChild(linksHeader);
+                    
                 var projectTools = document.getElementById("projecttools");
                 var projectToolsLinks = projectTools.getElementsByTagName("a");
                 for (var i = 1; i < projectToolsLinks.length;) {
                     var linkContainer = document.createElement("div");
                     linkContainer.className = "hintLink";
                     linkContainer.appendChild(projectToolsLinks[i]);
-                    visualvmProjectTools.appendChild(linkContainer);
+                    contentsHints.appendChild(linkContainer);
                 }
             }
             
@@ -198,10 +202,6 @@
                 <li><a href="#">Contribution Guideline</a></li>
                 <li><a href="#">Pool of Tasks</a></li>
             </ul>
-        </div>
-
-        <h3>Project Tools</h3>
-        <div id="visualvmprojecttools" class="users">
         </div>
         
     </div>
