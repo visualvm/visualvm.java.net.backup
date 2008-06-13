@@ -215,13 +215,22 @@ div#loginbar a:hover {
 }
 
 #contents_div a, #contents_div a:visited, #contents_div a:link.selfref, #contents_div a:visited.selfref {
-	color: #5b83a9 !important;
-	text-decoration: underline !important;
+    color: #5b83a9 !important;
+    text-decoration: underline !important;
 }
 
 #contents_div a:hover {
-	color: #f47123 !important;
-	text-decoration: underline !important;
+    color: #f47123 !important;
+    text-decoration: underline !important;
+}
+
+#contents_hints div a, #contents_hints div a:visited {
+    text-decoration: none !important;
+    display: block;
+    padding-top: 2px;
+    padding-left: 11px;
+    margin-left: 15px;
+    background: url(imgs/hint_links_icon.png) no-repeat 0 6px;
 }
 
 #contents_hints h2, #contents_hints h3 {

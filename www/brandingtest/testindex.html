@@ -142,7 +142,6 @@
 
             // Gets cookie
             function getCookie(name) {
-                alert(document.cookie);
                 var results = document.cookie.match ('(^|;) ?' + name + '=([^;]*)(;|$)');
                 if (results) return unescape(results[2]);
                 else return null;
@@ -186,10 +185,7 @@
                 var projectTools = document.getElementById("projecttools");
                 var projectToolsLinks = projectTools.getElementsByTagName("a");
                 for (var i = 1; i < projectToolsLinks.length;) {
-                    var linkContainer = document.createElement("div");
-                    linkContainer.className = "hintLink";
-                    linkContainer.appendChild(projectToolsLinks[i]);
-                    projectTools2.appendChild(linkContainer);
+                    projectTools2.appendChild(projectToolsLinks[i]);
                 }
                 projectTools2.style.display = showToolsCookie == "true" ? "block" : "none";
                 contentsHints.appendChild(projectTools2);
@@ -209,7 +205,7 @@
             // Predefined cookie controlling site customizations
             var CUSTOMIZE_SITE = "customize_site_cookie";
             var customizeSite = getCookie(CUSTOMIZE_SITE);
-            alert("Customize site: " + customizeSite);
+            
             if (customizeSite == "true") {
                 var SHOW_PROJECT_TOOLS = "show_project_tools_cookie";
                 var showToolsCookie = getCookie(SHOW_PROJECT_TOOLS);
@@ -296,30 +292,24 @@
         
         <h3>Users</h3>
         <div class="users">
-            <ul>
-                <li><a href="#">Getting Started</a></li>
-                <li><a href="#">Troubleshooting Guide</a></li>
-                <li><a href="#">Report a Bug</a></li>
-                <li><a href="#">Request a Feature</a></li>
-                <li><a href="#">Send Feedback</a></li>
-            </ul>
+            <a href="#">Getting Started</a>
+            <a href="#">Troubleshooting Guide</a>
+            <a href="#">Report a Bug</a>
+            <a href="#">Request a Feature</a>
+            <a href="#">Send Feedback</a>
         </div>
 
         <h3>Developers</h3>
         <div class="users">
-            <ul>
-                <li><a href="#">Build Guide</a></li>
-                <li><a href="#">Online JavaDoc</a></li>
-                <li><a href="#">Sample Projects</a></li>
-            </ul>
+            <a href="#">Build Guide</a>
+            <a href="#">Online JavaDoc</a>
+            <a href="#">Sample Projects</a>
         </div>
 
         <h3>Contributors</h3>
         <div class="users">
-            <ul>
-                <li><a href="#">Contribution Guideline</a></li>
-                <li><a href="#">Pool of Tasks</a></li>
-            </ul>
+            <a href="#">Contribution Guideline</a>
+            <a href="#">Pool of Tasks</a>
         </div>
         
     </div>
