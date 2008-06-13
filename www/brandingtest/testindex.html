@@ -106,7 +106,7 @@
             }
             
             p.news_highlight {
-                background: #eef1f2;
+                background: #f0f1f2;
             }
             
             
@@ -127,6 +127,24 @@
         
         <script type="text/javascript">
             
+            var projectTools2;
+            var showProjectTools;
+            var hideProjectTools;
+            
+            // Sets "long-life" cookie (expires December 31th, 2020)
+            function setCookie(name, value) {
+                var cookie_string = name + "=" + escape(value);
+                cookie_string += "; expires=" + new Date(2020, 12, 31).toGMTString();
+                document.cookie = cookie_string;
+            }
+
+            // Gets cookie
+            function getCookie(name) {
+                var results = document.cookie.match ('(^|;) ?' + name + '=([^;]*)(;|$)');
+                if (results) return unescape(results[2]);
+                else return null;
+            }
+            
             // Adds new window.onload handler (LIFO)
             function addFirstLoadEventHandler(func) {
                 var oldonload = window.onload;
@@ -140,25 +158,63 @@
                 }
             }
             
-            function initProjectTools() {
-                var contentsHints = document.getElementById("contents_hints");
-                var linksHeader = document.createElement("h3");
-                linksHeader.innerHTML = "Project Tools";
-                contentsHints.appendChild(linksHeader);
-                    
-                var projectTools = document.getElementById("projecttools");
-                var projectToolsLinks = projectTools.getElementsByTagName("a");
-                for (var i = 1; i < projectToolsLinks.length;) {
-                    var linkContainer = document.createElement("div");
-                    linkContainer.className = "hintLink";
-                    linkContainer.appendChild(projectToolsLinks[i]);
-                    contentsHints.appendChild(linkContainer);
-                }
+            function showTools() {
+                projectTools2.style.display = "block";
+                showProjectTools.style.display = "none";
+                hideProjectTools.style.display = "block";
+                setCookie(SHOW_PROJECT_TOOLS, "true")
             }
             
-            addFirstLoadEventHandler(function() {
-                initProjectTools();
-            });
+            function hideTools() {
+                projectTools2.style.display = "none";
+                showProjectTools.style.display = "block";
+                hideProjectTools.style.display = "none";
+                setCookie(SHOW_PROJECT_TOOLS, "false")
+            }
+            
+            function initProjectTools() {
+                var contentsHints = document.getElementById("contents_hints");
+                
+                var projectToolsHeader = document.createElement("h3");
+                projectToolsHeader.innerHTML = "Project Tools";
+                contentsHints.appendChild(projectToolsHeader);
+                
+                projectTools2 = document.createElement("div");
+                //var projectTools = document.getElementById("projecttools");
+                //var projectToolsLinks = projectTools.getElementsByTagName("a");
+                //for (var i = 1; i < projectToolsLinks.length;) {
+                //    var linkContainer = document.createElement("div");
+                //    linkContainer.className = "hintLink";
+                //    linkContainer.appendChild(projectToolsLinks[i]);
+                //    projectTools2.appendChild(linkContainer);
+                //}
+                projectTools2.style.display = showToolsCookie == "true" ? "block" : "none";
+                contentsHints.appendChild(projectTools2);
+                
+                showProjectTools = document.createElement("div");
+                showProjectTools.innerHTML = "<a href='javascript:showTools();'>Show Project Tools</a>";
+                showProjectTools.style.display = showToolsCookie == "true" ? "none" : "block";
+                contentsHints.appendChild(showProjectTools);
+                
+                hideProjectTools = document.createElement("div");
+                hideProjectTools.innerHTML = "<a href='javascript:hideTools();'>Hide Project Tools</a>";
+                hideProjectTools.style.display = showToolsCookie == "true" ? "block" : "none";
+                contentsHints.appendChild(hideProjectTools);
+                
+            }
+           
+            // Predefined cookie controlling site customizations
+            var CUSTOMIZE_SITE = "customize_site_cookie";
+            var customizeSite = getCookie(CUSTOMIZE_SITE);
+            
+            if (customizeSite == "true") {
+                var SHOW_PROJECT_TOOLS = "show_project_tools_cookie";
+                var showToolsCookie = getCookie(SHOW_PROJECT_TOOLS);
+                //setCookie(SHOW_PROJECT_TOOLS, "false")
+                addFirstLoadEventHandler(function() {
+                    initProjectTools();
+                });
+            }
             
         </script>
 
