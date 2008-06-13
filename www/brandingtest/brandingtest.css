@@ -69,15 +69,9 @@ h2, h3 {
     color: #2f4353 !important;
     margin: 0px !important;
     padding-top: 2px !important;
-    padding-bottom: 2px !important;
+    padding-bottom: 1px !important;
     padding-left: 5px !important;
     padding-right: 5px !important;
-}
-
-#contents_hints h2, #contents_hints h3 {
-    border: 1px solid #f57e37 !important;
-    border-bottom: 1px solid #fbc9ac !important;
-    background: #fbc9ac !important;
 }
 
 h2 {
@@ -205,13 +199,13 @@ div#loginbar a:hover {
 }
 
 #contents_main {
-    margin-right: 252px;
+    margin-right: 243px;
     vertical-align: top;
 }
 
 #contents_hints {
     float: right;
-    width: 240px;
+    width: 232px;
     vertical-align: top;
 }
 
@@ -227,6 +221,12 @@ div#loginbar a:hover {
 #contents_div a:hover {
 	color: #f47123 !important;
 	text-decoration: underline !important;
+}
+
+#contents_hints h2, #contents_hints h3 {
+    border: 1px solid #f57e37 !important;
+    border-bottom: 1px solid #fbc9ac !important;
+    background: #fbc9ac !important;
 }
 
 
