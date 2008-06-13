@@ -238,6 +238,7 @@ div#loginbar a:hover {
     border-bottom: 1px solid #fbc9ac !important;
     background: #fbc9ac !important;
     margin-top: 20px !important;
+    margin-bottom: 10px !important;
 }
 
 #contents_hints h2.first, #contents_hints h3.first {
