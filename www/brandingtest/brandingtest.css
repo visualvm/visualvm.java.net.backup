@@ -232,6 +232,10 @@ div#loginbar a:hover {
     padding-left: 12px;
 }
 
+#contents_hints div a:hover {
+    text-decoration: none !important;
+}
+
 #contents_hints h2, #contents_hints h3 {
     border: 1px solid #f57e37 !important;
     border-bottom: 1px solid #fbc9ac !important;
