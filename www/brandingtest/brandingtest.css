@@ -229,7 +229,7 @@ div#loginbar a:hover {
     display: list-item;
     list-style: square inside;
     padding: 2px;
-    padding-left: 12px;
+    padding-left: 15px;
 }
 
 #contents_hints div a:hover {
