@@ -228,7 +228,7 @@ div#loginbar a:hover {
     text-decoration: none !important;
     display: list-item;
     list-style: square inside;
-    padding: 2px;
+    padding: 1px;
     padding-left: 15px;
 }
 
