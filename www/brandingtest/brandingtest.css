@@ -226,11 +226,10 @@ div#loginbar a:hover {
 
 #contents_hints div a, #contents_hints div a:visited {
     text-decoration: none !important;
-    display: block;
-    padding-top: 1px;
-    padding-left: 11px;
-    margin-left: 15px;
-    background: url(imgs/hint_links_icon.png) no-repeat 0 6px;
+    display: list-item;
+    list-style: square inside;
+    padding: 2px;
+    padding-left: 12px;
 }
 
 #contents_hints h2, #contents_hints h3 {
