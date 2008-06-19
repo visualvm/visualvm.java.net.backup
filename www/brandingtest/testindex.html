@@ -63,34 +63,6 @@
             }
             
             
-            #contents_div {
-                margin: 8px;
-                margin-top: 15px;
-                padding: 0px;
-            }
-            
-            #contents_contents {
-                float: left;
-                width: 100%;
-                margin-right: -99%;
-            }
-            
-            #contents_main {
-                margin-right: 243px;
-                vertical-align: top;
-            }
-            
-            #contents_hints {
-                float: right;
-                width: 232px;
-                vertical-align: top;
-            }
-            
-            #contents_clear {
-                clear: both;
-            }
-            
-            
             #news p {
                 margin: 0px;
                 padding: 8px;
@@ -133,14 +105,12 @@
             function setCookie(name, value) {
                 var cookie_string = name + "=" + escape(value);
                 cookie_string += "; expires=" + new Date(2020, 12, 31).toGMTString();
-                cookie_string += "; domain=visualvm.dev.java.net";
-                cookie_string += "; path=/";
                 document.cookie = cookie_string;
             }
 
             // Gets cookie
-            function getCookie(name) {
-                var results = document.cookie.match ('(^|;) ?' + name + '=([^;]*)(;|$)');
+            function getCookie(cookie_name) {
+                var results = document.cookie.match ('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
                 if (results) return unescape(results[2]);
                 else return null;
             }
@@ -289,7 +259,7 @@
     <div id="contents_hints">
         
         <h3 class="first">Users</h3>
-        <div class="users">
+        <div>
             <a href="https://visualvm.dev.java.net/gettingstarted.html">Getting Started</a>
             <a href="https://visualvm.dev.java.net/troubleshooting.html">Troubleshooting Guide</a>
             <a href="https://visualvm.dev.java.net/issues/enter_bug.cgi?issue_type=DEFECT">Report a Bug</a>
@@ -298,8 +268,8 @@
         </div>
 
         <h3>Plugin Developers</h3>
-        <div class="users">
-            <a href="https://visualvm.dev.java.net/source/browse/visualvm/visualvm/">Sources</a>
+        <div>
+            <a href="https://visualvm.dev.java.net/source/browse/visualvm/">Sources</a>
             <a href="https://visualvm.dev.java.net/build.html">Build Guide</a>
             <a href="https://visualvm.dev.java.net/source/browse/visualvm/samples/">Sample Projects</a>
             <a href="https://visualvm.dev.java.net/api-quickstart.html">Developer Documentation</a>
@@ -307,7 +277,7 @@
         </div>
 
         <!--h3>Contributors</h3>
-        <div class="users">
+        <div>
             <a href="#">Contribution Guideline</a>
             <a href="#">Pool of Tasks</a>
         </div-->

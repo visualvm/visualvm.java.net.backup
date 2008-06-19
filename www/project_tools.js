@@ -6,8 +6,8 @@ function setCookie(name, value) {
 }
 
 // Gets cookie
-function getCookie(name) {
-    var results = document.cookie.match ('(^|;) ?' + name + '=([^;]*)(;|$)');
+function getCookie(cookie_name) {
+    var results = document.cookie.match ('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
     if (results) return unescape(results[2]);
     else return null;
 }

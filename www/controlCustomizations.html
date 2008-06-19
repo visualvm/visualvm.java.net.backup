@@ -1,11 +1,13 @@
 <script>
     
-    function setCookie( name, value, path, domain, secure ) {
+    // Sets "long-life" cookie (expires December 31th, 2020)
+    function setCookie(name, value) {
         var cookie_string = name + "=" + escape(value);
         cookie_string += "; expires=" + new Date(2020, 12, 31).toGMTString();
         document.cookie = cookie_string;
     }
 
+    // Gets cookie
     function getCookie(cookie_name) {
         var results = document.cookie.match ('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
         if (results) return unescape(results[2]);
