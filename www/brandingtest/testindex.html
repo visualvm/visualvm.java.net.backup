@@ -105,12 +105,14 @@
             function setCookie(name, value) {
                 var cookie_string = name + "=" + escape(value);
                 cookie_string += "; expires=" + new Date(2020, 12, 31).toGMTString();
+                cookie_string += "; domain=.visualvm.dev.java.net";
+                cookie_string += "; path=/";
                 document.cookie = cookie_string;
             }
 
             // Gets cookie
-            function getCookie(cookie_name) {
-                var results = document.cookie.match ('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
+            function getCookie(name) {
+                var results = document.cookie.match ('(^|;) ?' + name + '=([^;]*)(;|$)');
                 if (results) return unescape(results[2]);
                 else return null;
             }
