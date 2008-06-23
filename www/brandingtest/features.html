@@ -1,0 +1,192 @@
+<html>
+<head>
+    
+    <title>Test VisualVM Features</title>
+    
+    <style type="text/css">
+		/* <![CDATA[ */
+                @import "https://visualvm.dev.java.net/branding/css/tigris.css";
+                @import "https://visualvm.dev.java.net/branding/css/inst.css";
+		@import "file:///E:/Web/visualvm.localhost/visualvm/www/header.css";
+		/* ]]> */
+    </style>
+    
+    <style>            
+            
+        #contents_main p {
+            margin: 0px;
+            padding: 8px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            clear: both;
+        }
+        
+        #contents_main hr {
+            border: 1px dashed #cccccc;
+            border-collapse: collapse;
+            clear: both;
+        }
+
+        #contents_main p img {
+            float: left;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            padding: 2px;
+            border: 1px solid #cccccc;
+        }
+
+    </style>
+        
+    <link rel="stylesheet" href="css/slimbox.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="js/mootools.js"></script>
+    <script type="text/javascript" src="js/slimbox.js"></script>
+    
+    <script type="text/javascript">
+        
+        function showScreenshots() {
+            var slideshow = Slimbox.open([
+                ['imgs/localremoteapps.png', 'Display local and remote Java applications.'],
+                ['imgs/overview.png', 'Display application configuration and runtime environment.'],
+                ['imgs/monitor.png', 'Monitor application memory consumption and runtime behavior.'],
+                ['imgs/threads.png', 'Monitor application threads.'],
+                ['imgs/profiler.png', 'Profile application performance or analyze memory allocation.'],
+                ['imgs/threaddump.png', 'Take and display thread dumps.'],
+                ['imgs/heapdump.png', 'Take and browse heap dumps.'],
+                ['imgs/coredump.png', 'Analyze core dumps.'],
+                ['imgs/appsnapshot.png', 'Analyze applications offline.'],
+            ], 0);
+        }
+        
+    </script>
+    
+</head>
+
+<body>
+
+<div id="contents_div">
+    
+    <div id="contents_contents">
+        <div id="contents_main">
+            
+            <a name="features"></a>
+            <h3>Features</h3>
+            <div>
+                <p>Introduction - monitor, manage & troubleshoot Java applications. Running on 1.6, capable of monitoring 1.4+, transparently using jvmstat, JMX, sa, attach API and other...
+                </p>
+                
+                <p><a href="imgs/localremoteapps.png" rel="lightbox[screenshots]" title="Display local and remote Java applications."><img src="imgs/localremoteapps_small.png"/></a><b>Display local and remote Java applications.</b> VisualVM automatically detects and lists locally and remotely running Java applications (<code>jstatd</code> is required on remote host).
+                    You can also define applications manually by JMX connection. This way you can easily see what Java applications are running on your system or check if remote J2EE server process is alive.
+                </p>
+                
+                <hr/>
+                
+                <p><a href="imgs/overview.png" rel="lightbox[screenshots]" title="Display application configuration and runtime environment."><img src="imgs/overview_small.png"/></a><b>Display application configuration and runtime environment.</b> For each application VisualVM shows basic runtime information: PID, main class, arguments passed to <code>java</code> process, JVM version, JDK home, JVM flags and arguments and system properties.
+                </p>
+                
+                <hr/>
+                
+                <p><a href="imgs/monitor.png" rel="lightbox[screenshots]" title="Monitor application memory consumption and runtime behavior."><img src="imgs/monitor_small.png"/></a><b>Monitor application memory consumption and runtime behavior.</b> VisualVM monitors application heap and permanent generation memory, number of loaded classes and running threads.
+                    You can easily detect suspicious memory consumption and take an action - invoke garbage collection in the application or take a heap dump and browse the contents of application heap.
+                </p>
+                
+                <hr/>
+                
+                <p><a href="imgs/threads.png" rel="lightbox[screenshots]" title="Monitor application threads."><img src="imgs/threads_small.png"/></a><b>Monitor application threads.</b> All threads running in a Java process are displayed in a timeline.
+                    You can track threads activity and uncover inefficient patterns like blocked Event Dispatch Thread or unused worker threads.
+                </p>
+                
+                <hr/>
+                
+                <p><a href="imgs/profiler.png" rel="lightbox[screenshots]" title="Profile application performance or analyze memory allocation."><img src="imgs/profiler_small.png"/></a><b>Profile application performance or analyze memory allocation.</b> VisualVM has a built-in application profiler which can visualize where most of the time is being spent or which objects consume most of the memory by just one mouse click without any additional configuration.
+                </p>
+                
+                <hr/>
+                
+                <p><a href="imgs/threaddump.png" rel="lightbox[screenshots]" title="Take and display thread dumps."><img src="imgs/threaddump_small.png"/></a><b>Take and display thread dumps.</b> Taking and displaying a thread dump is as easy as clicking a mouse button.
+                    You don't need to deal with commandline at all to determine what's currently happening in the application. Moreover, simultaneous thread dumps of multiple applications can be taken at once to start uncovering distributed deadlocks.
+                </p>
+                
+                <hr/>
+                
+                <p><a href="imgs/heapdump.png" rel="lightbox[screenshots]" title="Take and browse heap dumps."><img src="imgs/heapdump_small.png"/></a><b>Take and browse heap dumps.</b> When you need to browse contents of application memory or uncover a memory leak in your application, you'll find the built-in HeapWalker tool really handy.
+                    Natively working with <code>hprof</code> format, it's also capable to browse heap dumps created by JVM on OutOfMemoryException.
+                </p>
+                
+                <hr/>
+                
+                <p><a href="imgs/coredump.png" rel="lightbox[screenshots]" title="Analyze core dumps."><img src="imgs/coredump_small.png"/></a><b>Analyze core dumps.</b> When a Java process crashes, a core dump can be generated by the JVM containing important information about application state at the crash time.
+                    VisualVM is able to display application configuration and runtime environment and to extract thread and heap dumps from the core dump.
+                </p>
+                
+                <hr/>
+                
+                <p><a href="imgs/appsnapshot.png" rel="lightbox[screenshots]" title="Analyze applications offline."><img src="imgs/appsnapshot_small.png"/></a><b>Analyze applications offline.</b> VisualVM is able to save application configuration and runtime environment together with all taken thread dumps, heap dumps and profiler snaphots into a single application snapshot which can be later processed offline.
+                    This is especially useful for bugreports where users can provide a single file containing all the necessary information to identify runtime environment and application state.
+                </p>
+            </div>
+            
+            <a name="plugins"></a>
+            <h3>Plugins</h3>
+            <div>
+                <p>Basic plugins:
+                </p>
+                
+                <p>Explore application MBeans
+                </p>
+                
+                <p>Reuse existing JConsole plugins
+                </p>
+                
+                <p>Haven't found a feature? More plugins at PLUGINS
+                </p>
+            </div>
+            
+            <a name="feature_matrix"></a>
+            <h3>Feature Matrix</h3>
+            <div>
+                <p>Feature Matrix
+                </p>
+            </div>
+            
+            <a name="system_requirements"></a>
+            <h3>System Requirements</h3>
+            <div>
+                <p>Hardware
+                </p>
+                
+                <p>Operating system
+                </p>
+                
+                <p>JDK
+                </p>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div id="contents_hints">
+        
+        <h3 class="first">On This Page</h3>
+        <div>
+            <a href="#features">Features</a>
+            <a href="#plugins">Plugins</a>
+            <a href="#system_requirements">Feature Matrix</a>
+        </div>
+        
+        <h3>Quick Links</h3>
+        <div>
+            <a href="javascript:showScreenshots();">Screenshots</a>
+            <a href="#plugins">All Plugins</a>
+            <a href="#system_requirements">System Requirements</a>
+            <a href="https://visualvm.dev.java.net/issues/enter_bug.cgi?issue_type=FEATURE">Request a Feature</a>
+            <a href="mailto:feedback@visualvm.dev.java.net">Send Feedback</a>
+        </div>
+        
+    </div>
+    
+    <div id="contents_clear"></div>
+
+</div>
+
+</body>
+</html>
