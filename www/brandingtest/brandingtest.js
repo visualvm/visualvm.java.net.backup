@@ -170,6 +170,9 @@ var customizeSite = getCookie(CUSTOMIZE_SITE);
 
 if (customizeSite == "true") { // Site branding is customized
     
+    // Add a favicon
+    document.write('<link rel="icon" type="image/png" href="https://visualvm.dev.java.net/brandingtest/imgs/favicon.ico">');
+    
     // Apply custom css style
     document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/brandingtest/brandingtest.css"/>');
     

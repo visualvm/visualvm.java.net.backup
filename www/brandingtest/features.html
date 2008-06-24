@@ -1,6 +1,8 @@
 <html>
 <head>
     
+    <link rel="icon" type="image/png" href="https://visualvm.dev.java.net/brandingtest/imgs/favicon.ico">
+    
     <title>Test VisualVM Features</title>
     
     <style type="text/css">
@@ -68,12 +70,25 @@
     <div id="contents_contents">
         <div id="contents_main">
             
+            <p>
+                VisualVM is a tool to monitor and troubleshoot Java applications. It runs on JDK 1.6, but is able to monitor JDK 1.4+ applications. It utilizes
+                various available technologies like jvmstat, JMX, SA and Attach API to get the data and automatically uses fastest and most lightweight technology
+                to impose minimal overhead to monitored applications.
+            </p>
+            
+            <p>
+                With the out-of-the-box features it perfectly fits all the requirements of application developers, system administrators, quality engineers and - last but not least - 
+                application users submitting bugreports containing all the necessary information.
+            </p>
+            
+            <p style="margin-bottom: 15px;">
+                With the out-of-the-box features it perfectly fits all the requirements of application developers, system administrators, quality engineers and - last but not least - 
+                application users submitting bugreports containing all the necessary information.
+            </p>
+            
             <a name="features"></a>
             <h3>Features</h3>
-            <div>
-                <p>Introduction - monitor, manage & troubleshoot Java applications. Running on 1.6, capable of monitoring 1.4+, transparently using jvmstat, JMX, sa, attach API and other...
-                </p>
-                
+            <div>                
                 <p><a href="imgs/localremoteapps.png" rel="lightbox[screenshots]" title="Display local and remote Java applications."><img src="imgs/localremoteapps_small.png"/></a><b>Display local and remote Java applications.</b> VisualVM automatically detects and lists locally and remotely running Java applications (<code>jstatd</code> is required on remote host).
                     You can also define applications manually by JMX connection. This way you can easily see what Java applications are running on your system or check if remote J2EE server process is alive.
                 </p>
@@ -144,21 +159,21 @@
             <a name="feature_matrix"></a>
             <h3>Feature Matrix</h3>
             <div>
-                <p>Feature Matrix
-                </p>
-            </div>
-            
-            <a name="system_requirements"></a>
-            <h3>System Requirements</h3>
-            <div>
-                <p>Hardware
-                </p>
-                
-                <p>Operating system
-                </p>
-                
-                <p>JDK
-                </p>
+                <center style="margin-top: 10px; margin-bottom: 10px;">
+                    <table border="1" cellspacing="0" width="95%">
+                        <tr><td style="vertical-align: middle;"><b>Feature</b></td><td style="text-align:center;" width="15%"><b>JDK 1.4.2<br><small>local/remote</small></b></td><td style="text-align:center;" width="15%"><b>JDK 5.0<br><small>local/remote</small></b></td><td style="text-align:center;" width="15%"><b>JDK 6.0<br><small>local</small></b></td><td style="text-align:center;" width="15%"><b>JDK 6.0<br><small>remote</small></b></td></tr>
+                        <tr><td>Overview</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td></tr>
+                        <tr><td>System Properties (in Overview)</td><td style="text-align:center;">&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td>&nbsp</td></tr>
+                        <tr><td>Monitor</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td></tr>
+                        <tr><td>Threads</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td></tr>
+                        <tr><td>Profiler</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td>&nbsp</td></tr>
+                        <tr><td>Thread Dump</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td>&nbsp</td></tr>
+                        <tr><td>Heap Dump</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td>&nbsp</td></tr>
+                        <tr><td>Enable Heap Dump on OOME</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td>&nbsp</td></tr>
+                        <tr><td>MBean Browser (plugin)</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td></tr>
+                        <tr><td>Wrapper for JConsole plugins (plugin)</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td></tr>
+                    </table>
+                </center>
             </div>
             
         </div>
@@ -176,8 +191,8 @@
         <h3>Quick Links</h3>
         <div>
             <a href="javascript:showScreenshots();">Screenshots</a>
-            <a href="#plugins">All Plugins</a>
-            <a href="#system_requirements">System Requirements</a>
+            <a href="#">Available Plugins</a>
+            <a href="#">System Requirements</a>
             <a href="https://visualvm.dev.java.net/issues/enter_bug.cgi?issue_type=FEATURE">Request a Feature</a>
             <a href="mailto:feedback@visualvm.dev.java.net">Send Feedback</a>
         </div>
