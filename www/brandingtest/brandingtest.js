@@ -171,8 +171,8 @@ var customizeSite = getCookie(CUSTOMIZE_SITE);
 if (customizeSite == "true") { // Site branding is customized
     
     // Add a favicon
-    document.write('<link rel="icon" type="image/png" href="https://visualvm.dev.java.net/favicon.ico">');
-    document.write('<link rel="shortcut icon" href="https://visualvm.dev.java.net/favicon.ico">');
+    document.write('<link rel="icon" type="image/png" href="https://visualvm.dev.java.net/favicon.png">');
+    document.write('<link rel="shortcut icon" type="image/png" href="https://visualvm.dev.java.net/favicon.png">');
     
     // Apply custom css style
     document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/brandingtest/brandingtest.css"/>');
