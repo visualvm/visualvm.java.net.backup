@@ -84,7 +84,7 @@
             <a name="features"></a>
             <h3>Features</h3>
             <div>                
-                <p><a href="imgs/localremoteapps.png" rel="lightbox[screenshots]" title="Display local and remote Java applications."><img src="imgs/localremoteapps_small.png"/></a><b>Display local and remote Java applications.</b> VisualVM automatically detects and lists locally and remotely running Java applications (<code>jstatd</code> is required on remote host).
+                <p style="margin-top: 5px;"><a href="imgs/localremoteapps.png" rel="lightbox[screenshots]" title="Display local and remote Java applications."><img src="imgs/localremoteapps_small.png"/></a><b>Display local and remote Java applications.</b> VisualVM automatically detects and lists locally and remotely running Java applications (<code>jstatd</code> is required on remote host).
                     You can also define applications manually by JMX connection. This way you can easily see what Java applications are running on your system or check if remote J2EE server process is alive.
                 </p>
                 
@@ -130,7 +130,7 @@
                 
                 <hr/>
                 
-                <p><a href="imgs/appsnapshot.png" rel="lightbox[screenshots]" title="Analyze applications offline."><img src="imgs/appsnapshot_small.png"/></a><b>Analyze applications offline.</b> VisualVM is able to save application configuration and runtime environment together with all taken thread dumps, heap dumps and profiler snaphots into a single application snapshot which can be later processed offline.
+                <p style="margin-bottom: 10px;"><a href="imgs/appsnapshot.png" rel="lightbox[screenshots]" title="Analyze applications offline."><img src="imgs/appsnapshot_small.png"/></a><b>Analyze applications offline.</b> VisualVM is able to save application configuration and runtime environment together with all taken thread dumps, heap dumps and profiler snaphots into a single application snapshot which can be later processed offline.
                     This is especially useful for bugreports where users can provide a single file containing all the necessary information to identify runtime environment and application state.
                 </p>
             </div>
@@ -138,23 +138,22 @@
             <a name="extensibility"></a>
             <h3>Extensibility</h3>
             <div>
-                <p>Basic plugins:
+                <p style="margin-top: 5px;">
+                    Since VisualVM is built on NetBeans Platform (<a href="http://platform.netbeans.org">http://platform.netbeans.org</a>), its architecture is modular and easy to extend by plugins. There are several
+                    plugins available on VisualVM Plugin Center including 3rd party plugins, other plugins can be obtained as separate downloads from their respective authors. You can check the list
+                    of currently available plugins at the <a href="https://visualvm.dev.java.net/brandingtest/plugins.html">Plugins</a> page.
                 </p>
                 
-                <p>Explore application MBeans
-                </p>
-                
-                <p>Reuse existing JConsole plugins
-                </p>
-                
-                <p>Haven't found a feature? More plugins at PLUGINS
+                <p style="margin-bottom: 10px;">
+                    If you need a special feature or support for a proprietary tool, you can implement your own plugin. It's easy, there's a plenty of information and sample code available for both
+                    NetBeans Platform and VisualVM APIs. A good place to start at is <a href="https://visualvm.dev.java.net/api-quickstart.html">Developer Documentation</a> page.
                 </p>
             </div>
             
             <a name="feature_matrix"></a>
             <h3>Feature Matrix</h3>
             <div>
-                <center style="margin-top: 10px; margin-bottom: 10px;">
+                <center style="margin-top: 15px; margin-bottom: 15px;">
                     <table border="1" cellspacing="0" width="95%">
                         <tr><td style="vertical-align: middle;"><b>Feature</b></td><td style="text-align:center;" width="15%"><b>JDK 1.4.2<br><small>local/remote</small></b></td><td style="text-align:center;" width="15%"><b>JDK 5.0<br><small>local/remote</small></b></td><td style="text-align:center;" width="15%"><b>JDK 6.0<br><small>local</small></b></td><td style="text-align:center;" width="15%"><b>JDK 6.0<br><small>remote</small></b></td></tr>
                         <tr><td>Overview</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td></tr>
@@ -186,7 +185,7 @@
         <h3>Quick Links</h3>
         <div>
             <a href="javascript:showScreenshots();">Screenshots</a>
-            <a href="#">Plugins</a>
+            <a href="https://visualvm.dev.java.net/brandingtest/plugins.html">Plugins</a>
             <a href="#">System Requirements</a>
             <a href="https://visualvm.dev.java.net/issues/enter_bug.cgi?issue_type=FEATURE">Request a Feature</a>
             <a href="mailto:feedback@visualvm.dev.java.net">Send Feedback</a>
