@@ -47,7 +47,7 @@ div#footer {
  -------------------------------------------------------------------------------
 */
 
-body, h1, h2, h3, h4, h5, h6, p, td, table td, table th, input, select { 
+body, h1, h2, h3, h4, h5, h6, p, td, table td, table th, input, select, ol li, ul li { 
     font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif !important;
 }
 
@@ -56,7 +56,7 @@ small, .small, div#footer, #login, .tabs th, .tabs td, #toptabs th, #toptabs td,
 }
 
 body {
-    font-size: 12px !important;
+    font-size: 11px !important;
     border: 0px !important;
     padding: 0px !important;
     margin: 0px !important;
