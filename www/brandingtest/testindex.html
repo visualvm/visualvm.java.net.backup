@@ -3,13 +3,13 @@
     
     <title>Test VisualVM Home</title>
     
-    <style type="text/css">
+    <!--style type="text/css">
 		/* <![CDATA[ */
                 @import "https://visualvm.dev.java.net/branding/css/tigris.css";
                 @import "https://visualvm.dev.java.net/branding/css/inst.css";
 		@import "file:///E:/Web/visualvm.localhost/visualvm/www/header.css";
 		/* ]]> */
-    </style>
+    </style-->
             
         <style>
             
@@ -71,6 +71,22 @@
             }
             
             
+            #spotlight {
+                padding-top: 5px;
+                padding-bottom: 7px;
+                margin-bottom: 10px;
+                background: #f0f1f2;
+            }
+            
+            #spotlight div {
+                display: list-item;
+                list-style: square inside;
+                margin: 0px;
+                padding: 8px;
+                padding-top: 2px;
+                padding-bottom: 2px;
+            }
+            
             #news p {
                 margin: 0px;
                 padding: 8px;
@@ -84,7 +100,21 @@
             }
             
             p.news_highlight {
-                background: #f0f1f2;
+                /*background: #f0f1f2;*/
+            }
+            
+            #ontheweb {
+                padding-top: 5px;
+                margin-bottom: 10px;
+            }
+            
+            #ontheweb div {
+                display: list-item;
+                list-style: square inside;
+                margin: 0px;
+                padding: 8px;
+                padding-top: 2px;
+                padding-bottom: 2px;
             }
             
             #ontheweb p {
@@ -225,7 +255,6 @@
             
             function addScreenshotsLink() {
                 var bannertextcontainer = document.getElementById("top_div_info");
-                alert(bannertextcontainer);
                 var bannertext = bannertextcontainer.innerHTML;
                 bannertext += " <a href=\"javascript:showScreenshots();\">See screenshots.</a>";
                 bannertextcontainer.innerHTML = bannertext;
@@ -274,6 +303,14 @@
     <div id="contents_contents">
         <div id="contents_main">
             
+            <h3>VisualVM Is Designed For You:</h3>
+            <div id="spotlight">
+                <div><b>Application Developer:</b> Monitor, profile, take thread dumps, browse heap dumps</div>
+                <div><b>System Administrator:</b> Monitor and control Java applications accross the entire network</div>
+                <div><b>Quality Engineer:</b> Ask the users for appropriate data, analyze dumps and snapshots</div>
+                <div><b>Java Application User:</b> Create bugreports containing all the necessary information</div>
+            </div>
+            
             <h3>News</h3>
             <div id="news" style="margin-bottom: 10px;">
                 <p class="news_highlight"><span class="news_date">May 6th, 2008:</span> VisualVM 1.0 RC released. This is mainly a stabilization
@@ -299,21 +336,12 @@
             
             <h3>VisualVM on the Web</h3>
             <div id="ontheweb">
-                <p><a class="ontheweb_title" href="http://java.sun.com/javaone/sf/media_shell.jsp?id=FRdamp267672">VisualVM at JavaOne General Session</a>: James Gosling's general session at JavaOne 2008 by Tomas Hurka & Luis-Miguel Alventosa.
-                </p>
-                
-                <p><a class="ontheweb_title" href="http://developers.sun.com/learning/javaoneonline/2008/pdf/TS-6000.pdf">Improving Application Performance with Monitoring and Profiling Tools</a>:
-                Technical Session at JavaOne 2008 by Gregg Sporar and Jaroslav Bachorik.
-                </p>
-
-                <p><a class="ontheweb_title">VisualVM BOF</a>: VisualVM BOF at JavaOne 2008 in SF by Tomas Hurka
-                </p>
-
-                <p><a class="ontheweb_title" href="http://www.infoq.com/news/2008/05/visualvm">Open Source Troubleshooting for Java</a>: Article about VisualVM by Craig Wickesser at InfoQ.
-                </p>
-                
-                <p><a class="ontheweb_title" href="http://java.dzone.com/news/visual-vm-free-and-open-source">VisualVM: Free and Open Source Java Troubleshooter</a>: Article about VisualVM by Geertjan Wielenga at Javalobby.
-                </p>
+                <div><a class="ontheweb_title" href="http://java.sun.com/javaone/sf/media_shell.jsp?id=FRdamp267672">VisualVM at JavaOne General Session</a>: James Gosling's general session at JavaOne 2008 by Tomas Hurka & Luis-Miguel Alventosa.</div>
+                <div><a class="ontheweb_title" href="http://developers.sun.com/learning/javaoneonline/2008/pdf/TS-6000.pdf">Improving Application Performance with Monitoring and Profiling Tools</a>:
+                Technical Session at JavaOne 2008 by Gregg Sporar and Jaroslav Bachorik.</div>
+                <div><a class="ontheweb_title">VisualVM BOF</a>: VisualVM BOF at JavaOne 2008 in SF by Tomas Hurka</div>
+                <div><a class="ontheweb_title" href="http://www.infoq.com/news/2008/05/visualvm">Open Source Troubleshooting for Java</a>: Article about VisualVM by Craig Wickesser at InfoQ.</div>
+                <div><a class="ontheweb_title" href="http://java.dzone.com/news/visual-vm-free-and-open-source">VisualVM: Free and Open Source Java Troubleshooter</a>: Article about VisualVM by Geertjan Wielenga at Javalobby.</div>
                 
                 <p class="previous_link"><a href="#">previous links</a>
                 </p>
