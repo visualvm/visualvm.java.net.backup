@@ -2,6 +2,14 @@
 <head>
     
     <title>Test VisualVM Home</title>
+    
+    <style type="text/css">
+		/* <![CDATA[ */
+                @import "https://visualvm.dev.java.net/branding/css/tigris.css";
+                @import "https://visualvm.dev.java.net/branding/css/inst.css";
+		@import "file:///E:/Web/visualvm.localhost/visualvm/www/header.css";
+		/* ]]> */
+    </style>
             
         <style>
             
@@ -119,6 +127,10 @@
             
         </style>
         
+        <link rel="stylesheet" href="css/slimbox.css" type="text/css" media="screen" />
+        <script type="text/javascript" src="js/mootools.js"></script>
+        <script type="text/javascript" src="js/slimbox.js"></script>
+        
         <script type="text/javascript">
             
             var projectTools2;
@@ -195,17 +207,41 @@
                 contentsHints.appendChild(hideProjectTools);
                 
             }
+            
+            function showScreenshots() {
+                var slideshow = Slimbox.open([
+                    ['imgs/localremoteapps.png', 'Display local and remote Java applications.'],
+                    ['imgs/overview.png', 'Display application configuration and runtime environment.'],
+                    ['imgs/monitor.png', 'Monitor application memory consumption and runtime behavior.'],
+                    ['imgs/threads.png', 'Monitor application threads.'],
+                    ['imgs/profiler.png', 'Profile application performance or analyze memory allocation.'],
+                    ['imgs/threaddump.png', 'Take and display thread dumps.'],
+                    ['imgs/heapdump.png', 'Take and browse heap dumps.'],
+                    ['imgs/coredump.png', 'Analyze core dumps.'],
+                    ['imgs/appsnapshot.png', 'Analyze applications offline.'],
+                    ['imgs/plugins.png', 'VisualVM can be easily extended by plugins.']
+                ], 0);
+            }
+            
+            function addScreenshotsLink() {
+                var bannertextcontainer = document.getElementById("top_div_info");
+                alert(bannertextcontainer);
+                var bannertext = bannertextcontainer.innerHTML;
+                bannertext += " <a href=\"javascript:showScreenshots();\">Show screenshots...</a>";
+                bannertextcontainer.innerHTML = bannertext;
+            }
            
             // Predefined cookie controlling site customizations
             var CUSTOMIZE_SITE = "customize_site_cookie";
             var customizeSite = getCookie(CUSTOMIZE_SITE);
-            
+
             if (customizeSite == "true") {
                 var SHOW_PROJECT_TOOLS = "show_project_tools_cookie";
                 var showToolsCookie = getCookie(SHOW_PROJECT_TOOLS);
                 //setCookie(SHOW_PROJECT_TOOLS, "false")
                 addFirstLoadEventHandler(function() {
                     initProjectTools();
+                    addScreenshotsLink();
                 });
             }
             
@@ -263,7 +299,7 @@
             
             <h3>VisualVM on the Web</h3>
             <div id="ontheweb">
-                <p><a class="ontheweb_title" href="http://java.sun.com/javaone/sf/media_shell.jsp?id=FRdamp267672">JavaOne: VisualVM General Session</a>: James Gosling's general session at JavaOne 2008 by Tomas Hurka & Luis-Miguel Alventosa.
+                <p><a class="ontheweb_title" href="http://java.sun.com/javaone/sf/media_shell.jsp?id=FRdamp267672">VisualVM at JavaOne General Session</a>: James Gosling's general session at JavaOne 2008 by Tomas Hurka & Luis-Miguel Alventosa.
                 </p>
                 
                 <p><a class="ontheweb_title" href="http://developers.sun.com/learning/javaoneonline/2008/pdf/TS-6000.pdf">Improving Application Performance with Monitoring and Profiling Tools</a>:
