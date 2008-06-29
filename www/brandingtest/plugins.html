@@ -13,14 +13,37 @@
     
     <style>            
             
-            #contents_main p {
+            #contents_main p, #contents_main h4 {
                 margin: 0px;
                 padding: 8px;
                 padding-top: 5px;
                 padding-bottom: 5px;
+                clear: both;
+            }
+
+            #contents_main hr {
+                border: 1px dashed #cccccc;
+                border-collapse: collapse;
+                clear: both;
+            }
+
+            #contents_main p img {
+                float: left;
+                margin-right: 8px;
+                margin-bottom: 8px;
+                padding: 2px;
+                border: 1px solid #cccccc;
+            }
+            
+            ol li, ul li {
+                padding-bottom: 3px;
             }
             
         </style>
+        
+        <link rel="stylesheet" href="css/slimbox.css" type="text/css" media="screen" />
+        <script type="text/javascript" src="js/mootools.js"></script>
+        <script type="text/javascript" src="js/slimbox.js"></script>
     
 </head>
 
@@ -31,51 +54,124 @@
     <div id="contents_contents">
         <div id="contents_main">
             
+            <h1>Plugins</h1>
+            
+            <p>
+                There are various plugins available on VisualVM Plugin Center including 3rd party plugins, other plugins can be obtained as separate downloads from their respective authors.
+            </p>
+            
+            <p style="margin-bottom: 15px;">
+                If you need a special feature or support for a proprietary tool, you can implement your own plugin. It's easy, there's a plenty of information and sample code available for both
+                NetBeans Platform and VisualVM APIs. Continue to the <a href="#write_plugin">Write Plugin</a> section for more details.
+            </p>
+            
             <a name="get_plugins"></a>
             <h3>Get Plugin</h3>
-            <div>
-                <p>1/ To install plugins available on VisualVM Plugin Center follow these steps:
+            <div style="background: #f0f1f2; padding-top: 10px; padding-right: 10px; padding-bottom: 5px; margin-top: 0px;">
+                <p style="margin-top: 0px; padding-top: 0px;"><b>To install plugins from VisualVM Plugin Center follow these steps:</b>
                 </p>
                 
-                <p>1/ Tools | Plugins
+                <ol>
+                    <li>In VisualVM main menu choose Tools | Plugins, Plugins dialog is opened</li>
+                    <li>Switch to Available Plugins tab, select the plugin(s) you want to install</li>
+                    <li>Click the Install button, review and accept plugin license and wait for the plugin to be downloaded and installed</li>
+                </ol>
+            </div>
+            <div style="padding-top: 5px;">    
+                <p><b>Some third-party plugins need to be installed from a downloaded file:</b>
                 </p>
                 
-                <p>2/ Available, select
-                </p>
-                
-                <p>1/ Install, restart
-                </p>
-                
-                <p>Some third-party plugins need to be installed from downloaded file:
-                </p>
-                
-                <p>1/ Tools | Plugins
-                </p>
-                
-                <p>2/ Downloaded, choose
-                </p>
-                
-                <p>1/ Install, restart
-                </p>
+                <ol style="margin-bottom: 13px;">
+                    <li>In VisualVM main menu choose Tools | Plugins, Plugins dialog is opened</li>
+                    <li>Switch to Downloaded tab, click the Add Plugins... button, select downloaded plugin .nbm file and click the Open button</li>
+                    <li>Click the Install button, review and accept plugin license and wait for the plugin to be installed</li>
+                </ol>
             </div>
             
-            <a name="plugins"></a>
-            <h3>Plugins</h3>
+            <a name="available_plugins"></a>
+            <h3>Available Plugins</h3>
             <div>
-                <p>Stable: MBeans, JConsole
+                <h4>Stable</h4>
+                
+                <p><a href="imgs/mbeans.png" rel="lightbox[plugins]" title="MBeans Browser."><img src="imgs/mbeans_small.png"/></a><b>MBeans Browser.</b>
+                MBeans Browser plugin provides in general the same functionality as MBeans Browser in JConsole JDK tool: shows MBeans of an application, displays values, operations and notifications.
+                In VisualVM the browser will be further improved to deliver better usability and support for latest JMX features.<br>
+                <i>Available on VisualVM Plugin Center</i>
                 </p>
                 
-                <p>Experimental: VisualGC, GlassFish, BTrace
+                <hr/>
+                
+                <p><a href="imgs/jconsoleplugins.png" rel="lightbox[plugins]" title="JConsole Plugins Container."><img src="imgs/jconsoleplugins_small.png"/></a><b>JConsole Plugins Container.</b>
+                JConsole Plugins container allows to use existing JConsole plugins (like JTop) inside VisualVM. The plugins are fully functional, but we suggest to convert them to VisualVM
+                plugins to better fit VisualVM workflow and UI and benefit from rich VisualVM APIs providing more data sources with lower overhead.<br>
+                <i>Available on VisualVM Plugin Center</i>
                 </p>
                 
-                <p>Third Party: TDA, TerraCotta
+                <h4>In Development</h4>
+                
+                <p><a href="imgs/visualgc.png" rel="lightbox[plugins]" title="Visual GC Plugin."><img src="imgs/visualgc_small.png"/></a><b>Visual GC Plugin.</b>
+                Integration of the Visual GC tool into VisualVM. Visual GC attaches to an application and collects and graphically displays garbage collection, class loader, and HotSpot compiler performance data.
+                See <a href="http://java.sun.com/performance/jvmstat/visualgc.html">Visual GC page</a> for more information.<br>
+                <i>Available on VisualVM Plugin Center</i>
                 </p>
+                
+                <hr/>
+                
+                <p><a href="imgs/glassfish.png" rel="lightbox[plugins]" title="GlassFish Plugin."><img src="imgs/glassfish_small.png"/></a><b>GlassFish Plugin.</b>
+                GlassFish plugin provides additional information for GlassFish servers like number of active sessions, processed transactions etc. It's also able to monitor each deployed
+                web application separately.<br>
+                <i>Available on VisualVM Plugin Center</i>
+                </p>
+                
+                <hr/>
+                
+                <p><a href="imgs/btrace.png" rel="lightbox[plugins]" title="BTrace Plugin."><img src="imgs/btrace_small.png"/></a><b>BTrace Plugin.</b>
+                BTrace is a safe, dynamic tracing tool for Java. BTrace inserts tracing actions into the classes of a running Java program and hotswaps the traced program classes. Visit
+                <a href="https://btrace.dev.java.net">https://btrace.dev.java.net</a> for more details.<br>
+                <i>Available in <a href="https://visualvm.dev.java.net/source/browse/visualvm/plugins/btrace/">VisualVM source repository</a></i>
+                </p>
+                
+                <h4>Third Party</h4>
+                
+                <p><a href="imgs/localremoteapps.png" rel="lightbox[plugins]" title="Terracotta Plugin."><img src="imgs/localremoteapps_small.png"/></a><b>Terracotta Plugin.</b>
+                Visit <a href="http://www.terracotta.org/confluence/display/orgsite/VisualVM">Terracotta VisualVM Plugin page</a> at www.terracotta.org for details.<br>
+                <i>Available at <a href="http://www.terracotta.org/confluence/display/orgsite/VisualVM">www.terracotta.org</a></i>
+                </p>
+                <hr/>
+                
+                <p style="margin-bottom: 10px;"><a href="imgs/tda.png" rel="lightbox[plugins]" title="TDA Plugin."><img src="imgs/tda_small.png"/></a><b>TDA Plugin.</b>
+                The Thread Dump Analyzer (TDA) for Java is a small GUI for analyzing Thread Dumps and Heap Information generated by the Sun Java VM. It provides statistic informations about the found thread dumps, gives information about locked monitors and waiting threads and much more.
+                For detailed description visit <a href="https://tda.dev.java.net">https://tda.dev.java.net</a>.<br>
+                <i>Available at <a href="https://tda.dev.java.net/servlets/ProjectDocumentList?folderID=9117&expandFolder=9117&folderID=0">tda.dev.java.net</a></i>
+                </p>
+                
             </div>
             
             <a name="write_plugin"></a>
             <h3>Write Plugin</h3>
             <div>
-                <p>Write plugin.
+                <p style="margin-top: 5px;">These resources are currently available for VisualVM plugin developers:
+                </p>
+                
+                <ul>
+                    <li><a href="https://visualvm.dev.java.net/api-quickstart.html">Developer Documentation</a>
+                    </li>
+                    
+                    <li><a href="https://visualvm.dev.java.net/source/browse/visualvm/">Sources</a>
+                    </li>
+                    
+                    <li><a href="https://visualvm.dev.java.net/build.html">Build Guide</a>
+                    </li>
+                    
+                    <li><a href="https://visualvm.dev.java.net/source/browse/visualvm/samples/">Sample Projects</a>
+                    </li>
+                    
+                    <li><a href="#">Online JavaDoc</a>
+                    </li>
+                </ul>
+                
+                <p style="margin-bottom: 15px;">A lot of information and sample VisualVM plugins is available on <a href="http://blogs.sun.com/geertjan">Geertjan's Blog</a> (blog by Geertjan Wielenga).
+                You may send your questions and get assistance on <a href="mailto:users@visualvm.dev.java.net">users@visualvm.dev.java.net</a> mailing list (you need to be registered to access the mailing list).
                 </p>
             </div>
             
@@ -84,11 +180,18 @@
     
     <div id="contents_hints">
         
-        <h3 class="first">Quick Links</h3>
+        <h3 class="first">On This Page</h3>
         <div>
-            <a href="#plugins">Plugins</a>
+            <a href="#get_plugins">Get Plugin</a>
+            <a href="#available_plugins">Available Plugins</a>
+            <a href="#write_plugin">Write Plugin</a>
+        </div>
+        
+        <h3>Quick Links</h3>
+        <div>
+            <a href="https://visualvm.dev.java.net/brandingtest/features.html">Features</a>
+            <a href="https://visualvm.dev.java.net/api-quickstart.html">Developer Documentation</a>
             <a href="https://visualvm.dev.java.net/issues/enter_bug.cgi?issue_type=FEATURE">Request a Feature</a>
-            <a href="#feature_matrix">Write Plugin</a>
             <a href="mailto:feedback@visualvm.dev.java.net">Send Feedback</a>
         </div>
         
