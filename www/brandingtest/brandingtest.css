@@ -214,7 +214,7 @@ div#loginbar a:hover {
     clear: both;
 }
 
-#contents_div a, #contents_div a:visited, #contents_div a:link.selfref, #contents_div a:visited.selfref {
+a, a:visited, a:link.selfref, a:visited.selfref {
     color: #5b83a9 !important;
     text-decoration: underline !important;
 }
