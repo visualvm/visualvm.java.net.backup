@@ -72,21 +72,21 @@
             <h1>Features</h1>
             
             <p>
-                VisualVM is a tool to monitor and troubleshoot Java applications. It runs on JDK 6.0, but is able to monitor JDK 1.4+ applications. It utilizes
-                various available technologies like jvmstat, JMX, SA and Attach API to get the data and automatically uses fastest and most lightweight technology
-                to impose minimal overhead to monitored applications.
+                VisualVM is a tool to monitor and troubleshoot Java applications. It runs on JDK 6.0, but is able to monitor applications running on JDK 1.4 and higher. It utilizes
+                various available technologies like jvmstat, JMX, the Serviceability Agent (SA), and the Attach API to get the data and automatically uses the fastest and most lightweight technology
+                to impose minimal overhead on monitored applications.
             </p>
             
             <p style="margin-bottom: 15px;">
                 With the out-of-the-box features it perfectly fits all the requirements of application developers, system administrators, quality engineers and - last but not least - 
-                application users submitting bugreports containing all the necessary information.
+                application users submitting bug reports containing all the necessary information.
             </p>
             
             <a name="features"></a>
             <h3>Features</h3>
             <div>                
-                <p style="margin-top: 5px;"><a href="imgs/localremoteapps.png" rel="lightbox[screenshots]" title="Display local and remote Java applications."><img src="imgs/localremoteapps_small.png"/></a><b>Display local and remote Java applications.</b> VisualVM automatically detects and lists locally and remotely running Java applications (<code>jstatd</code> is required on remote host).
-                    You can also define applications manually by JMX connection. This way you can easily see what Java applications are running on your system or check if remote J2EE server process is alive.
+                <p style="margin-top: 5px;"><a href="imgs/localremoteapps.png" rel="lightbox[screenshots]" title="Display local and remote Java applications."><img src="imgs/localremoteapps_small.png"/></a><b>Display local and remote Java applications.</b> VisualVM automatically detects and lists locally and remotely running Java applications (<code>jstatd</code> must be running on the remote host).
+                    You can also define applications manually by JMX connection. This way you can easily see what Java applications are running on your system or check if a remote J2EE server process is alive.
                 </p>
                 
                 <hr/>
@@ -103,36 +103,37 @@
                 <hr/>
                 
                 <p><a href="imgs/threads.png" rel="lightbox[screenshots]" title="Monitor application threads."><img src="imgs/threads_small.png"/></a><b>Monitor application threads.</b> All threads running in a Java process are displayed in a timeline.
-                    You can track threads activity and uncover inefficient patterns like blocked Event Dispatch Thread or unused worker threads.
+                    You can track thread activity and uncover inefficient patterns like blocked Event Dispatch Thread or unused worker threads.
                 </p>
                 
                 <hr/>
                 
-                <p><a href="imgs/profiler.png" rel="lightbox[screenshots]" title="Profile application performance or analyze memory allocation."><img src="imgs/profiler_small.png"/></a><b>Profile application performance or analyze memory allocation.</b> VisualVM has a built-in application profiler which can visualize where most of the time is being spent or which objects consume most of the memory by just one mouse click without any additional configuration.
+                <p><a href="imgs/profiler.png" rel="lightbox[screenshots]" title="Profile application performance or analyze memory allocation."><img src="imgs/profiler_small.png"/></a><b>Profile application performance or analyze memory allocation.</b>
+                    VisualVM has a built-in application profiler which can visualize where most of the time is being spent or which objects consume most of the memory by just one mouse click without any additional configuration.
                 </p>
                 
                 <hr/>
                 
                 <p><a href="imgs/threaddump.png" rel="lightbox[screenshots]" title="Take and display thread dumps."><img src="imgs/threaddump_small.png"/></a><b>Take and display thread dumps.</b> Taking and displaying a thread dump is as easy as clicking a mouse button.
-                    You don't need to deal with commandline at all to determine what's currently happening in the application. Moreover, simultaneous thread dumps of multiple applications can be taken at once to start uncovering distributed deadlocks.
+                    You don't need to deal with the command line at all to determine what's currently happening in the application. Moreover, simultaneous thread dumps of multiple applications can be taken at once to start uncovering distributed deadlocks.
                 </p>
                 
                 <hr/>
                 
                 <p><a href="imgs/heapdump.png" rel="lightbox[screenshots]" title="Take and browse heap dumps."><img src="imgs/heapdump_small.png"/></a><b>Take and browse heap dumps.</b> When you need to browse contents of application memory or uncover a memory leak in your application, you'll find the built-in HeapWalker tool really handy.
-                    Natively working with <code>hprof</code> format, it's also capable to browse heap dumps created by JVM on OutOfMemoryException.
+                    It can read files written in <code>hprof</code> format and is also able to browse heap dumps created by the JVM on an OutOfMemoryException.
                 </p>
                 
                 <hr/>
                 
-                <p><a href="imgs/coredump.png" rel="lightbox[screenshots]" title="Analyze core dumps."><img src="imgs/coredump_small.png"/></a><b>Analyze core dumps.</b> When a Java process crashes, a core dump can be generated by the JVM containing important information about application state at the crash time.
+                <p><a href="imgs/coredump.png" rel="lightbox[screenshots]" title="Analyze core dumps."><img src="imgs/coredump_small.png"/></a><b>Analyze core dumps.</b> When a Java process crashes, a core dump can be generated by the JVM containing important information about application state at the time of the crash.
                     VisualVM is able to display application configuration and runtime environment and to extract thread and heap dumps from the core dump.
                 </p>
                 
                 <hr/>
                 
                 <p style="margin-bottom: 10px;"><a href="imgs/appsnapshot.png" rel="lightbox[screenshots]" title="Analyze applications offline."><img src="imgs/appsnapshot_small.png"/></a><b>Analyze applications offline.</b> VisualVM is able to save application configuration and runtime environment together with all taken thread dumps, heap dumps and profiler snaphots into a single application snapshot which can be later processed offline.
-                    This is especially useful for bugreports where users can provide a single file containing all the necessary information to identify runtime environment and application state.
+                    This is especially useful for bug reports where users can provide a single file containing all the necessary information to identify runtime environment and application state.
                 </p>
             </div>
             
@@ -140,14 +141,13 @@
             <h3>Extensibility</h3>
             <div>
                 <p style="margin-top: 5px;"><a href="imgs/plugins.png" rel="lightbox[screenshots]" title="VisualVM can be easily extended by plugins."><img src="imgs/plugins_small.png"/></a>
-                    Since VisualVM is built on <a href="http://platform.netbeans.org">NetBeans Platform</a>, its architecture is modular and easy to extend by plugins. There are various
-                    plugins available on VisualVM Plugin Center including 3rd party plugins, other plugins can be obtained as separate downloads from their respective authors. You can check the list
+                    Since VisualVM is built on the <a href="http://platform.netbeans.org">NetBeans Platform</a>, its architecture is modular and easy to extend with plugins. There are various
+                    plugins available on the VisualVM Plugin Center including 3rd party plugins, other plugins can be obtained as separate downloads from their respective authors. You can check the list
                     of currently available plugins at the <a href="https://visualvm.dev.java.net/brandingtest/plugins.html">Plugins</a> page.
                 </p>
                 
                 <p style="margin-bottom: 10px;">
-                    If you need a special feature or support for a proprietary tool, you can implement your own plugin. It's easy, there's a plenty of information and sample code available for both
-                    NetBeans Platform and VisualVM APIs. A good place to start at is <a href="https://visualvm.dev.java.net/api-quickstart.html">Developer Documentation</a> page.
+                    If you need a special feature or support for a proprietary tool, you can implement your own plugin. It's easy and there is plenty of information and sample code available for both the NetBeans Platform and VisualVM APIs. A good place to start is the <a href="https://visualvm.dev.java.net/api-quickstart.html">Developer Documentation</a> page.
                 </p>
             </div>
             
