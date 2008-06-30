@@ -123,7 +123,7 @@ function createFooter() {
     footerHTML.push("  <div id='cfooter_links'>");
 
     footerHTML.push("    <div id='project_links'>");
-    footerHTML.push("      Owners: <a href='mailto:jsedlacek@dev.java.net'>Jiri Sedlacek</a>, <a href='mailto:thurka@dev.java.net'>Tomas Hurka</a> |");
+    footerHTML.push("      Project owners: <a href='mailto:jsedlacek@dev.java.net'>Jiri Sedlacek</a>, <a href='mailto:thurka@dev.java.net'>Tomas Hurka</a> |");
     footerHTML.push("      License: <a href='https://visualvm.dev.java.net/legal/gplv2+ce.html'>GPLv2&nbsp;+&nbsp;CE</a> |");
     footerHTML.push("      <a href='mailto:feedback@visualvm.dev.java.net'>Feedback</a> |");
     footerHTML.push("      <a href='javascript:disableTheme();'>Default Theme</a>");
