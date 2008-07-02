@@ -177,7 +177,7 @@
         
         <ul>
             <li>com.sun.tools.visualvm.core.ui.DataSourceView
-            <li>com.sun.tools.visualvm.core.ui.DataSourceViewsProvider
+            <li>com.sun.tools.visualvm.core.ui.DataSourceViewProvider
         </ul>
         
         <p>A complete example for creating new tabs can be found <a href="http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm">here</a>.
@@ -290,7 +290,7 @@
             <li>javax.swing.AbstractAction
         </ul>
         
-        <p><b>Note:</b> If a <tt>DataSourceViewsProvider</tt> returns true from the <tt>supportsViewFor()</tt> method, 
+        <p><b>Note:</b> If a <tt>DataSourceViewProvider</tt> returns true from the <tt>supportsViewFor()</tt> method, 
         an "Open" menu item is automatically created for you, as explained <a href="http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm_part4">here</a>. 
         
         <p>A complete example for creating new menu items can be found <a href="http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm_part">here</a>.
@@ -316,7 +316,7 @@
         
         <ul>
             <li>com.sun.tools.visualvm.core.ui.DataSourceView
-            <li>com.sun.tools.visualvm.core.ui.DataSourceViewsProvider&lt;Host&gt;
+            <li>com.sun.tools.visualvm.core.ui.DataSourceViewProvider&lt;Host&gt;
         </ul>
         
         <p>A complete example for creating new tabs 
@@ -348,7 +348,7 @@
             <li>com.sun.tools.visualvm.core.model.jmx.JmxModelFactory
         </ul>
         
-        <p>Use your <tt>DataSourceViewsProvider.supportsViewFor</tt> like this for these purposes:
+        <p>Use your <tt>DataSourceViewProvider.supportsViewFor</tt> like this for these purposes:
         
 <p><pre>public boolean supportsViewFor(Application application) {
     JmxModel jmx = JmxModelFactory.getJmxModelFor(application);
