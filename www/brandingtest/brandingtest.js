@@ -192,6 +192,10 @@ if (customizeSite == "true") { // Site branding is customized
 	// jump to anchor if one is given
 	if (window.location.hash != null && window.location.hash != "")
 		window.location.hash = window.location.hash;
+        
+        // GOOGLE ANALYTICS TRACKING FOR PROFILER
+        _uacct = "UA-1306237-2";
+        urchinTracker();
     });
     
 } else { // Site branding is default one
