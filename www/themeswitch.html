@@ -19,11 +19,13 @@
     var CUSTOMIZE_SITE = "customize_site_cookie";
     var customizeSite = getCookie(CUSTOMIZE_SITE);
     
-    var html =  "Customizations currently enabled: <b>" + (customizeSite == "true" ? "YES" : "NO") + "</b><br>"
+    document.title = "Portal Theme Switcher";
+    
+    var html =  "<h1>VisualVM Portal Theme Switcher</h1> <p>Current theme: <b>" + (customizeSite == "true" ? "customized VisualVM theme" : "default dev.java.net theme") + "</b></p>"
     if (customizeSite == "true")
-        html += "<a href=\"javascript:disableTheme();\">Disable customizations</a>"
+        html += "<p><a href=\"javascript:disableTheme();\">Switch to default dev.java.net theme</a></p>"
     else
-        html += "<a href=\"javascript:enableTheme();\">Enable customizations</a>"
+        html += "<p><a href=\"javascript:enableTheme();\">Switch to customized VisualVM theme</a></p>"
     document.write(html);
     
 </script>
