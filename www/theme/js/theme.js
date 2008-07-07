@@ -88,17 +88,17 @@ function createHeader() {
     headerHTML.push("</div>");
     
     headerHTML.push("<div id='logobar'>");
-    headerHTML.push("<div id='visualvm_logo'><a href='https://visualvm.dev.java.net/brandingtest/testindex.html'><img src='https://visualvm.dev.java.net/brandingtest/imgs/banner_logo.png'/></a></div>");
-    headerHTML.push("<div id='javanet_logo'><a href='http://www.java.net/'><img src='https://visualvm.dev.java.net/brandingtest/imgs/banner_javanet.png'/></a></div>");
+    headerHTML.push("<div id='visualvm_logo'><a href='testindex.html'><img src='https://visualvm.dev.java.net/images/banner_logo.png'/></a></div>");
+    headerHTML.push("<div id='javanet_logo'><a href='http://www.java.net/'><img src='https://visualvm.dev.java.net/images/banner_javanet.png'/></a></div>");
     headerHTML.push("<div id='logobar_clear'></div>");
     headerHTML.push("</div>");
     
     headerHTML.push("<div id='menu'>");
-    headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/testindex.html'>Home</a>");
-    headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/features.html'>Features</a>");
-    headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/download.html'>Download</a>");
+    headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net/index.html'>Home</a>");
+    headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net/features.html'>Features</a>");
+    headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net/download.html'>Download</a>");
     headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net/docindex.html'>Documentation</a>");
-    headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net/brandingtest/plugins.html'>Plugins</a>");
+    headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net/plugins.html'>Plugins</a>");
     headerHTML.push("&nbsp;|&nbsp;");
     headerHTML.push("<a class='menu_link_minor' href='https://visualvm.dev.java.net/servlets/ProjectIssues'>Issues</a>");
     headerHTML.push("<a class='menu_link_minor' href='https://visualvm.dev.java.net/servlets/ProjectMailingListList'>Mailing Lists</a>");
@@ -175,7 +175,7 @@ if (customizeSite == "true") { // Site branding is customized
     document.write('<link rel="shortcut icon" type="image/png" href="https://visualvm.dev.java.net/favicon.png">');
     
     // Apply custom css style
-    document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/brandingtest/brandingtest.css"/>');
+    document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/theme/theme.css"/>');
     
     // window.onload hook making the customizations
     addLastLoadEventHandler(function() {
