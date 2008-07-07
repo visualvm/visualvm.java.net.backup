@@ -1,0 +1,118 @@
+<html>
+<head>
+    
+    <title>Template 2 Columns</title>
+    
+    <style>            
+            
+        #contents_main p {
+            margin: 0px;
+            padding: 8px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            clear: both;
+        }
+        
+        #contents_main hr {
+            border: 1px dashed #cccccc;
+            border-collapse: collapse;
+            clear: both;
+        }
+
+        #contents_main p img {
+            float: left;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            padding: 2px;
+            border: 1px solid #cccccc;
+        }
+        
+        ol li, ul li {
+            padding-bottom: 3px;
+        }
+
+    </style>
+    
+</head>
+
+<body>
+
+<div id="contents_div">
+    
+    <div id="contents_contents">
+        <div id="contents_main">
+            
+            <h1>Caption</h1>
+            
+            <p>
+                Paragraph.
+            </p>
+            
+            <p style="margin-bottom: 15px;">
+                Last paragraph.
+            </p>
+            
+            <a name="section_1"></a>
+            <h3>Section 1</h3>
+            <div>                
+                <p style="margin-top: 5px;"><a href="#"><img src="#"/></a><b>Title.</b> Contents first.
+                </p>
+                
+                <hr/>
+                
+                <p><a href="#"><img src="#"/></a><b>Title.</b> Contents.
+                </p>
+                
+                <hr/>
+                
+                <p style="margin-bottom: 10px;"><a href="#"><img src="#"/></a><b>Title.</b> Contents last.
+                </p>
+            </div>
+            
+            <a name="section_2"></a>
+            <h3>Section 2</h3>
+            <div>                
+                <p style="margin-top: 5px;">Contents first.
+                </p>
+                
+                <ul>
+                    <li><a href="#">Item 1</a>
+                    </li>
+                    
+                    <li><a href="#">Item 2</a>
+                    </li>
+                    
+                    <li><a href="#">Item 3</a>
+                    </li>
+                </ul>
+                
+                <p style="margin-bottom: 15px;">Contents last.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div id="contents_hints">
+        
+        <h3 class="first">On This Page</h3>
+        <div>
+            <a href="#section_1">Section 1</a>
+            <a href="#section_2">Section 2</a>
+        </div>
+        
+        <h3>Quick Links</h3>
+        <div>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+        
+    </div>
+    
+    <div id="contents_clear"></div>
+
+</div>
+
+</body>
+</html>
