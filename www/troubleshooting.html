@@ -56,7 +56,7 @@
             <a name="jrehost"></a>
             <h3>Error Starting VisualVM Dialog Is Shown During VisualVM Startup</h3>
             <p><b>Description:&nbsp;</b>Error Starting VisualVM dialog is shown during VisualVM startup with a message about an unsupported version of Java.</p>
-            <p><b>Resolution:&nbsp;&nbsp;</b>VisualVM runs only on JDK 6.0 or 7.0 (not the JRE). When started on JRE and/or older Java platform, VisualVM shows this dialog and terminates. To define which JDK will be used for running VisualVM, follow the steps in 
+            <p><b>Resolution:&nbsp;&nbsp;</b>VisualVM runs only on JDK 6 or 7 (not the JRE). When started on JRE and/or older Java platform, VisualVM shows this dialog and terminates. To define which JDK will be used for running VisualVM, follow the steps in 
             Getting Started section of the <a href="description.html#getting_started">Introduction to VisualVM</a> document.</p><br>
                 
             <a name="jpswin"></a>
@@ -78,7 +78,7 @@
                 
             <a name="xshare"></a>
             <h3>Profiler Tab Shows Warning About Class Sharing, Profiling Does Not Work</h3>
-            <p><b>Description:&nbsp;</b>"Class sharing is enabled for this JVM" warning is shown in red box in Profiler tab, profiling CPU or Memory crashes local applications running on JDK 6.0.</p>
+            <p><b>Description:&nbsp;</b>"Class sharing is enabled for this JVM" warning is shown in red box in Profiler tab, profiling CPU or Memory crashes local applications running on JDK 6.</p>
             <p><b>Resolution:&nbsp;&nbsp;</b>There is a known problem with dynamic attach which is used for profiling, it may
                 cause target JVM to crash when class sharing is enabled. To start an application without class sharing, provide <code>-Xshare:off</code> argument
                 to the <code>java</code> command starting the app. More information can be found in <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6497639">this</a>
@@ -86,9 +86,9 @@
                 
             <a name="profmacosx"></a>
             <h3>Profiling Does Not Work on Mac OS X</h3>
-            <p><b>Description:&nbsp;</b>Profiling doesn't work for applications running on Developer preview of JDK 6.0 on Mac OS X.</p>
-            <p><b>Resolution:&nbsp;&nbsp;</b>Unfortunately profiling does not work with Developer preview of JDK 6.0, due to bug in the JDK. However you can
-            still take thread and heap dumps of applications running on JDK 6.0 on Mac OS X.</p><br>
+            <p><b>Description:&nbsp;</b>Profiling doesn't work for applications running on Developer preview of JDK 6 on Mac OS X.</p>
+            <p><b>Resolution:&nbsp;&nbsp;</b>Unfortunately profiling does not work with Developer preview of JDK 6, due to bug in the JDK. However you can
+            still take thread and heap dumps of applications running on JDK 6 on Mac OS X.</p><br>
                 
             <hr/>
             <br>
