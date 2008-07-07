@@ -203,7 +203,7 @@ if (customizeSite == "true") { // Site branding is customized
 	if (window.location.hash != null && window.location.hash != "")
 		window.location.hash = window.location.hash;
         
-        // GOOGLE ANALYTICS TRACKING FOR PROFILER
+        // Google Analytics
         _uacct = "UA-1306237-2";
         urchinTracker();
     });
@@ -212,5 +212,9 @@ if (customizeSite == "true") { // Site branding is customized
     
     // Show non-customized page contents
     document.body.style.display="block";
+    
+    // Google Analytics
+    _uacct = "UA-1306237-2";
+    urchinTracker();
     
 }
