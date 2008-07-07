@@ -174,6 +174,10 @@ var CUSTOMIZE_SITE = "customize_site_cookie";
 var customizeSite = getCookie(CUSTOMIZE_SITE);
 
 
+// Apply visualvm css style
+document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/css/visualvm.css"/>');
+
+
 if (customizeSite == "true") { // Site branding is customized
     
     // Add a favicon
