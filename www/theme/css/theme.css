@@ -1,3 +1,11 @@
+/* -----------------------------------------------------------------------------
+   --- visualvm.dev.java.net customizations ------------------------------------
+   --- 
+   --- author: Jiri Sedlacek ---------------------------------------------------
+   -----------------------------------------------------------------------------
+*/
+
+
 /*
  -------------------------------------------------------------------------------
  --- HIDE DEFAULT BRANDING                                                   ---
@@ -131,7 +139,7 @@ div#loginbar a:hover {
 }
 
 #logobar {
-        background: url('imgs/banner_filler.png') repeat-x;
+        background: url('https://visualvm.dev.java.net/theme/images/banner_filler.png') repeat-x;
         height: 60px;
 }
 

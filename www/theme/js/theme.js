@@ -1,3 +1,9 @@
+// -----------------------------------------------------------------------------
+// --- visualvm.dev.java.net customizations ------------------------------------
+// --- 
+// --- author: Jiri Sedlacek ---------------------------------------------------
+// -----------------------------------------------------------------------------
+
 
 // Sets "long-life" cookie (expires December 31th, 2020)
 function setCookie(name, value) {
@@ -88,8 +94,8 @@ function createHeader() {
     headerHTML.push("</div>");
     
     headerHTML.push("<div id='logobar'>");
-    headerHTML.push("<div id='visualvm_logo'><a href='testindex.html'><img src='https://visualvm.dev.java.net/images/banner_logo.png'/></a></div>");
-    headerHTML.push("<div id='javanet_logo'><a href='http://www.java.net/'><img src='https://visualvm.dev.java.net/images/banner_javanet.png'/></a></div>");
+    headerHTML.push("<div id='visualvm_logo'><a href='testindex.html'><img src='https://visualvm.dev.java.net/theme/images/banner_logo.png'/></a></div>");
+    headerHTML.push("<div id='javanet_logo'><a href='http://www.java.net/'><img src='https://visualvm.dev.java.net/theme/images/banner_javanet.png'/></a></div>");
     headerHTML.push("<div id='logobar_clear'></div>");
     headerHTML.push("</div>");
     
@@ -175,7 +181,7 @@ if (customizeSite == "true") { // Site branding is customized
     document.write('<link rel="shortcut icon" type="image/png" href="https://visualvm.dev.java.net/favicon.png">');
     
     // Apply custom css style
-    document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/theme/theme.css"/>');
+    document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/theme/css/theme.css"/>');
     
     // window.onload hook making the customizations
     addLastLoadEventHandler(function() {
