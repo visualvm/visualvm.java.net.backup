@@ -164,10 +164,69 @@ function createFooter() {
 }
 
 
+// Completes web page for displaying
+function finishPage() {
+    // Show page contents
+    document.body.style.display="block";
+
+    // jump to anchor if one is given
+    if (window.location.hash != null && window.location.hash != "")
+        window.location.hash = window.location.hash;
+}
+
+// Attaches click event to an element
+function startListening(element, eventhandler) {
+    if (element.addEventListener) element.addEventListener("click", eventhandler, false);
+    else if (element.attachEvent) element.attachEvent("onclick", eventhandler);
+}
+
+// Tracks mailto: link
+function trackMailto(event) {
+    var href = (event.srcElement) ? event.srcElement.href : this.href;
+    var mailto = "/mailto/" + href.substring(7);
+    pageTracker._trackPageview(mailto);
+}
+
+// Tracks link
+function trackLink(event) {
+    var e = (event.srcElement) ? event.srcElement : this;
+    while (e.tagName != "A") e = e.parentNode;
+    var link = (e.pathname.charAt(0) == "/") ? e.pathname : "/" + e.pathname;
+    if (e.search && e.pathname.indexOf(e.search) == -1) link += e.search;
+    if (e.hostname != location.host) link = "/external_link/" + e.hostname + link;
+    pageTracker._trackPageview(link);
+} 
+
+// Setup Google Analytics page tracking
+function trackPage() {
+    
+    // Default Google Analytics
+    pageTracker = _gat._getTracker("UA-1306237-2");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+    
+    // Custom tracking files, mailtos and external links
+    if (document.getElementsByTagName) {
+        var links = document.getElementsByTagName("a");
+        for (var i = 0; i < links.length; i++) {
+            if (links[i].protocol == "mailto:") startListening(links[i], trackMailto);
+            else if (links[i].hostname == location.host) {
+                var path = links[i].pathname + links[i].search;
+                var isDocument = path.match(/(?:zip|torrent|pdf|png|jpg|jpeg|odt)($|\&)/);
+                if (isDocument) startListening(links[i], trackLink);
+            } else startListening(links[i], trackLink);
+        }
+    }
+
+}
+
+
 // -------------------------------------------------------------------------
 // --- Code entrypoint, customizing site appearance if enabled -------------
 // -------------------------------------------------------------------------
 
+// Google Analytics page tracker
+var pageTracker;
 
 // Predefined cookie controlling site customizations
 var CUSTOMIZE_SITE = "customize_site_cookie";
@@ -196,16 +255,11 @@ if (customizeSite == "true") { // Site branding is customized
         // Create custom footer
         createFooter();
 
-        // Show page contents
-        document.body.style.display="block";
-
-	// jump to anchor if one is given
-	if (window.location.hash != null && window.location.hash != "")
-		window.location.hash = window.location.hash;
+        // Complete web page for displaying
+        finishPage();
         
         // Google Analytics
-        _uacct = "UA-1306237-2";
-        urchinTracker();
+        trackPage();
     });
     
 } else { // Site branding is default one
@@ -213,8 +267,14 @@ if (customizeSite == "true") { // Site branding is customized
     // Show non-customized page contents
     document.body.style.display="block";
     
-    // Google Analytics
-    _uacct = "UA-1306237-2";
-    urchinTracker();
+    // window.onload hook for Google Analytics
+    addLastLoadEventHandler(function() {
+        
+        // Complete web page for displaying
+        finishPage();
+        
+        // Google Analytics
+        trackPage();
+    });
     
 }
