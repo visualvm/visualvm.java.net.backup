@@ -21,12 +21,12 @@
     
     document.title = "visualvm: Project Theme Switcher";
     
-    var html =  "<h1>Project Theme Switcher</h1> <div><p>Current theme: <b>" + (customizeSite == "true" ? "customized VisualVM theme" : "default dev.java.net theme") + "</b><br>"
+    var html =  "<h1>Project Theme Switcher</h1> <br><p>Current theme: <b>" + (customizeSite == "true" ? "customized VisualVM theme" : "default dev.java.net theme") + "</b><br>"
     if (customizeSite == "true")
-        html += "Switch to <a href=\"javascript:disableTheme();\">default dev.java.net theme</a>"
+        html += "Switch to <a href=\"javascript:disableTheme();\"><b>default dev.java.net theme</b></a>"
     else
-        html += "Switch to <a href=\"javascript:enableTheme();\">customized VisualVM theme</a>"
-    html += "</p></div>"
+        html += "Switch to <a href=\"javascript:enableTheme();\"><b>customized VisualVM theme</b></a>"
+    html += "</p>"
     document.write(html);
     
 </script>
