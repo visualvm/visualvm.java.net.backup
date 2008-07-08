@@ -236,6 +236,10 @@ var disableTheme = getCookie(DISABLE_VISUALVM_THEME);
 // Apply visualvm css style
 document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/css/visualvm.css"/>');
 
+// Add a favicon
+document.write('<link rel="icon" type="image/png" href="https://visualvm.dev.java.net/favicon.png">');
+document.write('<link rel="shortcut icon" type="image/png" href="https://visualvm.dev.java.net/favicon.png">');
+
 
 if (disableTheme == "true") { // Site branding is default one
     
@@ -253,10 +257,6 @@ if (disableTheme == "true") { // Site branding is default one
     });
     
 } else { // Site branding is customized
-    
-    // Add a favicon
-    document.write('<link rel="icon" type="image/png" href="https://visualvm.dev.java.net/favicon.png">');
-    document.write('<link rel="shortcut icon" type="image/png" href="https://visualvm.dev.java.net/favicon.png">');
     
     // Apply custom css style
     document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/theme/css/theme.css"/>');
