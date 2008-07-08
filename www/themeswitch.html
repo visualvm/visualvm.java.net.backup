@@ -16,6 +16,9 @@
         else return null;
     }
     
+    var DISABLE_VISUALVM_THEME = "disable_visualvm_theme_cookie";
+    var disableTheme = getCookie(DISABLE_VISUALVM_THEME);
+    
     // Enables custom theme
     function enableTheme() {
         setCookie(DISABLE_VISUALVM_THEME, "false");
@@ -28,16 +31,13 @@
         history.go(0);
     }
     
-    var DISABLE_VISUALVM_THEME = "disable_visualvm_theme_cookie";
-    var disableTheme = getCookie(DISABLE_VISUALVM_THEME);
-    
     document.title = "visualvm: Project Theme Switcher";
     
     var html =  "<h1>Project Theme Switcher</h1> <br><p>Current theme: <b>" + (disableTheme != "true" ? "customized VisualVM theme" : "default dev.java.net theme") + "</b><br>"
     if (disableTheme != "true")
-        html += "Switch to <a href=\"javascript:disableTheme();\"><b>default dev.java.net theme</b></a>"
+        html += "Switch to <a href=\"javascript:alert('disableTheme()');disableTheme();\"><b>default dev.java.net theme</b></a>"
     else
-        html += "Switch to <a href=\"javascript:enableTheme();\"><b>customized VisualVM theme</b></a>"
+        html += "Switch to <a href=\"javascript:alert('enableTheme()');enableTheme();\"><b>customized VisualVM theme</b></a>"
     html += "</p>"
     document.write(html);
     
