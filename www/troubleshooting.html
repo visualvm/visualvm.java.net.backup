@@ -46,7 +46,7 @@
     <div id="contents_contents">
         <div id="contents_main">
             
-            <h1>Troubleshooting Guide</h1>
+            <h1>VisualVM Troubleshooting Guide</h1>
             
             <p style="margin-bottom: 15px;">
                 This document describes the most common problems related to using VisualVM and information on how to fix or workaround the problems.
@@ -100,9 +100,9 @@
                 
             <a name="calibration"></a>
             <h3>Profiler Measures Incorrect Performance Results</h3>
-            <p><b>Description:&nbsp;</b>Performance profiling results are incorrect - zero or negative time etc.</p>
+            <p><b>Description:&nbsp;</b>Performance profiling results are incorrect - zero or negative times etc.</p>
             <p><b>Resolution:&nbsp;&nbsp;</b>During first VisualVM startup calibration is performed to measure profiling overhead on local system. The calibration
-            data are then used to measure accurate profiling results. When the system performance changes, calibration data are no more valid and profiling results are biased.
+            data are then used to measure accurate profiling results. When the system performance changes, calibration data are no more valid and profiling results become biased.
             To recalibrate the profiler, you have to manually delete the calibration data file <code>&lt;system userdir&gt/.nbprofiler/machinedata.jdk1X</code>
             and restart VisualVM - calibration will be performed again on VisualVM startup.</p><br>
                 
