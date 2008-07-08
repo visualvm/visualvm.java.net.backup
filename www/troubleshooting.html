@@ -50,8 +50,22 @@
             
             <p style="margin-bottom: 15px;">
                 This document describes the most common problems related to using VisualVM and information on how to fix or workaround the problems.
-                If you are experiencing any problem not described in this document, please let us know on a <a href="mailto:feedback@visualvm.dev.java.net">mailing list</a> or <a href="https://visualvm.dev.java.net/issues/enter_bug.cgi?issue_type=DEFECT">file a bug report</a>.
+                If you are experiencing any problem not described in this document, please ask for assistance on a <a href="mailto:users@visualvm.dev.java.net">mailing list</a> or <a href="https://visualvm.dev.java.net/issues/enter_bug.cgi?issue_type=DEFECT">file a bug report</a> (you need to be registered to access the mailing list or file a bug report).
             </p>
+            
+            <a name="doesntstart"></a>
+            <h3>VisualVM Does Not Start</h3>
+            <p><b>Description:&nbsp;</b>VisualVM doesn't start at all without any visible reason.</p>
+            <p><b>Resolution:&nbsp;&nbsp;</b>There are several reasons which could prevent VisualVM from starting:</p>
+            <ul>
+                <li><i>The download is broken</i> - make sure you've got the correct bits (archive managers typically notify you when the archive is broken)</li>
+                <li><i>VisualVM waits for license confirmation</i> - make sure you haven't overlooked the License Agreement dialog</li>
+                <li><i>Incorrect JDK is used for running VisualVM</i> - if you haven't defined a JDK to run VisualVM manually, make sure that the
+                default Java on your system is Sun JDK 6+</li>
+                <li><i>Incorrectly set JDK for running VisualVM</i> - if you have defined a JDK to run VisualVM manually, make sure the path to the JDK is correct and doesn't end with a slash</li>
+                <li><i>Incorrectly set VisualVM user directory</i> - if you have defined VisualVM user directory manually, make sure it is outside of VisualVM installation directory</li>
+            </ul>
+            <br>
             
             <a name="jrehost"></a>
             <h3>Error Starting VisualVM Dialog Is Shown During VisualVM Startup</h3>
