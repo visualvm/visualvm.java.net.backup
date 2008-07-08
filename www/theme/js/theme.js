@@ -23,13 +23,13 @@ function getCookie(name) {
 
 // Enables custom theme
 function enableTheme() {
-    setCookie(CUSTOMIZE_SITE, "true");
+    setCookie(DISABLE_VISUALVM_THEME, "false");
     history.go(0);
 }
 
 // Disables custom theme
 function disableTheme() {
-    setCookie(CUSTOMIZE_SITE, "false");
+    setCookie(DISABLE_VISUALVM_THEME, "true");
     history.go(0);
 }
 
@@ -212,7 +212,7 @@ function trackPage() {
             if (links[i].protocol == "mailto:") startListening(links[i], trackMailto);
             else if (links[i].hostname == location.host) {
                 var path = links[i].pathname + links[i].search;
-                var isDocument = path.match(/(?:zip|torrent|pdf|png|jpg|jpeg|odt)($|\&)/);
+                var isDocument = path.match(/(?:zip|torrent|nbm|pdf|odt)($|\&)/);
                 if (isDocument) startListening(links[i], trackLink);
             } else startListening(links[i], trackLink);
         }
@@ -222,22 +222,37 @@ function trackPage() {
 
 
 // -------------------------------------------------------------------------
-// --- Code entrypoint, customizing site appearance if enabled -------------
+// --- Code entrypoint, customizing site appearance by default -------------
 // -------------------------------------------------------------------------
 
 // Google Analytics page tracker
 var pageTracker;
 
 // Predefined cookie controlling site customizations
-var CUSTOMIZE_SITE = "customize_site_cookie";
-var customizeSite = getCookie(CUSTOMIZE_SITE);
+var DISABLE_VISUALVM_THEME = "disable_visualvm_theme_cookie";
+var disableTheme = getCookie(DISABLE_VISUALVM_THEME);
 
 
 // Apply visualvm css style
 document.write('<link rel="stylesheet" type="text/css" href="https://visualvm.dev.java.net/css/visualvm.css"/>');
 
 
-if (customizeSite == "true") { // Site branding is customized
+if (disableTheme == "true") { // Site branding is default one
+    
+    // Show non-customized page contents
+    document.body.style.display="block";
+    
+    // window.onload hook for Google Analytics
+    addLastLoadEventHandler(function() {
+        
+        // Complete web page for displaying
+        finishPage();
+        
+        // Google Analytics
+        trackPage();
+    });
+    
+} else { // Site branding is customized
     
     // Add a favicon
     document.write('<link rel="icon" type="image/png" href="https://visualvm.dev.java.net/favicon.png">');
@@ -255,21 +270,6 @@ if (customizeSite == "true") { // Site branding is customized
         // Create custom footer
         createFooter();
 
-        // Complete web page for displaying
-        finishPage();
-        
-        // Google Analytics
-        trackPage();
-    });
-    
-} else { // Site branding is default one
-    
-    // Show non-customized page contents
-    document.body.style.display="block";
-    
-    // window.onload hook for Google Analytics
-    addLastLoadEventHandler(function() {
-        
         // Complete web page for displaying
         finishPage();
         
