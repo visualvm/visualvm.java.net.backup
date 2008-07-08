@@ -1,35 +1,6 @@
 <script>
     
-    // Sets "long-life" cookie (expires December 31th, 2020)
-    function setCookie(name, value) {
-        var cookie_string = name + "=" + escape(value);
-        cookie_string += "; expires=" + new Date(2020, 12, 31).toGMTString();
-        cookie_string += "; domain=.visualvm.dev.java.net";
-        cookie_string += "; path=/";
-        document.cookie = cookie_string;
-    }
-
-    // Gets cookie
-    function getCookie(name) {
-        var results = document.cookie.match ('(^|;) ?' + name + '=([^;]*)(;|$)');
-        if (results) return unescape(results[2]);
-        else return null;
-    }
     
-    var DISABLE_VISUALVM_THEME = "disable_visualvm_theme_cookie";
-    var disableTheme = getCookie(DISABLE_VISUALVM_THEME);
-    
-    // Enables custom theme
-    function enableTheme() {
-        setCookie(DISABLE_VISUALVM_THEME, "false");
-        history.go(0);
-    }
-
-    // Disables custom theme
-    function disableTheme() {
-        setCookie(DISABLE_VISUALVM_THEME, "true");
-        history.go(0);
-    }
     
     document.title = "visualvm: Project Theme Switcher";
     
