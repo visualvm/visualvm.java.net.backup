@@ -35,6 +35,10 @@
     vertical-align: top;
 }
 
+div#contents_hints h3 {
+    color: #2f4353 !important;
+}
+
 #contents_clear {
     clear: both;
 }
