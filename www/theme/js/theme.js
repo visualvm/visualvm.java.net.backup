@@ -163,6 +163,20 @@ function createFooter() {
     document.body.appendChild(containerElement);
 }
 
+// Updates Project Tools in default theme
+function updateProjectTools() {
+    var toolsHTML = [];
+    
+    toolsHTML.push("<li><a href=\"https://visualvm.dev.java.net/features.html\">Features</a></li>");
+    toolsHTML.push("<li><a href=\"https://visualvm.dev.java.net/download.html\">Download</a></li>");
+    toolsHTML.push("<li><a href=\"https://visualvm.dev.java.net/docindex.html\">Documentation</a></li>");
+    toolsHTML.push("<li><a href=\"https://visualvm.dev.java.net/plugins.html\">Plugins</a></li>");
+    toolsHTML.push("<li><a href=\"javascript:customTheme();\">VisualVM project theme</a></li>");
+    
+    var containerElement = document.getElementById("project_tools_2");
+    containerElement.innerHTML = toolsHTML.join('');
+}
+
 
 // Completes web page for displaying
 function finishPage() {
@@ -241,10 +255,13 @@ document.write('<link rel="icon" type="image/png" href="https://visualvm.dev.jav
 document.write('<link rel="shortcut icon" type="image/png" href="https://visualvm.dev.java.net/favicon.png">');
 
 
-if (disableTheme == "true") { // Site branding is default one
+if (disableTheme == "true") { // Site branding is default java.net
     
     // Show non-customized page contents
     document.body.style.display="block";
+    
+    // Update Project Tools
+    updateProjectTools();
     
     // window.onload hook for Google Analytics
     addLastLoadEventHandler(function() {
