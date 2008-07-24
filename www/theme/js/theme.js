@@ -214,14 +214,19 @@ function trackMailto(event) {
 function trackLink(event) {
     var e = (event.srcElement) ? event.srcElement : this;
     while (e.tagName != "A") e = e.parentNode;
-    if (devmode == "true") {
-        if (e.href == "#") return; // Links in Slimbox, IE only
-        if (e.href.indexOf("javascript") != -1) alert(location.pathname + "/" + e.href);
-        return;
+    
+    if (e.href == "#") return; // Links in Slimbox, IE only
+    
+    var link;
+    if (e.href.indexOf("javascript:") != -1) {
+        link = "/javascript/" + e.href.substring(11);
+    } else {
+        link = (e.pathname.charAt(0) == "/") ? e.pathname : "/" + e.pathname;
+        if (e.search && e.pathname.indexOf(e.search) == -1) link += e.search;
+        if (e.hostname != location.host) link = "/external_link/" + e.hostname + link;
     }
-    var link = (e.pathname.charAt(0) == "/") ? e.pathname : "/" + e.pathname;
-    if (e.search && e.pathname.indexOf(e.search) == -1) link += e.search;
-    if (e.hostname != location.host) link = "/external_link/" + e.hostname + link;
+    
+    if (devmode == "true") alert("About to log link " + link);
     pageTracker._trackPageview(link);
 } 
 
