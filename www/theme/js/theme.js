@@ -214,15 +214,14 @@ function trackMailto(event) {
 function trackLink(event) {
     var e = (event.srcElement) ? event.srcElement : this;
     while (e.tagName != "A") e = e.parentNode;
+    if (devmode == "true") {
+        //alert("link: " + link + ", event: " + e + ", hostname: " + e.hostname + ", path: " + e.pathname + ", src: " + e.srcElement);
+        alert("Link: " + e.href + ", contains javascript: " + (e.href.indexOf("javascript") != -1) + ", is hash: " + (e.href == "#"));
+        return;
+    }
     var link = (e.pathname.charAt(0) == "/") ? e.pathname : "/" + e.pathname;
     if (e.search && e.pathname.indexOf(e.search) == -1) link += e.search;
-    if (e.hostname != location.host) {
-        link = "/external_link/" + e.hostname + link;
-        if (devmode == "true") {
-            //alert("link: " + link + ", event: " + e + ", hostname: " + e.hostname + ", path: " + e.pathname + ", src: " + e.srcElement);
-            alert("Link: " + e + ", href: '" + e.href + "'");
-        }
-    }
+    if (e.hostname != location.host) link = "/external_link/" + e.hostname + link;
     pageTracker._trackPageview(link);
 } 
 
