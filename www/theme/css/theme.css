@@ -188,6 +188,15 @@ div#loginbar a:hover {
     color: #c7e4f2 !important;
 }
 
+#pageactions {
+    background: #e8edf0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #8bb3d9;
+}
+
 
 /*
  -------------------------------------------------------------------------------
