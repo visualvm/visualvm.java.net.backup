@@ -115,10 +115,11 @@ function createHeader() {
     
     if (devmode == "true") {
         if (!isFrontpage && tasksMessage != "") {
-          headerHTML.push("<div id='pageactions'>");
-          headerHTML.push("Page actions: ");
-          headerHTML.push(tasksMessage.replace("<br>", "&nbsp;&nbsp;&nbsp;"));
-          headerHTML.push("</div>");
+            alert("Actions: -" + tasksMessage + "-");
+            headerHTML.push("<div id='pageactions'>");
+            headerHTML.push("Page actions: ");
+            headerHTML.push(tasksMessage.replace("<br>", "&nbsp;&nbsp;&nbsp;"));
+            headerHTML.push("</div>");
         }
     }
     
