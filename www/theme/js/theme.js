@@ -114,8 +114,8 @@ function createHeader() {
     if (devmode == "true") {
         headerHTML.push("<div id='pageactions'>");
         headerHTML.push("Page actions: ");
-        headerHTML.push(tasksMessage);
-        alert(tasksMessage);
+        headerHTML.push(tasksMessage.replace("<br>", "&nbsp;&nbsp;&nbsp;"));
+        alert(tasksMessage.replace("<br>", "&nbsp;&nbsp;&nbsp;"));
         headerHTML.push("</div>");
     }
     
