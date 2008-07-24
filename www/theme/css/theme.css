@@ -189,10 +189,10 @@ div#loginbar a:hover {
 }
 
 #pageactions {
-    font-size: 11px;
+    font-size: 10px;
     background: #eef2f3;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     padding-top: 2px;
     padding-bottom: 2px;
     border-bottom: 1px solid #8bb3d9;
