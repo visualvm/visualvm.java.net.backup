@@ -34,10 +34,10 @@
     document.title = "visualvm: WWW Development Mode Switcher";
     
     var html =  "<h1>WWW Development Mode Switcher</h1> <br><p>Development mode is: <b>" + (devmode != "true" ? "off" : "on") + "</b><br>"
-    if (devmode != "true")
-        html += "Switch to <a href=\"javascript:devmodeOn();\"><b>development mode</b></a>"
-    else
+    if (devmode == "true")
         html += "Switch to <a href=\"javascript:devmodeOff();\"><b>production mode</b></a>"
+    else
+        html += "Switch to <a href=\"javascript:devmodeOn();\"><b>development mode</b></a>"
     html += "</p>"
     document.write(html);
     

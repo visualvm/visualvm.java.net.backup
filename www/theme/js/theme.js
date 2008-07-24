@@ -111,6 +111,12 @@ function createHeader() {
     headerHTML.push("<a class='menu_link_minor' href='https://visualvm.dev.java.net/source/browse/visualvm/'>Sources</a>");
     headerHTML.push("</div>");
     
+    if (devmode == "true") {
+        headerHTML.push("<div id='pageactions'>");
+        headerHTML.push("Page actions:");
+        headerHTML.push("</div>");
+    }
+    
     var containerElement = document.createElement("div");
     containerElement.id = "header";
     containerElement.innerHTML = headerHTML.join('');
@@ -245,6 +251,10 @@ var pageTracker;
 // Predefined cookie controlling site customizations
 var DISABLE_VISUALVM_THEME = "disable_visualvm_theme_cookie";
 var disableTheme = getCookie(DISABLE_VISUALVM_THEME);
+
+// Predefined cookie controlling site development/production mode
+var DEVMODE_FLAG_COOKIE = "devmode_flag_cookie";
+var devmode = getCookie(DEVMODE_FLAG_COOKIE);
 
 
 // Apply visualvm css style
