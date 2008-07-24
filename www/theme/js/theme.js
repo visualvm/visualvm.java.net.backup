@@ -215,8 +215,8 @@ function trackLink(event) {
     var e = (event.srcElement) ? event.srcElement : this;
     while (e.tagName != "A") e = e.parentNode;
     if (devmode == "true") {
-        //alert("link: " + link + ", event: " + e + ", hostname: " + e.hostname + ", path: " + e.pathname + ", src: " + e.srcElement);
-        alert("Link: " + e.href + ", contains javascript: " + (e.href.indexOf("javascript") != -1) + ", is hash: " + (e.href == "#"));
+        if (e.href == "#") return; // Links in Slimbox, IE only
+        if (e.href.indexOf("javascript") != -1) alert(e.href + "_at_" + location.pathname);
         return;
     }
     var link = (e.pathname.charAt(0) == "/") ? e.pathname : "/" + e.pathname;
