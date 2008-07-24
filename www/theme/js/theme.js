@@ -113,8 +113,8 @@ function createHeader() {
     
     var isFrontpage = (window.location.href == "https://visualvm.dev.java.net/" || window.location.href == "https://visualvm.dev.java.net/index.html");
     if (devmode == "true") {
-        alert(window.location.href + " is frontpage: " + isFrontpage);
-        if (!isFrontpage) {
+        alert("'" + tasksMessage + "' contains actions: " + (tasksMessage != ""));
+        if (!isFrontpage && tasksMessage != "") {
           headerHTML.push("<div id='pageactions'>");
           headerHTML.push("Page actions: ");
           headerHTML.push(tasksMessage.replace("<br>", "&nbsp;&nbsp;&nbsp;"));
