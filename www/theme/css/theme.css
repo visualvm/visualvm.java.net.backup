@@ -191,11 +191,21 @@ div#loginbar a:hover {
 #pageactions {
     font-size: 10px;
     background: #eef2f3;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 3px;
+    padding-bottom: 4px;
     border-bottom: 1px solid #8bb3d9;
+}
+
+#pageactions a, #pageactions a:visited, #pageactions a:link.selfref, #pageactions a:visited.selfref {
+    color: #5b83a9 !important;
+    text-decoration: underline !important;
+}
+
+#pageactions a:hover {
+    color: #f47123 !important;
+    text-decoration: underline !important;
 }
 
 
