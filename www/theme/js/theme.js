@@ -226,7 +226,6 @@ function trackLink(event) {
         if (e.hostname != location.host) link = "/external_link/" + e.hostname + link;
     }
     
-    if (devmode == "true") alert("About to log link " + link);
     pageTracker._trackPageview(link);
 } 
 
