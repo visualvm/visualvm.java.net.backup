@@ -111,12 +111,15 @@ function createHeader() {
     headerHTML.push("<a class='menu_link_minor' href='https://visualvm.dev.java.net/source/browse/visualvm/'>Sources</a>");
     headerHTML.push("</div>");
     
-    if (devmode == "true") alert(window.location.href);
-    if (devmode == "true" && (window.location.href == "https://visualvm.dev.java.net/" || window.location.href == "https://visualvm.dev.java.net/index.html")) {
-        headerHTML.push("<div id='pageactions'>");
-        headerHTML.push("Page actions: ");
-        headerHTML.push(tasksMessage.replace("<br>", "&nbsp;&nbsp;&nbsp;"));
-        headerHTML.push("</div>");
+    var isFrontpage = (window.location.href == "https://visualvm.dev.java.net/" || window.location.href == "https://visualvm.dev.java.net/index.html");
+    if (devmode == "true") {
+        alert(window.location.href + " is frontpage: " + isFrontpage);
+        if (!isFrontpage) {
+          headerHTML.push("<div id='pageactions'>");
+          headerHTML.push("Page actions: ");
+          headerHTML.push(tasksMessage.replace("<br>", "&nbsp;&nbsp;&nbsp;"));
+          headerHTML.push("</div>");
+        }
     }
     
     var containerElement = document.createElement("div");
