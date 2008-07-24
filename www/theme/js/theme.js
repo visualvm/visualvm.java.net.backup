@@ -218,7 +218,10 @@ function trackLink(event) {
     if (e.search && e.pathname.indexOf(e.search) == -1) link += e.search;
     if (e.hostname != location.host) {
         link = "/external_link/" + e.hostname + link;
-        if (devmode == "true") alert("link: " + link + ", event: " + e + ", hostname: " + e.hostname + ", path: " + e.pathname + ", src: " + e.srcElement);
+        if (devmode == "true") {
+            //alert("link: " + link + ", event: " + e + ", hostname: " + e.hostname + ", path: " + e.pathname + ", src: " + e.srcElement);
+            alert("Link: " + e + ", href: '" + e.href + "'");
+        }
     }
     pageTracker._trackPageview(link);
 } 
