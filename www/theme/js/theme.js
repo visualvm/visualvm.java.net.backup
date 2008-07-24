@@ -216,7 +216,7 @@ function trackLink(event) {
     while (e.tagName != "A") e = e.parentNode;
     if (devmode == "true") {
         if (e.href == "#") return; // Links in Slimbox, IE only
-        if (e.href.indexOf("javascript") != -1) alert(e.href + "_at_" + location.pathname);
+        if (e.href.indexOf("javascript") != -1) alert(location.pathname + "/" + e.href);
         return;
     }
     var link = (e.pathname.charAt(0) == "/") ? e.pathname : "/" + e.pathname;
