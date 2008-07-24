@@ -114,6 +114,7 @@ function createHeader() {
     headerHTML.push("</div>");
     
     if (devmode == "true") {
+        tasksMessage = tasksMessage.replace(/^\s\s*/, '').replace(/\s\s*$/, ''); // tasksMessage = tasksMessage.trim()
         if (!isFrontpage && tasksMessage != "") {
             alert("Actions: -" + tasksMessage + "-");
             headerHTML.push("<div id='pageactions'>");
