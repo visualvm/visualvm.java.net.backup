@@ -139,8 +139,8 @@ div#loginbar a:hover {
 }
 
 #logobar {
-        background: url('https://visualvm.dev.java.net/theme/images/banner_filler.png') repeat-x;
-        height: 60px;
+    background: url('https://visualvm.dev.java.net/theme/images/banner_filler.png') repeat-x;
+    height: 60px;
 }
 
 #logobar img {
@@ -189,7 +189,8 @@ div#loginbar a:hover {
 }
 
 #pageactions {
-    background: #e8edf0;
+    font-size: 11px;
+    background: #eef2f3;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 2px;
