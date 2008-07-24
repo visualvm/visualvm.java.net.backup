@@ -115,7 +115,7 @@ function createHeader() {
         headerHTML.push("<div id='pageactions'>");
         headerHTML.push("Page actions: ");
         headerHTML.push(tasksMessage.replace("<br>", "&nbsp;&nbsp;&nbsp;"));
-        alert(tasksMessage.replace("<br>", "&nbsp;&nbsp;&nbsp;"));
+        alert(window.location.href);
         headerHTML.push("</div>");
     }
     
