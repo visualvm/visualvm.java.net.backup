@@ -90,7 +90,7 @@ function createHeader() {
     var isFrontpage = (window.location.href == "https://visualvm.dev.java.net/" || window.location.href == "https://visualvm.dev.java.net/index.html");
     
     headerHTML.push("<div id='loginbar'>");
-    if (devmode != "true" || isFrontpage) headerHTML.push("<div id='loginbar_message'>" + tasksMessage + "</div>");
+    if (isFrontpage) headerHTML.push("<div id='loginbar_message'>" + tasksMessage + "</div>");
     headerHTML.push("<div id='loginbar_login'>" + loginMessage + "</div>");
     headerHTML.push("<div id='loginbar_clear'></div>");
     headerHTML.push("</div>");
@@ -113,15 +113,11 @@ function createHeader() {
     headerHTML.push("<a class='menu_link_minor' href='https://visualvm.dev.java.net/source/browse/visualvm/'>Sources</a>");
     headerHTML.push("</div>");
     
-    if (devmode == "true") {
-        tasksMessage = tasksMessage.replace(/^\s\s*/, '').replace(/\s\s*$/, ''); // tasksMessage = tasksMessage.trim()
-        if (!isFrontpage && tasksMessage != "") {
-            alert("Actions: -" + tasksMessage + "-");
-            headerHTML.push("<div id='pageactions'>");
-            headerHTML.push("Page actions: ");
-            headerHTML.push(tasksMessage.replace("<br>", "&nbsp;&nbsp;&nbsp;"));
-            headerHTML.push("</div>");
-        }
+    if (!isFrontpage && tasksMessage.replace(/^\s\s*/, '').replace(/\s\s*$/, '') != "") { // tasksMessage.trim()
+        headerHTML.push("<div id='pageactions'>");
+        headerHTML.push("Page actions: ");
+        headerHTML.push(tasksMessage.replace("<br>", "&nbsp;&nbsp;&nbsp;"));
+        headerHTML.push("</div>");
     }
     
     var containerElement = document.createElement("div");
