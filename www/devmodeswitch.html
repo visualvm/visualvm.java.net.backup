@@ -1,0 +1,44 @@
+<script>
+    
+    // Sets "long-life" cookie (expires December 31th, 2020)
+    function setCookie(name, value) {
+        var cookie_string = name + "=" + escape(value);
+        cookie_string += "; expires=" + new Date(2020, 12, 31).toGMTString();
+        cookie_string += "; domain=.visualvm.dev.java.net";
+        cookie_string += "; path=/";
+        document.cookie = cookie_string;
+    }
+
+    // Gets cookie
+    function getCookie(name) {
+        var results = document.cookie.match ('(^|;) ?' + name + '=([^;]*)(;|$)');
+        if (results) return unescape(results[2]);
+        else return null;
+    }
+    
+    var DEVMODE_FLAG_COOKIE = "devmode_flag_cookie";
+    var devmode = getCookie(DEVMODE_FLAG_COOKIE);
+    
+    // Switches www to devmode
+    function devmodeOn() {
+        setCookie(DEVMODE_FLAG_COOKIE, "true");
+        history.go(0);
+    }
+
+    // Switches www to production mode
+    function devmodeOff() {
+        setCookie(DEVMODE_FLAG_COOKIE, "false");
+        history.go(0);
+    }
+    
+    document.title = "visualvm: WWW Development Mode Switcher";
+    
+    var html =  "<h1>WWW Development Mode Switcher</h1> <br><p>Development mode is: <b>" + (devmode != "true" ? "off" : "on") + "</b><br>"
+    if (devmode != "true")
+        html += "Switch to <a href=\"javascript:devmodeOn();\"><b>development mode</b></a>"
+    else
+        html += "Switch to <a href=\"javascript:devmodeOff();\"><b>production mode</b></a>"
+    html += "</p>"
+    document.write(html);
+    
+</script>
