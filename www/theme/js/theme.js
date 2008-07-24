@@ -111,11 +111,11 @@ function createHeader() {
     headerHTML.push("<a class='menu_link_minor' href='https://visualvm.dev.java.net/source/browse/visualvm/'>Sources</a>");
     headerHTML.push("</div>");
     
-    if (devmode == "true") {
+    if (devmode == "true") alert(window.location.href);
+    if (devmode == "true" && (window.location.href == "https://visualvm.dev.java.net/" || window.location.href == "https://visualvm.dev.java.net/index.html")) {
         headerHTML.push("<div id='pageactions'>");
         headerHTML.push("Page actions: ");
         headerHTML.push(tasksMessage.replace("<br>", "&nbsp;&nbsp;&nbsp;"));
-        alert(window.location.href);
         headerHTML.push("</div>");
     }
     
