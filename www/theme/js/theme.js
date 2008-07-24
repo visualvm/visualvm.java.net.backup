@@ -87,8 +87,10 @@ function createHeader() {
     // Create header <div>
     var headerHTML = [];
     
+    var isFrontpage = (window.location.href == "https://visualvm.dev.java.net/" || window.location.href == "https://visualvm.dev.java.net/index.html");
+    
     headerHTML.push("<div id='loginbar'>");
-    headerHTML.push("<div id='loginbar_message'>" + tasksMessage + "</div>");
+    if (devmode != "true" || isFrontpage) headerHTML.push("<div id='loginbar_message'>" + tasksMessage + "</div>");
     headerHTML.push("<div id='loginbar_login'>" + loginMessage + "</div>");
     headerHTML.push("<div id='loginbar_clear'></div>");
     headerHTML.push("</div>");
@@ -111,9 +113,7 @@ function createHeader() {
     headerHTML.push("<a class='menu_link_minor' href='https://visualvm.dev.java.net/source/browse/visualvm/'>Sources</a>");
     headerHTML.push("</div>");
     
-    var isFrontpage = (window.location.href == "https://visualvm.dev.java.net/" || window.location.href == "https://visualvm.dev.java.net/index.html");
     if (devmode == "true") {
-        alert("'" + tasksMessage + "' contains actions: " + (tasksMessage != ""));
         if (!isFrontpage && tasksMessage != "") {
           headerHTML.push("<div id='pageactions'>");
           headerHTML.push("Page actions: ");
