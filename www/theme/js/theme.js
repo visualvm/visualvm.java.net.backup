@@ -108,7 +108,7 @@ function createHeader() {
     headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net/docindex.html'>Documentation</a>");
     headerHTML.push("<a class='menu_link' href='https://visualvm.dev.java.net/plugins.html'>Plugins</a>");
     headerHTML.push("&nbsp;|&nbsp;");
-    headerHTML.push("<a class='menu_link_minor' href='https://visualvm.dev.java.net/servlets/ProjectIssues'>Issues</a>");
+    headerHTML.push("<a class='menu_link_minor' href='https://visualvm.dev.java.net/issues/query.cgi'>Issues</a>");
     headerHTML.push("<a class='menu_link_minor' href='https://visualvm.dev.java.net/servlets/ProjectMailingListList'>Mailing Lists</a>");
     headerHTML.push("<a class='menu_link_minor' href='https://visualvm.dev.java.net/source/browse/visualvm/'>Sources</a>");
     headerHTML.push("</div>");
