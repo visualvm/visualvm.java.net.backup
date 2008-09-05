@@ -1,7 +1,7 @@
 <html>
 <head>
     
-    <title>VisualVM 1.0.1 Release Notes</title>
+    <title>VisualVM 1.0 Release Notes</title>
     
     <style>            
             
@@ -42,14 +42,10 @@
     <div id="contents_contents">
         <div id="contents_main">
             
-            <h1>VisualVM 1.0.1 Release Notes</h1>
-            
-            <p>
-                VisualVM is a visual tool integrating several commandline JDK tools and lightweight profiling capabilities. Designed for both production and development time use, it further enhances the capability of monitoring and performance analysis for the Java SE platform.
-            </p>
+            <h1>VisualVM 1.0 Release Notes</h1>
             
             <p style="margin-bottom: 15px;">
-                VisualVM 1.0.1 is a bugfix release based on VisualVM 1.0. See the <a href="#changes">Changes In 1.0.1</a> section for list of changes and bugfixes since the VisualVM 1.0.
+                VisualVM is a visual tool integrating several commandline JDK tools and lightweight profiling capabilities. Designed for both production and development time use, it further enhances the capability of monitoring and performance analysis for the Java SE platform.
             </p>
             
             <a name="system_requirements"></a>
@@ -77,39 +73,23 @@
                 </p>
             </div>
             
-            <a name="changes"></a>
-            <h3>Changes In 1.0.1</h3>
-            <div>                
-                <p style="margin-top: 5px;">
-                    <b>Features and enhancements:</b><br>
-                    <ul>
-                        <li>Profiler supports OpenJDK
-                        </li>
-                        
-                        <li>Profiler is silently disabled on unsupported platforms, the rest of the tool can run unaffected
-                        </li>
-
-                        <li>Minor improvements of warning messages in the tool and plugins to better describe reported problems
-                        </li>
-                        
-                        <li>New plugins available on the Plugin center: JvmCapabilities, KillApplication, SysTray
-                        </li>
-                    </ul>
-                </p>
-                
-                <p style="margin-bottom: 10px;">
-                    <b>Fixed bugs:</b> <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&resolution=FIXED&target_milestone=1.0.1&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfield=creation_ts&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
-                </p>
-            </div>
-            
             <a name="known_problems"></a>
             <h3>Known Problems</h3>
             <div>                
                 <ul>
+                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=152">Issue 152</a>: VisualVM encountering problems with JDK 7 b27 and newer
+                    </li>
+                    
                     <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=120">Issue 120</a>: JMX application datasource cannot be reused on application restart
                     </li>
                     
                     <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=72">Issue 72</a>: Running application sometimes not recognized
+                    </li>
+                    
+                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=91">Issue 91</a>, <a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=37">Issue 37</a>: Close buttons missing or incorrectly displayed in subtabs on GTK LaF
+                    </li>
+                    
+                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=53">Issue 53</a>: No action on Proxy Configuration button
                     </li>
                 </ul>
                 
@@ -125,7 +105,6 @@
         <h3 class="first">On This Page</h3>
         <div>
             <a href="#system_requirements">System Requirements</a>
-            <a href="#changes">Changes In 1.0.1</a>
             <a href="#known_problems">Known Problems</a>
         </div>
         
