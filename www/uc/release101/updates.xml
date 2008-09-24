@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!DOCTYPE module_updates PUBLIC "-//NetBeans//DTD Autoupdate Catalog 2.5//EN" "http://www.netbeans.org/dtds/autoupdate-catalog-2_5.dtd">
-<module_updates timestamp="22/13/14/04/09/2008">
+<module_updates timestamp="41/57/13/24/09/2008">
 
 
 <module codenamebase="com.sun.tools.visualvm.modules.jvmcap" distribution="https://visualvm.dev.java.net/files/documents/7163/109844/com-sun-tools-visualvm-modules-jvmcap.nbm" downloadsize="9948" homepage="" license="AD9FBBC9" moduleauthor="" needsrestart="false" releasedate="2008/09/04">
@@ -43,8 +43,8 @@
     
 </module>
 
-<module codenamebase="com.sun.tools.visualvm.modules.systray" distribution="https://visualvm.dev.java.net/files/documents/7163/109846/com-sun-tools-visualvm-modules-systray.nbm" downloadsize="14483" homepage="https://visualvm.dev.java.net" license="AD9FBBC9" moduleauthor="Jiri Sedlacek" needsrestart="false" releasedate="2008/09/04">
-    <manifest AutoUpdate-Show-In-Client="true" OpenIDE-Module="com.sun.tools.visualvm.modules.systray" OpenIDE-Module-Display-Category="Tools" OpenIDE-Module-Implementation-Version="080904" OpenIDE-Module-Java-Dependencies="Java &gt; 1.5" OpenIDE-Module-Long-Description="Allows to minimize/restore running VisualVM instance into/from system tray. Not supported on Mac OS X (does nothing)." OpenIDE-Module-Module-Dependencies="com.sun.tools.visualvm.core/0-1 &gt; 1.1, org.openide.dialogs &gt; 7.5.1, org.openide.modules &gt; 7.3.1, org.openide.util &gt; 7.10.1.1, org.openide.windows &gt; 6.18.1" OpenIDE-Module-Name="SysTray" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="Allows to minimize running VisualVM instance into system tray." OpenIDE-Module-Specification-Version="1.0"/>
+<module codenamebase="com.sun.tools.visualvm.modules.systray" distribution="https://visualvm.dev.java.net/files/documents/7163/111863/com-sun-tools-visualvm-modules-systray.nbm" downloadsize="22959" homepage="https://visualvm.dev.java.net" license="C0B2B106" moduleauthor="Jiri Sedlacek" needsrestart="false" releasedate="2008/09/24">
+    <manifest AutoUpdate-Show-In-Client="true" OpenIDE-Module="com.sun.tools.visualvm.modules.systray" OpenIDE-Module-Display-Category="Tools" OpenIDE-Module-Implementation-Version="080924" OpenIDE-Module-Java-Dependencies="Java &gt; 1.5" OpenIDE-Module-Long-Description="Allows to minimize/restore running VisualVM instance into/from system tray. Not supported on Mac OS X (does nothing)." OpenIDE-Module-Module-Dependencies="com.sun.tools.visualvm.core/0-1 &gt; 1.1, org.openide.dialogs &gt; 7.5.1, org.openide.modules &gt; 7.3.1, org.openide.util &gt; 7.10.1.1, org.openide.windows &gt; 6.18.1" OpenIDE-Module-Name="SysTray" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="Allows to minimize running VisualVM instance into system tray." OpenIDE-Module-Specification-Version="1.1"/>
     
 </module>
 
