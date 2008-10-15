@@ -87,7 +87,10 @@ function createHeader() {
     // Create header <div>
     var headerHTML = [];
     
-    var isFrontpage = (window.location.href == "https://visualvm.dev.java.net/" || window.location.href == "https://visualvm.dev.java.net/index.html");
+    var wlhref = window.location.href;
+    var isFrontpage = (wlhref == "https://visualvm.dev.java.net/" ||
+                       wlhref == "https://visualvm.dev.java.net/index.html" ||
+                       wlhref.substr(0, 39) == "https://visualvm.dev.java.net/?VisualVM");
     
     headerHTML.push("<div id='loginbar'>");
     if (isFrontpage) headerHTML.push("<div id='loginbar_message'>" + tasksMessage + "</div>");
