@@ -36,6 +36,10 @@ div#apphead {
     display: none;
 }
 
+div#topmodule {
+    display: none;
+}
+
 p.tasknav {
     display: none;
 }
