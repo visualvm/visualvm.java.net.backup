@@ -144,7 +144,7 @@ function createFooter() {
     footerHTML.push("      Project owners: <a href='mailto:jsedlacek@dev.java.net'>Jiri Sedlacek</a>, <a href='mailto:thurka@dev.java.net'>Tomas Hurka</a> |");
     footerHTML.push("      License: <a href='https://visualvm.dev.java.net/legal/gplv2+ce.html'>GPLv2&nbsp;+&nbsp;CE</a> |");
     footerHTML.push("      <a href='mailto:feedback@visualvm.dev.java.net'>Feedback</a> |");
-    footerHTML.push("      <a href='javascript:defaultTheme();'>Default Theme</a>");
+    footerHTML.push("      <a href='javascript:defaultTheme();'>Java.net Theme</a>");
     footerHTML.push("    </div>");
             
     footerHTML.push("    <div id='portal_links'>");
