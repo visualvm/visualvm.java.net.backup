@@ -1,7 +1,7 @@
 <html>
     <head>
 
-        <title>A basic integration of  VisualVM into Eclipse IDE</title>
+        <title>Eclipse launcher for VisualVM</title>
 
         <style>
 
@@ -48,6 +48,16 @@
 
                     <h1>Eclipse launcher for VisualVM</h1>
 
+                    <p>
+                        The Eclipse launcher for VisualVM is an Eclipse plugin to make the monitoring and profiling Eclipse projects using
+                        VisualVM more convenient to the IDE users. It starts the VisualVM tool along with the monitored application and
+                        automatically opens the application tab after VisualVM startup.
+                    </p>
+
+                    <p style="margin-bottom: 15px;">
+                        <b>Note: </b> The Eclipse launcher for VisualVM supports VisualVM 1.1 and newer, it won't work with the older tool releases.
+                    </p>
+
                     <a name="download"></a>
                     <h3>Download</h3>
                     <div style="background: #f0f1f2; padding: 10px; padding-left: 20px; margin-bottom: 10px;">
@@ -66,10 +76,10 @@
                     <div>
                         <ol>
                             <li>
-                                Create a new <a href="images/eclipse/configuration.png" target="_new">application configuration</a>
+                                Create a new <a href="images/eclipse/configuration.png" rel="lightbox[eclipselauncher]" title="Creating new application configuration." target="_new">application configuration</a>
                             </li>
                             <li>
-                                Choose the <b>"VisualVM Launcher"</b> as the <a href="images/eclipse/launcher.png" target="_new">application launcher</a>
+                                Choose the <b>"VisualVM Launcher"</b> as the <a href="images/eclipse/launcher.png" rel="lightbox[eclipselauncher]" title="Setting application launcher." target="_new">application launcher</a>
                             </li>
                             <li>Run/Debug the application with the created configuration to have VisualVM started automatically</li>
                         </ol>
@@ -78,12 +88,12 @@
                     <a name="preferences"></a>
                     <h3>Configuration</h3>
                     <ul>
-                        <li>Go to <b>Run/Debug-Launching-VisualVM Configuration</b> <a href="images/eclipse/preferences.png" target="_new">preferences section</a>
+                        <li>Go to <b>Run/Debug-Launching-VisualVM Configuration</b> <a href="images/eclipse/preferences.png" rel="lightbox[eclipselauncher]" title="VisualVM launcher configuration." target="_new">preferences section</a>
                             <p>
                                 Here you can modify:
                                 <ul>
                                     <li>JDK Home to be used by VisualVM</li>
-                                    <li>The path to VisualVM executable</li>
+                                    <li>The path to VisualVM executable (VisualVM 1.1+ is supported)</li>
                                 </ul>
                             </p>
                         </li>
