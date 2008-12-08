@@ -228,7 +228,7 @@
                     rules = document.styleSheets[3].rules;
                 rules[0].style.backgroundImage =
                     "url(images/main_background_" + imageIndex + ".jpg)";
-alert("Using image index " + imageIndex);
+
                 setCookie(BANNER_IMAGE_INDEX, ++imageIndex + '');
             }
             
@@ -307,10 +307,7 @@ alert("Using image index " + imageIndex);
             var BANNER_IMAGE_INDEX = "banner_image_index_cookie";
             var bannerImageIndex = getCookie(BANNER_IMAGE_INDEX);
 
-            var DEVMODE_FLAG_COOKIE = "devmode_flag_cookie";
-            var devmode = getCookie(DEVMODE_FLAG_COOKIE);
-            
-            if (devmode == "true") setBannerImage();
+            setBannerImage();
 
             if (disableTheme != "true") {
                 var SHOW_PROJECT_TOOLS = "show_project_tools_cookie";
