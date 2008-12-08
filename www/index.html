@@ -306,8 +306,11 @@
             // Predefined cookie tracking banner image to be displayed
             var BANNER_IMAGE_INDEX = "banner_image_index_cookie";
             var bannerImageIndex = getCookie(BANNER_IMAGE_INDEX);
+
+            var DEVMODE_FLAG_COOKIE = "devmode_flag_cookie";
+            var devmode = getCookie(DEVMODE_FLAG_COOKIE);
             
-            //setBannerImage();
+            if (devmode == "true") setBannerImage();
 
             if (disableTheme != "true") {
                 var SHOW_PROJECT_TOOLS = "show_project_tools_cookie";
