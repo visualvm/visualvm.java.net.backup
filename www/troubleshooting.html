@@ -80,6 +80,13 @@
                 detect running Java applications. There are two main root causes: <i>broken access rights to temporary directory on a NTFS disk</i> - see <a href="http://forum.java.sun.com/thread.jspa?threadID=5133218&tstart=0">this thread</a>
                 for details and fix or <i>having temporary directory on a FAT disk</i> - see <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5042659">this bug detail</a>
             for details and fix.</p><br>
+
+            <a name="jpswin2"></a>
+            <h3>Local Applications Listed As &lt;Unknown Application&gt;</h3>
+            <p><b>Description:&nbsp;</b>Locally running Java applications are displayed as &lt;Unknown Application&gt; (pid ###), &quot;not supported by this JVM&quot; is displayed when opened.</p>
+            <p><b>Resolution:&nbsp;&nbsp;</b>This can happen on Windows systems if the username contains capitalized letters. In this case, username is <code>UserName</code> but
+                the jvmstat directory created by JDK is <code>%temp%\hsperfdata_username</code>. To workaround the problem, exit all Java applications, delete the <code>%temp%\hsperfdata_username</code>
+                directory and create new <code>%temp%\hsperfdata_UserName</code> directory.</p><br>
                 
             <a name="jstatdremote"></a>
             <h3>No Running Remote Applications Detected</h3>
