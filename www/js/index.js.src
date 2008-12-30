@@ -49,7 +49,7 @@ function setBannerImage() {
     else
         rules = document.styleSheets[3].rules;
     rules[0].style.backgroundImage =
-        "url(images/main_background_" + imageIndex + ".jpg)";
+        "url(../images/main_background_" + imageIndex + ".jpg)";
 
     setCookie(BANNER_IMAGE_INDEX, ++imageIndex + '');
 }
@@ -98,16 +98,16 @@ function initProjectTools() {
 
 function showScreenshots() {
     var slideshow = Slimbox.open([
-        ['images/localremoteapps.jpg', 'Display local and remote Java applications.'],
-        ['images/overview.jpg', 'Display application configuration and runtime environment.'],
-        ['images/monitor.jpg', 'Monitor application memory consumption and runtime behavior.'],
-        ['images/threads.jpg', 'Monitor application threads.'],
-        ['images/profiler.jpg', 'Profile application performance or analyze memory allocation.'],
-        ['images/threaddump.jpg', 'Take and display thread dumps.'],
-        ['images/heapdump.jpg', 'Take and browse heap dumps.'],
-        ['images/coredump.jpg', 'Analyze core dumps.'],
-        ['images/appsnapshot.jpg', 'Analyze applications offline.'],
-        ['images/plugins.jpg', 'VisualVM can be easily extended by plugins.']
+        ['../images/localremoteapps.jpg', 'Display local and remote Java applications.'],
+        ['../images/overview.jpg', 'Display application configuration and runtime environment.'],
+        ['../images/monitor.jpg', 'Monitor application memory consumption and runtime behavior.'],
+        ['../images/threads.jpg', 'Monitor application threads.'],
+        ['../images/profiler.jpg', 'Profile application performance or analyze memory allocation.'],
+        ['../images/threaddump.jpg', 'Take and display thread dumps.'],
+        ['../images/heapdump.jpg', 'Take and browse heap dumps.'],
+        ['../images/coredump.jpg', 'Analyze core dumps.'],
+        ['../images/appsnapshot.jpg', 'Analyze applications offline.'],
+        ['../images/plugins.jpg', 'VisualVM can be easily extended by plugins.']
     ], 0);
 }
 
