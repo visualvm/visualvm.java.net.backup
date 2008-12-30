@@ -1,333 +1,23 @@
 <html>
 <head>
-    
+
     <title>Home</title>
-            
-        <style>
-            
-            #top_div_info {
-                background: white url(images/main_background_1.jpg) no-repeat;
-                vertical-align: bottom;
-                font-size: 12px !important;
-                font-weight: bold;
-                color: #555555;
-                padding: 10px;
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-            
-            div#apphead {
-                display: none;
-            }
 
-            p.tasknav {
-                display: none;
-            }
+        <link rel="stylesheet" type="text/css" href="css/index.css"/>
 
-            #projecthome .axial {
-                display: none;
-            }
-            
-            #header, #bodycol {
-                border: 0px !important;
-                padding: 0px !important;
-                margin: 0px !important;
-            }
-
-            #top_div table {
-                border: 0px;
-                border-bottom: 1px solid #8bb3d9;
-                padding: 0px;
-                border-collapse: collapse;
-                width: 100%;
-            }
-            
-            #top_div_info a, #top_div_info a:visited, #top_div_info a:link.selfref, #top_div_info a:visited.selfref {
-                text-decoration: none !important;
-            }
-            
-            #top_div_info a:hover {
-                color: #f47123 !important;
-            }
-            
-            #top_div_links {
-                background: #f47123 url(images/main_links_background.png) repeat-y;
-                padding: 0px;
-                padding-top: 30px;
-                padding-bottom: 10px;
-            }
-            
-            #top_div_links img {
-                border: 0px;
-                margin-right: 15px;
-                vertical-align: middle;
-            }
-            
-            #top_div_links a, #top_div_links a:visited {
-                display: block;
-                white-space: nowrap;
-                font-size: 20px;
-                text-decoration: none!important;
-                color: white!important;
-                margin-left: 20px;
-                padding: 6px 30px 6px 25px;
-            }
-            
-            #top_div_links a:hover {
-                color: white !important;
-                background: #e36920;
-                text-decoration: none;
-                border-top: 1px solid white;
-                border-bottom: 1px solid white;
-                padding: 5px 30px 5px 25px;
-            }
-            
-            
-            #spotlight {
-                padding-top: 5px;
-                padding-bottom: 7px;
-                margin-bottom: 10px;
-                background: #f0f1f2;
-            }
-            
-            #spotlight div {
-                /*display: list-item;*/
-                list-style: square inside;
-                margin: 0px;
-                padding: 8px;
-                padding-top: 2px;
-                padding-bottom: 2px;
-            }
-            
-            #news p {
-                margin: 0px;
-                padding: 8px;
-                padding-top: 5px;
-                padding-bottom: 5px;
-            }
-            
-            span.news_date {
-                /*font-style: italic;*/
-                font-weight: bold;
-            }
-            
-            p.news_highlight {
-                /*background: #f0f1f2;*/
-            }
-            
-            #ontheweb {
-                padding-top: 5px;
-                margin-bottom: 10px;
-            }
-            
-            #ontheweb div {
-                display: list-item;
-                list-style: square inside;
-                margin: 0px;
-                padding: 8px;
-                padding-top: 2px;
-                padding-bottom: 2px;
-            }
-            
-            #ontheweb p {
-                margin: 0px;
-                padding: 8px;
-                padding-top: 5px;
-                padding-bottom: 5px;
-            }
-            
-            a.ontheweb_title {
-                font-weight: bold !important;
-            }
-            
-            p.previous_link {
-                text-align: right;
-                margin-top: 0px !important;
-                padding-top: 0px !important;
-                margin-bottom: 0px !important;
-                padding-bottom: 0px !important;
-                font-size: 10px;
-            }
-            
-            
-            #subprojects2 th {
-                padding: 2px 3px 3px 2px;
-                color: #333333 !important;
-            }
-            
-            #subprojects2 td {
-                padding: 3px;
-            }
-            
-            #subprojects2 table {
-                padding: 4px;
-            }
-            
-            div#contents_hints h3.first {
-                margin-top: 0px !important;
-            }
-            
-            div#subprojects {
-                display:none;
-            }
-            
-        </style>
-        
         <link rel="stylesheet" href="css/slimbox.css" type="text/css" media="screen" />
         <script type="text/javascript" src="js/mootools.js"></script>
         <script type="text/javascript" src="js/slimbox.js"></script>
-        
-        <script type="text/javascript">
-            
-            var projectTools2;
-            var showProjectTools;
-            var hideProjectTools;
-            
-            // Sets "long-life" cookie (expires December 31th, 2020)
-            function setCookie(name, value) {
-                var cookie_string = name + "=" + escape(value);
-                cookie_string += "; expires=" + new Date(2020, 12, 31).toGMTString();
-                cookie_string += "; domain=.visualvm.dev.java.net";
-                cookie_string += "; path=/";
-                document.cookie = cookie_string;
-            }
 
-            // Gets cookie
-            function getCookie(name) {
-                var results = document.cookie.match ('(^|;) ?' + name + '=([^;]*)(;|$)');
-                if (results) return unescape(results[2]);
-                else return null;
-            }
-            
-            // Adds new window.onload handler (LIFO)
-            function addFirstLoadEventHandler(func) {
-                var oldonload = window.onload;
-                if (typeof window.onload != 'function') {
-                    window.onload = func;
-                } else {
-                    window.onload = function() {
-                        func();
-                        if (oldonload) oldonload();
-                    }
-                }
-            }
-            
-            // Changes page style to load banner image
-            function setBannerImage() {
-                if (!document.styleSheets) return;
-                if (AVAILABLE_BANNERS < 2) return;
-                
-                var imageIndex = bannerImageIndex == null ? 1 :
-                                 parseInt(bannerImageIndex);
-                if (imageIndex < 0 || imageIndex > AVAILABLE_BANNERS)
-                    imageIndex = 1;
-              
-                var rules = new Array();
-                if (document.styleSheets[3].cssRules)
-                    rules = document.styleSheets[3].cssRules;
-                else
-                    rules = document.styleSheets[3].rules;
-                rules[0].style.backgroundImage =
-                    "url(images/main_background_" + imageIndex + ".jpg)";
-
-                setCookie(BANNER_IMAGE_INDEX, ++imageIndex + '');
-            }
-            
-            function showTools() {
-                projectTools2.style.display = "block";
-                showProjectTools.style.display = "none";
-                hideProjectTools.style.display = "block";
-                setCookie(SHOW_PROJECT_TOOLS, "true")
-            }
-            
-            function hideTools() {
-                projectTools2.style.display = "none";
-                showProjectTools.style.display = "block";
-                hideProjectTools.style.display = "none";
-                setCookie(SHOW_PROJECT_TOOLS, "false")
-            }
-            
-            function initProjectTools() {
-                var contentsHints = document.getElementById("contents_hints");
-                
-                var projectToolsHeader = document.createElement("h3");
-                projectToolsHeader.innerHTML = "Project Tools";
-                contentsHints.appendChild(projectToolsHeader);
-                
-                projectTools2 = document.createElement("div");
-                var projectTools = document.getElementById("projecttools");
-                var projectToolsLinks = projectTools.getElementsByTagName("a");
-                for (var i = 1; i < projectToolsLinks.length;) {
-                    projectTools2.appendChild(projectToolsLinks[i]);
-                }
-                projectTools2.style.display = showToolsCookie == "true" ? "block" : "none";
-                contentsHints.appendChild(projectTools2);
-                
-                showProjectTools = document.createElement("div");
-                showProjectTools.innerHTML = "<a href='javascript:showTools();'>Show Project Tools</a>";
-                showProjectTools.style.display = showToolsCookie == "true" ? "none" : "block";
-                contentsHints.appendChild(showProjectTools);
-                
-                hideProjectTools = document.createElement("div");
-                hideProjectTools.innerHTML = "<a href='javascript:hideTools();'>Hide Project Tools</a>";
-                hideProjectTools.style.display = showToolsCookie == "true" ? "block" : "none";
-                contentsHints.appendChild(hideProjectTools);
-                
-            }
-            
-            function showScreenshots() {
-                var slideshow = Slimbox.open([
-                    ['images/localremoteapps.jpg', 'Display local and remote Java applications.'],
-                    ['images/overview.jpg', 'Display application configuration and runtime environment.'],
-                    ['images/monitor.jpg', 'Monitor application memory consumption and runtime behavior.'],
-                    ['images/threads.jpg', 'Monitor application threads.'],
-                    ['images/profiler.jpg', 'Profile application performance or analyze memory allocation.'],
-                    ['images/threaddump.jpg', 'Take and display thread dumps.'],
-                    ['images/heapdump.jpg', 'Take and browse heap dumps.'],
-                    ['images/coredump.jpg', 'Analyze core dumps.'],
-                    ['images/appsnapshot.jpg', 'Analyze applications offline.'],
-                    ['images/plugins.jpg', 'VisualVM can be easily extended by plugins.']
-                ], 0);
-            }
-            
-            function addScreenshotsLink() {
-                var bannertextcontainer = document.getElementById("top_div_info");
-                var bannertext = bannertextcontainer.innerHTML;
-                bannertext += " <a href=\"javascript:showScreenshots();\">See screenshots</a>.";
-                bannertextcontainer.innerHTML = bannertext;
-            }
-           
-            // Predefined cookie controlling site customizations
-            var DISABLE_VISUALVM_THEME = "disable_visualvm_theme_cookie";
-            var disableTheme = getCookie(DISABLE_VISUALVM_THEME);
-            
-            // Number of available banner images to display on this page
-            var AVAILABLE_BANNERS = 7;
-            
-            // Predefined cookie tracking banner image to be displayed
-            var BANNER_IMAGE_INDEX = "banner_image_index_cookie";
-            var bannerImageIndex = getCookie(BANNER_IMAGE_INDEX);
-
-            setBannerImage();
-
-            if (disableTheme != "true") {
-                var SHOW_PROJECT_TOOLS = "show_project_tools_cookie";
-                var showToolsCookie = getCookie(SHOW_PROJECT_TOOLS);
-                addFirstLoadEventHandler(function() {
-                    initProjectTools();
-                    addScreenshotsLink();
-                });
-            }
-            
-        </script>
+        <script type="text/javascript" src="js/index.js"></script>
 
 </head>
 
 <body>
-    
+
 <div id="top_div">
     <table>
-        
+
         <tr>
             <td id="top_div_info">
                 VisualVM is a visual tool integrating several commandline JDK tools and lightweight profiling capabilities. Designed for both production and development time use, it further enhances the capability of monitoring and performance analysis for the Java SE platform.
@@ -339,22 +29,22 @@
                 <a href="plugins.html"><img src="images/main_links_icon.png"/>Plugins</a>
             </td>
         </tr>
-        
+
     </table>
 </div>
 
 <div id="contents_div">
-    
+
     <div id="contents_contents">
         <div id="contents_main">
-            
+
             <h3>VisualVM Is Designed For You</h3>
             <div id="spotlight">
                 <div><b>Application Developer:</b> Monitor, profile, take thread dumps, browse heap dumps</div>
                 <div><b>System Administrator:</b> Monitor and control Java applications across the entire network</div>
                 <div><b>Java Application User:</b> Create bug reports containing all the necessary information</div>
             </div>
-            
+
             <h3>News</h3>
             <div id="news" style="margin-bottom: 10px;">
                 <!-- Please always display 3 items here. The item to be removed should be archived on news.html -->
@@ -363,7 +53,7 @@
                 <a href="nonav/apidocs/11/index.html">API documentation</a> for plugin developers. VisualVM 1.1 can be now <a href="features.html#ideintegration">integrated</a> with the Eclipse IDE and IntelliJ IDEA. The tool can be downloaded from the <a href="download.html">Download</a> page, sources are available in
                     <a href="https://visualvm.dev.java.net/source/browse/visualvm/visualvm/?only_with_tag=release11"><code>release11</code></a> branch. See the <a href="relnotes.html">Release Notes</a> for more information.
                 </p>
-                
+
                 <p><span class="news_date">December 2nd, 2008:</span> JDK 6 Update 11 released, it contains Java VisualVM tool based on the recent stable VisualVM 1.0.1.
                     Latest Sun JDK 6 update can be downloaded <a href="http://java.sun.com/javase/downloads/index.jsp">here</a>.
                 </p>
@@ -371,11 +61,11 @@
                 <p><span class="news_date">October 10th, 2008:</span> Thread Dump Analyzer plugin has been updated on the VisualVM 1.0.1 Plugin Center to version 2.0.
                     Detailed information about the tool can be found in the <a href="http://www.jroller.com/dumpster/entry/tda_2_0_released">TDA 2.0 release announcement</a>.
                 </p>
-                
+
                 <p class="previous_link"><a href="news.html">news archive</a>
                 </p>
             </div>
-            
+
             <h3>VisualVM on the Web</h3>
             <div id="ontheweb">
                 <!-- Please always display 5 items here. The item to be removed should be archived on ontheweb.html -->
@@ -385,37 +75,37 @@
                 <div><a class="ontheweb_title" href="http://blogs.sun.com/nbprofiler/entry/visualvm_in_ubuntu_8_10">VisualVM in Ubuntu 8.10</a>, announcement on The NetBeans Profiler Blog.</div>
                 <div><a class="ontheweb_title" href="http://blog.xebia.fr/2008/10/22/diagnostic-dune-jvm-a-distance/">Diagnostic d&#8217;une JVM &#x00E0; distance</a> (<a href="http://translate.google.com/translate?u=http%3A%2F%2Fblog.xebia.fr%2F2008%2F10%2F22%2Fdiagnostic-dune-jvm-a-distance%2F&hl=en&ie=UTF-8&sl=fr&tl=en">Diagnosis of a remote JVM</a>), tools overview at Xebia blog.</div>
                 <div><a class="ontheweb_title" href="http://kanonbra.com/index.php/projects/performance-testing/18-using-visualvm-on-liferay">Using VisualVM to find and resolve performance issue in Liferay</a> by Alf Hogemark.</div>
-                                
+
                 <p class="previous_link"><a href="ontheweb.html">links archive</a>
                 </p>
             </div>
-            
+
             <div class="h2" id="subprojects2" style="margin-top: 0px;">
                 <h2>Subprojects</h2>
 
                 <table width="100%">
                     <tr>
                         <th>Name</th>
-                        <th>Summary</th> 
+                        <th>Summary</th>
                     </tr>
 
-                    <tr class="a"> 
+                    <tr class="a">
                         <td><a href="https://btrace.dev.java.net/">btrace</a></td>
                         <td>BTrace - dynamic, safe tracing system for the Java platform</td>
                     </tr>
 
-                    <tr class="b"> 
+                    <tr class="b">
                         <td><a href="https://gchisto.dev.java.net/">gchisto</a></td>
                         <td>A garbage collection log visualization tool.</td>
                     </tr>
-                </table> 
+                </table>
             </div>
-            
+
         </div>
     </div>
-    
+
     <div id="contents_hints">
-        
+
         <h3 class="first">Users</h3>
         <div>
             <a href="gettingstarted.html">Getting Started</a>
@@ -433,9 +123,9 @@
             <a href="https://visualvm.dev.java.net/api-quickstart.html">Developer Documentation</a>
             <a href="nonav/apidocs/11/index.html">API Documentation</a>
         </div>
-        
+
     </div>
-    
+
     <div id="contents_clear"></div>
 
 </div>
