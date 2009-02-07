@@ -84,7 +84,7 @@ p.tasknav {
 }
 
 #spotlight div {
-    /*display: list-item;*/
+    display: list-item;
     list-style: square inside;
     margin: 0px;
     padding: 8px;
