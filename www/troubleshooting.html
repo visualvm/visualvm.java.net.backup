@@ -72,7 +72,14 @@
             <p><b>Description:&nbsp;</b>Error Starting VisualVM dialog is shown during VisualVM startup with a message about an unsupported version of Java.</p>
             <p><b>Resolution:&nbsp;&nbsp;</b>VisualVM runs only on JDK 6 or 7 (not the JRE). When started on JRE or incorrect JDK version, VisualVM shows this dialog and terminates. To define which JDK will be used for running VisualVM, follow the steps in 
             Getting Started section of the <a href="description.html#getting_started">Introduction to VisualVM</a> document.</p><br>
-                
+
+            <a name="jvmstat6u12"></a>
+            <h3>No Running Applications Detected, Exception Thrown After Startup</h3>
+            <p><b>Description:&nbsp;</b>No running applications are shown in Applications tree, an exception is thrown after VisualVM startup (<code>java.lang.NullPointerException at JvmJvmstatModelProvider.createModelFor(JvmJvmstatModelProvider)</code>).</p>
+            <p><b>Resolution:&nbsp;&nbsp;</b>This happens for VisualVM 1.1 and previous releases and for Java VisualVM 6u11 and previous releases when there's at least one Java application
+            running on JDK 6 Update 12 on the system (incl. the VisualVM itself). To fix this problem, download and install the latest VisualVM-Extensions plugin from the Plugin Center using
+            Tools -> Plugins. Details can be found in <a href="http://blogs.sun.com/nbprofiler/entry/visualvm_fixed_to_correctly_recognize">this blog post</a>.</p><br>
+
             <a name="jpswin"></a>
             <h3>Local Applications Cannot Be Detected (Error Dialog On Startup)</h3>
             <p><b>Description:&nbsp;</b>An error dialog saying that local applications cannot be detected is shown immediately after VisualVM startup.</p>
