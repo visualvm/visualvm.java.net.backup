@@ -123,7 +123,7 @@ var DISABLE_VISUALVM_THEME = "disable_visualvm_theme_cookie";
 var disableTheme = getCookie(DISABLE_VISUALVM_THEME);
 
 // Number of available banner images to display on this page
-var AVAILABLE_BANNERS = 7;
+var AVAILABLE_BANNERS = 6;
 
 // Predefined cookie tracking banner image to be displayed
 var BANNER_IMAGE_INDEX = "banner_image_index_cookie";

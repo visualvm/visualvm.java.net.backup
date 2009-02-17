@@ -1,7 +1,7 @@
 <html>
 <head>
     
-    <title>VisualVM 1.1 Release Notes</title>
+    <title>VisualVM 1.1.1 Release Notes</title>
     
     <style>            
             
@@ -42,14 +42,14 @@
     <div id="contents_contents">
         <div id="contents_main">
             
-            <h1>VisualVM 1.1 Release Notes</h1>
+            <h1>VisualVM 1.1.1 Release Notes</h1>
             
             <p>
                 VisualVM is a visual tool integrating several commandline JDK tools and lightweight profiling capabilities. Designed for both production and development time use, it further enhances the capability of monitoring and performance analysis for the Java SE platform.
             </p>
             
             <p style="margin-bottom: 15px;">
-                VisualVM 1.1 release is based on VisualVM 1.0.1. See the <a href="#changes">Changes In 1.1</a> section for list of changes and bugfixes since the VisualVM 1.0.1.
+                VisualVM 1.1.1 is a bugfix release based on VisualVM 1.1. See the <a href="#changes">Changes In 1.1.1</a> section for list of changes and bugfixes since the VisualVM 1.1.
                 See the <a href="releases.html">Releases Overview</a> page for detailed overview of all VisualVM and Java VisualVM releases.
             </p>
             
@@ -88,8 +88,68 @@
             </div>
             
             <a name="changes"></a>
-            <h3>Changes In 1.1</h3>
+            <h3>Changes In 1.1.1</h3>
             <div>                
+                <p style="margin-top: 5px;">
+                    <b>Features and enhancements:</b><br>
+                    <ul>
+                        <li>Introduced the Memory Sampler plugin
+                        </li>
+
+                        <li>Improved integration of the Visual GC tool
+                        </li>
+
+                        <li>Added version info to the Windows launcher <code>visualvm.exe</code>
+                        </li>
+                    </ul>
+                </p>
+
+                <p>
+                    <b>API Changes:</b><br>
+                    <ul>
+                        <li>Compatible: <code>com.sun.tools.visualvm.host.HostsSupport.getOrCreateHost(hostname, interactive)</code> added
+                        </li>
+                    </ul>
+                </p>
+                
+                <p style="margin-bottom: 10px;">
+                    <b>Fixed bugs:</b> <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&issue_status=RESOLVED&issue_status=VERIFIED&issue_status=CLOSED&resolution=FIXED&target_milestone=1.1.1&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&newqueryname=&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
+                </p>
+            </div>
+            
+            <a name="known_problems"></a>
+            <h3>Known Problems</h3>
+            <div>                
+                <ul>
+                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=224">Issue 224</a>: Cannot memory profile JBoss AS 4.2.3.GA
+                    </li>
+
+                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=148">Issue 148</a>: VisualVM hangs when lost remote connection
+                    </li>
+
+                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=120">Issue 120</a>: JMX application datasource cannot be reused on application restart
+                    </li>
+                    
+                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=72">Issue 72</a>: Running application sometimes not recognized
+                    </li>
+                </ul>
+                
+                <p style="margin-bottom: 15px;">To view all known problems please use this <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&subcomponent=code&issue_status=NEW&issue_status=STARTED&issue_status=REOPENED&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&newqueryname=&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
+                </p>
+            </div>
+
+            <br>
+            <hr>
+            <hr>
+            <br>
+            <br>
+
+            <a name="changeshistory"></a>
+            <h2>History of Changes</h2>
+            <br>
+
+            <h3>Changes In 1.1</h3>
+            <div>
                 <p style="margin-top: 5px;">
                     <b>Features and enhancements:</b><br>
                     <ul>
@@ -150,38 +210,11 @@
                         </li>
                     </ul>
                 </p>
-                
+
                 <p style="margin-bottom: 10px;">
                     <b>Fixed bugs:</b> <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&issue_status=RESOLVED&issue_status=VERIFIED&issue_status=CLOSED&resolution=FIXED&target_milestone=1.1&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&newqueryname=&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
                 </p>
             </div>
-            
-            <a name="known_problems"></a>
-            <h3>Known Problems</h3>
-            <div>                
-                <ul>
-                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=224">Issue 224</a>: Cannot memory profile JBoss AS 4.2.3.GA
-                    </li>
-
-                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=148">Issue 148</a>: VisualVM hangs when lost remote connection
-                    </li>
-
-                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=120">Issue 120</a>: JMX application datasource cannot be reused on application restart
-                    </li>
-                    
-                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=72">Issue 72</a>: Running application sometimes not recognized
-                    </li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;">To view all known problems please use this <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&subcomponent=code&issue_status=NEW&issue_status=STARTED&issue_status=REOPENED&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&newqueryname=&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
-                </p>
-            </div>
-
-            <br>
-            <hr>
-            <hr>
-            <a name="changeshistory"></a>
-            <h2>History of Changes</h2>
 
             <h3>Changes In 1.0.1</h3>
             <div>
@@ -215,7 +248,7 @@
         <h3 class="first">On This Page</h3>
         <div>
             <a href="#system_requirements">System Requirements</a>
-            <a href="#changes">Changes In 1.1</a>
+            <a href="#changes">Changes In 1.1.1</a>
             <a href="#known_problems">Known Problems</a>
             <a href="#changeshistory">History of Changes</a>
         </div>
