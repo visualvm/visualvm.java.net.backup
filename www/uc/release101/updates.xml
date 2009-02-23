@@ -48,8 +48,8 @@
     
 </module>
 
-<module codenamebase="org.netbeans.modules.visualgc" distribution="http://profiler.netbeans.org/files/documents/164/1271/visualgc-1.1.1.nbm" downloadsize="75995" homepage="http://profiler.netbeans.org" license="5D4B83E3" moduleauthor="" needsrestart="false" releasedate="2006/12/19">
-    <manifest OpenIDE-Module="org.netbeans.modules.visualgc/1" OpenIDE-Module-Build-Version="061219" OpenIDE-Module-Display-Category="Tools" OpenIDE-Module-Implementation-Version="1" OpenIDE-Module-Java-Dependencies="Java &gt; 1.5" OpenIDE-Module-Long-Description="Integration of the Visual GC tool into NetBeans IDE. Adds Window | Visual GC menu item to easily launch Visual GC integrated into the IDE." OpenIDE-Module-Module-Dependencies="org.openide.awt &gt; 6.7.1, org.openide.dialogs &gt; 6.5.1, org.openide.modules &gt; 6.5.1, org.openide.options &gt; 6.4.1, org.openide.util &gt; 6.8.1, org.openide.windows &gt; 6.5.1" OpenIDE-Module-Name="Visual GC" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Specification-Version="1.1.1"/>
+<module codenamebase="com.sun.tools.visualvm.modules.visualgc" distribution="https://visualvm.dev.java.net/files/documents/7163/127062/com-sun-tools-visualvm-modules-visualgc.nbm" downloadsize="72624" homepage="https://visualvm.dev.java.net" license="4FF326F7" moduleauthor="Jiri Sedlacek" needsrestart="false" releasedate="2009/02/17">
+    <manifest AutoUpdate-Show-In-Client="true" OpenIDE-Module="com.sun.tools.visualvm.modules.visualgc" OpenIDE-Module-Display-Category="Tools" OpenIDE-Module-Implementation-Version="090217" OpenIDE-Module-Java-Dependencies="Java &gt; 1.5" OpenIDE-Module-Long-Description="Integration of the Visual GC tool into VisualVM. Visual GC user interface is displayed for each local or remote application with performance counters available via jvmstat API.&#10;&lt;BR&gt;&lt;BR&gt;&#10;The Visual GC tool attaches to an instrumented HotSpot JVM and collects and graphically displays garbage collection, class loader, and HotSpot compiler performance data.&#10;&lt;BR&gt;&lt;BR&gt;&#10;See the Visual GC home page for information on using the tool: &lt;A HREF=&quot;http://java.sun.com/performance/jvmstat/visualgc.html&quot;&gt;http://java.sun.com/performance/jvmstat/visualgc.html&lt;/A&gt;.&#10;&lt;BR&gt;&lt;BR&gt;&#10;&lt;U&gt;Note:&lt;/U&gt; To display original Visual GC colors, start VisualVM with an extra command-line parameter: &lt;CODE&gt;-J-Dcom.sun.tools.visualvm.modules.visualgc.originalUI=true&lt;/CODE&gt;" OpenIDE-Module-Module-Dependencies="com.sun.tools.visualvm.application/0 &gt; 1.0, com.sun.tools.visualvm.core/0 &gt; 1.0, com.sun.tools.visualvm.host/0 &gt; 1.0, org.openide.awt &gt; 6.11.1.1, org.openide.modules &gt; 7.3, org.openide.util &gt; 7.10.0.1" OpenIDE-Module-Name="Visual GC" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="Integration of the Visual GC tool into VisualVM" OpenIDE-Module-Specification-Version="2.0"/>
     
 </module>
 
@@ -82,7 +82,7 @@
 
 <license name="AD9FBBC9">[NO LICENSE SPECIFIED]
 </license>
-<license name="5D4B83E3">For the NetBeans integration module:
+<license name="4FF326F7">For the VisualVM integration module:
 -----------------------------------------------------
 
 Pre-Release Binary Software Evaluation License 
