@@ -1,150 +1,124 @@
 <html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
     <head>
-        <title>Getting Started with VisualVM</title>
+        <title>VisualVM 入門</title>
         <link rel="stylesheet" type="text/css" href="default.css">
     </head>
     <body>
-        <h1>Getting Started with VisualVM</h1>
+        <h1>VisualVM 入門</h1>
         <hr>
-        <p>VisualVM provides detailed information about Java applications while they are running on the Java Virutal Machine (JVM). 
-        VisualVM's graphical user interface enables you to quickly and easily see information about multiple Java applications.</p>
-        
-        <p>This getting started guide should help you quickly get up and running with the VisualVM.
-        This guide will demonstrate how to install VisualVM and add functionality to the tool by installing a plugin from the VisualVM update center.
-        This guide will show you how to launch VisualVM and view some of the information you can get about an application running on local and remote JVMs.</p>
-        
+        <p>VisualVM は、Java 仮想マシン (JVM) で実行中の Java アプリケーションに関する詳細情報を提供します。VisualVM のグラフィカルユーザーインタフェースを使用すると、複数の Java アプリケーションに関する情報をすばやく簡単に表示できます。</p>
+
+        <p>この入門ガイドは、VisualVM をすばやく設定して実行するための支援を行います。このガイドでは、VisualVM をインストールする方法と、VisualVM のアップデートセンターからプラグインをインストールして、ツールに機能を追加する方法を説明します。また、VisualVM の起動方法と、ローカルおよびリモートの JVM で実行中のアプリケーションに関して取得できるいくつかの情報の表示方法を示します。</p>
+
         <br>
 
-        <h3>VisualVM In Action</h3>
-        <p>See the VisualVM features in this short screencast originally introduced at java.sun.com:</p>
+        <h3>実行中の VisualVM</h3>
+        <p>java.sun.com で紹介された短いスクリーンキャストで、VisualVM の機能を参照してください。</p>
         <p><embed src="http://blip.tv/play/AeGPcZKdZQ" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="400" height="330"></embed></p>
 
         <br>
-        
-        <h3>Installing VisualVM</h3>
+
+        <h3>VisualVM のインストール</h3>
         <ol>
-            <li>Download the VisualVM installer from the <a href="https://visualvm.dev.java.net/">VisualVM project page</a>.</li>
-            <li>Extract the VisualVM installer to your local system.</li>
-            <li>Navigate to the <tt>bin</tt> directory of the VisualVM installation directory and launch the application.</li>
-        </ol>    
-
-        <h3>Using the Applications Window</h3>
-        <p>The main window of VisualVM opens when you launch the application.
-        By default, the Applications window is displayed in the left pane of the main window.
-        The Applications window enables you to quickly see the Java applications running on a local and remote JVMs.</p>
-        <img src="images/getstarted/vvm-anagram-applications.png" style="border:1px solid;" alt="screenshot of Applications window" 
-        title="screenshot of Applications window">
-        <p>The Applications window is the primary entry point for viewing further details about a particular application.
-        Right-clicking an application node opens the popup menu where you can choose to open the main application tab or take thread or heap dumps.</p>
-
-        <p>For more details about how to use the Applications window to view and save data about applications, see the following pages:</p>
-        <ul>
-            <li><a href="applications_window.html">Using the Applications Window</a></li>
-        </ul>
-
-        <h3>Browsing a Heap Dump</h3>
-        <p>VisualVM has a visualizer that enables you to easily browse heap dumps.
-        You can load an existing heap dump or take a snapshot of the heap for local running applications.</p>
-        
-        <p>To take a heap dump of a local application you can do either of the following:</p>
-        <ul>
-            <li>Right-click an application's node in the Applications window and choose Heap Dump.</li>
-            <li>Double-click the application node in the Applications window to open the application tab and click
-            Heap Dump in the Monitor tab.</li>
-        </ul>
-        <p>To open a saved heap dump, choose File &gt; Load from the main menu and locate the saved heap dump.</p>
-        
-        <p>To browse an open heap dump:</p>
-        <ol>
-            <li>Click Classes in the Heap Dump toolbar to view a list of the live classes and corresponding instances.</li>
-            <li>Double-click a class name to open the Instances view to view a list of the instances.</li>
-            <li>Select an instance from the list to view the references to that instance.</li>
+            <li><a href="https://visualvm.dev.java.net/">VisualVM のプロジェクトページ</a>から VisualVM のインストーラをダウンロードします。</li>
+            <li>VisualVM インストーラをローカルシステムに抽出します。</li>
+            <li>VisualVM のインストールディレクトリの <tt>bin</tt> ディレクトリに移動し、アプリケーションを起動します。</li>
         </ol>
-        <img src="images/getstarted/vvm-anagram-heapdump.png" style="border:1px solid;" alt="screenshot of Instances tab of heap dump" 
-        title="screenshot of Instances tab of heap dump">
-        
-        <p>When you take a heap dump, VisualVM opens the heap dump in a new tab and creates a node for the heap dump under the application node
-        in the Applications window.
-        To save the generated heap dump, right-click the heap dump node and choose Save As.
-        If you do not explicitly save the generated heap dump, the dump will be deleted when the application closes.</p>
 
-        <p>For more information, see the following document:</p>
+        <h3>「アプリケーション」ウィンドウの使用</h3>
+        <p>アプリケーションを起動すると、VisualVM のメインウィンドウが開きます。デフォルトで、メインウィンドウの左パネルに、「アプリケーション」ウィンドウが表示されます。「アプリケーション」ウィンドウでは、ローカルおよびリモートの JVM で実行中の Java アプリケーションをすばやく確認できます。</p>
+        <img src="images/getstarted/vvm-anagram-applications.png" style="border:1px solid;" alt="「アプリケーション」ウィンドウのスクリーンショット"
+             title="「アプリケーション」ウィンドウのスクリーンショット">
+        <p>「アプリケーション」ウィンドウは、特定のアプリケーションの詳細を表示するための、主な入場点です。アプリケーションのノードを右クリックすると、ポップアップメニューが開きます。ここで、主アプリケーションのタブを開くか、スレッドダンプまたはヒープダンプを取得するかを選択できます。</p>
+
+        <p>「アプリケーション」ウィンドウを使用して、アプリケーションに関するデータを表示および保存する方法の詳細については、次のページを参照してください。</p>
         <ul>
-            <li><a href="heapdump.html">Browsing a Heap Dump</a></li>
+            <li><a href="../applications_window.html">「アプリケーション」ウィンドウの使用</a></li>
         </ul>
 
-        <h3>Profiling an Application</h3>
-        <p>VisualVM includes a profiler that enables you to profile applications running on a local JVM.
-        You access the profiling controls in the Profiler tab of the application tab.
-        The profiler enables you to analyze memory usage and CPU performance of local applications.<br/>
-        <b>Note.</b> To profile an application running on JDK 6, you need to turn off class sharing for the application otherwise the application may crash.
-        To turn off class sharing, start the application with <tt>-Xshare:off</tt> argument.</p>
-        
+        <h3>ヒープダンプの参照</h3>
+        <p>VisualVM には、ヒープダンプを簡単に参照できる表示機能があります。既存のヒープダンプを読み込んだり、ローカルで実行中のアプリケーションのヒープのスナップショットを作成したりできます。</p>
+
+        <p>ローカルアプリケーションのヒープダンプを取得するには、次のいずれかを実行します。</p>
+        <ul>
+            <li>「アプリケーション」ウィンドウで、アプリケーションのノードを右クリックし、「ヒープダンプ」を選択する。</li>
+            <li>「アプリケーション」ウィンドウで、アプリケーションのノードをダブルクリックし、アプリケーションのタブを開いて「監視」タブにある「ヒープダンプ」をクリックする。</li>
+        </ul>
+        <p>保存したヒープダンプを開くには、メインメニューから「ファイル」&gt;「読み込み」を選択し、保存したヒープダンプを探します。</p>
+
+        <p>開いたヒープダンプを参照するには、次の手順に従います。</p>
         <ol>
-            <li>Launch a local Java application. (Start the application with the <tt>-Xshare:off</tt> argument.)</li>
-            <li>Under the Local node in the Applications window, right-click the application node and choose Open to open the application tab.</li>
-            <li>Click the Profiler tab in the application tab.</li>
-            <li>Click Memory or CPU in the Profiler tab.
-            <p>When you choose a profiling task, VisualVM displays the profiling data in the Profiler tab.</p>
+            <li>「ヒープダンプ」ツールバーの「クラス」をクリックし、ライブクラスと対応するインスタンスのリストを表示します。</li>
+            <li>クラス名をダブルクリックしてインスタンスビューを表示し、インスタンスのリストを表示します。</li>
+            <li>リストからインスタンスを選択して、そのインスタンスへの参照を表示します。</li>
+        </ol>
+        <img src="images/getstarted/vvm-anagram-heapdump.png" style="border:1px solid;" alt="ヒープダンプの「インスタンス」タブのスクリーンショット"
+             title="ヒープダンプの「インスタンス」タブのスクリーンショット">
+
+        <p>ヒープダンプを取得すると、VisualVM は新しいタブでヒープダンプを開き、「アプリケーション」ウィンドウのアプリケーションのノードの下にヒープダンプ用のノードを作成します。生成したヒープダンプを保存するには、ヒープダンプのノードを右クリックし、「別名保存」を選択します。生成したヒープダンプを明示的に保存しない場合、アプリケーションが閉じるときに、ダンプは削除されます。</p>
+
+        <p>詳細については、次のドキュメントを参照してください。</p>
+        <ul>
+            <li><a href="../heapdump.html">ヒープダンプの参照</a></li>
+        </ul>
+
+        <h3>アプリケーションのプロファイル</h3>
+        <p>VisualVM には、ローカルの JVM で実行中のアプリケーションをプロファイルできるプロファイラが含まれています。アプリケーションのタブの「プロファイラ」タブで、プロファイルの制御にアクセスします。プロファイラでは、ローカルアプリケーションのメモリー使用量と CPU パフォーマンスを解析できます。<br/>
+        <b>注:</b> JDK 6 で実行中のアプリケーションをプロファイルするには、アプリケーションのクラス共有を無効にする必要があります。そうしないと、アプリケーションがクラッシュする可能性があります。クラス共有を無効にするには、<tt>-Xshare:off</tt> 引数を付けてアプリケーションを起動します。</p>
+
+        <ol>
+            <li>ローカル Java アプリケーションを起動します (<tt>-Xshare:off</tt> 引数を付けてアプリケーションを起動)。</li>
+            <li>「アプリケーション」ウィンドウの「ローカル」ノードの下で、アプリケーションのノードを右クリックして「開く」を選択し、アプリケーションのタブを開きます。</li>
+            <li>アプリケーションのタブで「プロファイラ」タブをクリックします。</li>
+            <li>「プロファイラ」タブで「メモリー」または「CPU」をクリックします。
+                <p>プロファイルタスクを選択すると、VisualVM は「プロファイラ」タブにプロファイルデータを表示します。</p>
             </li>
         </ol>
-        <img src="images/getstarted/vvm-anagram-profiler.png" style="border:1px solid;" alt="screenshot of profier tab with profiling results" 
-        title="Screenshot showing the profiling results when analyzing memory allocation">
+        <img src="images/getstarted/vvm-anagram-profiler.png" style="border:1px solid;" alt="プロファイル結果がある「プロファイラ」タブのスクリーンショット"
+             title="メモリーの割り当て解析時のプロファイル結果を示すスクリーンショット">
 
-      
-        <p>For more information about profiling using VisualVM, see the following document:</p>
+
+        <p>VisualVM を使用したプロファイルの詳細については、次のドキュメントを参照してください。</p>
         <ul>
-            <li><a href="profiler.html">Profiling an Application</a></li>
+            <li><a href="../profiler.html">アプリケーションのプロファイル</a></li>
         </ul>
-      
-        <h3>Connecting to a Remote Host</h3>
-        <p>VisualVM enables you to easily monitor applications running on remote hosts and view general data about the remote system. 
-        To view information about applications on remote hosts, you must first connect to the remote host.
-        Connected remote hosts are listed below the Remote node in the Applications window.
-        Expand the remote host node to view the applications running on the remote host.</p>
-        <p>To retrieve data from a remote application, the <tt>jstatd</tt> utility needs to be running on the remote JVM.
-        For more information on how to start <tt>jstatd</tt>, see <a href="http://java.sun.com/javase/6/docs/technotes/tools/share/jstatd.html">jstatd - Virtual Machine jstat Daemon</a>.
-        You cannot profile applications running on a remote host.</p>
+
+        <h3>リモートホストへの接続</h3>
+        <p>VisualVM では、リモートホストで実行中のアプリケーションを簡単に監視でき、またリモートシステムに関する一般的なデータを表示できます。リモートホストのアプリケーションに関する情報を表示するには、まずリモートホストに接続します。「アプリケーション」ウィンドウの「リモート」ノードの下に、接続しているリモートホストが一覧表示されます。リモートホストのノードを展開し、リモートホストで実行中のアプリケーションを表示します。</p>
+        <p>リモートアプリケーションからデータを取得するには、リモートの JVM で <tt>jstatd</tt> ユーティリティーが実行されている必要があります。<tt>jstatd</tt> を起動する方法については、「<a href="http://java.sun.com/javase/6/docs/technotes/tools/share/jstatd.html">jstatd - 仮想マシン jstat デーモン</a>」 を参照してください。リモートホストで実行中のアプリケーションはプロファイルできません。</p>
         <ol>
-            <li>Right-click Remote in the Applications window and choose Add Remote Host.</li>
-            <li>In the Add Remote Host dialog box, type the host name or IP address of the remote machine.</li>
-            <li>(Optional) Type a display name for the remote host. This name is displayed in the Applications window.
-            If no display name is entered, the host name is used to identify the remote host in the Applications window.</li>
-            <li>Click OK.</li>
+            <li>「アプリケーション」ウィンドウで「リモート」を右クリックし、「リモートホストを追加」を選択します。</li>
+            <li>「リモートホストの追加」ダイアログで、リモートマシンのホスト名または IP アドレスを入力します。</li>
+            <li>(省略可能) リモートホストの表示名を入力します。この名前は、「アプリケーション」ウィンドウに表示されます。表示名を入力しない場合、「アプリケーション」ウィンドウでリモートホストを識別するために、ホスト名が使用されます。</li>
+            <li>「了解」をクリックします。</li>
         </ol>
-        <p>When you click OK, a node for the remote host appears under the Remote node. 
-        Expand the remote host node to see the Java applications that are running on the remote host.</p>
-        <p>You can double-click on the name of the remote applications to open the application tab in VisualVM.</p>
-        <img src="images/getstarted/vvm-applications-remote.png" style="border:1px solid;" alt="screenshot of Applications window with remote hosts" 
-        title="Screenshot of Applications window with remote hosts">
+        <p>「了解」をクリックすると、「リモート」ノードの下にリモートホストのノードが表示されます。リモートホストのノードを展開し、リモートホストで実行中の Java アプリケーションを表示します。</p>
+        <p>リモートアプリケーションの名前をダブルクリックすると、VisualVM でそのアプリケーションのタブを開くことができます。</p>
+        <img src="images/getstarted/vvm-applications-remote.png" style="border:1px solid;" alt="リモートホストがある「アプリケーション」ウィンドウのスクリーンショット"
+             title="リモートホストがある「アプリケーション」ウィンドウのスクリーンショット">
 
-        <p>For more information, see the following document:</p>
+        <p>詳細については、次のドキュメントを参照してください。</p>
         <ul>
-            <li><a href="applications_remote.html">Working with Remote Applications</a></li>
+            <li><a href="../applications_remote.html">リモートアプリケーションの操作</a></li>
         </ul>
 
-        <h3>Installing VisualVM Plugins</h3>
-        <p>You can add functionality to VisualVM by installing plugins available from the VisualVM update center.
-        For example, installing the VisualVM-MBeans plugin adds an MBeans tab to the application tab 
-        that enables you to <a href="http://java.sun.com/javase/6/docs/technotes/guides/management/jconsole.html#gdeap">monitor and manage MBeans</a> 
-        from within VisualVM.</p>
-        <p><b>To install a VisualVM plugin:</b></p>
+        <h3>VisualVM プラグインのインストール</h3>
+        <p>VisualVM アップデートセンターから入手できるプラグインをインストールして、VisualVM に機能を追加できます。たとえば、VisualVM-MBeans プラグインをインストールすると、アプリケーションのタブに「MBeans」タブが追加されます。これを使用すると、VisualVM 内部から <a href="http://java.sun.com/javase/6/docs/technotes/guides/management/jconsole.html#gdeap">MBeans を監視および管理</a>できます。</p>
+        <p><b>VisualVM プラグインをインストールするには、次の手順に従います。</b></p>
         <ol>
-            <li>Choose Tools &gt; Plugins from the main menu.</li>
-            <li>In the Available Plugins tab, select the Install checkbox for the plugin. Click Install.</li>
-            <li>Step through and complete the plugin installer.<br/>
-        </ol>        
-        <img src="images/getstarted/vvm-plugins-window.png" alt="screenshot of Plugins window" 
-        title="Screenshot of Plugins window">
-        <p class="small">Screenshot of Plugin manager with the VisualVM-MBeans plugin selected.</p>
+            <li>メインメニューから「ツール」&gt;「プラグイン」を選択します。</li>
+            <li>「Available Plugins」タブで、プラグインの「Install」チェックボックスを選択します。「インストール」をクリックします。</li>
+            <li>手順を続行してプラグインのインストーラを完了します。<br/>
+        </ol>
+        <img src="images/getstarted/vvm-plugins-window.png" alt="「プラグイン」ウィンドウのスクリーンショット"
+             title="「プラグイン」ウィンドウのスクリーンショット">
+        <p class="small">VisualVM-MBeans プラグインが選択されているプラグインマネージャーのスクリーンショットです。</p>
 
-        <h2>Additional VisualVM Documentation</h2>
-        <p>This document introduces some of the features of VisualVM.
-        VisualVM is designed to be an intuitive visual interface that enables you to 
-        easily explore information about Java applications running on local and remote JVMs. 
-        For more detailed information about working with VisualVM features, see the following documents:</p>
+        <h2>その他の VisualVM ドキュメント</h2>
+        <p>このドキュメントでは、VisualVM の一部の機能を紹介しています。VisualVM は、直感的なビジュアルインタフェースとして設計されており、ローカルおよびリモートの JVM で実行中の Java アプリケーションに関する情報を簡単に調査できます。VisualVM の機能の操作の詳細については、次のドキュメントを参照してください。</p>
         <ul>
-            <li><a href="https://visualvm.dev.java.net/docindex.html">VisualVM Documentation and Resources</a>.</li>
+            <li><a href="https://visualvm.dev.java.net/docindex.html">VisualVM のドキュメントおよびリソース</a></li>
         </ul>
     </body>
 </html>
