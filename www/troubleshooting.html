@@ -46,7 +46,7 @@
     <div id="contents_contents">
         <div id="contents_main">
             
-            <h1>VisualVM Troubleshooting Guide</h1>
+            <h1>VisualVM 1.2 Troubleshooting Guide</h1>
             
             <p style="margin-bottom: 15px;">
                 This document describes the most common problems related to using VisualVM and information on how to fix or workaround the problems.
@@ -89,10 +89,10 @@
             for details and fix.</p><br>
 
             <a name="jpswin2"></a>
-            <h3>Local Applications Listed As &lt;Unknown Application&gt;</h3>
-            <p><b>Description:&nbsp;</b>Locally running Java applications are displayed as &lt;Unknown Application&gt; (pid ###), &quot;not supported by this JVM&quot; is displayed when opened.</p>
+            <h3>Local Applications Cannot Be Monitored (Error Dialog On Startup)</h3>
+            <p><b>Description:&nbsp;</b>An error dialog saying that local applications cannot be monitored is shown immediately after VisualVM startup. Locally running Java applications are displayed as &lt;Unknown Application&gt; (pid ###).</p>
             <p><b>Resolution:&nbsp;&nbsp;</b>This can happen on Windows systems if the username contains capitalized letters. In this case, username is <code>UserName</code> but
-                the jvmstat directory created by JDK is <code>%temp%\hsperfdata_username</code>. To workaround the problem, exit all Java applications, delete the <code>%temp%\hsperfdata_username</code>
+                the jvmstat directory created by JDK is <code>%TMP%\hsperfdata_username</code>. To workaround the problem, exit all Java applications, delete the <code>%temp%\hsperfdata_username</code>
                 directory and create new <code>%temp%\hsperfdata_UserName</code> directory.</p><br>
                 
             <a name="jstatdremote"></a>
