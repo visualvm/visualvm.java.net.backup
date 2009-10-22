@@ -68,10 +68,16 @@
             <br>
             
             <a name="jrehost"></a>
-            <h3>Error Starting VisualVM Dialog Is Shown During VisualVM Startup</h3>
-            <p><b>Description:&nbsp;</b>Error Starting VisualVM dialog is shown during VisualVM startup with a message about an unsupported version of Java.</p>
+            <h3>Error Starting VisualVM (Error Dialog During Startup)</h3>
+            <p><b>Description:&nbsp;</b>'Error Starting VisualVM' dialog is shown during VisualVM startup with a message about an unsupported version of Java.</p>
             <p><b>Resolution:&nbsp;&nbsp;</b>VisualVM runs only on JDK 6 or 7 (not the JRE). When started on JRE or incorrect JDK version, VisualVM shows this dialog and terminates. To define which JDK will be used for running VisualVM, follow the steps in 
             Getting Started section of the <a href="description.html#getting_started">Introduction to VisualVM</a> document.</p><br>
+
+            <a name="cleandir"></a>
+            <h3>Warning - could not install some modules (Error Dialog During Startup)</h3>
+            <p><b>Description:&nbsp;</b>'Warning - could not install some modules' dialog is shown during VisualVM startup showing a list of affected modules.</p>
+            <p><b>Resolution:&nbsp;&nbsp;</b>This typically happens if you unzip new VisualVM version over an already existing VisualVM installation.
+            Make sure you are unzipping the VisualVM to a new directory.</p><br>
 
             <a name="jvmstat6u12"></a>
             <h3>No Running Applications Detected, Exception Thrown After Startup</h3>
@@ -92,8 +98,8 @@
             <h3>Local Applications Cannot Be Monitored (Error Dialog On Startup)</h3>
             <p><b>Description:&nbsp;</b>An error dialog saying that local applications cannot be monitored is shown immediately after VisualVM startup. Locally running Java applications are displayed as &lt;Unknown Application&gt; (pid ###).</p>
             <p><b>Resolution:&nbsp;&nbsp;</b>This can happen on Windows systems if the username contains capitalized letters. In this case, username is <code>UserName</code> but
-                the jvmstat directory created by JDK is <code>%TMP%\hsperfdata_username</code>. To workaround the problem, exit all Java applications, delete the <code>%temp%\hsperfdata_username</code>
-                directory and create new <code>%temp%\hsperfdata_UserName</code> directory.</p><br>
+                the jvmstat directory created by JDK is <code>%TMP%\hsperfdata_username</code>. To workaround the problem, exit all Java applications, delete the <code>%TMP%\hsperfdata_username</code>
+                directory and create new <code>%TMP%\hsperfdata_UserName</code> directory.</p><br>
                 
             <a name="jstatdremote"></a>
             <h3>No Running Remote Applications Detected</h3>
@@ -109,7 +115,7 @@
             <p><b>Description:&nbsp;</b>"Class sharing is enabled for this JVM" warning is shown in red box in Profiler tab, profiling CPU or Memory crashes local applications running on JDK 6 Update 6 and earlier.</p>
             <p><b>Resolution:&nbsp;&nbsp;</b>There is a known problem with dynamic attach which is used for profiling, it may
                 cause target JVM to crash when class sharing is enabled. To start an application without class sharing, provide <code>-Xshare:off</code> argument
-                to the <code>java</code> command starting the app. More information can be found in <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6497639">this</a>
+                to the <code>java</code> command starting the application. More information can be found in <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6497639">this</a>
             and <a href="http://bugs.sun.com/bugdatabase/view_bug.do;jsessionid=75eeb97f40427854daec7d1fcd3?bug_id=6598065">this</a> bug detail.</p><br>
                 
             <a name="calibration"></a>
@@ -129,9 +135,16 @@
             <hr/>
             <br>
             <br>
+
+            <a name="pluginsloading"></a>
+            <h3>Timeout While Installing a Plugin</h3>
+            <p><b>Description:&nbsp;</b>Plugin Installer dialog shows 'The Plugin Installer found problem timeout of loading &lt;module name&gt;' message.</p>
+            <p><b>Resolution:&nbsp;&nbsp;</b>This can sometimes happen when installing a plugin from the Plugins Center. The plugin could not be enabled in the
+                actual VisualVM session, please restart the VisualVM to start using the plugin.
+            </p><br/>
                 
             <a name="pluginsvalidation"></a>
-            <h3>Validation Warning When Installing a Plugin</h3>
+            <h3>Validation Warning While Installing a Plugin</h3>
             <p><b>Description:&nbsp;</b>Validation Warning dialog with Validation failed message is shown when installing a plugin from VisualVM Plugin Center.</p>
             <p><b>Resolution:&nbsp;&nbsp;</b>This occurs when installing any plugin from VisualVM Plugin Center. In fact the plugins are valid and trusted, you can
             simply skip the dialog and continue with plugin installation. The problem is caused by a missing key in VisualVM tool to recognize plugin certificate validity.
