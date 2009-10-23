@@ -66,6 +66,14 @@
                 <li><i>Incorrectly set VisualVM user directory</i> - if you have defined VisualVM user directory manually, make sure it is outside of VisualVM installation directory</li>
             </ul>
             <br>
+
+            <a name="d3dwin64"></a>
+            <h3>Java(TM) Platform SE binary has stopped working (Native Error Dialog During Startup, Windows 64bit)</h3>
+            <p><b>Description:&nbsp;</b>'Java(TM) Platform SE binary has stopped working' dialog is shown during VisualVM startup by the operating system, VisualVM process terminates.</p>
+            <p><b>Resolution:&nbsp;&nbsp;</b>This is a known bug in the d3d rendering pipeline affecting Windows 64bit systems. To disable d3d acceleration
+            use <code>visualvm.exe -J-Dsun.java2d.d3d=false</code> to start VisualVM. Alternatively you may update the <code>&lt;visualvm_installdir&gt;\etc\visualvm.conf</code>
+            file to include the <code>-J-Dsun.java2d.d3d=false</code> switch in the <code>default_options</code> section. See this <a href="http://bugs.sun.com/view_bug.do?bug_id=6772139">bug detail</a>
+            for more details.</p><br>
             
             <a name="jrehost"></a>
             <h3>Error Starting VisualVM (Error Dialog During Startup)</h3>
