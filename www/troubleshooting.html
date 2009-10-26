@@ -72,7 +72,7 @@
             <p><b>Description:&nbsp;</b>'Java(TM) Platform SE binary has stopped working' dialog is shown during VisualVM startup by the operating system, VisualVM process terminates.</p>
             <p><b>Resolution:&nbsp;&nbsp;</b>This is a known JDK bug in the d3d rendering pipeline affecting Windows 64bit systems. To disable d3d acceleration
             use <code>visualvm.exe -J-Dsun.java2d.d3d=false</code> to start VisualVM. Alternatively you may update the <code>&lt;visualvm_installdir&gt;\etc\visualvm.conf</code>
-            file to include the <code>-J-Dsun.java2d.d3d=false</code> switch in the <code>default_options</code> section. See this <a href="http://bugs.sun.com/view_bug.do?bug_id=6772139">JDK bug #6772139</a>
+            file to include the <code>-J-Dsun.java2d.d3d=false</code> switch in the <code>default_options</code> section. See the <a href="http://bugs.sun.com/view_bug.do?bug_id=6772139">JDK bug #6772139</a>
             for more details.</p><br>
             
             <a name="jrehost"></a>
@@ -123,8 +123,8 @@
             <p><b>Description:&nbsp;</b>"Class sharing is enabled for this JVM" warning is shown in red box in Profiler tab, profiling CPU or Memory crashes local applications running on JDK 6 Update 6 and earlier.</p>
             <p><b>Resolution:&nbsp;&nbsp;</b>There is a known problem with dynamic attach which is used for profiling, it may
                 cause target JVM to crash when class sharing is enabled. To start an application without class sharing, provide <code>-Xshare:off</code> argument
-                to the <code>java</code> command starting the application. More information can be found in <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6497639">this</a>
-            and <a href="http://bugs.sun.com/bugdatabase/view_bug.do;jsessionid=75eeb97f40427854daec7d1fcd3?bug_id=6598065">this</a> bug detail.</p><br>
+                to the <code>java</code> command starting the application. More information can be found in <a href="http://bugs.sun.com/view_bug.do?bug_id=6497639">JDK bug #6497639</a>
+                and <a href="http://bugs.sun.com/view_bug.do?bug_id=6598065">JDK bug #6598065</a>.</p><br>
                 
             <a name="calibration"></a>
             <h3>Profiler Measures Incorrect Performance Results</h3>
