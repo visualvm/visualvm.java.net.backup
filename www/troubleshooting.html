@@ -97,10 +97,16 @@
             <a name="jpswin"></a>
             <h3>Local Applications Cannot Be Detected (Error Dialog On Startup)</h3>
             <p><b>Description:&nbsp;</b>An error dialog saying that local applications cannot be detected is shown immediately after VisualVM startup.</p>
-            <p><b>Resolution:&nbsp;&nbsp;</b>This can happen on Windows systems, it's a known problem related to the <code>jps</code> JDK tool used by VisualVM to
-                detect running Java applications. There are two main root causes: <i>broken access rights to temporary directory on a NTFS disk</i> - see <a href="http://forum.java.sun.com/thread.jspa?threadID=5133218&tstart=0">this thread</a>
-                for details and fix or <i>having temporary directory on a FAT disk</i> - see <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5042659">this bug detail</a>
-            for details and fix.</p><br>
+            <p><b>Resolution:&nbsp;&nbsp;</b>This can happen on Windows systems, it's caused by misconfigured <code>jvmstat</code> technology used to detect
+                the running applications. There are two possible causes:</p>
+            <ul>
+                <li><i>Insufficient permissions for <code>%TMP%\hsperfdata_username</code> folder</i> - make sure you're able to create a file in the directory and eventually update the permissions for full folder access. Alternatively you can just re-create the folder which should automatically set the correct access rights.
+                    See see this <a href="http://forum.java.sun.com/thread.jspa?threadID=5133218&tstart=0">forums.sun.com thread</a> for more details.</li>
+                <li><i>Having <code>%TMP%\hsperfdata_username</code> folder on a FAT disk</i> - by default <code>jvmstat</code> doesn't work on FAT disks due to security restrictions. You can bypass the security check by
+                    setting the <code>-XX:+PerfBypassFileSystemCheck</code> flag for both VisualVM and the monitored application. See the <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5042659">JDK bug #5042659</a>
+                    for more details.</li>
+            </ul>
+            <br>
 
             <a name="jpswin2"></a>
             <h3>Local Applications Cannot Be Monitored (Error Dialog On Startup)</h3>
