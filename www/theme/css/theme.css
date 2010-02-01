@@ -1,6 +1,6 @@
 /* -----------------------------------------------------------------------------
    --- visualvm.dev.java.net customizations ------------------------------------
-   --- 
+   ---
    --- author: Jiri Sedlacek ---------------------------------------------------
    -----------------------------------------------------------------------------
 */
@@ -63,7 +63,7 @@ div#footer {
  -------------------------------------------------------------------------------
 */
 
-body, h1, h2, h3, h4, h5, h6, p, td, table td, table th, input, select, ol li, ul li { 
+body, h1, h2, h3, h4, h5, h6, p, td, table td, table th, input, select, ol li, ul li {
     font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif !important;
 }
 
@@ -99,8 +99,8 @@ h3 {
     font-size: 12px !important;
 }
 
-th, td { 
-    padding: 0px; 
+th, td {
+    padding: 0px;
 }
 
 .a:hover td, .a:hover, #rightcol div.siteinfo .a:hover, .b:hover td, .b:hover, #rightcol div.siteinfo .b:hover, .hilight {
@@ -239,13 +239,13 @@ div#loginbar a:hover {
 
 #cfooter_links {
     margin-top: 3px;
-    margin-right: 272px;
+    margin-right: 390px;
 }
 
 #cfooter_logos {
     float: right;
     text-align: right;
-    width: 255px;
+    width: 375px;
     border-left: 2px solid #cccccc;
 }
 
