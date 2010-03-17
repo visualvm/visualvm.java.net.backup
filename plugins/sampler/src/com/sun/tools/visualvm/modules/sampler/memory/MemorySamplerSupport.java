@@ -90,16 +90,12 @@ public abstract class MemorySamplerSupport extends AbstractSamplerSupport {
     public boolean startSampling(ProfilingSettings settings, int samplingRate) {
         heapTimer.start();
         permgenTimer.start();
-        if (heapView != null && permgenView != null)
-            doRefreshImpl(heapTimer, heapView, permgenView);
         return true;
     }
     
     public synchronized void stopSampling() {
         heapTimer.stop();
         permgenTimer.stop();
-        if (heapView != null && permgenView != null)
-            doRefreshImplImpl(snapshotDumper.lastHistogram, heapView, permgenView);
     }
     
     public synchronized void terminate() {
@@ -118,23 +114,21 @@ public abstract class MemorySamplerSupport extends AbstractSamplerSupport {
                 heapRefresher.refresh();
             }
         });
+        heapTimer.setInitialDelay(0);
         heapRefresher = new Refresher() {
             public final boolean checkRefresh() {
                 if (!heapTimer.isRunning()) return false;
-                return (heapView.isShowing() || (permgenTimer.getDelay() ==
-                        heapTimer.getDelay() && permgenView.isShowing()));
+                return (heapView.isShowing() || permgenView.isShowing());
             }
             public final void doRefresh() {
-                if (heapView.isShowing()) {
+                if (permgenTimer.getDelay() == heapTimer.getDelay()) {
+                    doRefreshImpl(heapTimer, heapView, permgenView);
+                } else {
                     doRefreshImpl(heapTimer, heapView);
-                } else if (permgenTimer.getDelay() == heapTimer.getDelay() &&
-                           permgenView.isShowing()) {
-                    doRefreshImpl(heapTimer, permgenView);
                 }
             }
             public final void setRefreshRate(int refreshRate) {
                 heapTimer.setDelay(refreshRate);
-                heapTimer.setInitialDelay(refreshRate);
                 heapTimer.restart();
             }
             public final int getRefreshRate() {
@@ -147,18 +141,18 @@ public abstract class MemorySamplerSupport extends AbstractSamplerSupport {
                 permgenRefresher.refresh();
             }
         });
+        permgenTimer.setInitialDelay(0);
         permgenRefresher = new Refresher() {
             public final boolean checkRefresh() {
                 if (!permgenTimer.isRunning()) return false;
                 if (permgenTimer.getDelay() == heapTimer.getDelay()) return false;
-                return (permgenView.isShowing());
+                return (heapView.isShowing() || permgenView.isShowing());
             }
             public final void doRefresh() {
                 doRefreshImpl(permgenTimer, permgenView);
             }
             public final void setRefreshRate(int refreshRate) {
                 permgenTimer.setDelay(refreshRate);
-                permgenTimer.setInitialDelay(refreshRate);
                 permgenTimer.restart();
             }
             public final int getRefreshRate() {
@@ -179,14 +173,22 @@ public abstract class MemorySamplerSupport extends AbstractSamplerSupport {
     
     
     private void doRefreshImpl(final Timer timer, final MemoryView... views) {
-        if (!timer.isRunning() || (views.length == 1 && views[0].isPaused())) return;
+        if (!timer.isRunning()) return;
         
         try {
             processor.schedule(new TimerTask() {
                 public void run() {
                     try {
                         if (!timer.isRunning()) return;
-                        doRefreshImplImpl(attachModel.takeHeapHistogram(), views);
+                        final HeapHistogram heapHistogram = attachModel.takeHeapHistogram();
+                        if (heapHistogram != null)
+                            SwingUtilities.invokeLater(new Runnable() {
+                                public void run() {
+                                    snapshotDumper.lastHistogram = heapHistogram;
+                                    for (MemoryView view : views)
+                                        view.refresh(heapHistogram);
+                                }
+                            });
                     } catch (Exception e) {
                         terminate();
                     }
@@ -196,18 +198,7 @@ public abstract class MemorySamplerSupport extends AbstractSamplerSupport {
             terminate();
         }
     }
-
-    private void doRefreshImplImpl(final HeapHistogram heapHistogram, final MemoryView... views) {
-        if (heapHistogram != null)
-            SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                    snapshotDumper.lastHistogram = heapHistogram;
-                    for (MemoryView view : views) view.refresh(heapHistogram);
-                }
-            });
-    }
-
-
+    
     public static abstract class HeapDumper {
         public abstract void takeHeapDump(boolean openView);
     }

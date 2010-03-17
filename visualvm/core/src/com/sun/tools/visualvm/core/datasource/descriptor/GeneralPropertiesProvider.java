@@ -31,7 +31,6 @@ import com.sun.tools.visualvm.core.properties.PropertiesProvider;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Image;
 import java.awt.Insets;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -41,7 +40,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import org.openide.awt.Mnemonics;
-import org.openide.util.ImageUtilities;
 import org.openide.util.NbBundle;
 
 /**
@@ -66,10 +64,7 @@ class GeneralPropertiesProvider extends PropertiesProvider<DataSource> {
         PropertiesPanel panel = new PropertiesPanel();
         panel.setLayout(new GridBagLayout());
 
-        Image icon = descriptor.getIcon();
-        if (icon == null) icon = ImageUtilities.loadImage(
-                "com/sun/tools/visualvm/core/ui/resources/empty.png"); // NOI18N
-        JButton iconButton = new JButton(new ImageIcon(icon));
+        JButton iconButton = new JButton(new ImageIcon(descriptor.getIcon()));
         iconButton.setDisabledIcon(iconButton.getIcon());
         iconButton.setEnabled(false);
         iconButton.setMargin(new Insets(3, 3, 3, 3));

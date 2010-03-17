@@ -110,7 +110,8 @@ public class AboutDialogControls extends JPanel {
         
         detailsButton = new JButton();
         Mnemonics.setLocalizedText(detailsButton, NbBundle.getMessage(AboutDialogControls.class, "LBL_Details")); // NOI18N
-        detailsButton.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(AboutDialogControls.class, "DESCR_Details")); // NOI18N
+        detailsButton.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(AboutDialogControls.class, "DESCR_Details"));
+        detailsButton.setDefaultCapable(false);
         detailsButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 showDetails();
@@ -119,7 +120,8 @@ public class AboutDialogControls extends JPanel {
         
         logfileButton = new JButton();
         Mnemonics.setLocalizedText(logfileButton, NbBundle.getMessage(AboutDialogControls.class, "LBL_Logfile")); // NOI18N
-        logfileButton.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(AboutDialogControls.class, "DESCR_Logfile")); // NOI18N
+        logfileButton.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(AboutDialogControls.class, "DESCR_Logfile"));
+        logfileButton.setDefaultCapable(false);
         logfileButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 showLogfile();
@@ -128,6 +130,7 @@ public class AboutDialogControls extends JPanel {
         
         closeButton = new JButton();
         Mnemonics.setLocalizedText(closeButton, NbBundle.getMessage(AboutDialogControls.class, "LBL_Close")); // NOI18N
+        closeButton.setDefaultCapable(true);
         closeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 SwingUtilities.invokeLater(new Runnable() {

@@ -25,6 +25,7 @@
 
 package com.sun.tools.visualvm.jvmstat.application;
 
+import com.sun.tools.visualvm.core.datasource.DataSource;
 import com.sun.tools.visualvm.core.properties.PropertiesSupport;
 import com.sun.tools.visualvm.core.ui.actions.SingleDataSourceAction;
 import com.sun.tools.visualvm.host.Host;
@@ -35,7 +36,7 @@ import org.openide.util.NbBundle;
  *
  * @author Jiri Sedlacek
  */
-class AddJstatdConnectionAction extends SingleDataSourceAction<Host> {
+class AddJstatdConnectionAction extends SingleDataSourceAction {
 
     private static AddJstatdConnectionAction instance;
 
@@ -45,12 +46,12 @@ class AddJstatdConnectionAction extends SingleDataSourceAction<Host> {
     }
 
 
-    protected void actionPerformed(Host host, ActionEvent actionEvent) {
-        PropertiesSupport.sharedInstance().openProperties(host,
+    protected void actionPerformed(DataSource dataSource, ActionEvent actionEvent) {
+        PropertiesSupport.sharedInstance().openProperties(dataSource,
                 HostPropertiesProvider.CATEGORY_JSTATD_CONNECTION);
     }
 
-    protected boolean isEnabled(Host host) {
+    protected boolean isEnabled(DataSource dataSource) {
         return true;
     }
 

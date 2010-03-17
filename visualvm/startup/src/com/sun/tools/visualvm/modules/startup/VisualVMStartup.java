@@ -1,5 +1,5 @@
 /*
- * Copyright 2007-2010 Sun Microsystems, Inc.  All Rights Reserved.
+ * Copyright 2007-2008 Sun Microsystems, Inc.  All Rights Reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -27,16 +27,17 @@ package com.sun.tools.visualvm.modules.startup;
 import java.text.MessageFormat;
 import java.util.Properties;
 import java.util.ResourceBundle;
-import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 import org.openide.LifecycleManager;
 import org.openide.modules.ModuleInstall;
 import org.openide.util.NbBundle;
 
 /**
- *
- * @author Jiri Sedlacek
+ * Manages a module's lifecycle. Remember that an installer is optional and
+ * often not needed at all.
  */
-final class VisualVMStartup extends ModuleInstall {
+public class VisualVMStartup extends ModuleInstall {
     
     private static final boolean DISABLE_STARTUP_CHECK = Boolean.getBoolean("com.sun.tools.visualvm.modules.startup.DisableStartupCheck"); // NOI18N
     
@@ -44,47 +45,42 @@ final class VisualVMStartup extends ModuleInstall {
     private static final String ERROR_STARTUP_CAPTION = bundle.getString("VisualVMStartup_ErrorStartupCaption"); // NOI18N
     private static final String INCORRECT_VERSION_MSG = bundle.getString("VisualVMStartup_IncorrectVersionMsg"); // NOI18N
     private static final String JRE_MSG = bundle.getString("VisualVMStartup_JreMsg"); // NOI18N
-
-    private static boolean envChecked = false;
     
     
     public void validate() {
-        if (!checkEnv()) LifecycleManager.getDefault().exit();
-    }
-
-    static synchronized boolean checkEnv() {
-        if (envChecked) return true;
-        envChecked = true;
         
         if (DISABLE_STARTUP_CHECK) {
             System.err.println("Starting with com.sun.tools.visualvm.modules.startup.DisableStartupCheck=true"); // NOI18N
         } else {
             if (!isJava6or7()) {
                 displayError6or7();
-                return false;
+                LifecycleManager.getDefault().exit();
             } else if (!isJDK()) {
                 displayErrorJRE();
-                return false;
+                LifecycleManager.getDefault().exit();
             }
         }
-
-        return true;
+    }
+    
+    private static void setSystemLaF() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {}
     }
     
     private static void displayError6or7() {
-        Utils.setSystemLaF();
-        JDialog d = Utils.assertiveErrorDialog(ERROR_STARTUP_CAPTION, MessageFormat.format(INCORRECT_VERSION_MSG,
+        setSystemLaF();
+        JOptionPane.showMessageDialog(null, MessageFormat.format(INCORRECT_VERSION_MSG,
                 new Object[] { System.getProperty("java.specification.version"), getJavaInfo(), // NOI18N
-                getJvmInfo(), System.getProperties().getProperty("java.home", "unknown location") })); // NOI18N
-        d.setVisible(true);
+                getJvmInfo(), System.getProperties().getProperty("java.home", "unknown location") }), // NOI18N
+                ERROR_STARTUP_CAPTION, JOptionPane.ERROR_MESSAGE);
     }
     
     private static void displayErrorJRE() {
-        Utils.setSystemLaF();
-        JDialog d = Utils.assertiveErrorDialog(ERROR_STARTUP_CAPTION, MessageFormat.format(JRE_MSG,
-                new Object[] { getJavaInfo(), getJvmInfo(), System.getProperties().getProperty(
-                "java.home", "unknown location") })); // NOI18N
-        d.setVisible(true);
+        setSystemLaF();
+        JOptionPane.showMessageDialog(null, MessageFormat.format(JRE_MSG, new Object[] { getJavaInfo(),
+                getJvmInfo(), System.getProperties().getProperty("java.home", "unknown location") }), // NOI18N
+                ERROR_STARTUP_CAPTION, JOptionPane.ERROR_MESSAGE);
     }
     
     private static boolean isJava6or7() {

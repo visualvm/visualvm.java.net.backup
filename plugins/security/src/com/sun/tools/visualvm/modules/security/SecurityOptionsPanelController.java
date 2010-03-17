@@ -31,7 +31,6 @@ import java.beans.PropertyChangeSupport;
 import java.util.Arrays;
 import javax.swing.JComponent;
 import org.netbeans.spi.options.OptionsPanelController;
-import org.openide.LifecycleManager;
 import org.openide.util.HelpCtx;
 import org.openide.util.Lookup;
 
@@ -55,7 +54,6 @@ class SecurityOptionsPanelController extends OptionsPanelController {
         p.setTrustStoreType(model.getTrustStoreType());
         p.setEnabledProtocols(model.getEnabledProtocols());
         p.setEnabledCipherSuites(model.getEnabledCipherSuites());
-        p.resetRestart();
     }
 
     public void applyChanges() {
@@ -68,12 +66,6 @@ class SecurityOptionsPanelController extends OptionsPanelController {
         model.setTrustStoreType(p.getTrustStoreType());
         model.setEnabledProtocols(p.getEnabledProtocols());
         model.setEnabledCipherSuites(p.getEnabledCipherSuites());
-
-        if (p.shouldRestart() && differsFromEnv()) {
-            LifecycleManager lcm = LifecycleManager.getDefault();
-            lcm.markForRestart();
-            lcm.exit();
-        }
     }
 
     public void cancel() {
