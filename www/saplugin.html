@@ -1,0 +1,103 @@
+<html>
+<body>
+
+<h3><center> SA-Plugin for VisualVM </center> </h3>
+<hr width=600>
+
+<p>
+SA Plugin makes Serviceability Agent's features and utilities available in VisualVM. Serviceability Agent is an out-of-process snapshot debugger for Hotspot Java Virtual Machine. It can be used to explore Java Objects and Hotspot Data Structures in running processes as well as core files. More details here: 
+<a href=http://www.usenix.org/events/jvm01/full_papers/russell/russell_html/index.html> http://www.usenix.org/events/jvm01/full_papers/russell/russell_html/index.html</a> </p>
+
+<p> SA-Plugin brings those powerful features of Serviceability Agent to VisualVM Ð All-in-One Java Troubleshooting Tool. This Plugin makes SA utilities available in the following four panels in VisualVM:</p>
+<p>
+<b>Java Threads / Java Stack Trace: </b>
+<ul>
+<li>
+It shows all the Java Threads in the process. </li>
+<li> Double click on any thread or clicking on the 'Open Inspector' icon on Java Threads Panel shows internal details of the thread object in another 'Oop Inspector' panel. </li>
+<li> Clicking on the 'Show Stack Trace' icon on Java Threads Panel shows thread's stack trace. </li>
+</ul>
+</p>
+
+<p>
+<b>Oop Inspector: </b>
+<ul>
+<li>All the java objects in hotspot VM are represented as Oops - 'Ordinary Object Pointer'.  The 'Oop Inspector' panel shows details of Oops. The ability to see all the internal fields of any java object provides a great debugging help. </li>
+<li>This also provides the ability to 'compute the liveness' of any Oop in the Java Heap.</li>
+</ul>
+</p>
+
+<p>
+<b>Memory Viewer: </b>
+<ul>
+<li>Shows values at any address in the Java Heap</li>
+</ul>
+</p>
+
+<p>
+<b>Find Panel: </b>
+<ul>
+<li>Find Address in Heap: Shows where all the given address is assessed in Java Heap</li>
+<li>Find Address in CodeCache :  Shows where all the given address is assessed in Compiler's codecache.</li>
+<li>Find Pointer: Find where a pointer lies in Java Heap. e.g 
+</p>
+<p><i><center>
+Address 0x10100088: In new generation   eden [0x10010000,0x1001e950,0x100f0000) space capacity = 917504, 6.509835379464286 used
+  from [0x10100000,0x10110000,0x10110000) space capacity = 65536, 100.0 used
+  to   [0x100f0000,0x100f0000,0x10100000) space capacity = 65536, 0.0 used
+</p></i></center>
+</li>
+</ul>
+
+<p>
+<b> How to install SAPlugin: </b>
+<ul>
+<li> In VisualVM main menu choose Tools | Plugins, Plugins dialog is opened. </li>
+<li> Switch to Available Plugins tab and select SAPlugin. </li>
+<li> Click the Install button, review and accept SAPlugin license and wait for the plugin to be downloaded and installed. </li>
+</ul>
+</p>
+
+<p>
+<b> How to use it </b>
+<ul> 
+<li> Start the process that needs to explored with SAPlugin using JDK that has the SA binaries.<br>
+e.g. on Solaris-Sparc sa-jdi.jar and libsaproc.so should be present in lib/ and jre/lib/sparc/ 
+folders respectively. 
+</li>
+<li> Double click the process in VisualVM. With SAPlugin installed, 'SA Plugin' tab will also appear in VisualVM.</li>
+<li> In 'SA Plugin' tab, click on 'Attach to Process'. This will attach serviceability agent to the process and will bring up 'Java Threads Panel' and also other three panels in hidden mode. Please note that this might take few seconds.<br>
+<img src="images/saplugin_1.png"/>
+</li>
+<li> Other tabs for the attached process will not be usable as long as SA Plugin is attached to the process, so one needs to detach SA Plugin from the process before using it's other tabs in VisualVM. When SA Plugin gets attached to the process, a message box is shown with this information.<br>
+<img src="images/saplugin_2.png"/>
+</li>
+<li> Now, one can look at Java Threads, their stack traces, look at any Oop, search any address in heap and look at disassembly at any address etc. </li>
+<li> Click on 'Detach from Process' to detach it from the process. </li>
+</li> SAPlugin also works with core dumps in VisualVM.
+</ul>
+</p>
+
+<p>
+<b>JDK versions supported</b> <br>
+- 1.7.0-b64 and later on all platforms.   <br>
+- 6u17 and later on Solaris and Linux (because SA binaries are not shipped with jdk6 on Windows)
+</p>
+<br>
+<b>Java Threads</b><br>
+<img src="images/saplugin_3.png" />
+<br><br>
+<b>Java Stack Trace</b><br>
+<img src="images/saplugin_4.png" />
+<br><br>
+<b>Oop Inspector</b><br>
+<img src="images/saplugin_5.png" />
+<br><br>
+<b>Memory Viewer</b><br>
+<img src="images/saplugin_6.png" />
+<br><br>
+<b>Find Address Panel</b><br>
+<img src="images/saplugin_7.png" />
+
+</body>
+</html>
