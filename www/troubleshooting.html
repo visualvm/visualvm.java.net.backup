@@ -46,7 +46,7 @@
     <div id="contents_contents">
         <div id="contents_main">
             
-            <h1>VisualVM 1.2.2 Troubleshooting Guide</h1>
+            <h1>VisualVM 1.3 Troubleshooting Guide</h1>
             
             <p style="margin-bottom: 15px;">
                 This document describes the most common problems related to using VisualVM and information on how to fix or workaround the problems.
@@ -61,11 +61,19 @@
                 <li><i>The download is broken</i> - make sure you've got the correct bits (archive managers typically notify you when the archive is broken)</li>
                 <li><i>VisualVM waits for license confirmation</i> - make sure you haven't overlooked the License Agreement dialog</li>
                 <li><i>Incorrect JDK is used for running VisualVM</i> - if you haven't defined a JDK to run VisualVM manually, make sure that the
-                default Java on your system is Sun JDK 6+</li>
+                default Java on your system is Oracle/Sun JDK 6+</li>
                 <li><i>Incorrectly set JDK for running VisualVM</i> - if you have defined a JDK to run VisualVM manually, make sure the path to the JDK is correct and doesn't end with a slash</li>
                 <li><i>Incorrectly set VisualVM user directory</i> - if you have defined VisualVM user directory manually, make sure it is outside of VisualVM installation directory</li>
             </ul>
             <br>
+
+            <a name="compatwin"></a>
+            <h3>VisualVM has stopped working (Native Error Dialog During Startup)</h3>
+            <p><b>Description:&nbsp;</b>'VisualVM has stopped working' dialog is shown during VisualVM startup by the operating system, VisualVM process terminates.</p>
+            <p><b>Resolution:&nbsp;&nbsp;</b>This problem occurs on Windows systems when the VisualVM process is started in Compatibility mode for Windows 95/98/ME. Please make sure
+            the Compatibility mode is disabled for VisualVM launcher, or use Compatibility mode for the newest possible OS version if required.
+            Note: using the Compatibility mode for running VisualVM or the monitored Java applications is strongly not recommended, virtualized environments incompatibilities
+            may crash the Java processes.</p><br>
 
             <a name="d3dwin64"></a>
             <h3>Java(TM) Platform SE binary has stopped working (Native Error Dialog During Startup)</h3>

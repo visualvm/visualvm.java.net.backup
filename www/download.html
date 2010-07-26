@@ -39,23 +39,24 @@
             
             <p>
                 VisualVM is available in two distributions: <b>VisualVM</b> available at <a href="https://visualvm.dev.java.net">visualvm.dev.java.net</a> and
-                <b>Java VisualVM</b> available as a JDK tool in Sun JDK distributions starting from JDK 6 update 7 and Apple's Java for Mac OS X 10.5 Update 4
-                (see the <a href="releases.html">Releases Overview</a> page). The Java VisualVM is a stable tool tested with each JDK distribution, latest Sun
-                JDK update including Java VisualVM can be downloaded <a href="http://java.sun.com/javase/downloads/index.jsp">here</a>. VisualVM available on
+                <b>Java VisualVM</b> available as a JDK tool in Oracle/Sun JDK distributions starting from JDK 6 update 7 and Apple's Java for Mac OS X 10.5 Update 4
+                (see the <a href="releases.html">Releases Overview</a> page). The Java VisualVM is a stable tool tested with each JDK distribution, latest JDK
+                update from Oracle including Java VisualVM can be downloaded <a href="http://java.sun.com/javase/downloads/index.jsp">here</a>. VisualVM available on
                 this page is a bleeding-edge distribution with the latest features and bug fixes.
             </p>
             
             <p style="margin-bottom: 15px;">
                 <b>Note: </b> Be sure to read the <a href="relnotes.html">Release Notes</a> prior to installing VisualVM to be aware of minimal system requirements.
-                The main prerequisite is a correctly installed JDK 6+ (Sun JDK is available at <a href="http://java.sun.com/javase/downloads/index.jsp">java.sun.com</a>)
+                The main prerequisite is a correctly installed JDK 6+ (JDK from Oracle is available <a href="http://java.sun.com/javase/downloads/index.jsp">here</a>)
                 which will be used for running VisualVM.
             </p>
             
             <a name="download"></a>
             <h3>Download</h3>
             <div style="background: #f0f1f2; padding: 10px; padding-left: 20px; margin-bottom: 10px;">
-                <div><a href="https://visualvm.dev.java.net/files/documents/7163/146709/visualvm_122.zip"><span style="font-size: 14px; font-weight: bold;">VisualVM 1.2.2</span></a> (.zip, 10.2MB)<span style="margin-left: 15px; margin-right: 15px;">|</span>IDE integration: <a href="eclipse-launcher.html">Eclipse IDE</a></div>
-                <div style="padding-top: 5px;"><small><a href="https://visualvm.dev.java.net/files/documents/7163/146710/visualvm_122-ml.zip"><b>Multi-language</b></a> (.zip, 10.9MB, English / Japanese <img src="ja/images/japanese.png" style="border: 0px; vertical-align: bottom;"/> / Chinese <img src="zh_CN/images/simplified_chinese.png" style="border: 0px; vertical-align: bottom;"/>)</small></div>
+                <div><a href="https://visualvm.dev.java.net/files/documents/7163/151728/visualvm_13.zip"><span style="font-size: 14px; font-weight: bold;">VisualVM 1.3</span></a> (.zip, 11.3MB)<span style="margin-left: 15px; margin-right: 15px;">|</span>IDE integration: <a href="eclipse-launcher.html">Eclipse IDE</a></div>
+                <div style="padding-top: 5px;"><small><a href="https://visualvm.dev.java.net/files/documents/7163/151730/visualvm_13-ml.zip"><b>Multi-language</b></a> (.zip, 12.1MB, English / Japanese <img src="ja/images/japanese.png" style="border: 0px; vertical-align: bottom;"/> / Chinese <img src="zh_CN/images/simplified_chinese.png" style="border: 0px; vertical-align: bottom;"/>)</small></div>
+                <div><small><a href="https://visualvm.dev.java.net/files/documents/7163/151731/VisualVM_13.dmg"><b>Mac OS X Application Bundle</b></a> (.dmg, 13.0MB)</small></div>
             </div>
             
             <a style="clear: both;" name="first_steps"></a>
@@ -89,10 +90,15 @@
                             <li><i>The download is broken</i> - make sure you've got the correct bits (archive managers typically notify you when the archive is broken)</li>
                             <li><i>VisualVM waits for license confirmation</i> - make sure you haven't overlooked the License Agreement dialog</li>
                             <li><i>Incorrect JDK is used for running VisualVM</i> - if you haven't defined a JDK to run VisualVM manually, make sure that the
-                            default Java on your system is Sun JDK 6+</li>
+                            default Java on your system is Oracle/Sun JDK 6+</li>
                             <li><i>Incorrectly set JDK for running VisualVM</i> - if you have defined a JDK to run VisualVM manually, make sure the path to the JDK is correct and doesn't end with a slash</li>
                             <li><i>Incorrectly set VisualVM user directory</i> - if you have defined VisualVM user directory manually, make sure it is outside of VisualVM installation directory</li>
                         </ul>
+                    </li>
+
+                    <li>
+                        <i>VisualVM has stopped working (Windows): </i>caused by running VisualVM using an unsupported Compatibility mode, see the
+                        <a href="troubleshooting.html#compatwin">Troubleshooting Guide</a> for more details and steps to fix the problem
                     </li>
 
                     <li>
@@ -102,7 +108,7 @@
                     
                     <li>
                         <i>VisualVM startup terminates by Error Starting VisualVM Dialog - unsupported version of Java: </i>this typically happens when JRE or incorrect JDK version is used to run VisualVM,
-                        make sure VisualVM is running on Sun JDK 6+
+                        make sure VisualVM is running on Oracle/Sun JDK 6+
                     </li>
 
                     <li>

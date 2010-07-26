@@ -1,10 +1,10 @@
 <html>
 <head>
-    
-    <title>VisualVM 1.2.2 Release Notes</title>
-    
-    <style>            
-            
+
+    <title>VisualVM 1.3 Release Notes</title>
+
+    <style>
+
         #contents_main p {
             margin: 0px;
             padding: 8px;
@@ -12,7 +12,7 @@
             padding-bottom: 5px;
             clear: both;
         }
-        
+
         #contents_main hr {
             border: 1px dashed #cccccc;
             border-collapse: collapse;
@@ -26,36 +26,36 @@
             padding: 2px;
             border: 1px solid #cccccc;
         }
-        
+
         ol li, ul li {
             padding-bottom: 3px;
         }
 
     </style>
-    
+
 </head>
 
 <body>
 
 <div id="contents_div">
-    
+
     <div id="contents_contents">
         <div id="contents_main">
-            
-            <h1>VisualVM 1.2.2 Release Notes</h1>
-            
+
+            <h1>VisualVM 1.3 Release Notes</h1>
+
             <p>
                 VisualVM is a visual tool integrating several commandline JDK tools and lightweight profiling capabilities. Designed for both production and development time use, it further enhances the capability of monitoring and performance analysis for the Java SE platform.
             </p>
-            
+
             <p style="margin-bottom: 15px;">
-                VisualVM 1.2.2 is a maintenance and bugfix release based on VisualVM 1.2.1. See the <a href="#changes">Changes In 1.2.2</a> section for list of changes and bugfixes since the VisualVM 1.2.1.
+                VisualVM 1.3 is a stable release following after VisualVM 1.2.2. See the <a href="#changes">Changes In 1.3</a> section for list of changes and bugfixes since the VisualVM 1.2.2.
                 See the <a href="releases.html">Releases Overview</a> page for detailed overview of all VisualVM and Java VisualVM releases.
             </p>
-            
+
             <a name="system_requirements"></a>
             <h3>System Requirements</h3>
-            <div>                
+            <div>
                 <p style="margin-top: 5px;">
                     <b>Supported OS:</b><br>
                     <ul>
@@ -75,11 +75,11 @@
                         </li>
                     </ul>
                 </p>
-                
+
                 <p style="margin-bottom: 10px;">
                     <b>Required software:</b><br>
                     <ul>
-                        <li>Sun JDK 6+
+                        <li>Oracle/Sun JDK 6+
                         </li>
 
                         <li>OpenJDK 6+
@@ -96,8 +96,143 @@
                     </ul>
                 </p>
             </div>
-            
+
             <a name="changes"></a>
+            <h3>Changes In 1.3</h3>
+            <div>
+                <p style="margin-top: 5px;">
+                    <b>Features and enhancements:</b><br>
+                    <ul>
+                        <li>Sampler added to the core tool
+                        </li>
+
+                        <li>Introduced Sampler and Profiler presets
+                        </li>
+
+                        <li>Enabled taking remote heap dumps
+                        </li>
+
+                        <li>Enabled monitoring remote hosts via a JMX-enabled application
+                        </li>
+
+                        <li>Enabled custom sorting of hosts, applications, coredumps and snapshots
+                        </li>
+
+                        <li>Recognizing Clojure, Groovy, JRuby, Jython and Scala runtimes
+                        </li>
+
+                        <li>Introduced Tracer framework and probes
+                        </li>
+
+                        <li>Introduced Threads Inspector plugin
+                        </li>
+
+                        <li>Distributed also as a Mac OS X Application Bundle
+                        </li>
+
+                        <li>Built on NetBeans Platform & profiler 6.9:
+                            <ul>
+                                <li>Summary | Overview view in HeapWalker now displays local variables in Threads section
+                                </li>
+
+                                <li>Support for opening <code>.npss</code> snapshots created by the NetBeans IDE's Profile Me! feature
+                                </li>
+
+                                <li>Number of bugfixes and performance improvements in Profiler, HeapWalker and charts
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p>
+
+                <p>
+                    <b>API Changes:</b><br>
+                    <ul>
+                        <li>Compatible: <code>com.sun.tools.visualvm.application.ApplicationDescriptor.&lt;init&gt;(application, preferredPosition)</code> and <code>ApplicationDescriptor.resolveApplicationName(application, applicationType)</code> added
+                        </li>
+
+                        <li>Compatible: <code>com.sun.tools.visualvm.coredump.CoreDumpsContainerDescriptor</code> added
+                        </li>
+
+                        <li>Compatible: <code>com.sun.tools.visualvm.core.datasource.descriptor.DataSourceDescriptor.getChildrenComparator()</code>, <code>DataSourceDescriptor.setChildrenComparator(comparator)</code>, <code>DataSourceDescriptor.resolveName(dataSource, name)</code> and <code>DataSourceDescriptor.resolvePosition(dataSource, position, savePosition)</code> added
+                        </li>
+
+                        <li>Compatible: <code>com.sun.tools.visualvm.heapdump.HeapDumpSupport.supportsRemoteHeapDump(application)</code> and <code>HeapDumpSupport.takeRemoteHeapDump(application, dumpFile, customizeDumpFile)</code> added
+                        </li>
+
+                        <li>Compatible: <code>com.sun.tools.visualvm.tools.jmx.JmxModel.getSystemProperties()</code>, <code>JmxModel.isTakeHeapDumpSupported()</code>, <code>JmxModel.takeHeapDump(fileName)</code>, <code>JmxModel.isTakeThreadDumpSupported()</code>, <code>JmxModel.takeThreadDump()</code>, <code>JmxModel.takeThreadDump(threadIds[])</code>, <code>JmxModel.getFlagValue(name)</code> and <code>JmxModel.setFlagValue(name, value)</code> added
+                        </li>
+
+                        <li>Compatible: <code>com.sun.tools.visualvm.host.LocalHostDescriptor.setChildrenComparator(comparator)</code> added
+                        </li>
+
+                        <li>Compatible: <code>com.sun.tools.visualvm.core.datasupport.Positionable.STRONG_COMPARATOR</code> and <code>Positionable.StrongPositionableComparator</code> added
+                        </li>
+
+                        <li>Compatible: <code>com.sun.tools.visualvm.host.RemoteHostDescriptor.setChildrenComparator(comparator)</code> added
+                        </li>
+
+                        <li>Compatible: <code>com.sun.tools.visualvm.host.RemoteHostsContainer</code> made final (has only a private constructor anyway)
+                        </li>
+
+                        <li>Compatible: <code>com.sun.tools.visualvm.host.RemoteHostsContainerDescriptor</code> added
+                        </li>
+
+                        <li>Compatible: <code>com.sun.tools.visualvm.core.snapshot.Snapshot.isInSnapshot()</code> added
+                        </li>
+
+                        <li>Compatible: <code>com.sun.tools.visualvm.core.snapshot.SnapshotDescriptor.&lt;init&gt;(snapshot, description, icon)</code>, <code>SnapshotDescriptor.&lt;init&gt;(snapshot, name, description, icon, position, autoExpansionPolicy)</code> and <code>SnapshotDescriptor.resolveSnapshotName(snapshot)</code> added
+                        </li>
+
+                        <li>Compatible: <code>com.sun.tools.visualvm.core.snapshot.SnapshotsContainerDescriptor</code> added
+                        </li>
+
+                        <li>Compatible: <code>com.sun.tools.visualvm.core.ui.components.Spacer</code> added
+                        </li>
+
+                    </ul>
+                </p>
+
+                <p style="margin-top: 5px; margin-bottom: 10px;">
+                    <b>Fixed bugs:</b> <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&resolution=FIXED&target_milestone=1.3&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfield=creation_ts&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
+                </p>
+            </div>
+
+            <a name="known_problems"></a>
+            <h3>Known Problems</h3>
+            <div>
+                <ul>
+                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=224">Issue 224</a>: Cannot memory profile JBoss AS 4.2.3.GA
+                    </li>
+
+                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=148">Issue 148</a>: VisualVM hangs when lost remote connection
+                    </li>
+
+                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=120">Issue 120</a>: JMX application datasource cannot be reused on application restart
+                    </li>
+
+                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=72">Issue 72</a>: Running application sometimes not recognized
+                    </li>
+                </ul>
+
+                <p>
+                    <b>Warning:</b> due to a JDK bug taking heap dump may crash the target JVM if it's running JDK 6 Update 16+ using Concurrent Mark Sweep garbage collector (CMS). A workaround is to use a different GC (for example using <code>-XX:+UseParallelGC</code>). Similar problem seems to affect also the JDK 7 devbuilds.
+                </p>
+
+                <p style="margin-bottom: 15px;">To view all known problems please use this <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&subcomponent=code&issue_status=NEW&issue_status=STARTED&issue_status=REOPENED&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&newqueryname=&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
+                </p>
+            </div>
+
+            <br>
+            <hr>
+            <hr>
+            <br>
+            <br>
+
+            <a name="changeshistory"></a>
+            <h2>History of Changes</h2>
+            <br>
+
             <h3>Changes In 1.2.2</h3>
             <div>
                 <p style="margin-top: 5px;">
@@ -123,75 +258,14 @@
                     </ul>
                 </p>
                 <p style="margin-top: 5px; margin-bottom: 10px;">
-                    <b>Fixed bugs:</b><br>
-                    <ul>
-                        <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=339">Issue 339</a>: --cp:a command line argument does not work
-                        </li>
-
-                        <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=345">Issue 345</a>: Profiler Agent Warning: Failed to lookup cached class
-                        </li>
-
-                        <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=346">Issue 346</a>: "profiled application does not respond" dialog
-                        </li>
-
-                        <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=349">Issue 349</a>: Unnecessary refresh in memory sampler
-                        </li>
-
-                        <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=344">Issue 344</a>: Proxy Settings button in Plugins doesn't work on JDK 7
-                        </li>
-                    </ul>
+                    <b>Fixed bugs:</b> <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&resolution=FIXED&target_milestone=1.2.2&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfield=creation_ts&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
                 </p>
             </div>
-            
-            <a name="known_problems"></a>
-            <h3>Known Problems</h3>
-            <div>                
-                <ul>
-                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=224">Issue 224</a>: Cannot memory profile JBoss AS 4.2.3.GA
-                    </li>
-
-                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=148">Issue 148</a>: VisualVM hangs when lost remote connection
-                    </li>
-
-                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=120">Issue 120</a>: JMX application datasource cannot be reused on application restart
-                    </li>
-                    
-                    <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=72">Issue 72</a>: Running application sometimes not recognized
-                    </li>
-                </ul>
-
-                <p>
-                    <b>Warning:</b> due to a JDK bug taking heap dump may crash the target JVM if it's running JDK 6 Update 16+ using Concurrent Mark Sweep garbage collector (CMS). A workaround is to use a different GC (for example using <code>-XX:+UseParallelGC</code>). Similar problem seems to affect also the JDK 7 devbuilds.
-                </p>
-                
-                <p style="margin-bottom: 15px;">To view all known problems please use this <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&subcomponent=code&issue_status=NEW&issue_status=STARTED&issue_status=REOPENED&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&newqueryname=&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
-                </p>
-            </div>
-
-            <br>
-            <hr>
-            <hr>
-            <br>
-            <br>
-
-            <a name="changeshistory"></a>
-            <h2>History of Changes</h2>
-            <br>
 
             <h3>Changes In 1.2.1</h3>
             <div>
                 <p style="margin-top: 5px; margin-bottom: 10px;">
-                    <b>Fixed bugs:</b><br>
-                    <ul>
-                        <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=333">Issue 333</a>: HeapWalker in VisualVM doesn't work with JDK 6 Update 17+
-                        </li>
-
-                        <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=327">Issue 327</a>: Maximum value in Monitor charts is Integer.MAX_VALUE
-                        </li>
-
-                        <li><a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=332">Issue 332</a>: NPE in VisualVM-Sampler
-                        </li>
-                    </ul>
+                    <b>Fixed bugs:</b> <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&resolution=FIXED&target_milestone=1.2.1&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfield=creation_ts&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
                 </p>
             </div>
 
@@ -430,12 +504,12 @@
                     <b>Fixed bugs:</b> <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&resolution=FIXED&target_milestone=1.0.1&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfield=creation_ts&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
                 </p>
             </div>
-            
+
         </div>
     </div>
-    
+
     <div id="contents_hints">
-        
+
         <h3 class="first">On This Page</h3>
         <div>
             <a href="#system_requirements">System Requirements</a>
@@ -443,7 +517,7 @@
             <a href="#known_problems">Known Problems</a>
             <a href="#changeshistory">History of Changes</a>
         </div>
-        
+
         <h3>Quick Links</h3>
         <div>
             <a href="features.html">Features</a>
@@ -452,9 +526,9 @@
             <a href="plugins.html">Plugins</a>
             <a href="releases.html">Releases Overview</a>
         </div>
-        
+
     </div>
-    
+
     <div id="contents_clear"></div>
 
 </div>
