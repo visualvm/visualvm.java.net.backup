@@ -250,7 +250,7 @@ function trackPage() {
             if (links[i].protocol == "mailto:") startListening(links[i], trackMailto);
             else if (links[i].hostname == location.host) {
                 var path = links[i].pathname + links[i].search;
-                var isDocument = path.match(/(?:zip|torrent|nbm|pdf|odt)($|\&)/);
+                var isDocument = path.match(/(?:zip|dmg|torrent|nbm|pdf|odt)($|\&)/);
                 if (isDocument) startListening(links[i], trackLink);
             } else startListening(links[i], trackLink);
         }
