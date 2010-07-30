@@ -163,7 +163,6 @@ function createFooter() {
 
     footerHTML.push("  <a href='http://www.oracle.com/'><img src='https://visualvm.dev.java.net/branding/images/logo_oracle_footer.gif' id='logooracle' alt='Oracle'/></a>");
     footerHTML.push("  <a href='http://www.cognisync.com/'><img src='https://visualvm.dev.java.net/branding/images/cognisync.jpg' id='cognisync' width='74' height='19' alt='Cognisync'/></a>");
-    footerHTML.push("  <a href='http://www.oreilly.com/'><img src='https://visualvm.dev.java.net/branding/images/montague_logo_oreilly.gif' id='logooreilly' width='74' height='19' alt='Oreilly'/></a>");
     footerHTML.push("  <a href='http://www.collab.net/special/clickpbc0502.html'><img src='https://visualvm.dev.java.net/branding/images/poweredby.gif'/></a>");
 
     footerHTML.push("</div>");
