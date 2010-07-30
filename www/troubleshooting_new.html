@@ -1,14 +1,10 @@
 <html>
 <head>
-    
-    <title>Troubleshooting Guide</title>
-    
-    <style>            
 
-        #contents_main {
-            margin-right: 0px !important;
-        }
-            
+    <title>Troubleshooting Guide</title>
+
+    <style>
+
         #contents_main p {
             margin: 0px;
             padding: 8px;
@@ -16,7 +12,7 @@
             padding-bottom: 5px;
             clear: both;
         }
-        
+
         #contents_main hr {
             border: 1px dashed #cccccc;
             border-collapse: collapse;
@@ -30,31 +26,32 @@
             padding: 2px;
             border: 1px solid #cccccc;
         }
-        
+
         ol li, ul li {
             padding-bottom: 3px;
         }
 
     </style>
-    
+
 </head>
 
 <body>
 
 <div id="contents_div">
-    
+
     <div id="contents_contents">
         <div id="contents_main">
-            
+
             <h1>VisualVM 1.3 Troubleshooting Guide</h1>
-            
+
             <p style="margin-bottom: 15px;">
                 This document describes the most common problems related to using VisualVM and information on how to fix or workaround the problems.
                 If you are experiencing any problem not described in this document, please ask for assistance on a <a href="mailto:users@visualvm.dev.java.net">mailing list</a> or <a href="https://visualvm.dev.java.net/issues/enter_bug.cgi?issue_type=DEFECT">file a bug report</a> (you need to be registered to access the mailing list or file a bug report).
             </p>
 
+            <a name="starting"></a>
             <h3>Problems With Starting VisualVM</h3>
-            
+
             <a name="doesntstart"></a>
             <h4>VisualVM Does Not Start</h4>
             <p><b>Description:&nbsp;</b>VisualVM doesn't start at all without any visible reason.</p>
@@ -84,11 +81,11 @@
             use <code>visualvm.exe -J-Dsun.java2d.d3d=false</code> to start VisualVM. Alternatively you may update the <code>&lt;visualvm_installdir&gt;\etc\visualvm.conf</code>
             file to include the <code>-J-Dsun.java2d.d3d=false</code> switch in the <code>default_options</code> section. See the <a href="http://bugs.sun.com/view_bug.do?bug_id=6772139">JDK bug #6772139</a>
             for more details.</p><br>
-            
+
             <a name="jrehost"></a>
             <h4>Error Starting VisualVM (Error Dialog During Startup)</h4>
             <p><b>Description:&nbsp;</b>'Error Starting VisualVM' dialog is shown during VisualVM startup with a message about an unsupported version of Java.</p>
-            <p><b>Resolution:&nbsp;&nbsp;</b>VisualVM runs only on JDK 6 or 7 (not the JRE). When started on JRE or incorrect JDK version, VisualVM shows this dialog and terminates. To define which JDK will be used for running VisualVM, follow the steps in 
+            <p><b>Resolution:&nbsp;&nbsp;</b>VisualVM runs only on JDK 6 or 7 (not the JRE). When started on JRE or incorrect JDK version, VisualVM shows this dialog and terminates. To define which JDK will be used for running VisualVM, follow the steps in
             Getting Started section of the <a href="description.html#getting_started">Introduction to VisualVM</a> document.</p><br>
 
             <a name="cleandir"></a>
@@ -97,6 +94,7 @@
             <p><b>Resolution:&nbsp;&nbsp;</b>This typically happens if you unzip new VisualVM version over an already existing VisualVM installation.
             Make sure you are unzipping the VisualVM to a new directory.</p><br>
 
+            <a name="using"></a>
             <h3>Problems With Using VisualVM</h3>
 
             <a name="jvmstat6u12"></a>
@@ -126,7 +124,7 @@
             <p><b>Resolution:&nbsp;&nbsp;</b>This can happen on Windows systems if the username contains capitalized letters. In this case, username is <code>UserName</code> but
                 the jvmstat directory created by JDK is <code>%TMP%\hsperfdata_username</code>. To workaround the problem, exit all Java applications, delete the <code>%TMP%\hsperfdata_username</code>
                 directory and create new <code>%TMP%\hsperfdata_UserName</code> directory.</p><br>
-                
+
             <a name="jstatdremote"></a>
             <h4>No Running Remote Applications Detected</h4>
             <p><b>Description:&nbsp;</b>There are no running applications shown for remote host in the Applications window on the left side.</p>
@@ -149,7 +147,7 @@
             <p><b>Resolution:&nbsp;&nbsp;</b>This happens when running the VisualVM on JDK 6 Update 17 and newer using the Windows LaF. Details and hotfix are available in
                 <a href="https://visualvm.dev.java.net/issues/show_bug.cgi?id=333">VisualVM bug #333</a>. A quick workaround is to change the look'n'feel using
                 <code>visualvm.exe --laf Nimbus</code> or <code>visualvm.exe --laf Metal</code> or use JDK 6 Update 16 (or previous) to run VisualVM.</p><br>
-                
+
             <a name="xshare"></a>
             <h4>Profiler Tab Shows Warning About Class Sharing, Profiling Does Not Work</h4>
             <p><b>Description:&nbsp;</b>"Class sharing is enabled for this JVM" warning is shown in red box in Profiler tab, profiling CPU or Memory crashes local applications running on JDK 6 Update 6 and earlier.</p>
@@ -157,7 +155,7 @@
                 cause target JVM to crash when class sharing is enabled. To start an application without class sharing, provide <code>-Xshare:off</code> argument
                 to the <code>java</code> command starting the application. More information can be found in <a href="http://bugs.sun.com/view_bug.do?bug_id=6497639">JDK bug #6497639</a>
                 and <a href="http://bugs.sun.com/view_bug.do?bug_id=6598065">JDK bug #6598065</a>.</p><br>
-                
+
             <a name="calibration"></a>
             <h4>Profiler Measures Incorrect Performance Results</h4>
             <p><b>Description:&nbsp;</b>Performance profiling results are incorrect - zero or negative times etc.</p>
@@ -166,6 +164,7 @@
             To recalibrate the profiler, you have to manually delete the calibration data file <code>&lt;system userdir&gt/.nbprofiler/machinedata.jdk1X</code>
             and restart VisualVM - calibration will be performed again on VisualVM startup.</p><br>
 
+            <a name="plugins"></a>
             <h3>Problems With VisualVM Plugins</h3>
 
             <a name="pluginsaccess"></a>
@@ -183,32 +182,49 @@
             <p><b>Resolution:&nbsp;&nbsp;</b>This can sometimes happen when installing a plugin from the Plugins Center. The plugin could not be enabled in the
                 actual VisualVM session, please restart the VisualVM to start using the plugin.
             </p><br/>
-                
+
             <a name="pluginsvalidation"></a>
             <h4>Validation Warning While Installing a Plugin</h4>
             <p><b>Description:&nbsp;</b>Validation Warning dialog with Validation failed message is shown when installing a plugin from VisualVM Plugin Center.</p>
             <p><b>Resolution:&nbsp;&nbsp;</b>This occurs when installing any plugin from VisualVM Plugin Center. In fact the plugins are valid and trusted, you can
             simply skip the dialog and continue with plugin installation. The problem is caused by a missing key in VisualVM tool to recognize plugin certificate validity.
             </p><br/>
-                
+
             <a name="gfstatsdisabled"></a>
             <h4>Cannot Get The List Of Web Applications From GlassFish</h4>
             <p><b>Description:&nbsp;</b>Opening the "Model" subnode of the GlassFish application hangs with "Please Wait" displayed</p>
-            <p><b>Resolution:&nbsp;&nbsp;</b>This happens when monitoring of web applications is not allowed on the target server. In order to enable monitoring 
+            <p><b>Resolution:&nbsp;&nbsp;</b>This happens when monitoring of web applications is not allowed on the target server. In order to enable monitoring
                 you need to go to <i>Application Server/Monitor/Runtime/Configure Monitoring</i> from the GlassFish administration console and set
                 <i>Web Container</i> to <i>High</i>. You can also try and use this <a href="http://localhost:4848/configuration/monitoringService.jsf?configName=server-config" target="_new">link</a>
                 to open the configuration from here.
             </p><br/>
-                
+
             <a name="gfnoservlets"></a>
             <h4>No Servlets Displayed In The Runtime Area Of GlassFish Web Application Tab</h4>
             <p><b>Description:&nbsp;</b>There are no servlets displayed in the runtime are of GlassFish web application tab (see <a href="images/troubleshoot/visualvm_gf_noservlets.png" target="_new">here</a>)</p>
             <p><b>Resolution:&nbsp;&nbsp;</b>Only servlets with some statistics available are displayed. In order to generate statistics put some load on the web application.</p>
             <br/>
-            
+
         </div>
     </div>
-    
+
+    <div id="contents_hints">
+
+        <h3 class="first">On This Page</h3>
+        <div>
+            <a href="#starting">Problems With Starting VisualVM</a>
+            <a href="#using">Problems With Using VisualVM</a>
+            <a href="#plugins">Problems With Using VisualVM</a>
+        </div>
+
+        <h3>Quick Links</h3>
+        <div>
+            <a href="https://visualvm.dev.java.net/issues/enter_bug.cgi?issue_type=DEFECT">Report a Bug</a>
+            <a href="mailto:feedback@visualvm.dev.java.net">Send Feedback</a>
+        </div>
+
+    </div>
+
     <div id="contents_clear"></div>
 
 </div>
