@@ -69,11 +69,11 @@ function hideTools() {
 }
 
 function initProjectTools() {
-    var contentsHints = document.getElementById("contents_hints");
+    var indexLinks = document.getElementById("index_links");
 
     var projectToolsHeader = document.createElement("h3");
     projectToolsHeader.innerHTML = "Project Tools";
-    contentsHints.appendChild(projectToolsHeader);
+    indexLinks.insertAdjacentElement('beforeBegin', projectToolsHeader);
 
     projectTools2 = document.createElement("div");
     var projectTools = document.getElementById("projecttools");
@@ -82,17 +82,17 @@ function initProjectTools() {
         projectTools2.appendChild(projectToolsLinks[i]);
     }
     projectTools2.style.display = showToolsCookie == "true" ? "block" : "none";
-    contentsHints.appendChild(projectTools2);
+    indexLinks.insertAdjacentElement('beforeBegin', projectTools2);
 
     showProjectTools = document.createElement("div");
     showProjectTools.innerHTML = "<a href='javascript:showTools();'>Show Project Tools</a>";
     showProjectTools.style.display = showToolsCookie == "true" ? "none" : "block";
-    contentsHints.appendChild(showProjectTools);
+    indexLinks.insertAdjacentElement('beforeBegin', showProjectTools);
 
     hideProjectTools = document.createElement("div");
     hideProjectTools.innerHTML = "<a href='javascript:hideTools();'>Hide Project Tools</a>";
     hideProjectTools.style.display = showToolsCookie == "true" ? "block" : "none";
-    contentsHints.appendChild(hideProjectTools);
+    indexLinks.insertAdjacentElement('beforeBegin', hideProjectTools);
 
 }
 
