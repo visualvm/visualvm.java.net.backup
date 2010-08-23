@@ -160,6 +160,10 @@ div#contents_hints h3.first {
     margin-top: 0px !important;
 }
 
+#contents_hints p a, #contents_hints p a:visited {
+    margin-top: 20px !important;
+}
+
 div#subprojects {
     display:none;
 }

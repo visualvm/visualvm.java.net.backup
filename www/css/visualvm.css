@@ -76,10 +76,3 @@ div#contents_hints h3 {
 #contents_hints h2.first, #contents_hints h3.first {
     margin-top: 10px !important;
 }
-
-#contents_links {
-    float: right;
-    width: 232px;
-    vertical-align: top;
-    margin-top: 20px !important;
-}
