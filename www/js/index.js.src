@@ -70,11 +70,10 @@ function hideTools() {
 
 function initProjectTools() {
     var contentsHints = document.getElementById("contents_hints");
-    var indexLinks = document.getElementById("index_links");
 
     var projectToolsHeader = document.createElement("h3");
     projectToolsHeader.innerHTML = "Project Tools";
-    indexLinks.insertBefore(projectToolsHeader);
+    contentsHints.appendChild(projectToolsHeader);
 
     projectTools2 = document.createElement("div");
     var projectTools = document.getElementById("projecttools");
@@ -83,17 +82,17 @@ function initProjectTools() {
         projectTools2.appendChild(projectToolsLinks[i]);
     }
     projectTools2.style.display = showToolsCookie == "true" ? "block" : "none";
-    indexLinks.insertBefore(projectTools2);
+    contentsHints.appendChild(projectTools2);
 
     showProjectTools = document.createElement("div");
     showProjectTools.innerHTML = "<a href='javascript:showTools();'>Show Project Tools</a>";
     showProjectTools.style.display = showToolsCookie == "true" ? "none" : "block";
-    indexLinks.insertBefore(showProjectTools);
+    contentsHints.appendChild(showProjectTools);
 
     hideProjectTools = document.createElement("div");
     hideProjectTools.innerHTML = "<a href='javascript:hideTools();'>Hide Project Tools</a>";
     hideProjectTools.style.display = showToolsCookie == "true" ? "block" : "none";
-    indexLinks.insertBefore(hideProjectTools);
+    contentsHints.appendChild(hideProjectTools);
 
 }
 

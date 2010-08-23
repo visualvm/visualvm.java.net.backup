@@ -79,7 +79,7 @@ p.tasknav {
 #spotlight {
     padding-top: 5px;
     padding-bottom: 7px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     background: #f0f1f2;
 }
 
@@ -158,11 +158,6 @@ p.previous_link {
 
 div#contents_hints h3.first {
     margin-top: 0px !important;
-}
-
-#contents_hints p, #contents_hints p {
-    margin-top: 35px !important;
-    margin-left: 38px !important;
 }
 
 div#subprojects {
