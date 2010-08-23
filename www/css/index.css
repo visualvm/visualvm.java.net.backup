@@ -160,6 +160,11 @@ div#contents_hints h3.first {
     margin-top: 0px !important;
 }
 
+#index_links p {
+    margin-top: 35px !important;
+    margin-left: 38px !important;
+}
+
 div#subprojects {
     display:none;
 }
