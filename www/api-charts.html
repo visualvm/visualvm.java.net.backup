@@ -1,0 +1,314 @@
+<html>
+<head>
+    
+    <title>Using VisualVM Charts</title>
+    
+    <style>            
+            
+        #contents_main p {
+            margin: 0px;
+            padding: 8px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            clear: both;
+        }
+        
+        #contents_main hr {
+            border: 1px dashed #cccccc;
+            border-collapse: collapse;
+            clear: both;
+        }
+
+        #contents_main p img {
+            float: left;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            padding: 2px;
+            border: 1px solid #cccccc;
+        }
+        
+        ol li, ul li {
+            padding-bottom: 3px;
+        }
+
+    </style>
+    
+</head>
+
+<body>
+
+<div id="contents_div">
+    
+    <div id="contents_contents">
+        <div id="contents_main">
+            
+            <h1>Using VisualVM Charts</h1>
+            
+            <p>
+                Since VisualVM 1.2 there's a public API for creating charts available for developers. See the
+                <a href="nonav/apidocs/13/index.html?com/sun/tools/visualvm/charts/package-summary.html">VisualVM Charts API Documentation</a>.
+                The goal of the library is to help VisualVM plugin developers to visualize live data with a minimal effort using a standardized
+                user interface.
+            </p>
+            
+            <p style="margin-bottom: 15px;">
+                The library is not designed to provide generic, fully featured and customizable charts. It focuses on straightforward usage and
+                low cpu &amp; memory footprint even during heavy loads. The charts can be used in any NetBeans Platform applications or Swing
+                applications, but the primary and only supported platform is VisualVM.
+            </p>
+
+            <a name="features"></a>
+            <h3>Features</h3>
+            <div>
+                <h4>Chart Types</h4>
+                <p>The current version of VisualVM Charts library implemens one type of chart, a simple XY chart. This
+                    is the most frequently used chart for displaying live data. The chart is very easy to setup and use
+                    since nearly all of its features are predefined and fixed.
+                </p>
+
+                <h4>Building Blocks</h4>
+                <p>The simple XY chart consists of these parts:
+                </p>
+                <ul>
+                    <li>Customizable chart title. Appearance of the title can be customized using html string.
+                    </li>
+
+                    <li>Customizable chart axes descriptions. Appearance of the descriptions can be customizard using html strings.
+                    </li>
+
+                    <li>Customizable details area displaying additional textual data. If defined, the details area is
+                        only displayed if there's enough space available for the chart. Otherwise it's automatically collapsed.
+                    </li>
+
+                    <li>Chart body graphically displaying values of the chart items. Beside tweaking items appearance, the
+                        chart body cannot be customized in any way. When hovered, it displays an interactive tooltip showing
+                        item values at the actual pointer position. The tooltip is displayed automatically and cannot be
+                        customized/disabled.
+                    </li>
+
+                    <li>Chart legend showing item names and colors. The items can optionally display check boxes to allow the user
+                        to show or hide item values in chart body.
+                    </li>
+                </ul>
+
+                <h4>Chart Items & Values</h4>
+                <p>The simple XY chart supports displaying an unlimited number of items. However, the recommended maximum for a reasonable
+                    usability is 4 items for each chart. The items can be rendered using a combination of stroke and fill with customizable
+                    colors and stroke widths. If not defined, the charts use predefined colors and gradients. This is a recommended approach
+                    which ensures visual consistency of all VisualVM charts.<br><br>
+                    The items displayed in a chart use the same units and should share similar ranges of values. This means that one
+                    chart cannot display both relative (%) and bytes (B/MB) items, and should not display two decimal items with different
+                    ranges of values (0~10 vs. 50~50.000). The items/values can be further described using the details area of the chart
+                    by providing additional metrics like aggregated values, average values etc.<br><br>
+                    Data buffer of the simple XY chart supports only <code>long</code> values. A <code>double</code> factor constant can be
+                    defined for a chart to enable displaying the data as decimal numbers. The data buffer is created with a fixed capacity,
+                    and works the FIFO way - the oldest values are thrown away when new values are added. When adding new data to the buffer,
+                    the values timestamp is required to be increasing - each successive data packet must be added with a greater timestamp than
+                    the previous.
+                </p>
+
+                <h4>Displaying Data</h4>
+                <p>The way the values are displayed by the simple XY chart is fixed and cannot be modified. The chart always displays
+                    all values stored in its data buffer. As long as the number of values is lower than buffer capacity, the chart
+                    works in "fit to width" mode. Once the data buffer is full, the chart starts "scrolling" (the oldest values are
+                    thrown away when new values are added). Simple XY chart doesn't provide interactive zooming or scrolling.<br><br>
+                    When displaying items, the chart automatically updates its vertical scale to display all values. The minimum/maximum
+                    value is updated automatically during run time, but can be set up in advance when adding new items. This is for
+                    example useful when displaying relative values which may be mostly less than 50%, but the chart should be scaled
+                    verticaly to have 100% as its maximum value. The chart also supports defining initial vertical scale before any data
+                    are collected.
+                </p>
+
+                <h4>Persisting Data</h4>
+                <p>
+                    The underlying data buffer of a chart supports persistence by providing basic load/save operations. The values
+                    are saved in a proprietary, binary format not designed to be reused or altered by other applications. The data
+                    can be loaded from a persistent storage before displaying the chart. Since the chart data buffer requires the
+                    values to be added only with increasing timestamps, it's not recommended to load persisted data after adding
+                    any live values to the chart. The load/save operations should always be invoked in a worker thread.
+                </p>
+
+                <h4>Chart Performance</h4>
+                <p style="margin-bottom: 15px;"> The charts are designed to have the lowest possible performance & memory overhead.
+                    The drawing performance can be described as <code>O(min(<i>values count</i>, <i>chart width [px]</i>))</code>.
+                    Memory footprint can be described as <code>O(min(<i>values count</i>, <i>buffer size</i>))</code>.<br><br>
+                    The chart appearance is graphically rich when displayed locally, but the CPU utilization stays low during rendering
+                    because of using hardware-accelerated offscreen buffers. For remote X sessions the rendering quality is
+                    automatically decreased by not using gradients and transparency and disabling antialiasing. This ensures good
+                    repaint and response times for remote chart instances.
+                </p>
+            </div>
+
+            <a name="visualvm"></a>
+            <h3>VisualVM Plugins</h3>
+            <div>
+                <p style="margin-top: 5px;">Contents first.
+                </p>
+
+                <p style="margin-bottom: 15px;">Contents last.
+                </p>
+            </div>
+
+            <a name="nbplatform"></a>
+            <h3>NetBeans Platform Applications</h3>
+            <div>
+                <p style="margin-top: 5px;">Contents first.
+                </p>
+
+                <p style="margin-bottom: 15px;">Contents last.
+                </p>
+            </div>
+
+            <a name="swing"></a>
+            <h3>Swing Applications</h3>
+            <div>
+                <p style="margin-top: 5px;">Contents first.
+                </p>
+
+                <p style="margin-bottom: 15px;">Contents last.
+                </p>
+            </div>
+
+            <a name="api_description"></a>
+            <h3>API Description</h3>
+            <div>
+                <p style="margin-top: 5px;">VisualVM Charts API is defined in the
+                    <a href="nonav/apidocs/13/index.html?com/sun/tools/visualvm/charts/package-summary.html">VisualVM Charts API Documentation</a>.
+                    Current version provides the following classes:
+                </p>
+
+                <ul>
+                    <li><a href="nonav/apidocs/13/index.html?com/sun/tools/visualvm/charts/ChartFactory.html"><code>ChartFactory</code></a>:
+                        class to create chart objects based on the provided descriptors. Currently one chart type is available, a simple XY chart.
+                    </li>
+
+                    <li><a href="nonav/apidocs/13/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html"><code>SimpleXYChartDescriptor</code></a>:
+                        class to describe appearance and define items of the chart to be created. Note that these settings can only be defined prior to
+                        creating the chart. Once created, the chart appearance and items are fixed.
+                    </li>
+
+                    <li><a href="nonav/apidocs/13/index.html?com/sun/tools/visualvm/charts/SimpleXYChartSupport.html"><code>SimpleXYChartSupport</code></a>:
+                        handle to access and control a chart during run time. It allows to add new values to the chart, update the details (textual) area of
+                        the chart and provides a JComponent instance representing the chart. It also enables to pretty-format chart values and provides basic
+                        persistence operations to save/load chart values.
+                    </li>
+                </ul>
+
+                <p>There are three chart types implemented by the simple XY chart:
+                </p>
+
+                <ul>
+                    <li><code><a href="nonav/apidocs/13/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html">SimpleXYChartDescriptor</a>.decimal(...)</code>:
+                        chart displaying decimal values without units. This chart is used for displaying Classes and Threads in the Monitor tab in VisualVM.
+                    </li>
+
+                    <li><code><a href="nonav/apidocs/13/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html">SimpleXYChartDescriptor</a>.bytes(...)</code>:
+                        chart displaying memory values with B/MB units. This chart is used for displaying Heap and PermGen in the Monitor tab in VisualVM.
+                    </li>
+
+                    <li><code><a href="nonav/apidocs/13/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html">SimpleXYChartDescriptor</a>.percent(...)</code>:
+                        chart displaying relative (percent) values with % units. This chart is used for displaying CPU usage and GC activity in the Monitor tab in VisualVM.
+                    </li>
+                </ul>
+
+                <p>The <a href="nonav/apidocs/13/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html"><code>SimpleXYChartDescriptor</code></a>
+                        methods to create descriptors for <code>decimal</code>, <code>bytes</code> and <code>percent</code> charts use (some of) these parameters:
+                </p>
+
+                <ul>
+                    <li><code>minValue</code>: minimum value of the chart (controls chart appearance when displaying data, automatically updated for new values).
+                    </li>
+
+                    <li><code>maxValue</code>: maximum value of the chart (controls chart appearance when displaying data, automatically updated for new values).
+                    </li>
+
+                    <li><code>initialYMargin</code>: virtual first value of the chart (controls initial chart appearance before data are available)
+                    </li>
+
+                    <li><code>chartFactor</code>: factor used to display chart values (allows displaying decimal numbers: value = 33, chartFactor = 0.01, displays 0.33)
+                    </li>
+
+                    <li><code>hideableItems</code>: controls whether the user will be able to hide chart items at run time
+                    </li>
+
+                    <li><code>valuesBuffer</code>: defines size of chart data buffer (controls number of displayed items)
+                    </li>
+                </ul>
+
+                <p>The chart items can be defined in <a href="nonav/apidocs/13/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html"><code>SimpleXYChartDescriptor</code></a>
+                    using simple <code>add<i>[Line|Fill|LineFill]</i>Items(String... itemNames)</code> methods. These methods ensure maximum consistency of the chart appearance with other VisualVM
+                    graphs by using predefined colors and default line widths. Custom appearance of chart items can be defined using the <code>addItem(...)</code> method with the following
+                    parameters:
+                </p>
+
+                <ul>
+                    <li><code>itemName</code>: name of the item, appears in tooltip and legend
+                    </li>
+
+                    <li><code>itemColor</code>: color representing the item (typically <code>lineColor</code> or <code>fillColor1</code>), appears in legend
+                    </li>
+
+                    <li><code>lineWidth</code>: width of the item stroke, default is <code>2f</code>
+                    </li>
+
+                    <li><code>lineColor</code>: color of the item stroke, <code>null</code> value means a fill item
+                    </li>
+
+                    <li><code>fillColor1</code>: first (top) color of linear gradient used to paint item area, <code>null</code> value means a line item
+                    </li>
+
+                    <li><code>fillColor2</code>: second (bottom) color of linear gradient used to paint item area, <code>null</code> value means no gradient (solid fill)
+                    </li>
+                </ul>
+                
+                <p>The chart appearance can be further customized using the <a href="nonav/apidocs/13/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html"><code>SimpleXYChartDescriptor</code></a> methods:
+                </p>
+
+                <ul>
+                    <li><code>setChartTitle(String chartTitle)</code>: optional (none by default), defines caption of the chart. Chart title
+                        supports html formatting like <code>&lt;html&gt;&lt;big&gt;Chart Title&lt;/big&gt;&lt;/html&gt;</code>.
+                    </li>
+
+                    <li><code>set*AxisDescription(String *AxisDescription)</code>: optional (none by default), defines description of chart axes.
+                        Axes description support html formatting like <code>&lt;html&gt;&lt;i&gt;Axis Descriptor&lt;/i&gt;&lt;/html&gt;</code>.
+                    </li>
+
+                    <li><code>setDetailsItems(String[] detailNames)</code>: optional (none by default), defines textual area above the chart.
+                        This area can display any information periodically updated by
+                        <code><a href="nonav/apidocs/13/index.html?com/sun/tools/visualvm/charts/SimpleXYChartSupport.html">SimpleXYChartSupport</a>.updateDetails(String[] values)</code>,
+                        but typically it displays current and additional (more detailed) values of chart items.
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div id="contents_hints">
+        
+        <h3 class="first">On This Page</h3>
+        <div>
+            <a href="#charts_visualvm">Features</a>
+            <a href="#charts_visualvm">VisualVM Plugins</a>
+            <a href="#charts_nbplatform">NetBeans Platform Applications</a>
+            <a href="#charts_swing">Swing Applications</a>
+            <a href="#api_description">API Description</a>
+        </div>
+        
+        <h3>Quick Links</h3>
+        <div>
+            <a href="https://visualvm.dev.java.net/issues/enter_bug.cgi?issue_type=FEATURE">Request a Feature</a>
+            <a href="https://visualvm.dev.java.net/issues/enter_bug.cgi?issue_type=DEFECT">Report a Bug</a>
+            <a href="mailto:feedback@visualvm.dev.java.net">Send Feedback</a>
+            <a href="https://visualvm.dev.java.net/api-quickstart.html">Developer Documentation</a>
+            <a href="https://visualvm.dev.java.net/nonav/apidocs/13/index.html">API Documentation</a>
+        </div>
+        
+    </div>
+    
+    <div id="contents_clear"></div>
+
+</div>
+
+</body>
+</html>
