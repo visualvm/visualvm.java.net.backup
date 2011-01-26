@@ -1,0 +1,39 @@
+<div id='loginbar'>
+  <div id='loginbar_message'>&nbsp;</div>
+  <div id='loginbar_login'>
+    <div id="loginbox" style="display: none;">
+      <div>
+        <a href="https://java.net/people/login">Login</a>
+        |
+        <a href="https://java.net/people/new">Register</a>
+      </div>
+    </div>
+    <div id="loggedin" style="display: none;">
+      <div>
+        Logged in as
+        <a id="username" href="http://java.net/mypage"></a>
+        |
+        <a href="http://java.net/people/logout">Log out</a>
+      </div>
+    </div>
+  </div>
+  <div id='loginbar_clear'></div>
+</div>
+
+<div id='logobar'>
+  <div id='visualvm_logo'><a href='http://visualvm.java.net'><img src='http://visualvm.java.net/theme/images/b_logo.png'/></a></div>
+  <div id='javanet_logo'><a href='http://www.java.net/'><img src='http://visualvm.java.net/theme/images/b_javanet.png'/></a></div>
+  <div id='logobar_clear'></div>
+</div>
+
+<div id='menu'>
+  <a class='menu_link' href='http://visualvm.java.net'>Home</a>
+  <a class='menu_link' href='http://visualvm.java.net/features.html'>Features</a>
+  <a class='menu_link' href='http://visualvm.java.net/download.html'>Download</a>
+  <a class='menu_link' href='http://visualvm.java.net/docindex.html'>Documentation</a>
+  <a class='menu_link' href='http://visualvm.java.net/plugins.html'>Plugins</a>
+  &nbsp;|&nbsp;
+  <a class='menu_link_minor' href='http://java.net/jira/browse/VISUALVM'>Issues</a>
+  <a class='menu_link_minor' href='http://java.net/projects/visualvm/lists'>Mailing Lists</a>
+  <a class='menu_link_minor' href='http://java.net/projects/visualvm/sources/svn/show'>Sources</a>
+</div>

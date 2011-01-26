@@ -12,6 +12,16 @@
  -------------------------------------------------------------------------------
 */
 
+#printSideColumn {
+    display: none;
+}
+
+.contentPadding {
+    margin: 0px;
+}
+
+
+
 div#collabnet {
     display: none;
 }
@@ -71,12 +81,22 @@ small, .small, div#footer, #login, .tabs th, .tabs td, #toptabs th, #toptabs td,
     font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif !important;
 }
 
+#container, textarea {
+    font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif !important;
+}
+
 body {
-    font-size: 12px !important;
+    /**font-size: 12px !important;**/
     border: 0px !important;
     padding: 0px !important;
     margin: 0px !important;
     color: #333333;
+}
+
+h1 {
+    font-size: 16px !important;
+    font-weight: normal !important;
+    padding-bottom: 15px !important;
 }
 
 h2, h3 {
@@ -108,8 +128,31 @@ h4 {
     padding-right: 5px !important;
 }
 
+hr {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+th {
+    background-color: lightgray;
+    color: black;
+}
+
 th, td {
     padding: 0px;
+}
+
+ol, ul {
+    padding: 10px !important;
+    padding-left: 25px !important;
+}
+
+code {
+    font-size: 11px !important;
+}
+
+small {
+    font-size: 10px !important;
 }
 
 .a:hover td, .a:hover, #rightcol div.siteinfo .a:hover, .b:hover td, .b:hover, #rightcol div.siteinfo .b:hover, .hilight {
@@ -182,6 +225,7 @@ div#loginbar a:hover {
     border-bottom: 1px solid #5b83a9;
     background: #b7d4e2;
     padding: 4px 8px 4px 8px;
+    text-align: left;
 }
 
 #menu a.menu_link, #menu a.menu_link_minor {

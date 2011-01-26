@@ -32,28 +32,12 @@
         }
 
     </style>
-        
-    <link rel="stylesheet" href="css/slimbox.css" type="text/css" media="screen" />
-    <script type="text/javascript" src="js/mootools.js"></script>
-    <script type="text/javascript" src="js/slimbox.js"></script>
-    
+
+    <link rel="stylesheet" type="text/css" href="http://visualvm.java.net/shadowbox/shadowbox.css">
+    <script type="text/javascript" src="http://visualvm.java.net/shadowbox/shadowbox.js"></script>
+    <script type="text/javascript" src="http://visualvm.java.net/js/screenshots.js"></script>
     <script type="text/javascript">
-        
-        function showScreenshots() {
-            var slideshow = Slimbox.open([
-                ['images/localremoteapps.jpg', 'Display local and remote Java applications.'],
-                ['images/overview.jpg', 'Display application configuration and runtime environment.'],
-                ['images/monitor.jpg', 'Monitor application memory consumption and runtime behavior.'],
-                ['images/threads.jpg', 'Monitor application threads.'],
-                ['images/profiler.jpg', 'Profile application performance or analyze memory allocation.'],
-                ['images/threaddump.jpg', 'Take and display thread dumps.'],
-                ['images/heapdump.jpg', 'Take and browse heap dumps.'],
-                ['images/coredump.jpg', 'Analyze core dumps.'],
-                ['images/appsnapshot.jpg', 'Analyze applications offline.'],
-                ['images/plugins.jpg', 'VisualVM can be easily extended by plugins.']
-            ], 0);
-        }
-        
+      Shadowbox.init();
     </script>
     
 </head>
@@ -178,16 +162,16 @@
                 <center style="margin-top: 15px; margin-bottom: 15px;">
                     <table border="1" cellspacing="0" width="95%">
                         <tr><td style="vertical-align: middle;"><b>Feature</b></td><td style="text-align:center;" width="15%"><b>JDK 1.4.2<br><small>local/remote</small></b></td><td style="text-align:center;" width="15%"><b>JDK 5<br><small>local/remote</small></b></td><td style="text-align:center;" width="15%"><b>JDK 6<br><small>local</small></b></td><td style="text-align:center;" width="15%"><b>JDK 6<br><small>remote</small></b></td></tr>
-                        <tr><td>Overview</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td></tr>
-                        <tr><td>System Properties (in Overview)</td><td style="text-align:center;">&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td>&nbsp</td></tr>
-                        <tr><td>Monitor</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td></tr>
-                        <tr><td>Threads</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td></tr>
-                        <tr><td>Profiler</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td>&nbsp</td></tr>
-                        <tr><td>Thread Dump</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td>&nbsp</td></tr>
-                        <tr><td>Heap Dump</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td>&nbsp</td></tr>
-                        <tr><td>Enable Heap Dump on OOME</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td>&nbsp</td></tr>
-                        <tr><td>MBean Browser (plugin)</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td></tr>
-                        <tr><td>Wrapper for JConsole plugins (plugin)</td><td>&nbsp</td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td><td style="text-align:center;"><img src="https://visualvm.dev.java.net/images/check.png"/></td></tr>
+                        <tr><td>Overview</td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td></tr>
+                        <tr><td>System Properties (in Overview)</td><td style="text-align:center;">&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
+                        <tr><td>Monitor</td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td></tr>
+                        <tr><td>Threads</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td></tr>
+                        <tr><td>Profiler</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
+                        <tr><td>Thread Dump</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
+                        <tr><td>Heap Dump</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
+                        <tr><td>Enable Heap Dump on OOME</td><td>&nbsp</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td>&nbsp</td></tr>
+                        <tr><td>MBean Browser (plugin)</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td></tr>
+                        <tr><td>Wrapper for JConsole plugins (plugin)</td><td>&nbsp</td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td><td style="text-align:center;"><img src="images/check.png"/></td></tr>
                     </table>
                 </center>
             </div>
@@ -212,7 +196,7 @@
             <a href="plugins.html">Plugins</a>
             <a href="relnotes.html#system_requirements">System Requirements</a>
             <a href="https://visualvm.dev.java.net/issues/enter_bug.cgi?issue_type=FEATURE">Request a Feature</a>
-            <a href="mailto:feedback@visualvm.dev.java.net">Send Feedback</a>
+            <a href="mailto:feedback@visualvm.java.net">Send Feedback</a>
         </div>
         
     </div>

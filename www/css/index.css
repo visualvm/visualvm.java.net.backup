@@ -168,3 +168,8 @@ div#contents_hints h3.first {
 div#subprojects {
     display:none;
 }
+
+#contents_div {
+    margin: 15px 8px 8px 8px;
+    padding: 0px;
+}

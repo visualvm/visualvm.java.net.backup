@@ -20,12 +20,51 @@
                 padding: 10px;
                 background-color: #f2f2f2;
             }
+
+            #contents_main {
+            margin-right: 0px !important;
+        }
+
+        #contents_main p {
+            margin: 0px;
+            padding: 8px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            clear: both;
+        }
+
+        #contents_main hr {
+            border: 1px dashed #cccccc;
+            border-collapse: collapse;
+            clear: both;
+        }
+
+        #contents_main p img {
+            float: left;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            padding: 2px;
+            border: 1px solid #cccccc;
+        }
+
+        ol li, ul li {
+            padding-bottom: 3px;
+        }
+
+        #loginbox {
+            padding: 0px !important;
+        }
             -->
         </style>
         
         
     </head>
     <body>
+
+  <div id="contents_div">
+    <div id="contents_contents">
+        <div id="contents_main">
+
         <h1>Getting Started Extending VisualVM</h1>
         
         
@@ -668,7 +707,10 @@ public void uninstalled() {
             
         </ol>
         
-        <p><p>
+    </div>
+  </div>
+  <div id="contents_clear"></div>
+</div>
         
     </body>
 </html>
