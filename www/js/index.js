@@ -16,19 +16,6 @@ function getCookie(name) {
     else return null;
 }
 
-// Adds new window.onload handler (LIFO)
-function addFirstLoadEventHandler(func) {
-    var oldonload = window.onload;
-    if (typeof window.onload != 'function') {
-        window.onload = func;
-    } else {
-        window.onload = function() {
-            func();
-            if (oldonload) oldonload();
-        }
-    }
-}
-
 // Changes page style to load banner image
 function setBannerImage() {
     if (!document.styleSheets) return;
@@ -51,6 +38,10 @@ function setBannerImage() {
 }
 
 function addScreenshotsLink() {
+    Shadowbox.init({
+        skipSetup: true
+    });
+
     var bannertextcontainer = document.getElementById("top_div_info");
     var bannertext = bannertextcontainer.innerHTML;
     bannertext += " <a href=\"javascript:showScreenshots();\">See screenshots</a>.";
@@ -65,10 +56,3 @@ var BANNER_IMAGE_INDEX = "banner_image_index_cookie";
 var bannerImageIndex = getCookie(BANNER_IMAGE_INDEX);
 
 setBannerImage();
-
-addFirstLoadEventHandler(function() {
-    Shadowbox.init({
-        skipSetup: true
-    });
-    addScreenshotsLink();
-});
