@@ -1,7 +1,7 @@
 <html>
 <head>
 
-    <title>VisualVM 1.3.2 Release Notes</title>
+    <title>VisualVM 1.3.1 Release Notes</title>
 
     <style>
 
@@ -42,14 +42,14 @@
     <div id="contents_contents">
         <div id="contents_main">
 
-            <h1>VisualVM 1.3.2 Release Notes</h1>
+            <h1>VisualVM 1.3.1 Release Notes</h1>
 
             <p>
                 VisualVM is a visual tool integrating several commandline JDK tools and lightweight profiling capabilities. Designed for both production and development time use, it further enhances the capability of monitoring and performance analysis for the Java SE platform.
             </p>
 
             <p style="margin-bottom: 15px;">
-                VisualVM 1.3.2 is a bugfix release based on VisualVM 1.3.1. See the <a href="#changes">Changes In 1.3.2</a> section for list of changes and bugfixes since the VisualVM 1.3.1.
+                VisualVM 1.3.1 is a bugfix release based on VisualVM 1.3. See the <a href="#changes">Changes In 1.3.1</a> section for list of changes and bugfixes since the VisualVM 1.3.
                 See the <a href="releases.html">Releases Overview</a> page for detailed overview of all VisualVM and Java VisualVM releases.
             </p>
 
@@ -98,15 +98,15 @@
             </div>
 
             <a name="changes"></a>
-            <h3>Changes In 1.3.2</h3>
+            <h3>Changes In 1.3.1</h3>
             <div>
                 <p style="margin-top: 5px;">
                     <b>Features and enhancements:</b><br>
                     <ul>
-                        <li><a href="http://java.net/jira/browse/VISUALVM-428">Issue 428</a>: Show CompositeType field descriptions in tooltips
+                        <li>Added Java version and vendor information to the application Overview view
                         </li>
 
-                        <li>tracking (hash)map resize events by Tracer-Collections plugin
+                        <li>Built on NetBeans Platform & profiler 6.9.1
                         </li>
                     </ul>
                 </p>
@@ -114,31 +114,22 @@
                 <p style="margin-top: 5px; margin-bottom: 10px;">
                     <b>Fixed bugs:</b><br>
                     <ul>
-                        <li><a href="http://java.net/jira/browse/VISUALVM-430">Issue 430</a>: Stack overflow at disconnect of JMX application
+                        <li><a href="http://java.net/jira/browse/VISUALVM-397">Issue 397</a>: Overview tab does not have 'Details' and 'Saved data'
                         </li>
 
-                        <li><a href="http://java.net/jira/browse/VISUALVM-432">Issue 432</a>: Profiler tab is not available for OpenJDK 7
+                        <li><a href="http://java.net/jira/browse/VISUALVM-398">Issue 398</a>: BTrace probes are enabled for remote application
                         </li>
 
-                        <li><a href="http://java.net/jira/browse/VISUALVM-434">Issue 434</a>: java.lang.NoSuchMethodError from Tracer Jvmstat
+                        <li><a href="http://java.net/jira/browse/VISUALVM-403">Issue 403</a>: [I18N] Show/Hide section checkbox tooltip not from bundle
                         </li>
 
-                        <li><a href="http://netbeans.org/bugzilla/show_bug.cgi?id=191297">NetBeans issue 191297</a>: Profiling fails with 'Redefinition failed with error 62'
+                        <li><a href="http://java.net/jira/browse/VISUALVM-405">Issue 405</a>: UnsupportedOperationException when opening remote application
                         </li>
 
-                        <li><a href="http://netbeans.org/bugzilla/show_bug.cgi?id=194407">NetBeans issue 194407</a>: Installed Plugin Tab does not show list of plugins installed
+                        <li><a href="http://java.net/jira/browse/VISUALVM-406">Issue 406</a>: Confusing message in HeapWalker
                         </li>
 
-                        <li><a href="http://netbeans.org/bugzilla/show_bug.cgi?id=195955">NetBeans issue 195955</a>: [HeapWalker] deadlock in processing of OQL query
-                        </li>
-
-                        <li>Threads not displayed in Threads Inspector in JDK 7
-                        </li>
-
-                        <li>Tracer timeline layout oscillates in JDK 7
-                        </li>
-
-                        <li>http links updated: sun.com -> oracle.com 
+                        <li><a href="http://java.net/jira/browse/VISUALVM-407">Issue 407</a>: Bad Tracer charts quality
                         </li>
                     </ul>
                 </p>
@@ -182,25 +173,6 @@
             <a name="changeshistory"></a>
             <h2>History of Changes</h2>
             <br>
-
-            <h3>Changes In 1.3.1</h3>
-            <div>
-                <p style="margin-top: 5px;">
-                    <b>Features and enhancements:</b><br>
-                    <ul>
-                    <ul>
-                        <li>Added Java version and vendor information to the application Overview view
-                        </li>
-
-                        <li>Built on NetBeans Platform & profiler 6.9.1
-                        </li>
-                    </ul>
-                    </ul>
-                </p>
-                <p style="margin-top: 5px; margin-bottom: 10px;">
-                    <b>Fixed bugs:</b> <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&resolution=FIXED&target_milestone=1.3.1&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfield=creation_ts&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
-                </p>
-            </div>
 
             <h3>Changes In 1.3</h3>
             <div>
