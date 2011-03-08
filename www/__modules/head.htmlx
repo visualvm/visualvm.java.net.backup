@@ -1,6 +1,12 @@
 <link rel="icon" type="image/png" href="http://visualvm.java.net/favicon.png">
 <link rel="shortcut icon" type="image/png" href="http://visualvm.java.net/favicon.png">
 
+<script type="text/javascript">
+  if ("/projects/visualvm/content/" == window.location.pathname) {
+      window.location = "http://visualvm.java.net/index.html"
+  }
+</script>
+
 <link rel="stylesheet" type="text/css" href="http://visualvm.java.net/theme/css/theme.css"/>
 <link rel="stylesheet" type="text/css" href="http://visualvm.java.net/css/visualvm.css"/>
 
