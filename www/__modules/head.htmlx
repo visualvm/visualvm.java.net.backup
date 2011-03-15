@@ -4,6 +4,8 @@
 <script type="text/javascript">
   if ("/projects/visualvm/content/" == window.location.pathname) {
       window.location = "http://visualvm.java.net/index.html"
+  } else if ("/projects/visualvm/content/download.html" == window.location.pathname) {
+      window.location = "http://visualvm.java.net/download.html"
   }
 </script>
 
