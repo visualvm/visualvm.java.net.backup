@@ -25,12 +25,12 @@ function setBannerImage() {
                      parseInt(bannerImageIndex);
     if (imageIndex < 0 || imageIndex > AVAILABLE_BANNERS)
         imageIndex = 1;
-    
+
     var rules = new Array();
-    if (document.styleSheets[5].cssRules)
-        rules = document.styleSheets[5].cssRules;
+    if (document.styleSheets[STYLESHEET_INDEX].cssRules)
+        rules = document.styleSheets[STYLESHEET_INDEX].cssRules;
     else
-        rules = document.styleSheets[5].rules;
+        rules = document.styleSheets[STYLESHEET_INDEX].rules;
     rules[0].style.backgroundImage =
         "url(http://visualvm.java.net/images/main_background_" + imageIndex + ".jpg)";
 
@@ -50,6 +50,9 @@ function addScreenshotsLink() {
 
 // Number of available banner images to display on this page
 var AVAILABLE_BANNERS = 6;
+
+// Index of index.css in document
+var STYLESHEET_INDEX = 6;
 
 // Predefined cookie tracking banner image to be displayed
 var BANNER_IMAGE_INDEX = "banner_image_index_cookie";
