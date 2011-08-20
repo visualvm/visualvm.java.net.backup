@@ -4,8 +4,13 @@
 <script type="text/javascript">
   if ("/projects/visualvm/content/" == window.location.pathname) {
       window.location = "http://visualvm.java.net/index.html"
-  } else if ("/projects/visualvm/content/download.html" == window.location.pathname) {
-      window.location = "http://visualvm.java.net/download.html"
+  } else {
+      // Determine if the pathname starts with /projects/visualvm/content/
+      var index = window.location.pathname.indexOf("/projects/visualvm/content/");
+      if (index == 0) {
+          var segement = window.location.pathname.substring(27);
+          window.location = "http://visualvm.java.net/"+ segement;
+      }
   }
 </script>
 
