@@ -1,7 +1,7 @@
 <html>
 <head>
 
-    <title>VisualVM 1.3.3 Release Notes</title>
+    <title>VisualVM 1.3.2 Release Notes</title>
 
     <style>
 
@@ -42,14 +42,14 @@
     <div id="contents_contents">
         <div id="contents_main">
 
-            <h1>VisualVM 1.3.3 Release Notes</h1>
+            <h1>VisualVM 1.3.2 Release Notes</h1>
 
             <p>
                 VisualVM is a visual tool integrating several commandline JDK tools and lightweight profiling capabilities. Designed for both production and development time use, it further enhances the capability of monitoring and performance analysis for the Java SE platform.
             </p>
 
             <p style="margin-bottom: 15px;">
-                VisualVM 1.3.3 release is based on VisualVM 1.3.2. See the <a href="#changes">Changes In 1.3.3</a> section for list of changes and bugfixes since the VisualVM 1.3.2.
+                VisualVM 1.3.2 is a bugfix release based on VisualVM 1.3.1. See the <a href="#changes">Changes In 1.3.2</a> section for list of changes and bugfixes since the VisualVM 1.3.1.
                 See the <a href="releases.html">Releases Overview</a> page for detailed overview of all VisualVM and Java VisualVM releases.
             </p>
 
@@ -98,112 +98,6 @@
             </div>
 
             <a name="changes"></a>
-            <h3>Changes In 1.3.3</h3>
-            <div>
-                <p style="margin-top: 5px;">
-                    <b>Features and enhancements:</b><br>
-                    <ul>
-                        <li>Eclipse VisualVM Launcher now supports Eclipse IDE 3.6 and newer.
-                        </li>
-
-                        <li><a href="http://java.net/jira/browse/VISUALVM-337">Issue 337</a>: JUnit support for Eclipse VisualVM Launcher
-                        </li>
-
-                        <li><a href="http://java.net/jira/browse/VISUALVM-443">Issue 443</a>: Automatic deadlock detector
-                        </li>
-
-                        <li><a href="http://java.net/jira/browse/VISUALVM-452">Issue 452</a>: Add support for tracking of cumulative Java heap bytes allocated on a per-thread basis
-                        </li>
-
-                        <li><a href="http://java.net/jira/browse/VISUALVM-455">Issue 455</a>: Add 'Pending Finalizers Count' probe
-                        </li>
-
-                        <li><a href="http://java.net/jira/browse/VISUALVM-463">Issue 463</a>: Add support for tracking of CPU time on a per-thread basis
-                        </li>
-
-                        <li><a href="http://netbeans.org/bugzilla/show_bug.cgi?id=191779">NetBeans issue 191779</a>: Detect heap dump caused by OOME and indicate which thread is throwing OOME
-                        </li>
-
-                        <li>Built on NetBeans Platform & profiler 7.0.1
-                        </li>
-                    </ul>
-                </p>
-
-                <p style="margin-top: 5px; margin-bottom: 10px;">
-                    <b>Fixed bugs:</b><br>
-                    <ul>
-                        <li><a href="http://java.net/jira/browse/VISUALVM-416">Issue 416</a>: VisualVM does not start on Windows
-                        </li>
-
-                        <li><a href="http://java.net/jira/browse/VISUALVM-419">Issue 419</a>: Swing/AWT code invoked out of EDT
-                        </li>
-
-                        <li><a href="http://java.net/jira/browse/VISUALVM-442">Issue 442</a>: Fields in Proxy settings are not trimmed
-                        </li>
-
-                        <li><a href="http://java.net/jira/browse/VISUALVM-446">Issue 446</a>: Perm Gen information is missing
-                        </li>
-
-                        <li><a href="http://java.net/jira/browse/VISUALVM-454">Issue 454</a>: Installation of Kill Application plugin timeouts in 2nd+ session
-                        </li>
-
-                        <li><a href="http://java.net/jira/browse/VISUALVM-460">Issue 460</a>: NetBeans 7.0 recognized as 6.9+
-                        </li>
-
-                        <li><a href="http://java.net/jira/browse/VISUALVM-462">Issue 462</a>: Open references to all files > 1MB after loading a heap dump
-                        </li>
-
-                        <li><a href="http://java.net/jira/browse/VISUALVM-465">Issue 465</a>: VisualVM Eclipse plugin can't launch VisualVM with JDK 1.7.0
-                        </li>
-
-                        <li><a href="http://java.net/jira/browse/VISUALVM-466">Issue 466</a>: libprofilerinterface.so files on Solaris and Linux are not executable
-                        </li>
-
-                        <li><a href="http://netbeans.org/bugzilla/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&product=profiler&version=6.0&version=6.1&version=6.5&version=6.7&version=6.8&version=6.9&version=6.9.1&target_milestone=7.0&target_milestone=7.0.1&long_desc_type=substring&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=VISUALVM&cf_bug_type=DEFECT&cf_bug_type=ENHANCEMENT&cf_bug_type=TASK&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailassigned_to2=1&emailreporter2=1&emailqa_contact2=1&emailcc2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">IssueTracker query</a> to list all changes in NetBeans profiler
-                        </li>
-                    </ul>
-                </p>
-
-                <!--p style="margin-top: 5px; margin-bottom: 10px;">
-                    <b>Fixed bugs:</b> <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&resolution=FIXED&target_milestone=1.3.1&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfield=creation_ts&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
-                </p-->
-            </div>
-
-            <a name="known_problems"></a>
-            <h3>Known Problems</h3>
-            <div>
-                <ul>
-                    <li><a href="http://java.net/jira/browse/VISUALVM-224">Issue 224</a>: Cannot memory profile JBoss AS 4.2.3.GA
-                    </li>
-
-                    <li><a href="http://java.net/jira/browse/VISUALVM-148">Issue 148</a>: VisualVM hangs when lost remote connection
-                    </li>
-
-                    <li><a href="http://java.net/jira/browse/VISUALVM-120">Issue 120</a>: JMX application datasource cannot be reused on application restart
-                    </li>
-
-                    <li><a href="http://java.net/jira/browse/VISUALVM-72">Issue 72</a>: Running application sometimes not recognized
-                    </li>
-                </ul>
-
-                <p>
-                    <b>Warning:</b> due to a JDK bug taking heap dump may crash the target JVM if it's running JDK 6 Update 16+ using Concurrent Mark Sweep garbage collector (CMS). A workaround is to use a different GC (for example using <code>-XX:+UseParallelGC</code>). Similar problem seems to affect also the JDK 7 devbuilds.
-                </p>
-
-                <p style="margin-bottom: 15px;">To view all known problems please use this <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&subcomponent=code&issue_status=NEW&issue_status=STARTED&issue_status=REOPENED&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&newqueryname=&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
-                </p>
-            </div>
-
-            <br>
-            <hr>
-            <hr>
-            <br>
-            <br>
-
-            <a name="changeshistory"></a>
-            <h2>History of Changes</h2>
-            <br>
-
             <h3>Changes In 1.3.2</h3>
             <div>
                 <p style="margin-top: 5px;">
@@ -247,7 +141,7 @@
                         <li>Tracer timeline layout oscillates in JDK 7
                         </li>
 
-                        <li>http links updated: sun.com -> oracle.com
+                        <li>http links updated: sun.com -> oracle.com 
                         </li>
                     </ul>
                 </p>
@@ -256,6 +150,41 @@
                     <b>Fixed bugs:</b> <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&resolution=FIXED&target_milestone=1.3.1&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfield=creation_ts&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
                 </p-->
             </div>
+
+            <a name="known_problems"></a>
+            <h3>Known Problems</h3>
+            <div>
+                <ul>
+                    <li><a href="http://java.net/jira/browse/VISUALVM-224">Issue 224</a>: Cannot memory profile JBoss AS 4.2.3.GA
+                    </li>
+
+                    <li><a href="http://java.net/jira/browse/VISUALVM-148">Issue 148</a>: VisualVM hangs when lost remote connection
+                    </li>
+
+                    <li><a href="http://java.net/jira/browse/VISUALVM-120">Issue 120</a>: JMX application datasource cannot be reused on application restart
+                    </li>
+
+                    <li><a href="http://java.net/jira/browse/VISUALVM-72">Issue 72</a>: Running application sometimes not recognized
+                    </li>
+                </ul>
+
+                <p>
+                    <b>Warning:</b> due to a JDK bug taking heap dump may crash the target JVM if it's running JDK 6 Update 16+ using Concurrent Mark Sweep garbage collector (CMS). A workaround is to use a different GC (for example using <code>-XX:+UseParallelGC</code>). Similar problem seems to affect also the JDK 7 devbuilds.
+                </p>
+
+                <p style="margin-bottom: 15px;">To view all known problems please use this <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&subcomponent=code&issue_status=NEW&issue_status=STARTED&issue_status=REOPENED&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&newqueryname=&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
+                </p>
+            </div>
+
+            <br>
+            <hr>
+            <hr>
+            <br>
+            <br>
+
+            <a name="changeshistory"></a>
+            <h2>History of Changes</h2>
+            <br>
 
             <h3>Changes In 1.3.1</h3>
             <div>
@@ -656,7 +585,7 @@
         <h3 class="first">On This Page</h3>
         <div>
             <a href="#system_requirements">System Requirements</a>
-            <a href="#changes">Changes In 1.3.3</a>
+            <a href="#changes">Changes In 1.3.2</a>
             <a href="#known_problems">Known Problems</a>
             <a href="#changeshistory">History of Changes</a>
         </div>
