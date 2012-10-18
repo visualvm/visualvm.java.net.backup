@@ -53,10 +53,53 @@
       }
   }
 
+  // Creates custom footer
+  function createFooter() {
+      // Create footer <div>
+      var footerHTML = [];
+
+      footerHTML.push("<div id='cfooter_links_container'>");
+      footerHTML.push("  <div id='cfooter_links'>");
+
+      footerHTML.push("    <div id='project_links'>");
+      footerHTML.push("      Project owners: <a href='mailto:jsedlacek@java.net'>Jiri Sedlacek</a>, <a href='mailto:thurka@java.net'>Tomas Hurka</a> |");
+      footerHTML.push("      License: <a href='http://visualvm.java.net/legal/gplv2+ce.html'>GPLv2&nbsp;+&nbsp;CE</a> |");
+      footerHTML.push("      <a href='mailto:feedback@visualvm.java.net'>Feedback</a> |");
+      footerHTML.push("      <span id='portal_links'>");
+      footerHTML.push("        <a href='http://java.net/terms_of_use'>Terms of Use</a> |");
+      footerHTML.push("        <a href='http://www.oracle.com/us/legal/privacy/index.html'>Privacy Policy</a> |");
+      footerHTML.push("      </span>");
+      footerHTML.push("      <a href='http://www.oracle.com'><img src='http://www.java.net/sites/all/themes/java_adaptive/images/oracle.png'/></a>");
+      footerHTML.push("      <a href='http://kenai.com'><img src='http://www.java.net/sites/all/themes/java_adaptive/images/kenai.png'/></a>");
+      footerHTML.push("      <a href='http://www.cognisync.com'><img src='http://www.java.net/sites/all/themes/java_adaptive/images/cognisync.png'/></a>");
+      footerHTML.push("    </div>");
+
+      footerHTML.push("  </div>");
+      footerHTML.push("</div>");
+
+      //footerHTML.push("<div id='cfooter_logos'>");
+
+      //footerHTML.push("  <a href='http://www.oracle.com'><img src='http://www.java.net/sites/all/themes/java_adaptive/images/oracle.png'/></a>");
+      //footerHTML.push("  <a href='http://kenai.com'><img src='http://www.java.net/sites/all/themes/java_adaptive/images/kenai.png'/></a>");
+      //footerHTML.push("  <a href='http://www.cognisync.com'><img src='http://www.java.net/sites/all/themes/java_adaptive/images/cognisync.png'/></a>");
+
+      //footerHTML.push("</div>");
+
+      footerHTML.push("<div id='cfooter_clear'></div>");
+
+      var containerElement = document.createElement("div");
+      containerElement.id = "cfooter";
+      containerElement.innerHTML = footerHTML.join('');
+
+      // Inject footer <div> at the end of the document
+      document.body.appendChild(containerElement);
+  }
+
   // Google Analytics page tracker
   var pageTracker;
 
   try {
+    createFooter()
     trackPage();
   } catch(err) {}
   
