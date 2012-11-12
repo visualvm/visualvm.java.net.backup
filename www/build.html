@@ -1,13 +1,14 @@
 <html>
 <head>
-<title>Build guide for VisualVM 1.3.4</title>
+<title>Build guide for VisualVM 1.3.5</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 <body>
 <p>
-Build instructions for the latest stable version <b>VisualVM 1.3.4</b>. If you want to build different version use links below:
+Build instructions for the latest stable version <b>VisualVM 1.3.5</b>. If you want to build different version use links below:
 <ul>
     <li><a href="build/build.html">trunk</a></li>
+    <li><a href="build/build134.html">VisualVM 1.3.4</a></li>
     <li><a href="build/build133.html">VisualVM 1.3.3</a></li>
     <li><a href="build/build132.html">VisualVM 1.3.2</a></li>
     <li><a href="build/build131.html">VisualVM 1.3.1</a></li>
@@ -23,7 +24,7 @@ Build instructions for the latest stable version <b>VisualVM 1.3.4</b>. If you w
 Check out source code with a SVN client using the following command. <br>
  
  
-<code> svn checkout https://svn.java.net/svn/visualvm~svn/branches/release134</code><br>
+<code> svn checkout https://svn.java.net/svn/visualvm~svn/branches/release135</code><br>
 </p>
 
 <p>There are two suites:</p>
@@ -32,9 +33,9 @@ Check out source code with a SVN client using the following command. <br>
 <li><b>plugins</b>: which contains the plugins available in the VisualVM Plugin Center.</li>
 </ul>
 
-<p>The layout in <a href="http://java.net/projects/visualvm/sources/svn/show/branches/release134">SVN</a> for VisualVM 1.3.4 release is:</p>
+<p>The layout in <a href="http://java.net/projects/visualvm/sources/svn/show/branches/release135">SVN</a> for VisualVM 1.3.5 release is:</p>
 <ul>
-    <li>release134
+    <li>release135
         <ul>
             <li>visualvm&nbsp;&nbsp;&lt;--- core tool suite</li>
             <li>plugins&nbsp;&nbsp;&nbsp;&nbsp;&lt;--- for plugin center (jconsole, mbeans, glassfish)</li>
@@ -42,15 +43,15 @@ Check out source code with a SVN client using the following command. <br>
     </li>
 </ul>
 <p>
-To build the visualvm core tool you need the NetBeans 7.1.1 platform and profiler binaries available
-<a href="http://java.net/projects/visualvm/downloads/download/dev/nb711_visualvm_20032012.zip">here</a>.
-These binaries must be extracted into the release133/visualvm directory. You can use <code>ant run</code>
+To build the visualvm core tool you need the NetBeans 7.2.1 platform and profiler binaries available
+<a href="http://java.net/projects/visualvm/downloads/download/dev/nb72_visualvm_09102012.zip">here</a>.
+These binaries must be extracted into the release135/visualvm directory. You can use <code>ant run</code>
 or <code>ant build-zip</code> to build or run VisualVM.
 </p>
 <p>
 To build the plugins suite, use <code>ant build</code> or <code>ant run</code>. This will automatically
-build the zip distribution of the visualvm core tool into release134/visualvm/dist/visualvm.zip and extract
-it into the release134/plugins/visualvm directory. After that the build of the plugins suite continues to
+build the zip distribution of the visualvm core tool into release135/visualvm/dist/visualvm.zip and extract
+it into the release135/plugins/visualvm directory. After that the build of the plugins suite continues to
 build each of the individual plugins.</p>
 </body>
 </html>
