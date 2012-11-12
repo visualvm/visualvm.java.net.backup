@@ -1,7 +1,7 @@
 <html>
 <head>
 
-    <title>VisualVM 1.3.4 Release Notes</title>
+    <title>VisualVM 1.3.5 Release Notes</title>
 
     <style>
 
@@ -42,14 +42,14 @@
     <div id="contents_contents">
         <div id="contents_main">
 
-            <h1>VisualVM 1.3.4 Release Notes</h1>
+            <h1>VisualVM 1.3.5 Release Notes</h1>
 
             <p>
                 VisualVM is a visual tool integrating several commandline JDK tools and lightweight profiling capabilities. Designed for both production and development time use, it further enhances the capability of monitoring and performance analysis for the Java SE platform.
             </p>
 
             <p style="margin-bottom: 15px;">
-                VisualVM 1.3.4 release is based on VisualVM 1.3.3. See the <a href="#changes">Changes In 1.3.4</a> section for list of changes and bugfixes since the VisualVM 1.3.3.
+                VisualVM 1.3.5 release is based on VisualVM 1.3.4. See the <a href="#changes">Changes In 1.3.5</a> section for list of changes and bugfixes since the VisualVM 1.3.4.
                 See the <a href="releases.html">Releases Overview</a> page for detailed overview of all VisualVM and Java VisualVM releases.
             </p>
 
@@ -98,6 +98,123 @@
             </div>
 
             <a name="changes"></a>
+            <h3>Changes In 1.3.5</h3>
+            <div>
+                <p style="margin-top: 5px;">
+                    <b>Features and enhancements:</b><br>
+                    <ul>
+                        <li><a href="http://java.net/jira/browse/VISUALVM-526">Issue 526</a>: Update visualvm launchers
+                        </li>
+                        
+                        <li><a href="http://java.net/jira/browse/VISUALVM-520">Issue 520</a>: Extend KillApplication action to also use kill -9
+                        </li>
+
+                        <li><a href="http://java.net/jira/browse/VISUALVM-517">Issue 517</a>: Open .npss files in timeline
+                        </li>
+
+                        <li><a href="http://netbeans.org/bugzilla/show_bug.cgi?id=55485">NB Issue 55485</a>: Allow filtering treetable results
+                        </li>
+
+                        <li><a href="http://netbeans.org/bugzilla/show_bug.cgi?id=139305">NB Issue 139305</a>: ability to define name and add metadata to snapshots
+                        </li>
+
+                        <li><a href="http://netbeans.org/bugzilla/show_bug.cgi?id=181194">NB Issue 181194</a>: Speed-up computation of retained sizes
+                        </li>
+
+                        <li><a href="http://netbeans.org/bugzilla/show_bug.cgi?id=205250">NB Issue 205250</a>: UI to copy nearest GC root trace to clipboard
+                        </li>
+
+                        <li>Built on NetBeans Platform & profiler 7.2.1
+                        </li>
+                    </ul>
+                </p>
+
+                <p style="margin-top: 5px; margin-bottom: 10px;">
+                    <b>Fixed bugs:</b><br>
+                    <ul>
+                        <li><a href="http://java.net/jira/browse/VISUALVM-530">Issue 530</a>: Random deadlock when starting VisualVM
+                        </li>
+
+                        <li><a href="http://java.net/jira/browse/VISUALVM-529">Issue 529</a>: Deadlock detector throws NoSuchMethodException on JDK 1.5
+                        </li>
+
+                        <li><a href="http://java.net/jira/browse/VISUALVM-528">Issue 528</a>: SysTray plugin throwing AWTException on VisualVM startup on Ubuntu 12.04
+                        </li>
+
+                        <li><a href="http://java.net/jira/browse/VISUALVM-527">Issue 527</a>: NPE when restoring saved core dumps
+                        </li>
+
+                        <li><a href="http://java.net/jira/browse/VISUALVM-525">Issue 525</a>: CSV Export colums incorrect and values shouldn't have a unit
+                        
+
+                        <li><a href="http://java.net/jira/browse/VISUALVM-519">Issue 519</a>: Sample action incorrectly enabled
+                        
+
+                        <li><a href="http://java.net/jira/browse/VISUALVM-518">Issue 518</a>: MBeans: Improve error message when invoke operation failed
+                        
+
+                        <li><a href="http://java.net/jira/browse/VISUALVM-516">Issue 516</a>: VisualVM does not recognize itself
+                        
+
+                        <li><a href="http://java.net/jira/browse/VISUALVM-513">Issue 513</a>: Unidentified developer when run on OS X Mountain Lion
+                        
+
+                        <li><a href="http://java.net/jira/browse/VISUALVM-512">Issue 512</a>: Cannot open a snapshot
+                        </li>
+
+                        <li><a href="http://java.net/jira/browse/VISUALVM-510">Issue 510</a>: snapshot save don't use filename
+                        </li>
+
+                        <li><a href="http://java.net/jira/browse/VISUALVM-507">Issue 507</a>: Cannot see local Java applications if NetBeans 7.1.2 is running on Mac OS X
+                        </li>
+
+                        <li><a href="http://java.net/jira/browse/VISUALVM-505">Issue 505</a>: Name of Eclipse applications is shown as "null"
+                        </li>
+
+                        <li><a href="http://java.net/jira/browse/VISUALVM-467">Issue 467</a>: Thread CPU Time: clicking Deltas doesn't refresh data
+                        </li>
+                 
+                        <li><a href="http://netbeans.org/bugzilla/buglist.cgi?keywords=VISUALVM%2C%20&keywords_type=allwords&resolution=FIXED&query_format=advanced&bug_status=RESOLVED&bug_status=VERIFIED&target_milestone=7.2&target_milestone=7.2.1">IssueTracker query</a> to list all changes in NetBeans profiler
+                        </li>
+                    </ul>
+                </p>
+
+                <!--p style="margin-top: 5px; margin-bottom: 10px;">
+                    <b>Fixed bugs:</b> <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&resolution=FIXED&target_milestone=1.3.1&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfield=creation_ts&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
+                </p-->
+            </div>
+
+            <a name="known_problems"></a>
+            <h3>Known Problems</h3>
+            <div>
+                <ul>
+                    <li><a href="http://java.net/jira/browse/VISUALVM-224">Issue 224</a>: Cannot memory profile JBoss AS 4.2.3.GA
+                    </li>
+
+                    <li><a href="http://java.net/jira/browse/VISUALVM-148">Issue 148</a>: VisualVM hangs when lost remote connection
+                    </li>
+
+                    <li><a href="http://java.net/jira/browse/VISUALVM-120">Issue 120</a>: JMX application datasource cannot be reused on application restart
+                    </li>
+
+                    <li><a href="http://java.net/jira/browse/VISUALVM-72">Issue 72</a>: Running application sometimes not recognized
+                    </li>
+                </ul>
+
+                <p style="margin-bottom: 15px;">To view all known problems please use this <a href="http://java.net/jira/secure/IssueNavigator.jspa?reset=true&jqlQuery=project+%3D+VISUALVM+AND+issuetype+%3D+Bug+AND+status+%3D+Open">IssueTracker query</a>.
+                </p>
+            </div>
+
+            <br>
+            <hr>
+            <hr>
+            <br>
+            <br>
+
+            <a name="changeshistory"></a>
+            <h2>History of Changes</h2>
+            <br>
+            
             <h3>Changes In 1.3.4</h3>
             <div>
                 <p style="margin-top: 5px;">
@@ -157,45 +274,7 @@
                     </ul>
                 </p>
 
-                <!--p style="margin-top: 5px; margin-bottom: 10px;">
-                    <b>Fixed bugs:</b> <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&resolution=FIXED&target_milestone=1.3.1&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfield=creation_ts&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
-                </p-->
             </div>
-
-            <a name="known_problems"></a>
-            <h3>Known Problems</h3>
-            <div>
-                <ul>
-                    <li><a href="http://java.net/jira/browse/VISUALVM-224">Issue 224</a>: Cannot memory profile JBoss AS 4.2.3.GA
-                    </li>
-
-                    <li><a href="http://java.net/jira/browse/VISUALVM-148">Issue 148</a>: VisualVM hangs when lost remote connection
-                    </li>
-
-                    <li><a href="http://java.net/jira/browse/VISUALVM-120">Issue 120</a>: JMX application datasource cannot be reused on application restart
-                    </li>
-
-                    <li><a href="http://java.net/jira/browse/VISUALVM-72">Issue 72</a>: Running application sometimes not recognized
-                    </li>
-                </ul>
-
-                <p>
-                    <b>Warning:</b> due to a JDK bug taking heap dump may crash the target JVM if it's running JDK 6 Update 16+ using Concurrent Mark Sweep garbage collector (CMS). A workaround is to use a different GC (for example using <code>-XX:+UseParallelGC</code>). Similar problem seems to affect also the JDK 7 devbuilds.
-                </p>
-
-                <p style="margin-bottom: 15px;">To view all known problems please use this <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&subcomponent=code&issue_status=NEW&issue_status=STARTED&issue_status=REOPENED&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&newqueryname=&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
-                </p>
-            </div>
-
-            <br>
-            <hr>
-            <hr>
-            <br>
-            <br>
-
-            <a name="changeshistory"></a>
-            <h2>History of Changes</h2>
-            <br>
             
             <h3>Changes In 1.3.3</h3>
             <div>
