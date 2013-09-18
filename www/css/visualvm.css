@@ -28,6 +28,11 @@
     vertical-align: top;
 }
 
+#contents_main_doc {
+    margin-right: 0px;
+    vertical-align: top;
+}
+
 #contents_hints {
     float: right;
     width: 232px;
