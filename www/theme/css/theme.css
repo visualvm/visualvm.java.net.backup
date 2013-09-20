@@ -150,7 +150,7 @@ ol, ul {
     padding-left: 25px !important;
 }
 
-code {
+code, pre {
     font-size: 11px !important;
 }
 
