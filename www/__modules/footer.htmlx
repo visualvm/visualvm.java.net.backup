@@ -1,57 +1,60 @@
 <script type="text/javascript">
 
-  // Attaches click event to an element
-  function startListening(element, eventhandler) {
-      if (element.addEventListener) element.addEventListener("click", eventhandler, false);
-      else if (element.attachEvent) element.attachEvent("onclick", eventhandler);
-  }
-
-  // Tracks mailto: link
-  function trackMailto(event) {
-      var href = (event.srcElement) ? event.srcElement.href : this.href;
-      var mailto = "/mailto/" + href.substring(7);
-      pageTracker._trackPageview(mailto);
-  }
-
-  // Tracks link
-  function trackLink(event) {
-      var e = (event.srcElement) ? event.srcElement : this;
-      while (e.tagName != "A") e = e.parentNode;
-
-      if (e.href == "#") return; // Links in Slimbox, IE only
-
-      var link;
-      if (e.href.indexOf("javascript:") != -1) {
-          link = "/javascript/" + e.href.substring(11);
-      } else {
-          link = (e.pathname.charAt(0) == "/") ? e.pathname : "/" + e.pathname;
-          if (e.search && e.pathname.indexOf(e.search) == -1) link += e.search;
-          if (e.hostname != location.host) link = "/external_link/" + e.hostname + link;
-      }
-
-      pageTracker._trackPageview(link);
-  }
-
-  // Setup Google Analytics page tracking
-  function trackPage() {
-      // Default Google Analytics
-      pageTracker = _gat._getTracker("UA-1306237-5");
-      pageTracker._initData();
-      pageTracker._trackPageview();
-
-      // Custom tracking files, mailtos and external links
-      if (document.getElementsByTagName) {
-          var links = document.getElementsByTagName("a");
-          for (var i = 0; i < links.length; i++) {
-              if (links[i].protocol == "mailto:") startListening(links[i], trackMailto);
-              else if (links[i].hostname == location.host) {
-                  var path = links[i].pathname + links[i].search;
-                  var isDocument = path.match(/(?:zip|dmg|torrent|nbm|pdf|odt)($|\&)/);
-                  if (isDocument) startListening(links[i], trackLink);
-              } else startListening(links[i], trackLink);
-          }
-      }
-  }
+//   ---------------------------------------------------------------------------
+//   ---   Stupid, we are not allowed to use Google Analytics for VisualVM   ---
+//   ---------------------------------------------------------------------------
+//   // Attaches click event to an element
+//   function startListening(element, eventhandler) {
+//       if (element.addEventListener) element.addEventListener("click", eventhandler, false);
+//       else if (element.attachEvent) element.attachEvent("onclick", eventhandler);
+//   }
+// 
+//   // Tracks mailto: link
+//   function trackMailto(event) {
+//       var href = (event.srcElement) ? event.srcElement.href : this.href;
+//       var mailto = "/mailto/" + href.substring(7);
+//       pageTracker._trackPageview(mailto);
+//   }
+// 
+//   // Tracks link
+//   function trackLink(event) {
+//       var e = (event.srcElement) ? event.srcElement : this;
+//       while (e.tagName != "A") e = e.parentNode;
+// 
+//       if (e.href == "#") return; // Links in Slimbox, IE only
+// 
+//       var link;
+//       if (e.href.indexOf("javascript:") != -1) {
+//           link = "/javascript/" + e.href.substring(11);
+//       } else {
+//           link = (e.pathname.charAt(0) == "/") ? e.pathname : "/" + e.pathname;
+//           if (e.search && e.pathname.indexOf(e.search) == -1) link += e.search;
+//           if (e.hostname != location.host) link = "/external_link/" + e.hostname + link;
+//       }
+// 
+//       pageTracker._trackPageview(link);
+//   }
+// 
+//   // Setup Google Analytics page tracking
+//   function trackPage() {
+//       // Default Google Analytics
+//       pageTracker = _gat._getTracker("UA-1306237-5");
+//       pageTracker._initData();
+//       pageTracker._trackPageview();
+// 
+//       // Custom tracking files, mailtos and external links
+//       if (document.getElementsByTagName) {
+//           var links = document.getElementsByTagName("a");
+//           for (var i = 0; i < links.length; i++) {
+//               if (links[i].protocol == "mailto:") startListening(links[i], trackMailto);
+//               else if (links[i].hostname == location.host) {
+//                   var path = links[i].pathname + links[i].search;
+//                   var isDocument = path.match(/(?:zip|dmg|torrent|nbm|pdf|odt)($|\&)/);
+//                   if (isDocument) startListening(links[i], trackLink);
+//               } else startListening(links[i], trackLink);
+//           }
+//       }
+//   }
 
   // Creates custom footer
   function createFooter() {
@@ -95,12 +98,12 @@
       document.body.appendChild(containerElement);
   }
 
-  // Google Analytics page tracker
-  var pageTracker;
+//   // Google Analytics page tracker
+//   var pageTracker;
 
   try {
     createFooter()
-    trackPage();
+//     trackPage();
   } catch(err) {}
   
 </script>
