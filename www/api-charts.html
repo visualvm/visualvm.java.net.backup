@@ -46,7 +46,7 @@
             
             <p>
                 Since VisualVM 1.2 there's a public API for creating charts available for developers. See the
-                <a href="nonav/apidocs/136/index.html?com/sun/tools/visualvm/charts/package-summary.html">VisualVM Charts API Documentation</a>.
+                <a href="nonav/apidocs/137/index.html?com/sun/tools/visualvm/charts/package-summary.html">VisualVM Charts API Documentation</a>.
                 The goal of the library is to help VisualVM plugin developers to visualize live data with a minimal effort using a standardized
                 user interface.
             </p>
@@ -173,21 +173,21 @@
             <h3>API Description</h3>
             <div>
                 <p style="margin-top: 5px;">VisualVM Charts API is defined in the
-                    <a href="nonav/apidocs/136/index.html?com/sun/tools/visualvm/charts/package-summary.html">VisualVM Charts API Documentation</a>.
+                    <a href="nonav/apidocs/137/index.html?com/sun/tools/visualvm/charts/package-summary.html">VisualVM Charts API Documentation</a>.
                     Current version provides the following classes:
                 </p>
 
                 <ul>
-                    <li><a href="nonav/apidocs/136/index.html?com/sun/tools/visualvm/charts/ChartFactory.html"><code>ChartFactory</code></a>:
+                    <li><a href="nonav/apidocs/137/index.html?com/sun/tools/visualvm/charts/ChartFactory.html"><code>ChartFactory</code></a>:
                         class to create chart objects based on the provided descriptors. Currently one chart type is available, a simple XY chart.
                     </li>
 
-                    <li><a href="nonav/apidocs/136/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html"><code>SimpleXYChartDescriptor</code></a>:
+                    <li><a href="nonav/apidocs/137/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html"><code>SimpleXYChartDescriptor</code></a>:
                         class to describe appearance and define items of the chart to be created. Note that these settings can only be defined prior to
                         creating the chart. Once created, the chart appearance and items are fixed.
                     </li>
 
-                    <li><a href="nonav/apidocs/136/index.html?com/sun/tools/visualvm/charts/SimpleXYChartSupport.html"><code>SimpleXYChartSupport</code></a>:
+                    <li><a href="nonav/apidocs/137/index.html?com/sun/tools/visualvm/charts/SimpleXYChartSupport.html"><code>SimpleXYChartSupport</code></a>:
                         handle to access and control a chart during run time. It allows to add new values to the chart, update the details (textual) area of
                         the chart and provides a JComponent instance representing the chart. It also enables to pretty-format chart values and provides basic
                         persistence operations to save/load chart values.
@@ -198,20 +198,20 @@
                 </p>
 
                 <ul>
-                    <li><code><a href="nonav/apidocs/136/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html">SimpleXYChartDescriptor</a>.decimal(...)</code>:
+                    <li><code><a href="nonav/apidocs/137/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html">SimpleXYChartDescriptor</a>.decimal(...)</code>:
                         chart displaying decimal values without units. This chart is used for displaying Classes and Threads in the Monitor tab in VisualVM.
                     </li>
 
-                    <li><code><a href="nonav/apidocs/136/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html">SimpleXYChartDescriptor</a>.bytes(...)</code>:
+                    <li><code><a href="nonav/apidocs/137/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html">SimpleXYChartDescriptor</a>.bytes(...)</code>:
                         chart displaying memory values with B/MB units. This chart is used for displaying Heap and PermGen in the Monitor tab in VisualVM.
                     </li>
 
-                    <li><code><a href="nonav/apidocs/136/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html">SimpleXYChartDescriptor</a>.percent(...)</code>:
+                    <li><code><a href="nonav/apidocs/137/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html">SimpleXYChartDescriptor</a>.percent(...)</code>:
                         chart displaying relative (percent) values with % units. This chart is used for displaying CPU usage and GC activity in the Monitor tab in VisualVM.
                     </li>
                 </ul>
 
-                <p>The <a href="nonav/apidocs/136/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html"><code>SimpleXYChartDescriptor</code></a>
+                <p>The <a href="nonav/apidocs/137/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html"><code>SimpleXYChartDescriptor</code></a>
                         methods to create descriptors for <code>decimal</code>, <code>bytes</code> and <code>percent</code> charts use (some of) these parameters:
                 </p>
 
@@ -235,7 +235,7 @@
                     </li>
                 </ul>
 
-                <p>The chart items can be defined in <a href="nonav/apidocs/136/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html"><code>SimpleXYChartDescriptor</code></a>
+                <p>The chart items can be defined in <a href="nonav/apidocs/137/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html"><code>SimpleXYChartDescriptor</code></a>
                     using simple <code>add<i>[Line|Fill|LineFill]</i>Items(String... itemNames)</code> methods. These methods ensure maximum consistency of the chart appearance with other VisualVM
                     graphs by using predefined colors and default line widths. Custom appearance of chart items can be defined using the <code>addItem(...)</code> method with the following
                     parameters:
@@ -261,7 +261,7 @@
                     </li>
                 </ul>
                 
-                <p>The chart appearance can be further customized using the <a href="nonav/apidocs/136/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html"><code>SimpleXYChartDescriptor</code></a> methods:
+                <p>The chart appearance can be further customized using the <a href="nonav/apidocs/137/index.html?com/sun/tools/visualvm/charts/SimpleXYChartDescriptor.html"><code>SimpleXYChartDescriptor</code></a> methods:
                 </p>
 
                 <ul>
@@ -275,7 +275,7 @@
 
                     <li><code>setDetailsItems(String[] detailNames)</code>: optional (none by default), defines textual area above the chart.
                         This area can display any information periodically updated by
-                        <code><a href="nonav/apidocs/136/index.html?com/sun/tools/visualvm/charts/SimpleXYChartSupport.html">SimpleXYChartSupport</a>.updateDetails(String[] values)</code>,
+                        <code><a href="nonav/apidocs/137/index.html?com/sun/tools/visualvm/charts/SimpleXYChartSupport.html">SimpleXYChartSupport</a>.updateDetails(String[] values)</code>,
                         but typically it displays current and additional (more detailed) values of chart items.
                     </li>
                 </ul>
@@ -301,7 +301,7 @@
             <a href="http://java.net/jira/secure/CreateIssue.jspa?pid=10598&issuetype=1">Report a Bug</a>
             <a href="mailto:feedback@visualvm.java.net">Send Feedback</a>
             <a href="https://visualvm.java.net/api-quickstart.html">Developer Documentation</a>
-            <a href="https://visualvm.java.net/nonav/apidocs/136/index.html">API Documentation</a>
+            <a href="https://visualvm.java.net/nonav/apidocs/137/index.html">API Documentation</a>
         </div>
         
     </div>
