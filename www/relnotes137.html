@@ -1,7 +1,7 @@
 <html>
 <head>
 
-    <title>VisualVM 1.3.8 Release Notes</title>
+    <title>VisualVM 1.3.7 Release Notes</title>
 
     <style>
 
@@ -42,14 +42,14 @@
     <div id="contents_contents">
         <div id="contents_main">
 
-            <h1>VisualVM 1.3.8 Release Notes</h1>
+            <h1>VisualVM 1.3.7 Release Notes</h1>
 
             <p>
                 VisualVM is a visual tool integrating several commandline JDK tools and lightweight profiling capabilities. Designed for both production and development time use, it further enhances the capability of monitoring and performance analysis for the Java SE platform.
             </p>
 
             <p style="margin-bottom: 15px;">
-                VisualVM 1.3.8 release is based on VisualVM 1.3.7. See the <a href="#changes">Changes In 1.3.8</a> section for list of changes and bugfixes since the VisualVM 1.3.7.
+                VisualVM 1.3.7 release is based on VisualVM 1.3.6. See the <a href="#changes">Changes In 1.3.7</a> section for list of changes and bugfixes since the VisualVM 1.3.6.
                 See the <a href="releases.html">Releases Overview</a> page for detailed overview of all VisualVM and Java VisualVM releases.
             </p>
 
@@ -59,13 +59,10 @@
                 <p style="margin-top: 5px;">
                     <b>Supported OS:</b><br>
                     <ul>
-                        <li>Microsoft Windows (8, 7, Vista, Server): 32bit &amp; 64bit
+                        <li>Microsoft Windows (7, Vista, XP, Server): 32bit &amp; 64bit
                         </li>
 
                         <li>Linux: Intel platform, 32bit &amp; 64bit
-                        </li>
-                        
-                        <li>Linux ARM HFLT (Raspberry Pi), JDK 8+ only
                         </li>
 
                         <li>Sun Solaris: Intel &amp; Sparc platform, 32bit &amp; 64bit
@@ -98,30 +95,27 @@
             </div>
 
             <a name="changes"></a>
-            <h3>Changes In 1.3.8</h3>
+            <h3>Changes In 1.3.7</h3>
             <div>
                 <p style="margin-top: 5px;">
                     <b>Features and enhancements:</b><br>
                     <ul>
-                        <li>Monitor graphs in Application Snapshots can now be zoomed and scrolled.
+                        <li><a href="https://java.net/jira/browse/VISUALVM-576">Issue 576</a>: Add memory sampling functionality for remote applications
                         </li>
                         
-                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=238028">NB Issue 238028</a>: Add support for profiling Java SE Embedded on ARM-VFP-HFLT platform
+                        <li><a href="https://java.net/jira/browse/VISUALVM-583">Issue 583</a>: Improve handling profiler calibration
+                        </li>
+                        
+                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=225710">NB Issue 225710</a>: [heapwalker] Display logical values of instances where feasible
                         </li>
 
-                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=238594">NB Issue 238594</a>: Improve Threads view
+                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=227292">NB Issue 227292</a>: Enhance Thread display with info about java.util.concurrent locks
                         </li>
                         
-                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=235168">NB Issue 235168</a>: Warn the user when comparing 32bit vs. 64bit heap dumps or memory snapshots
-                        </li>
-                        
-                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=237308">NB Issue 237308</a>: [heapwalker] binary export
-                        </li>
-                        
-                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=237864">NB Issue 237864</a>: [heapwalker] heap model can use less memory
+                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=228403">NB Issue 228403</a>: Sort methods by inclusive time
                         </li>
 
-                        <li>Built on NetBeans Platform & profiler 8.0
+                        <li>Built on NetBeans Platform & profiler 7.4
                         </li>
                     </ul>
                 </p>
@@ -129,13 +123,22 @@
                 <p>
                     <b>API Changes:</b><br>
                     <ul>
-                        <li>Compatible: <code>com.sun.tools.visualvm.application.jvm.Jvm.is19()</code> added
+                        <li>Compatible: <code>com.sun.tools.visualvm.application.jvm.Jvm.takeHeapHistogram()</code> added
                         </li>
                         
-                        <li>Compatible: <code>com.sun.tools.visualvm.charts.xy.SimpleXYChartUtils.setZoomingEnabled(boolean enabled)</code> added
+                        <li>Compatible: <code>com.sun.tools.visualvm.tools.jmx.JmxModel.takeHeapHistogram()</code> added
                         </li>
                         
-                        <li>Compatible: <code>com.sun.tools.visualvm.charts.xy.SimpleXYChartUtils.isZoomingEnabled()</code> added
+                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.DefaultCustomizer.allowsInsecureConnection()</code> added
+                        </li>
+                        
+                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.JmxApplicationsSupport.createJmxApplicationInteractive(..., boolean allowsInsecure)</code> added
+                        </li>
+
+                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.JmxConnectionCustomizer.Setup(..., boolean allowsInsecureConnection)</code> added
+                        </li>
+                        
+                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.JmxConnectionCustomizer.Setup.allowsInsecureConnection()</code> added
                         </li>
                     </ul>
                 </p>
@@ -144,25 +147,25 @@
                     <b>Fixed bugs:</b><br>
                     <ul>
                         
-                        <li><a href="https://java.net/jira/browse/VISUALVM-478">Issue 478</a>: Spikey and sometimes scattered graph
+                        <li><a href="https://java.net/jira/browse/VISUALVM-571">Issue 571</a>: MissingResourceException when starting CPU profiler
                         </li>
 
-                        <li><a href="https://java.net/jira/browse/VISUALVM-553">Issue 553</a>: Rendering issues with charts after long data display
+                        <li><a href="https://java.net/jira/browse/VISUALVM-572">Issue 572</a>: Cannot connect to remote jmx agent discovered via jstatd
                         </li>
 
-                        <li><a href="https://java.net/jira/browse/VISUALVM-592">Issue 592</a>: use jcmd to enable local JMX agent
+                        <li><a href="https://java.net/jira/browse/VISUALVM-577">Issue 577</a>: Profiler class sharing warning displayed incorrectly for JDK 7 and JDK 6
                         </li>
                         
-                        <li><a href="https://java.net/jira/browse/VISUALVM-595">Issue 595</a>: Broken graph mesh in Application snapshots
+                        <li><a href="https://java.net/jira/browse/VISUALVM-579">Issue 579</a>: Deadlock after startup
                         </li>
                         
-                        <li><a href="https://java.net/jira/browse/VISUALVM-596">Issue 596</a>: Missing default root methods
+                        <li><a href="https://java.net/jira/browse/VISUALVM-581">Issue 581</a>: Network Options - Manual settings
                         </li>
                         
-                        <li><a href="https://java.net/jira/browse/VISUALVM-597">Issue 597</a>: Remove "PermGen histogram" on JDK 8+
+                        <li><a href="https://java.net/jira/browse/VISUALVM-582">Issue 582</a>: Undocked Applications view is semi-transparent
                         </li>
                  
-                        <li><a href="https://netbeans.org/bugzilla/buglist.cgi?cf_bug_type=DEFECT&keywords=VISUALVM%2C%20&keywords_type=allwords&list_id=257344&query_format=advanced&resolution=FIXED&target_milestone=8.0&order=priority%2Cbug_id&query_based_on=">IssueTracker query</a> to list all changes in NetBeans profiler affecting VisualVM
+                        <li><a href="https://netbeans.org/bugzilla/buglist.cgi?cf_bug_type=DEFECT&keywords=VISUALVM%2C%20&keywords_type=allwords&list_id=257344&query_format=advanced&resolution=FIXED&target_milestone=7.4&order=priority%2Cbug_id&query_based_on=">IssueTracker query</a> to list all changes in NetBeans profiler affecting VisualVM
                         </li>
                     </ul>
                 </p>
@@ -176,10 +179,16 @@
             <h3>Known Problems</h3>
             <div>
                 <ul>
+                    <li><a href="http://java.net/jira/browse/VISUALVM-224">Issue 224</a>: Cannot memory profile JBoss AS 4.2.3.GA
+                    </li>
+
                     <li><a href="http://java.net/jira/browse/VISUALVM-148">Issue 148</a>: VisualVM hangs when lost remote connection
                     </li>
 
                     <li><a href="http://java.net/jira/browse/VISUALVM-120">Issue 120</a>: JMX application datasource cannot be reused on application restart
+                    </li>
+
+                    <li><a href="http://java.net/jira/browse/VISUALVM-72">Issue 72</a>: Running application sometimes not recognized
                     </li>
                 </ul>
 
@@ -187,85 +196,7 @@
                 </p>
             </div>
 
-            <br><h3>Changes In 1.3.7</h3>
-            <div>
-                <p style="margin-top: 5px;">
-                    <b>Features and enhancements:</b><br>
-                    <ul>
-                        <li><a href="https://java.net/jira/browse/VISUALVM-576">Issue 576</a>: Add memory sampling functionality for remote applications
-                        </li>
-                        
-                        <li><a href="https://java.net/jira/browse/VISUALVM-583">Issue 583</a>: Improve handling profiler calibration
-                        </li>
-                        
-                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=225710">NB Issue 225710</a>: [heapwalker] Display logical values of instances where feasible
-                        </li>
-
-                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=227292">NB Issue 227292</a>: Enhance Thread display with info about java.util.concurrent locks
-                        </li>
-                        
-                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=228403">NB Issue 228403</a>: Sort methods by inclusive time
-                        </li>
-
-                        <li>Built on NetBeans Platform & profiler 7.4
-                        </li>
-                    </ul>
-                </p>
-
-                <p>
-                    <b>API Changes:</b><br>
-                    <ul>
-                        <li>Compatible: <code>com.sun.tools.visualvm.application.jvm.Jvm.takeHeapHistogram()</code> added
-                        </li>
-                        
-                        <li>Compatible: <code>com.sun.tools.visualvm.tools.jmx.JmxModel.takeHeapHistogram()</code> added
-                        </li>
-                        
-                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.DefaultCustomizer.allowsInsecureConnection()</code> added
-                        </li>
-                        
-                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.JmxApplicationsSupport.createJmxApplicationInteractive(..., boolean allowsInsecure)</code> added
-                        </li>
-
-                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.JmxConnectionCustomizer.Setup(..., boolean allowsInsecureConnection)</code> added
-                        </li>
-                        
-                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.JmxConnectionCustomizer.Setup.allowsInsecureConnection()</code> added
-                        </li>
-                    </ul>
-                </p>
-
-                <p style="margin-top: 5px; margin-bottom: 10px;">
-                    <b>Fixed bugs:</b><br>
-                    <ul>
-                        
-                        <li><a href="https://java.net/jira/browse/VISUALVM-571">Issue 571</a>: MissingResourceException when starting CPU profiler
-                        </li>
-
-                        <li><a href="https://java.net/jira/browse/VISUALVM-572">Issue 572</a>: Cannot connect to remote jmx agent discovered via jstatd
-                        </li>
-
-                        <li><a href="https://java.net/jira/browse/VISUALVM-577">Issue 577</a>: Profiler class sharing warning displayed incorrectly for JDK 7 and JDK 6
-                        </li>
-                        
-                        <li><a href="https://java.net/jira/browse/VISUALVM-579">Issue 579</a>: Deadlock after startup
-                        </li>
-                        
-                        <li><a href="https://java.net/jira/browse/VISUALVM-581">Issue 581</a>: Network Options - Manual settings
-                        </li>
-                        
-                        <li><a href="https://java.net/jira/browse/VISUALVM-582">Issue 582</a>: Undocked Applications view is semi-transparent
-                        </li>
-                 
-                        <li><a href="https://netbeans.org/bugzilla/buglist.cgi?cf_bug_type=DEFECT&keywords=VISUALVM%2C%20&keywords_type=allwords&list_id=257344&query_format=advanced&resolution=FIXED&target_milestone=7.4&order=priority%2Cbug_id&query_based_on=">IssueTracker query</a> to list all changes in NetBeans profiler affecting VisualVM
-                        </li>
-                    </ul>
-                </p>
-
-                <!--p style="margin-top: 5px; margin-bottom: 10px;">
-                    <b>Fixed bugs:</b> <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&resolution=FIXED&target_milestone=1.3.1&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfield=creation_ts&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
-                </p-->
-            </div>
+            <br>
             <hr>
             <hr>
             <br>
@@ -274,164 +205,6 @@
             <a name="changeshistory"></a>
             <h2>History of Changes</h2>
             <br>
-            
-            <h3>Changes In 1.3.7</h3>
-            <div>
-                <p style="margin-top: 5px;">
-                    <b>Features and enhancements:</b><br>
-                    <ul>
-                        <li><a href="https://java.net/jira/browse/VISUALVM-576">Issue 576</a>: Add memory sam<h3>Changes In 1.3.7</h3>
-            <div>
-                <p style="margin-top: 5px;">
-                    <b>Features and enhancements:</b><br>
-                    <ul>
-                        <li><a href="https://java.net/jira/browse/VISUALVM-576">Issue 576</a>: Add memory sampling functionality for remote applications
-                        </li>
-                        
-                        <li><a href="https://java.net/jira/browse/VISUALVM-583">Issue 583</a>: Improve handling profiler calibration
-                        </li>
-                        
-                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=225710">NB Issue 225710</a>: [heapwalker] Display logical values of instances where feasible
-                        </li>
-
-                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=227292">NB Issue 227292</a>: Enhance Thread display with info about java.util.concurrent locks
-                        </li>
-                        
-                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=228403">NB Issue 228403</a>: Sort methods by inclusive time
-                        </li>
-
-                        <li>Built on NetBeans Platform & profiler 7.4
-                        </li>
-                    </ul>
-                </p>
-
-                <p>
-                    <b>API Changes:</b><br>
-                    <ul>
-                        <li>Compatible: <code>com.sun.tools.visualvm.application.jvm.Jvm.takeHeapHistogram()</code> added
-                        </li>
-                        
-                        <li>Compatible: <code>com.sun.tools.visualvm.tools.jmx.JmxModel.takeHeapHistogram()</code> added
-                        </li>
-                        
-                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.DefaultCustomizer.allowsInsecureConnection()</code> added
-                        </li>
-                        
-                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.JmxApplicationsSupport.createJmxApplicationInteractive(..., boolean allowsInsecure)</code> added
-                        </li>
-
-                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.JmxConnectionCustomizer.Setup(..., boolean allowsInsecureConnection)</code> added
-                        </li>
-                        
-                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.JmxConnectionCustomizer.Setup.allowsInsecureConnection()</code> added
-                        </li>
-                    </ul>
-                </p>
-
-                <p style="margin-top: 5px; margin-bottom: 10px;">
-                    <b>Fixed bugs:</b><br>
-                    <ul>
-                        
-                        <li><a href="https://java.net/jira/browse/VISUALVM-571">Issue 571</a>: MissingResourceException when starting CPU profiler
-                        </li>
-
-                        <li><a href="https://java.net/jira/browse/VISUALVM-572">Issue 572</a>: Cannot connect to remote jmx agent discovered via jstatd
-                        </li>
-
-                        <li><a href="https://java.net/jira/browse/VISUALVM-577">Issue 577</a>: Profiler class sharing warning displayed incorrectly for JDK 7 and JDK 6
-                        </li>
-                        
-                        <li><a href="https://java.net/jira/browse/VISUALVM-579">Issue 579</a>: Deadlock after startup
-                        </li>
-                        
-                        <li><a href="https://java.net/jira/browse/VISUALVM-581">Issue 581</a>: Network Options - Manual settings
-                        </li>
-                        
-                        <li><a href="https://java.net/jira/browse/VISUALVM-582">Issue 582</a>: Undocked Applications view is semi-transparent
-                        </li>
-                 
-                        <li><a href="https://netbeans.org/bugzilla/buglist.cgi?cf_bug_type=DEFECT&keywords=VISUALVM%2C%20&keywords_type=allwords&list_id=257344&query_format=advanced&resolution=FIXED&target_milestone=7.4&order=priority%2Cbug_id&query_based_on=">IssueTracker query</a> to list all changes in NetBeans profiler affecting VisualVM
-                        </li>
-                    </ul>
-                </p>
-
-                <!--p style="margin-top: 5px; margin-bottom: 10px;">
-                    <b>Fixed bugs:</b> <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&resolution=FIXED&target_milestone=1.3.1&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfield=creation_ts&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
-                </p-->
-            </div>pling functionality for remote applications
-                        </li>
-                        
-                        <li><a href="https://java.net/jira/browse/VISUALVM-583">Issue 583</a>: Improve handling profiler calibration
-                        </li>
-                        
-                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=225710">NB Issue 225710</a>: [heapwalker] Display logical values of instances where feasible
-                        </li>
-
-                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=227292">NB Issue 227292</a>: Enhance Thread display with info about java.util.concurrent locks
-                        </li>
-                        
-                        <li><a href="https://netbeans.org/bugzilla/show_bug.cgi?id=228403">NB Issue 228403</a>: Sort methods by inclusive time
-                        </li>
-
-                        <li>Built on NetBeans Platform & profiler 7.4
-                        </li>
-                    </ul>
-                </p>
-
-                <p>
-                    <b>API Changes:</b><br>
-                    <ul>
-                        <li>Compatible: <code>com.sun.tools.visualvm.application.jvm.Jvm.takeHeapHistogram()</code> added
-                        </li>
-                        
-                        <li>Compatible: <code>com.sun.tools.visualvm.tools.jmx.JmxModel.takeHeapHistogram()</code> added
-                        </li>
-                        
-                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.DefaultCustomizer.allowsInsecureConnection()</code> added
-                        </li>
-                        
-                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.JmxApplicationsSupport.createJmxApplicationInteractive(..., boolean allowsInsecure)</code> added
-                        </li>
-
-                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.JmxConnectionCustomizer.Setup(..., boolean allowsInsecureConnection)</code> added
-                        </li>
-                        
-                        <li>Compatible: <code>com.sun.tools.visualvm.jmx.JmxConnectionCustomizer.Setup.allowsInsecureConnection()</code> added
-                        </li>
-                    </ul>
-                </p>
-
-                <p style="margin-top: 5px; margin-bottom: 10px;">
-                    <b>Fixed bugs:</b><br>
-                    <ul>
-                        
-                        <li><a href="https://java.net/jira/browse/VISUALVM-571">Issue 571</a>: MissingResourceException when starting CPU profiler
-                        </li>
-
-                        <li><a href="https://java.net/jira/browse/VISUALVM-572">Issue 572</a>: Cannot connect to remote jmx agent discovered via jstatd
-                        </li>
-
-                        <li><a href="https://java.net/jira/browse/VISUALVM-577">Issue 577</a>: Profiler class sharing warning displayed incorrectly for JDK 7 and JDK 6
-                        </li>
-                        
-                        <li><a href="https://java.net/jira/browse/VISUALVM-579">Issue 579</a>: Deadlock after startup
-                        </li>
-                        
-                        <li><a href="https://java.net/jira/browse/VISUALVM-581">Issue 581</a>: Network Options - Manual settings
-                        </li>
-                        
-                        <li><a href="https://java.net/jira/browse/VISUALVM-582">Issue 582</a>: Undocked Applications view is semi-transparent
-                        </li>
-                 
-                        <li><a href="https://netbeans.org/bugzilla/buglist.cgi?cf_bug_type=DEFECT&keywords=VISUALVM%2C%20&keywords_type=allwords&list_id=257344&query_format=advanced&resolution=FIXED&target_milestone=8.0&order=priority%2Cbug_id&query_based_on=">IssueTracker query</a> to list all changes in NetBeans profiler affecting VisualVM
-                        </li>
-                    </ul>
-                </p>
-
-                <!--p style="margin-top: 5px; margin-bottom: 10px;">
-                    <b>Fixed bugs:</b> <a href="https://visualvm.dev.java.net/issues/buglist.cgi?Submit+query=Submit+query&issue_type=DEFECT&component=visualvm&resolution=FIXED&target_milestone=1.3.1&email1=&emailtype1=exact&emailassigned_to1=1&email2=&emailtype2=exact&emailreporter2=1&issueidtype=include&issue_id=&changedin=&votes=&chfield=creation_ts&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=fulltext&long_desc=&long_desc_type=fulltext&issue_file_loc=&issue_file_loc_type=fulltext&status_whiteboard=&status_whiteboard_type=fulltext&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&order=Reuse+same+sort+as+last+time">IssueTracker query</a>.
-                </p-->
-            </div>
             
             <h3>Changes In 1.3.6</h3>
             <div>
@@ -1178,7 +951,7 @@
         <h3 class="first">On This Page</h3>
         <div>
             <a href="#system_requirements">System Requirements</a>
-            <a href="#changes">Changes In 1.3.8</a>
+            <a href="#changes">Changes In 1.3.7</a>
             <a href="#known_problems">Known Problems</a>
             <a href="#changeshistory">History of Changes</a>
         </div>
