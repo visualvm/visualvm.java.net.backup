@@ -170,6 +170,11 @@
                 cause target JVM to crash when class sharing is enabled. To start an application without class sharing, provide <code>-Xshare:off</code> argument
                 to the <code>java</code> command starting the application. More information can be found in <a href="http://bugs.sun.com/view_bug.do?bug_id=6497639">JDK bug #6497639</a>
                 and <a href="http://bugs.sun.com/view_bug.do?bug_id=6598065">JDK bug #6598065</a>.</p><br>
+            
+            <a name="xverify"></a>
+            <h4>CPU Profiling Fails With "Redefinition failed with error 62"</h4>
+            <p><b>Description:&nbsp;</b>CPU profiling in the Profiler tab or using the Startup Profiler plugin fails, VisualVM displays message "Redefinition failed with error 62".</p>
+            <p><b>Resolution:&nbsp;&nbsp;</b>Restart the application with the VM argument -Xverify:none to disable classfile verification. You must restart the application to disable classfile verification. You cannot disable verification if the application is running.</p><br>
 
             <a name="calibration"></a>
             <h4>Profiler Measures Incorrect Performance Results</h4>
